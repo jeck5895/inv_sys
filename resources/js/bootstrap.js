@@ -39,6 +39,7 @@ Vue.component(
 
 try {
     window.$ = window.jQuery = require('jquery');
+    window.hammerjs = require('hammerjs');
 
     require('bootstrap');
 } catch (e) {}

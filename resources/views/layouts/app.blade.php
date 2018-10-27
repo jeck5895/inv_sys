@@ -23,6 +23,8 @@
                 <router-view></router-view>
             <!-- </div> -->
         </div>
+        <!-- <script src="assets/plugins/simplebar/js/simplebar.js"></script> -->
+        <!-- waves effect js -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

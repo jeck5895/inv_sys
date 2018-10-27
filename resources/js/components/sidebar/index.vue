@@ -22,7 +22,7 @@
             </div>
         </div>
         <ul class="sidebar-menu do-nicescrol">
-            <li class="sidebar-header">MAIN NAVIGATION</li>
+            <li class="sidebar-header">ADMINISTRATIVE PANEL</li>
             <li>
                 <router-link to="/administrator/dashboard" class="waves-effect">
                     <i class="icon-home"></i><span>Dashboard</span><i class="fa fa-angle-left pull-right"></i>

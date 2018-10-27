@@ -11,11 +11,20 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.js(
+        [
+            'resources/js/app.js',
+            'resources/plugins/simplebar.js',
+            'resources/plugins/waves.js',
+            'resources/plugins/sidebar-menu.js',
+        ], 
+        'public/js'
+    )
    .sass('resources/sass/app.scss', 'public/css')
    .styles(
         [
             'resources/css/app-style.css',
+            'resources/css/simplebar.css',
             'resources/css/icons.css',
             'resources/css/sidebar-menu.css'
         ], 
