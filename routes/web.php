@@ -10,9 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('reports/firstreport', 'Reports\ReportsController@firstreport');
+Route::get('reports/receipt', 'Reports\ReportsController@receipt');
+
 Route::get('/', 'IndexController@index')->name('index');
 
 
 Route::get('/{vue_capture?}', function () {
-    return view('layouts.app');
+    return view('pages.index');
 })->where('vue_capture', '[\/\w\.-]*');
+

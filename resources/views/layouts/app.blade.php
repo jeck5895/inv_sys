@@ -12,15 +12,15 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/custom-styles.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">  --}}
     </head>
     <body>
         <div id="app" class="wrapper">
-            <!-- @yield('content') -->
+            @yield('content')
             <!-- <div class="container-fluid"> -->
-                <router-view></router-view>
+                
             <!-- </div> -->
         </div>
         <!-- <script src="assets/plugins/simplebar/js/simplebar.js"></script> -->

@@ -83,8 +83,8 @@
                     if (result) {
                         let payload = {
                             grant_type: 'password',
-                            client_id: 2,
-                            client_secret: 'ZceLweZBN3H07WPoFCmloYS9vmrHL0suiKrgYD8i',
+                            client_id: 1,
+                            client_secret: 'uKgKi1NLCz74b7WR7nlKJ7u3fDV558qiyFbsGj8s',
                             username: this.email,
                             password: this.password,
                             scope: '',
