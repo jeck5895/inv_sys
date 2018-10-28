@@ -16,7 +16,9 @@ router.beforeEach((to, from, next) => {
         }
     }
     else if(!to.matched.some(record => record.meta.forAuthUsers) && to.fullPath == '/login' && store.getters['AuthModule/LOGGED_IN']){
-        window.location = window.history.back();
+        next({
+            path: '/administrator'
+        })
     }
     else{
         next();
@@ -26,5 +28,10 @@ router.beforeEach((to, from, next) => {
 const app = new Vue({
     el: '#app',
     router,
-    store
+    store,
+    methods: {
+        setFormType (type) {
+            console.log(localStorage.setItem('f_type', type));
+        }
+    }
 });

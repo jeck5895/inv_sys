@@ -42,10 +42,10 @@
                     </div>
                     <div class="form-row mr-0 ml-0">
                         <div class="form-group col-6">
-                            <div class="demo-checkbox">
+                            <!-- <div class="demo-checkbox">
                                 <input type="checkbox" id="user-checkbox" class="filled-in chk-col-danger" checked="" />
                                 <label for="user-checkbox">Remember me</label>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="form-group col-6 text-right">
                             <a href="authentication-dark-reset-password.html">Reset Password</a>

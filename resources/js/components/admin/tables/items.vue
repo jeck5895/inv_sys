@@ -15,132 +15,36 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Pencil</td>
-                <td>CODE</td>
-                <td>PCS</td>
+            <tr v-if="items.data.length != 0" v-for="(item, i) in items.data" :key="i">
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.item_code }}</td>
+                <td>{{ item.unit.unit_name }}</td>
 
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.site.site_name }}</td>
+                <td>{{ item.create_at|humanReadableFormat}}</td>
+                <td>{{ item.dr_number }}</td>
                 <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert4">REMOVE
+                    <button @click="handleEdit(item)" type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
+                        <i class="fa fa-plus-circle"></i> <span>UPDATE</span> 
+                    </button>
+                    <button @click="handleRemove(item)" type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert4">REMOVE
                     </button>
 
                 </td>
             </tr>
-            <tr>
-                <td>Ballpen</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert5">REMOVE
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Lanyard</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert6">REMOVE
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Book</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert7">REMOVE
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Pants</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert8">REMOVE
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Shirt</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert9">REMOVE
-                    </button>
-
-                </td>
-            </tr>
-            <tr>
-                <td>Bag</td>
-                <td>CODE</td>
-                <td>PCS</td>
-
-                <td>50</td>
-                <td>100</td>
-                <td>Sumacab</td>
-                <td>14 July 2018</td>
-                <td>12345</td>
-                <td align="center">
-                    <button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#primarymodal">UPDATE</button>
-                    <button type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert10">REMOVE
-                    </button>
-
-                </td>
+            <tr v-else>
+               <td class="text-center" colspan="9">
+                    <span>Loading....</span>   
+                </td> 
             </tr>
         </tbody>
-        <tfoot>
+        <!-- <tfoot>
             <tr>
                 <th>Item Name</th>
                 <th>Item Code</th>
                 <th>Unit</th>
-
                 <th>Quantity</th>
                 <th>Price</th>
                 <th>Site</th>
@@ -148,13 +52,40 @@
                 <th>DR Number</th>
                 <th>Action</th>
             </tr>
-        </tfoot>
+        </tfoot> -->
     </table>
 </template>
 
 <script>
     export default {
+        props: {
+            items: {
+                required: true
+            }
+        },
+        methods: {
+            handleEdit (item) {
+                let payload = {
+                    id: item.id,
+                    item_code: item.item_code,
+                    item_name: item.item_name,
+                    price: item.price,
+                    quantity: item.quantity,
+                    unit: item.unit.id,
+                    site: item.site.id,
+                    dr_number: item.dr_number
+                };
+                this.$root.setFormType('EDIT_ITEM');
+                this.$store.commit('ITEMS_MODULE/SET_ITEM', payload);
+            },
+            handleRemove (item) {
+                let bool = confirm(`Delete ${item.item_name} ?`);
 
+                if(bool) {
+                    this.$store.dispatch('ITEMS_MODULE/DELETE_ITEM', item.id);
+                }
+            }
+        }
     }
 </script>
 

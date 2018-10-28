@@ -29,14 +29,14 @@
             </div>
         </div>
         <!--End Modal -->
-        <button type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
+        <button @click="$root.setFormType('NEW_ITEM')" type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
             <i class="fa fa-plus-circle"></i> <span>New Item</span> </button>
     </div>
 </template>
 
 <script>
     export default {
-
+        
     }
 </script>
 

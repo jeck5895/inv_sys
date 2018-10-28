@@ -20,7 +20,7 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
-        "toastr": "^2.1.4",
+        "toastr": "^2.1.2",
         "vue": "^2.5.7"
     },
     "dependencies": {

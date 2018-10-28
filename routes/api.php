@@ -19,5 +19,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::middleware('auth:api')->group(function() {
+    Route::get('/stocks/lists', 'API\ItemController@lists');
+    Route::get('/sites/lists', 'API\SiteController@lists');
+    Route::get('/units/lists', 'API\UnitController@lists');
 
+    Route::apiResource('stocks', 'API\ItemController');
+    Route::apiResource('sales', 'API\SalesController');
+    Route::apiResource('units', 'API\UnitController');
+    ROute::apiResource('sites', 'API\SiteController');
 });

@@ -36,7 +36,7 @@
                         <!-- End Buttons -->
                         <hr>
                         <!-- Table -->
-                        <ItemsTable/>
+                        <ItemsTable :items="stocks"/>
                         <!-- End Table -->
                         
                         <!-- Item Form Modal -->
@@ -53,8 +53,23 @@
     import NavButtons from '../../components/admin/buttons/item-buttons.vue'
     import ItemsTable from '../../components/admin/tables/items.vue'
     import ItemForm from '../../components/form-modal/item.vue'
+    import { store } from '../../store/index.js';
 
     export default {
+        beforeRouteEnter(to, from, next) {
+            store.dispatch('ITEMS_MODULE/FETCH_ITEMS')
+            .then(() => {
+                store.dispatch('UNITS_MODULE/FETCH_UNITS_LIST')
+                store.dispatch('SITES_MODULE/FETCH_SITES_LIST')
+                next();
+            }); //items data table
+                        
+        },
+        computed: {
+            stocks () {
+                return this.$store.getters['ITEMS_MODULE/GET_ITEMS'];
+            }
+        },
         components:{
             NavButtons,
             ItemsTable,

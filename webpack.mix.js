@@ -23,6 +23,7 @@ mix.js(
    .sass('resources/sass/app.scss', 'public/css')
    .styles(
         [
+            'resources/css/toastr.min.css',
             'resources/css/app-style.css',
             'resources/css/simplebar.css',
             'resources/css/icons.css',

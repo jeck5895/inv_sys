@@ -5,6 +5,8 @@ import VeeValidate from 'vee-validate';
 import moment from 'moment';
 import toastr from 'toastr';
 import Cookies from 'js-cookie';
+
+
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 window.VeeValidate = VeeValidate;
@@ -37,8 +39,17 @@ Vue.component(
 );
 
 
+/**
+ * Global Filters
+ */
+Vue.filter('humanReadableFormat', function(date){
+    return moment(date).format('MMMM D, YYYY');
+});
+
+
 try {
     window.$ = window.jQuery = require('jquery');
+    window.Popper = require('popper.js').default;//for bootstrap 4 dropdown
     window.hammerjs = require('hammerjs');
 
     require('bootstrap');
@@ -53,6 +64,7 @@ try {
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.baseURL = window.location.protocol + "//" + window.location.host;
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

@@ -30,6 +30,12 @@ class UnitsTableSeeder extends Seeder
                 'is_active' => 1 ,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'unit_name' => 'PACK',
+                'is_active' => 1 ,
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
             ]
         ]);
     }

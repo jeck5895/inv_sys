@@ -1,6 +1,6 @@
-const Dashboard = () => import('../../components/admin/dashboard.vue');
+const Dashboard = () => import('../../pages/admin/dashboard.vue');
 const Stocks = () => import('../../pages/admin/stocks.vue');
-const Issuance = () => import('../../components/admin/issueance.vue');
+const Issuance = () => import('../../pages/admin/issueance.vue');
 
 export default [
     {
