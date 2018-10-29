@@ -8,9 +8,17 @@ use App\Http\Requests\Sales\StoreSale;
 use App\Http\Requests\Sales\UpdateSale;
 use App\Model\Sale;
 use App\Model\Item;
+use PDF;
 
 class SalesController extends Controller
 {
+    protected $report;
+    public function __construct(
+        \App\Services\ReportService $report
+    ) 
+    {
+        $this->report = $report;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +56,7 @@ class SalesController extends Controller
 
             return [
                 'message' => 'Sales has been saved.',
-                'sales_no' => $sale->id
+                'sales_no' => $sale->id,
             ];
         }
         else {

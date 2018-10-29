@@ -22,8 +22,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input-38" class="col-sm-2 col-form-label">Customer Type</label>
-            <div class="col-sm-4">
+            <label for="input-38" class="col-sm-12 col-form-label">Customer Type</label>
+            <div class="col-sm-12">
                 <select
                     v-validate="'required'"
                     v-model="customer.customer_type"
@@ -39,15 +39,16 @@
                     {{  errors.first('SALES_FORM.customer_type') }}
                 </small>
             </div>
-
-            <label for="input-36" class="col-sm-2 col-form-label">
+        </div>
+        <div class="form-group row">
+            <label for="input-36" class="col-sm-12 col-form-label">
                 <span v-if="customer.customer_type == 'student'">
                     Student ID
                 </span>
                 <span v-else-if="customer.customer_type == 'faculty'"> Faculty ID</span>
                 <span v-else>Customer ID</span>
             </label>
-            <div class="col-sm-4">
+            <div class="col-sm-12">
                 <input 
                     v-model="customer.customer_id"
                     name="customer_id"
@@ -55,8 +56,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input-33" class="col-sm-2 col-form-label">Full Name</label>
-            <div class="col-sm-10">
+            <label for="input-33" class="col-sm-12 col-form-label">Full Name</label>
+            <div class="col-sm-12">
                 <input 
                     v-validate="'required'"
                     v-model="customer.fullname"
@@ -68,8 +69,8 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input-35" class="col-sm-2 col-form-label">Department</label>
-            <div class="col-sm-4">
+            <label for="input-35" class="col-sm-12 col-form-label">Department</label>
+            <div class="col-sm-12">
                 <input 
                     v-model="customer.department"
                     name="department"
@@ -77,9 +78,9 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="input-38" class="col-sm-2 col-form-label">Item Name</label>
-            <div class="col-sm-10">
+        <!-- <div class="form-group row">
+            <label for="input-38" class="col-sm-12 col-form-label">Item Name</label>
+            <div class="col-sm-12">
                 <select
                     v-validate="'required'" 
                     v-model="customer.item_id"
@@ -95,8 +96,8 @@
         </div>
 
         <div class="form-group row">
-            <label for="input-37" class="col-sm-2 col-form-label">Quanity</label>
-            <div class="col-sm-10">
+            <label for="input-37" class="col-sm-12 col-form-label">Quanity</label>
+            <div class="col-sm-12">
                 <input
                     v-validate="'required|min_value:1|numeric'"
                     v-model="customer.quantity"
@@ -106,12 +107,12 @@
                         {{  errors.first('SALES_FORM.quantity') }}
                     </small>
             </div>
-        </div>
+        </div> -->
 
         <div class="form-group row">
-            <label for="input-38" class="col-sm-2 col-form-label">Remarks
+            <label for="input-38" class="col-sm-12 col-form-label">Remarks
                 (Optional)</label>
-            <div class="col-sm-10">
+            <div class="col-sm-12">
                 <input 
                     v-model="customer.remarks"
                     type="text" class="form-control" id="input-38" placeholder="Enter Remarks">
@@ -119,8 +120,7 @@
         </div>
 
         <div class="form-group row">
-            <label class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
+            <div class="col-sm-12">
                 <button 
                     :disabled="isLoading"
                     type="submit" class="btn btn-link bg-white text-info shadow px-5"><i class="icon-check"></i>
@@ -172,6 +172,8 @@
                             this.isLoading = false;
                             this.response = [];
                             this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                            var baseURL = window.location.protocol + "//" + window.location.host;
+                            window.open(`${baseURL}/receipt?or_no=${response.data.sales_no}`, 'Receipt', 'width=700,heigth=300');
                         })
                         .catch(error => {
                             // toastr.error('Error', error.response.data);

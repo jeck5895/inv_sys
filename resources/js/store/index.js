@@ -5,6 +5,7 @@ import SALES_MODULE from './modules/sales/index';
 import ITEMS_MODULE from './modules/items/index';
 import UNITS_MODULE from './modules/units/index';
 import SITES_MODULE from './modules/sites/index';
+import CART_MODULE from './modules/cart/index';
 
 Vue.use(Vuex);
 
@@ -15,6 +16,7 @@ export const store = new Vuex.Store({
         ITEMS_MODULE,
         UNITS_MODULE,
         SITES_MODULE,
+        CART_MODULE
     }
 });
 

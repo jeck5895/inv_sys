@@ -43,7 +43,14 @@
                                             Supplies Issuance</div>
                                         <hr>
                                         <!-- Issuance Form -->
-                                        <IssuanceForm/>
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <IssuanceForm/>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <IssuanceCart/>
+                                            </div>
+                                        </div>
                                         <!-- End Issuance Form -->
                                     </div>
                                 </div>
@@ -62,6 +69,7 @@
 <script>
     import IssuanceForm from '../../components/form-modal/issuance.vue';
     import IssuanceTable from '../../components/admin/tables/items.vue';
+    import IssuanceCart from '../../components/admin/cart/index.vue'
 
     export default {
         beforeRouteEnter(to, from, next) {
@@ -72,7 +80,8 @@
         },
         components: {
             IssuanceForm,
-            IssuanceTable
+            IssuanceTable,
+            IssuanceCart
         },
         computed: {
             stocks () {

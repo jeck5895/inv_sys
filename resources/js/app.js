@@ -31,7 +31,7 @@ const app = new Vue({
     store,
     methods: {
         setFormType (type) {
-            console.log(localStorage.setItem('f_type', type));
+            localStorage.setItem('f_type', type);
         }
-    }
+    },
 });
