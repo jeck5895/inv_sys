@@ -12,6 +12,7 @@
 */
 Route::get('reports/firstreport', 'Reports\ReportsController@firstreport');
 Route::get('reports/receipt', 'Reports\ReportsController@receipt');
+Route::get('reports/sales', 'Reports\ReportsController@sales');
 
 Route::get('/', 'IndexController@index')->name('index');
 

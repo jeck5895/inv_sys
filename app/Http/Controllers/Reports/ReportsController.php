@@ -21,7 +21,7 @@ class ReportsController extends Controller
     public function firstreport()
     {
         $data = array(
-            'test' => 'test'
+            'month' => 'January'
         );
 
         $pdf = PDF::loadView('reports.firstreport',$data);
@@ -37,6 +37,16 @@ class ReportsController extends Controller
         $pdf = PDF::loadView('reports.receipt',$data);
         // return $pdf->download('firstreport.pdf');
         return $pdf->stream('receipt.pdf');
+    }
+
+    public function sales(){
+        $data = array(
+            'month' => 'January'
+        );
+
+        $pdf = PDF::loadView('reports.salesreport',$data);
+        // return $pdf->download('firstreport.pdf');
+        return $pdf->stream('salesreport.pdf');
     }
     /**
      * Show the form for creating a new resource.
