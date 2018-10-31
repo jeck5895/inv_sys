@@ -17,7 +17,7 @@ router.beforeEach((to, from, next) => {
     }
     else if(!to.matched.some(record => record.meta.forAuthUsers) && to.fullPath == '/login' && store.getters['AuthModule/LOGGED_IN']){
         next({
-            path: '/administrator'
+            path: '/administrator/stocks'
         })
     }
     else{

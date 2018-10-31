@@ -26,8 +26,10 @@ class StoreSale extends FormRequest
         return [
             'customer_type' => 'required',
             'fullname' => 'required',
-            'item_id' => 'required|numeric',
-            'quantity' => 'required|numeric|min:1',
+            'fund' => 'required',
+            'items' => 'required',
+            // 'item_id' => 'required|numeric',
+            // 'quantity' => 'required|numeric|min:1',
         ];
     }
 }

@@ -20,8 +20,6 @@ export default {
                 }
             })
             .then(response => {
-                toastr.success('Success', 'Sales has been saved');
-                commit('CLEAR_CUSTOMER');
                 resolve(response);
             })
             .catch(error => {

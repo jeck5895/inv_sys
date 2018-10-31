@@ -213,6 +213,7 @@
                                 this.isLoading = false;
                                 this.response = [];
                                 this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                                $("#addmodal").modal('hide');
                             })
                             .catch(error => {
                                 

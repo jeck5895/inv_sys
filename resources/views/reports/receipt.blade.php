@@ -84,20 +84,20 @@
                 <table class="table1">
                     <tbody>
                         <tr>
-                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;">Date:</td>
-                            <td style="width: 60%; padding: 8px 5px;" colspan="2">No {{ $data['test'] }} - A</td>
+                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;">Date: {{ $data['items'][0]['transaction_date'] }}</td>
+                            <td style="width: 60%; padding: 8px 5px;" colspan="2">No {{ $data['transaction_no'] }} - A</td>
                         </tr>
                     </tbody>
                 </table>
                 <table  class="table2">
                     <tbody>
                         <tr>
-                            <td style="width: 70%; padding: 8px 5px; border-right:1px solid black;">Payor:</td>
-                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Fund</td>
+                            <td style="width: 70%; padding: 8px 5px; border-right:1px solid black;">Payor: {{ $data['items'][0]['customer_name'] }}</td>
+                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Fund {{ $data['items'][0]['fund'] }}</td>
                         </tr>
                     </tbody>
                 </table>
-                <table  class="table3">
+                <table style=""  class="table3">
                     <tbody>
                         <tr>
                             <td style="padding: 1.5px !important; border-bottom:1px solid black;" colspan="3"></td>
@@ -107,22 +107,39 @@
                             <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;">Account Code</td>
                             <td style="width: 30%; padding: 8px 5px;">Amount</td>
                         </tr>
-                    </tbody>
-                </table>
-                <table  class="table4">
-                    <tbody>
+                        @foreach($data['items'] as $key => $transaction)
                         <tr>
-                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;" valign="top">dito kana mag loop haha <br> adasdasd</td>
-                            <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;" valign="top"></td>
-                            <td style="width: 30%; padding: 8px 5px;" valign="top"></td>
+                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;" valign="top"></td>
+                            <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;" valign="top">
+                                {{ $transaction['item_name'] }}
+                            </td>
+                            <td style="width: 30%; padding: 8px 5px;" valign="top">
+                                {{ $transaction['amount'] }}
+                            </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                <!-- <table  class="table4">
+                    <tbody>
+                        @foreach($data['items'] as $key => $transaction)
+                        <tr>
+                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;" valign="top"></td>
+                            <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;" valign="top">
+                                {{ $transaction['item_name'] }}
+                            </td>
+                            <td style="width: 30%; padding: 8px 5px;" valign="top">
+                                {{ $transaction['amount'] }}
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table> -->
                 <table  class="table2">
                     <tbody>
                         <tr>
                             <td style="width: 70%; padding: 8px 5px; border-right:1px solid black; text-align: center;">Total:</td>
-                            <td style="width: 30%; padding: 8px 5px;" colspan="2">P</td>
+                            <td style="width: 30%; padding: 8px 5px;" colspan="2">P {{ $data['total_amount'] }}</td>
                         </tr>
                     </tbody>
                 </table>

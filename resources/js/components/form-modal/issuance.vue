@@ -69,6 +69,19 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="input-33" class="col-sm-12 col-form-label">Fund</label>
+            <div class="col-sm-12">
+                <input 
+                    v-validate="'required'"
+                    v-model="customer.fund"
+                    name="fund"
+                    type="number" class="form-control" id="input-34" placeholder="Enter fund">
+                <small class="form-text text-danger" v-show="errors.has('SALES_FORM.fund')">
+                    {{  errors.first('SALES_FORM.fund') }}
+                </small>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="input-35" class="col-sm-12 col-form-label">Department</label>
             <div class="col-sm-12">
                 <input 
@@ -147,8 +160,8 @@
             customer () {
                 return this.$store.getters['SALES_MODULE/GET_CUSTOMER'];
             },
-            items () {
-                return this.$store.getters['ITEMS_MODULE/GET_ITEMS_LIST'];
+            cart () {
+                return this.$store.getters['CART_MODULE/GET_CART_ITEMS'];
             }
         },
         methods: {
@@ -156,31 +169,42 @@
                 this.$validator.validateAll(form)
                 .then(response => {
                     if(response) {
-                        this.isLoading = true;
-                        let payload = {
-                            customer_type: this.customer.customer_type,
-                            customer_id: this.customer.customer_id,
-                            fullname: this.customer.fullname,
-                            department: this.customer.department,
-                            item_id: this.customer.item_id,
-                            quantity: this.customer.quantity,
-                            remarks: this.customer.remarks
-                        };
+                        if(this.cart.length > 0) {
+                            this.isLoading = true;
+                            let payload = {
+                                customer_type: this.customer.customer_type,
+                                customer_id: this.customer.customer_id,
+                                fullname: this.customer.fullname,
+                                fund: this.customer.fund,
+                                department: this.customer.department,
+                                items: this.cart,
+                                // item_id: this.customer.item_id,
+                                // quantity: this.customer.quantity,
+                                remarks: this.customer.remarks
+                            };
 
-                        this.$store.dispatch('SALES_MODULE/STORE_SALE', payload)
-                        .then(response => {
-                            this.isLoading = false;
-                            this.response = [];
-                            this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
-                            var baseURL = window.location.protocol + "//" + window.location.host;
-                            window.open(`${baseURL}/receipt?or_no=${response.data.sales_no}`, 'Receipt', 'width=700,heigth=300');
-                        })
-                        .catch(error => {
-                            // toastr.error('Error', error.response.data);
-                            this.response = [];
-                            this.response = error.response;
-                            this.isLoading = false;
-                        })
+                            this.$store.dispatch('SALES_MODULE/STORE_SALE', payload)
+                            .then(response => {
+                                var baseURL = window.location.protocol + "//" + window.location.host;
+                                window.open(`${baseURL}/receipt?transaction_no=${response.data.transaction_no}`, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
+                                this.isLoading = false;
+                                this.response = [];
+                                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                                this.$store.commit('CART_MODULE/CLEAR_ITEMS');
+                                this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
+                                toastr.success('Success', 'Sales has been saved');
+                                
+                            })
+                            .catch(error => {
+                                // toastr.error('Error', error.response.data);
+                                this.response = [];
+                                this.response = error.response;
+                                this.isLoading = false;
+                            })
+                        } 
+                        else {
+                            toastr.warning('Your cart is empty')
+                        }
                     }
                 })
 

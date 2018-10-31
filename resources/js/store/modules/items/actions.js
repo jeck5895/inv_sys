@@ -22,9 +22,9 @@ export default {
         })
     },
     FETCH_ITEMS: ({ commit }, payload) => {
-        
+        let url = payload ? payload : '/api/stocks';
         return new Promise((resolve, reject) => {
-            axios.get('/api/stocks', {
+            axios.get(url, {
                 headers:{
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`

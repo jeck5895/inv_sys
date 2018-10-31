@@ -27,9 +27,10 @@ class UpdateSale extends FormRequest
             'customer_type' => 'required',
             'customer_id' => 'required',
             'fullname' => 'required',
-            'department' => 'required',
-            'item_id' => 'required|numeric',
-            'quantity' => 'required|numeric',
+            'fund' => 'required',
+            'items' => 'required'
+            // 'item_id' => 'required|numeric',
+            // 'quantity' => 'required|numeric',
         ];
     }
 }

@@ -1,62 +1,71 @@
 <template>
-    <table id="example" class="table table-bordered">
-        <thead class="thead-primary shadow-primary">
-            <tr>
-                <th>Item Name</th>
-                <th>Item Code</th>
-                <th>Unit</th>
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <table id="example" class="table table-bordered">
+                <thead class="thead-primary shadow-primary">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Code</th>
+                        <th>Unit</th>
 
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Site</th>
-                <th>Date Added</th>
-                <th>DR Number</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-if="items.data.length != 0" v-for="(item, i) in items.data" :key="i">
-                <td>{{ item.item_name }}</td>
-                <td>{{ item.item_code }}</td>
-                <td>{{ item.unit.unit_name }}</td>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Site</th>
+                        <th>Date Added</th>
+                        <th>DR Number</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-if="items.data.length != 0" v-for="(item, i) in items.data" :key="i">
+                        <td>{{ item.item_name }}</td>
+                        <td>{{ item.item_code }}</td>
+                        <td>{{ item.unit.unit_name }}</td>
 
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.site.site_name }}</td>
-                <td>{{ item.create_at|humanReadableFormat}}</td>
-                <td>{{ item.dr_number }}</td>
-                <td align="center">
-                    <button @click="handleEdit(item)" type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
-                        <i class="fa fa-plus-circle"></i> <span>UPDATE</span> 
-                    </button>
-                    <button @click="handleRemove(item)" type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert4">REMOVE
-                    </button>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>{{ item.site.site_name }}</td>
+                        <td>{{ item.create_at|humanReadableFormat}}</td>
+                        <td>{{ item.dr_number }}</td>
+                        <td align="center">
+                            <button @click="handleEdit(item)" type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
+                                <i class="fa fa-plus-circle"></i> <span>UPDATE</span> 
+                            </button>
+                            <button @click="handleRemove(item)" type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert4">REMOVE
+                            </button>
 
-                </td>
-            </tr>
-            <tr v-else>
-               <td class="text-center" colspan="9">
-                    <span>Loading....</span>   
-                </td> 
-            </tr>
-        </tbody>
-        <!-- <tfoot>
-            <tr>
-                <th>Item Name</th>
-                <th>Item Code</th>
-                <th>Unit</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Site</th>
-                <th>Date Added</th>
-                <th>DR Number</th>
-                <th>Action</th>
-            </tr>
-        </tfoot> -->
-    </table>
+                        </td>
+                    </tr>
+                    <tr v-else>
+                    <td class="text-center" colspan="9">
+                            <span>Loading....</span>   
+                        </td> 
+                    </tr>
+                </tbody>
+                <!-- <tfoot>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Item Code</th>
+                        <th>Unit</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Site</th>
+                        <th>Date Added</th>
+                        <th>DR Number</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot> -->
+            </table>
+        </div>  
+        <div class="col-md-12 justify-content-right">
+            <Pagination :object="items"/>    
+        </div>            
+    </div>
 </template>
 
 <script>
+    import Pagination from '../../pagination/index.vue';
+
     export default {
         props: {
             items: {
@@ -85,6 +94,9 @@
                     this.$store.dispatch('ITEMS_MODULE/DELETE_ITEM', item.id);
                 }
             }
+        },
+        components: {
+            Pagination
         }
     }
 </script>
