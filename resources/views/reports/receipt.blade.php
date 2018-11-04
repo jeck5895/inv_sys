@@ -26,6 +26,7 @@
                     margin-top:5px;
                     border: 3px solid black;
                     box-sizing: border-box;
+                    position: relative;
                 }   
                 .header .content{
                     text-align: center;
@@ -36,9 +37,12 @@
                     width: 100.37%;
                     border: 2px solid black;
                     border-bottom: 1px solid black;
-
                     border-collapse: collapse;
                     font-size: 11px;
+                    table-layout: fixed;
+                }
+                td {
+                    wordwrap: break-word;
                 }
                 .table2 tr td{
                     padding-top: 4px !important;
@@ -63,6 +67,16 @@
                     display: inline-block;
                     margin-top: 1px;
                 }
+                .first-logo, .second-logo {
+                    position: absolute;
+                    top:1.5rem;
+                }
+                .first-logo {
+                    left: 5px;
+                }
+                .second-logo {
+                    right: 5px;
+                }
             </style>
         </head>
         <body>
@@ -72,14 +86,18 @@
                     <p>Revised January 1992 <span style="float:right; font-weight: bold;">(Original)</span></p>
                 </div>
                 <div class="header">
-                    <div class="first-logo"></div>
+                    <div class="first-logo">
+                        <img height="45" width="45" src="./images/app/logo.gif" alt="">
+                    </div>
                     <div class="content">
                         <p style="font-size: 14px; font-weight: 600">OFFICIAL RECEIPT</p> 
                         <p style="font-size: 12px; font-weight: normal;">Republic of the Philippines</p>
                         <p style="font-size: 15px; font-weight: bold;">NUEVA ECIJA UNIVERSITY OF<br>SCIENCE AND TECHNOLOGY</p>
                         <p style="font-size: 12px; font-weight: normal;">Cabanatuan City</p>
                     </div>
-                    <div class="second-logo"></div>
+                    <div class="second-logo">
+                        <img height="45" width="45" src="./images/app/neust_logo.png" alt="">
+                    </div>
                 </div>
                 <table class="table1">
                     <tbody>
@@ -98,26 +116,32 @@
                     </tbody>
                 </table>
                 <table style=""  class="table3">
-                    <tbody>
-                        <tr>
-                            <td style="padding: 1.5px !important; border-bottom:1px solid black;" colspan="3"></td>
+                    <thead>
+                         <tr style="text-align:center; border-bottom: 1px solid;">
+                            <td style="border-bottom: 1px solid; vertical-align:middle; padding: 5px 5px; border-right:1px solid black;">Nature of Collection:</td>
+                            <td style="border-bottom: 1px solid; vertical-align:middle; padding: 5px 5px; border-right:1px solid black;">Account Code</td>
+                            <td colspan="1" style="border-bottom: 1px solid; vertical-align:middle; padding: 5px 5px;">Amount</td>
                         </tr>
-                        <tr>
-                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;">Nature of Collection:</td>
-                            <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;">Account Code</td>
-                            <td style="width: 30%; padding: 8px 5px;">Amount</td>
-                        </tr>
+                    </thead>
+                    <tbody style="">
+                       
                         @foreach($data['items'] as $key => $transaction)
                         <tr>
-                            <td style="width: 40%; padding: 8px 5px; border-right:1px solid black;" valign="top"></td>
-                            <td style="width: 30%; padding: 8px 5px; border-right:1px solid black;" valign="top">
-                                {{ $transaction['item_name'] }}
-                            </td>
-                            <td style="width: 30%; padding: 8px 5px;" valign="top">
-                                {{ $transaction['amount'] }}
-                            </td>
+                            <td style="vertical-align:middle; width: 50%; padding: 5px 5px; border-right:1px solid black;"></td>
+                            <td style="vertical-align:middle; width: 20%; padding: 5px 5px; border-right:1px solid black;">{{ $transaction['item_name'] }}</td>
+                            <td colspan="1" style="vertical-align:middle; padding: 5px 5px;">{{ $transaction['amount']}}</td>
                         </tr>
                         @endforeach
+
+                        @if($data['total_items'] < 37)
+                            @for($i = 0; $i < 37 - $data['total_items']; $i++)
+                            <tr>
+                                <td style="vertical-align:middle; width: 50%; padding: 5px 5px; border-right:1px solid black;"></td>
+                                <td style="vertical-align:middle; width: 20%; padding: 5px 5px; border-right:1px solid black;"></td>
+                                <td colspan="1" style="vertical-align:middle; padding: 5px 5px;"></td>
+                            </tr>
+                            @endfor
+                        @endif
                     </tbody>
                 </table>
                 <!-- <table  class="table4">
@@ -149,7 +173,7 @@
                             <td style="padding: 1.5px !important; border-bottom:1px solid black;" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px 5px;" colspan="3">Amount in Words</td>
+                            <td style="padding: 8px 5px;" colspan="3">Amount in Words: <i>{{ $data['amount_in_words'] }}</i></td>
                         </tr>
                     </tbody>
                 </table>

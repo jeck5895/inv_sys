@@ -56,9 +56,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Issuance Table -->
-                        <IssuanceTable :items="stocks"/>
-                        <!-- End Issuance Table -->
+                        <!-- Sales Table -->
+                        <hr>
+                        <SalesTable/>
+                        <!-- End Sales Table -->
                     </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@
 
 <script>
     import IssuanceForm from '../../components/form-modal/issuance.vue';
-    import IssuanceTable from '../../components/admin/tables/items.vue';
+    import SalesTable from '../../components/admin/tables/sales.vue';
     import IssuanceCart from '../../components/admin/cart/index.vue'
 
     export default {
@@ -76,11 +77,12 @@
             next(vm => {
                 vm.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS_LIST');//items for select box
                 vm.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS'); //items data table
+                vm.$store.dispatch('SALES_MODULE/FETCH_SALES');
             })
         },
         components: {
             IssuanceForm,
-            IssuanceTable,
+            SalesTable,
             IssuanceCart
         },
         computed: {

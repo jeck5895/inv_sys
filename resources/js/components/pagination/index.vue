@@ -39,6 +39,12 @@
         props: {
             object: {
                 required: true
+            },
+            module: {
+                required: true
+            },
+            query: {
+                required: false
             }
         },
         created(){
@@ -74,20 +80,24 @@
         },
         methods:{
             toPage(page, obj){
-                let path = `${obj.path}?page=${page}`; 
-                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS', path);
+                let path = this.query ? `${obj.path}?page=${page}&${this.query}` :`${obj.path}?page=${page}`; 
+                this.$store.dispatch(this.module, path);
             },
             nextPage (url) {
-                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS', url);
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             prevPage (url) {
-                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS', url);
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             firstPage(url){
-                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS', url);
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             lastPage(url){
-                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS', url);
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
         }
     }

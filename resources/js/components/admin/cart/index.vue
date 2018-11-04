@@ -1,9 +1,10 @@
 <template>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-md-12">
-            <form data-vv-scope="CART_FORM" @submit.prevent="addToCart('CART_FORM')">
+            <form class="color-form" data-vv-scope="CART_FORM" @submit.prevent="addToCart('CART_FORM')">
                 <div class="row">
                     <div class="form-group col-md-5">
+                        <label for="input-38" class="col-sm-12 col-form-label">Item</label>
                         <select
                             v-validate="'required'" 
                             v-model="cart_item.item"
@@ -19,6 +20,7 @@
                         </small>
                     </div>
                     <div class="form-group col-md-4">
+                        <label class="col-form-label" for="">Quantity</label>
                         <input
                         v-model="cart_item.quantity"
                         v-validate="'required|min_value:1|numeric'"
@@ -29,7 +31,8 @@
                         </small>
                     </div>
                     <div class="form-group col-md-3">
-                        <button type="submit" class="btn btn-success btn-sm">Add to Cart</button>
+                    
+                        <button type="submit" style="margin-top:2.2rem;" class="btn btn-success btn-sm">Add to Cart</button>
                     </div>
                 </div>
             </form>

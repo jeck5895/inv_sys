@@ -7,5 +7,14 @@ export default {
     },
     GET_SALES: state => {
         return state.sales;
+    },
+    GET_FILTER_FROM: state => {
+        return state.filters.date_from;
+    },
+    GET_FILTER_TO: state => {
+        return state.filters.date_to;
+    },
+    GET_FILTER_KEYWORD: state => {
+        return state.filters.keyword;
     } 
 }

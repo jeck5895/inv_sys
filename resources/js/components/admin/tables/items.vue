@@ -58,7 +58,9 @@
             </table>
         </div>  
         <div class="col-md-12 justify-content-right">
-            <Pagination :object="items"/>    
+            <Pagination 
+                :object="items"
+                module="ITEMS_MODULE/FETCH_ITEMS"/>    
         </div>            
     </div>
 </template>

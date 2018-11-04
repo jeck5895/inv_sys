@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Sales\StoreSale;
 use App\Http\Requests\Sales\UpdateSale;
@@ -25,9 +26,28 @@ class SalesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $sales = DB::table('sales')
+                ->select('transaction_no', 'fullname', 'customer_type', 'created_at')
+                ->orderBy('created_at', 'DESC')
+                ->where(function($query) use ($request) {
+                    if($request->has('keyword') && $request->keyword != "") 
+                    {
+                        $query->where('fullname', 'LIKE', '%'.$request->keyword.'%');
+                    }
+                    if(($request->has('date_from') && $request->date_from != "") && ($request->has('date_to') && $request->date_to != "")) 
+                    {
+                        $query->whereBetween('created_at', [$request->date_from, $request->date_to]);
+                    }  
+                })
+                ->groupBy('transaction_no')
+                ->paginate(10);
+
+        return [
+            'columns' => Sale::columns,
+            'model' => $sales
+        ];
     }
 
     /**

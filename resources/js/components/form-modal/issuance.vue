@@ -186,10 +186,10 @@
                             this.$store.dispatch('SALES_MODULE/STORE_SALE', payload)
                             .then(response => {
                                 var baseURL = window.location.protocol + "//" + window.location.host;
-                                window.open(`${baseURL}/receipt?transaction_no=${response.data.transaction_no}`, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
+                                window.open(`${baseURL}/sales/receipt?transaction_no=${response.data.transaction_no}`, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
                                 this.isLoading = false;
                                 this.response = [];
-                                this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                                this.$store.dispatch('SALES_MODULE/FETCH_SALES');
                                 this.$store.commit('CART_MODULE/CLEAR_ITEMS');
                                 this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
                                 toastr.success('Success', 'Sales has been saved');

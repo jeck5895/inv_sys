@@ -1,5 +1,10 @@
 export default {
     customer: {},
     sale: {},
-    sales: []
+    sales: [],
+    filters: {
+        keyword: '',
+        date_from: '',
+        date_to:''
+    }
 }

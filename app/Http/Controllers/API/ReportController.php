@@ -44,6 +44,7 @@ class ReportController extends Controller
         $data = [];
         $items = [];
         $total_amount = 0;
+        $formatter = new \NumberFormatter('en', \NumberFormatter::SPELLOUT);
         $transactions = DB::table('sales')
                         ->leftJoin('items', 'sales.item_id','=','items.id')
                         ->select('sales.*','items.item_code','items.item_name', 'items.price')
@@ -68,10 +69,14 @@ class ReportController extends Controller
             $data['items'] = $items;
             $data['total_amount'] = $total_amount;
             $data['transaction_no'] = $request['transaction_no'];
+            $data['amount_in_words'] = ucwords($formatter->format($data['total_amount']));
+            $data['total_items'] = count($transactions);
             //dd($data);
             $pdf = PDF::loadView('reports.receipt',compact('data'));
-            // return $pdf->download('firstreport.pdf');
+            // // return $pdf->download('firstreport.pdf');
             return $pdf->stream('receipt.pdf');
+
+            //return view('reports.receipt', compact('data'));
         }
         else {
             return response()->json(['status' => FALSE, 'message' => 'Transaction receipt could not be found'], 400);

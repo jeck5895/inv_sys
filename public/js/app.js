@@ -46182,7 +46182,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     customer: {},
     sale: {},
-    sales: []
+    sales: [],
+    filters: {
+        keyword: '',
+        date_from: '',
+        date_to: ''
+    }
 };
 
 /***/ }),
@@ -46204,6 +46209,15 @@ exports.default = {
     },
     GET_SALES: function GET_SALES(state) {
         return state.sales;
+    },
+    GET_FILTER_FROM: function GET_FILTER_FROM(state) {
+        return state.filters.date_from;
+    },
+    GET_FILTER_TO: function GET_FILTER_TO(state) {
+        return state.filters.date_to;
+    },
+    GET_FILTER_KEYWORD: function GET_FILTER_KEYWORD(state) {
+        return state.filters.keyword;
     }
 };
 
@@ -46221,6 +46235,12 @@ exports.default = {
     CLEAR_CUSTOMER: function CLEAR_CUSTOMER(state) {
         state.customer = {};
     },
+    CLEAR_SALES: function CLEAR_SALES(state) {
+        state.sales = [];
+    },
+    CLEAR_SALE: function CLEAR_SALE(state) {
+        state.sale = {};
+    },
     SET_CUSTOMER: function SET_CUSTOMER(state, payload) {
         state.customer = payload;
     },
@@ -46229,6 +46249,15 @@ exports.default = {
     },
     SET_SALES: function SET_SALES(state, payload) {
         state.sales = payload;
+    },
+    SET_FILTER_FROM: function SET_FILTER_FROM(state, payload) {
+        state.filters.date_from = payload;
+    },
+    SET_FILTER_TO: function SET_FILTER_TO(state, payload) {
+        state.filters.date_to = payload;
+    },
+    SET_FILTER_KEYWORD: function SET_FILTER_KEYWORD(state, payload) {
+        state.filters.keyword = payload;
     }
 };
 
@@ -46253,7 +46282,23 @@ var token = _jsCookie2.default.get('_a.token');
 
 exports.default = {
     FETCH_SALES: function FETCH_SALES(_ref, payload) {
-        var context = _ref.context;
+        var commit = _ref.commit;
+
+        var url = payload ? payload : '/api/sales';
+        return new Promise(function (resolve, reject) {
+            axios.get(url, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                commit('CLEAR_SALES');
+                commit('SET_SALES', response.data.model);
+                resolve(response);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
     },
     FETCH_SALE: function FETCH_SALE(_ref2, payload) {
         var context = _ref2.context;

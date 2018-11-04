@@ -11,7 +11,10 @@
 |
 */
 Route::get('/', 'IndexController@index')->name('index');
-Route::get('receipt', 'API\ReportController@receipt');
+Route::get('sales/receipt', 'API\ReportController@receipt');
+Route::get('/phpinfo', function() {
+    echo phpinfo();
+});
 
 Route::get('/{vue_capture?}', function () {
     return view('layouts.app');
