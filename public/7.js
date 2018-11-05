@@ -1,18 +1,18 @@
-webpackJsonp([3],{
+webpackJsonp([7],{
 
-/***/ 228:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(282)
+  __webpack_require__(299)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(284)
+var __vue_script__ = __webpack_require__(301)
 /* template */
-var __vue_template__ = __webpack_require__(285)
+var __vue_template__ = __webpack_require__(302)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 282:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(283);
+var content = __webpack_require__(300);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 283:
+/***/ 300:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -87,14 +87,14 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 284:
+/***/ 301:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -149,16 +149,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
 
 exports.default = {
     data: function data() {
         return {
-            year: moment().format('YYYY'),
-            month: moment().format('M'),
             months: [{
                 name: 'January',
                 value: 1
@@ -201,23 +195,17 @@ exports.default = {
     computed: {
         years: function years() {
             var years = [];
-            for (var index = moment().format('YYYY'); index >= 2000; index--) {
+            for (var index = moment().format('YYYY'); index >= 2000; index++) {
                 years.push(index);
             }
             return years;
-        }
-    },
-    methods: {
-        handleGenerateReport: function handleGenerateReport() {
-            var baseURL = window.location.protocol + "//" + window.location.host;
-            window.open(baseURL + '/sales/report?month=' + this.month + '&year=' + this.year, 'Sales Report', 'width=700,heigth=300');
         }
     }
 };
 
 /***/ }),
 
-/***/ 285:
+/***/ 302:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -233,103 +221,46 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _c("div", { staticClass: "row justify-content-center" }, [
               _c("div", { staticClass: "col-md-4" }, [
-                _c(
-                  "form",
-                  {
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.handleGenerateReport($event)
-                      }
-                    }
-                  },
-                  [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.month,
-                              expression: "month"
-                            }
-                          ],
-                          staticClass: "form-control form-control-sm",
-                          attrs: { name: "month", id: "" },
-                          on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.month = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            }
-                          }
-                        },
-                        _vm._l(_vm.months, function(month) {
-                          return _c(
-                            "option",
-                            {
-                              key: month.value,
-                              domProps: { value: month.value }
-                            },
-                            [_vm._v(_vm._s(month.name))]
-                          )
-                        })
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c(
-                        "select",
-                        {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.year,
-                              expression: "year"
-                            }
-                          ],
-                          staticClass: "form-control form-control-sm",
-                          attrs: { name: "year", id: "" },
-                          on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.year = $event.target.multiple
-                                ? $$selectedVal
-                                : $$selectedVal[0]
-                            }
-                          }
-                        },
-                        _vm._l(_vm.years, function(year) {
-                          return _c(
-                            "option",
-                            { key: year, domProps: { value: year } },
-                            [_vm._v(_vm._s(year))]
-                          )
-                        })
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _vm._m(1)
-                  ]
-                )
+                _c("form", [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "select",
+                      {
+                        staticClass: "form-control form-control-sm",
+                        attrs: { name: "", id: "" }
+                      },
+                      _vm._l(_vm.months, function(month) {
+                        return _c(
+                          "option",
+                          {
+                            key: month.value,
+                            domProps: { value: month.value }
+                          },
+                          [_vm._v(_vm._s(month.name))]
+                        )
+                      })
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group" }, [
+                    _c(
+                      "select",
+                      {
+                        staticClass: "form-control form-control-sm",
+                        attrs: { name: "", id: "" }
+                      },
+                      _vm._l(_vm.years, function(year) {
+                        return _c(
+                          "option",
+                          { key: year, domProps: { value: year } },
+                          [_vm._v(_vm._s(year))]
+                        )
+                      })
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ])
               ])
             ])
           ])
@@ -356,8 +287,9 @@ var staticRenderFns = [
         "button",
         { staticClass: "btn btn-success btn-block", attrs: { type: "submit" } },
         [
-          _vm._v("\n                                        Generate "),
-          _c("i", { staticClass: "fa fa-print" })
+          _vm._v(
+            "\n                                        Generate\n                                    "
+          )
         ]
       )
     ])

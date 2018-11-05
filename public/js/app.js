@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		4: 0
+/******/ 		5: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -44672,7 +44672,7 @@ var _adminSubRoutes2 = _interopRequireDefault(_adminSubRoutes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AdminIndex = function AdminIndex() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 228));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 229));
 };
 
 var routes = [{
@@ -44711,13 +44711,16 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 225));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 225));
 };
 var Stocks = function Stocks() {
     return __webpack_require__.e/* import() */(1).then(__webpack_require__.bind(null, 226));
 };
 var Issuance = function Issuance() {
     return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 227));
+};
+var Reports = function Reports() {
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 228));
 };
 
 exports.default = [{
@@ -44732,6 +44735,9 @@ exports.default = [{
 }, {
     path: 'issueance',
     component: Issuance
+}, {
+    path: 'reports',
+    component: Reports
 }];
 
 /***/ }),

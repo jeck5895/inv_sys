@@ -111,7 +111,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 70%; padding: 8px 5px; border-right:1px solid black;">Payor: {{ $data['items'][0]['customer_name'] }}</td>
-                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Fund {{ $data['items'][0]['fund'] }}</td>
+                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Fund: {{ $data['items'][0]['fund'] }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -127,8 +127,8 @@
                        
                         @foreach($data['items'] as $key => $transaction)
                         <tr>
-                            <td style="vertical-align:middle; width: 50%; padding: 5px 5px; border-right:1px solid black;"></td>
-                            <td style="vertical-align:middle; width: 20%; padding: 5px 5px; border-right:1px solid black;">{{ $transaction['item_name'] }}</td>
+                            <td style="vertical-align:middle; padding: 5px 5px; border-right:1px solid black;">{{ $transaction['item_name'] }}</td>
+                            <td style="vertical-align:middle; padding: 5px 5px; border-right:1px solid black;">{{ $transaction['item_code'] }} </td>
                             <td colspan="1" style="vertical-align:middle; padding: 5px 5px;">{{ $transaction['amount']}}</td>
                         </tr>
                         @endforeach
@@ -136,8 +136,8 @@
                         @if($data['total_items'] < 37)
                             @for($i = 0; $i < 37 - $data['total_items']; $i++)
                             <tr>
-                                <td style="vertical-align:middle; width: 50%; padding: 5px 5px; border-right:1px solid black;"></td>
-                                <td style="vertical-align:middle; width: 20%; padding: 5px 5px; border-right:1px solid black;"></td>
+                                <td style="vertical-align:middle; padding: 5px 5px; border-right:1px solid black;"></td>
+                                <td style="vertical-align:middle; padding: 5px 5px; border-right:1px solid black;"></td>
                                 <td colspan="1" style="vertical-align:middle; padding: 5px 5px;"></td>
                             </tr>
                             @endfor
@@ -173,7 +173,7 @@
                             <td style="padding: 1.5px !important; border-bottom:1px solid black;" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px 5px;" colspan="3">Amount in Words: <i>{{ $data['amount_in_words'] }}</i></td>
+                            <td style="padding: 8px 5px; word-wrap:break-word;" colspan="3">Amount in Words: <i>{{ $data['amount_in_words'] }} Pesos Only ASdasdasd</i></td>
                         </tr>
                     </tbody>
                 </table>

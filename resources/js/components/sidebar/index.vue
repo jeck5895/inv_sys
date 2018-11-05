@@ -36,7 +36,7 @@
                 </router-link>
             </li>
             <li>
-                <router-link to="/administrator/issueance">
+                <router-link to="/administrator/issueance" class="waves-effect">
                     <i class="icon-note"></i><span>Issue</span>
                 </router-link>
             </li>
@@ -53,15 +53,15 @@
             <li>
                 <a href="#" @click="toggleReportClass" class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#report-dropdown">
                     <div class="media-body">
-                        <i class="icon-home"></i>
+                        <i class="fa fa-line-chart"></i>
                     <span>Reports</span>
                     </div>
                     <!-- <i class="fa fa-angle-left float-right"></i> -->
                 </a>
                 <div id="report-dropdown" class="collapse">
                     <ul class="user-setting-menu">
-                        <li><a href="register.html"><i class="fa fa-long-arrow-right"></i> Generate Report</a></li>
-                        <li><a href="account.html"><i class="fa fa-long-arrow-right"></i> Sales Table</a></li>
+                        <li><router-link to="/administrator/reports" class="waves-effect"><i class="fa fa-long-arrow-right"></i> Generate Report</router-link></li>
+                        <!-- <li><a href="account.html"><i class="fa fa-long-arrow-right"></i> Sales Table</a></li> -->
                     </ul>
                 </div>
             </li>

@@ -1,18 +1,18 @@
 webpackJsonp([2],{
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(281)
+  __webpack_require__(286)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(283)
+var __vue_script__ = __webpack_require__(288)
 /* template */
-var __vue_template__ = __webpack_require__(294)
+var __vue_template__ = __webpack_require__(299)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 281:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(282);
+var content = __webpack_require__(287);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 282:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -94,7 +94,7 @@ exports.push([module.i, "\n#wrapper {\n    width: 100%;\n    position: relative;
 
 /***/ }),
 
-/***/ 283:
+/***/ 288:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -104,11 +104,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(284);
+var _index = __webpack_require__(289);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(289);
+var _index3 = __webpack_require__(294);
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -141,19 +141,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 284:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(285)
+  __webpack_require__(290)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(287)
+var __vue_script__ = __webpack_require__(292)
 /* template */
-var __vue_template__ = __webpack_require__(288)
+var __vue_template__ = __webpack_require__(293)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -193,13 +193,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 285:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(286);
+var content = __webpack_require__(291);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -220,7 +220,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 286:
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -235,7 +235,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 287:
+/***/ 292:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -357,7 +357,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 288:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -430,10 +430,17 @@ var render = function() {
         _c(
           "li",
           [
-            _c("router-link", { attrs: { to: "/administrator/issueance" } }, [
-              _c("i", { staticClass: "icon-note" }),
-              _c("span", [_vm._v("Issue")])
-            ])
+            _c(
+              "router-link",
+              {
+                staticClass: "waves-effect",
+                attrs: { to: "/administrator/issueance" }
+              },
+              [
+                _c("i", { staticClass: "icon-note" }),
+                _c("span", [_vm._v("Issue")])
+              ]
+            )
           ],
           1
         ),
@@ -457,7 +464,31 @@ var render = function() {
             [_vm._m(5)]
           ),
           _vm._v(" "),
-          _vm._m(6)
+          _c(
+            "div",
+            { staticClass: "collapse", attrs: { id: "report-dropdown" } },
+            [
+              _c("ul", { staticClass: "user-setting-menu" }, [
+                _c(
+                  "li",
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "waves-effect",
+                        attrs: { to: "/administrator/reports" }
+                      },
+                      [
+                        _c("i", { staticClass: "fa fa-long-arrow-right" }),
+                        _vm._v(" Generate Report")
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          )
         ]),
         _vm._v(" "),
         _c("li", [
@@ -472,7 +503,7 @@ var render = function() {
               },
               on: { click: _vm.toggleUserClass }
             },
-            [_vm._m(7)]
+            [_vm._m(6)]
           ),
           _vm._v(" "),
           _c(
@@ -604,36 +635,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "media-body" }, [
-      _c("i", { staticClass: "icon-home" }),
+      _c("i", { staticClass: "fa fa-line-chart" }),
       _vm._v(" "),
       _c("span", [_vm._v("Reports")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "collapse", attrs: { id: "report-dropdown" } },
-      [
-        _c("ul", { staticClass: "user-setting-menu" }, [
-          _c("li", [
-            _c("a", { attrs: { href: "register.html" } }, [
-              _c("i", { staticClass: "fa fa-long-arrow-right" }),
-              _vm._v(" Generate Report")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "account.html" } }, [
-              _c("i", { staticClass: "fa fa-long-arrow-right" }),
-              _vm._v(" Sales Table")
-            ])
-          ])
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -657,19 +662,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(290)
+  __webpack_require__(295)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(292)
+var __vue_script__ = __webpack_require__(297)
 /* template */
-var __vue_template__ = __webpack_require__(293)
+var __vue_template__ = __webpack_require__(298)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -709,13 +714,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 290:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(291);
+var content = __webpack_require__(296);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -736,7 +741,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 291:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -751,7 +756,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 292:
+/***/ 297:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -961,7 +966,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 293:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1463,7 +1468,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 294:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

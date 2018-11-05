@@ -12,6 +12,7 @@
 */
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('sales/receipt', 'API\ReportController@receipt');
+Route::get('sales/report', 'API\ReportController@sales_report');
 Route::get('/phpinfo', function() {
     echo phpinfo();
 });

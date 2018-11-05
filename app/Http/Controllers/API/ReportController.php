@@ -72,14 +72,37 @@ class ReportController extends Controller
             $data['amount_in_words'] = ucwords($formatter->format($data['total_amount']));
             $data['total_items'] = count($transactions);
             //dd($data);
+            //return view('reports.receipt', compact('data'));
             $pdf = PDF::loadView('reports.receipt',compact('data'));
             // // return $pdf->download('firstreport.pdf');
             return $pdf->stream('receipt.pdf');
 
-            //return view('reports.receipt', compact('data'));
+            
         }
         else {
             return response()->json(['status' => FALSE, 'message' => 'Transaction receipt could not be found'], 400);
         }
+    }
+
+    public function sales_report(Request $request) 
+    {
+        $items = DB::table('sales')
+                    ->leftJoin('items', 'sales.item_id','=','items.id')
+                    ->select('sales.*','items.item_code','items.item_name', 'items.price')
+                    ->whereMonth('sales.created_at', $request['month'])
+                    ->whereYear('sales.created_at', $request['year'])
+                    ->get();
+
+        $data = array(
+            'month' => $request['month'],
+            'year' => $request['year'],
+            'items' => $items,
+            
+        );
+
+        $pdf = PDF::loadView('reports.sales-report', compact('data'));
+        // // // return $pdf->download('firstreport.pdf');
+        return $pdf->stream('salesreport.pdf');
+        
     }
 }

@@ -1,6 +1,7 @@
 const Dashboard = () => import('../../pages/admin/dashboard.vue');
 const Stocks = () => import('../../pages/admin/stocks.vue');
 const Issuance = () => import('../../pages/admin/issueance.vue');
+const Reports = () => import('../../pages/admin/reports.vue');
 
 export default [
     {
@@ -18,5 +19,9 @@ export default [
     {
         path: 'issueance',
         component: Issuance
+    },
+    {
+        path: 'reports',
+        component: Reports
     }
 ];
