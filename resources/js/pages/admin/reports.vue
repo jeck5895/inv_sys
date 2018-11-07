@@ -1,123 +1,44 @@
 <template>
     <div class="container-fluid">
         <div class="row pt-2 pb-2">
-            <div class="col-md-12">
-                <div class="card card-default">
-                    <div class="card-header">
-                        <h3>Generate Sales Report</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4">
-                                <form @submit.prevent="handleGenerateReport">
-                                    <div class="form-group">
-                                        <select 
-                                            v-model="month"
-                                            name="month" id="" class="form-control form-control-sm">
-                                            <option  
-                                                v-for="(month) in months"
-                                                :key="month.value"
-                                                :value="month.value">{{ month.name }}</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <select 
-                                            v-model="year"
-                                            name="year" id="" class="form-control form-control-sm">
-                                            <option  
-                                                v-for="(year) in years"
-                                                :key="year"
-                                                :value="year">{{ year }}</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-success btn-block">
-                                            Generate <i class="fa fa-print"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="card-footer">
-                        
-                    </div> -->
+            <!-- <div class="col-md-4">
+                <div class="form-group">
+                    <select v-model="report_type" name="report_type" class="form-control" id="">
+                    <option value="sales">Sales</option>
+                    <option value="stocks">Stock</option>
+                </select>
                 </div>
-            </div>
+            </div> -->
+            <template v-if="report_type == 'sales'">
+                <div class="col-md-12">
+                    <MonthlySalesForm/>
+                </div>
+                <div class="col-md-12">
+                    <DailySalesForm/>
+                </div>
+            </template>
+            <template v-else-if="report_type == 'stocks'">
+                <div class="col-md-12">
+                    <DailyStockForm/>
+                </div>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
+import MonthlySalesForm from '../../components/reports/sales/monthly';
+import DailySalesForm from '../../components/reports/sales/daily';
+import DailyStockForm from '../../components/reports/stocks/daily'
+
 export default {
     data: () => ({
-        year: moment().format('YYYY'),
-        month: moment().format('M'),
-        months: [
-            {
-                name: 'January',
-                value: 1
-            },
-            {
-                name: 'February',
-                value: 2
-            },
-            {
-                name: 'March',
-                value: 3
-            },
-            {
-                name: 'April',
-                value: 4
-            },
-            {
-                name: 'May',
-                value: 5
-            },
-            {
-                name: 'June',
-                value: 6
-            },
-            {
-                name: 'July',
-                value: 7
-            },
-            {
-                name: 'August',
-                value: 8
-            },
-            {
-                name: 'September',
-                value: 9
-            },
-            {
-                name: 'October',
-                value: 10
-            },
-            {
-                name: 'November',
-                value: 11
-            },
-            {
-                name: 'December',
-                value: 12
-            }
-        ]
+        report_type: 'sales'
     }),
-    computed: {
-        years () {
-            let years = [];
-            for (let index = moment().format('YYYY'); index >= 2000; index--) {
-                years.push(index);
-            }
-            return years;
-        }
-    },
-    methods: {
-        handleGenerateReport () {
-            var baseURL = window.location.protocol + "//" + window.location.host;
-            window.open(`${baseURL}/sales/report?month=${this.month}&year=${this.year}`, 'Sales Report', 'width=700,heigth=300');
-        }
+    components: {
+        MonthlySalesForm,
+        DailySalesForm,
+        DailyStockForm
     }
 }
 </script>

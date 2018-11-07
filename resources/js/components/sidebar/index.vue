@@ -80,6 +80,11 @@
                     </ul>
                 </div>
             </li>
+            <li>
+                <a @click.prevent="handleLogout" href="#" class="waves-effect"><i class="icon-logout">
+                    </i><span>Logout</span>
+                </a>
+            </li>
         </ul>
 
     </div>
@@ -107,6 +112,10 @@
                 !($('#account-dropdown').hasClass('show')) ? 
                 console.log($('#account-dropdown').prev().addClass('active')) :
                 $('#account-dropdown').prev().removeClass('active');
+            },
+            handleLogout () {
+                this.$store.dispatch('AuthModule/LOGOUT')
+                this.$router.push('/login');
             }
         }
     }   

@@ -62,7 +62,7 @@
                 </div>
                 <div >
                     <h2 style="text-align:center;">NUEVA ECIJA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h2>
-                    <h2 style="text-align:center;">Monthly Sales Report for {{ date("F", mktime(0, 0, 0, $data['month'], 1)) }} - {{ $data['year'] }}</h2>
+                    <h2 style="text-align:center;">Daily Stocks Report for {{ date('F j, Y', $data['date']) }}</h2>
                 </div>
             </div>
             <hr>
@@ -71,32 +71,24 @@
                     <tr>
                         <th>Item Code</th>
                         <th>Item Name</th>
-                        <th>Price</th>
                         <th>Quantity</th>
-                        <th>Amount</th>
+                        <th>Issued Quantity</th>
+                        <th>Current Quantity</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                        $total_sales = 0.00;
-                    @endphp
+                   
                     @foreach($data['items'] as $key => $item)
-                        @php
-                            $total_sales = floatval($total_sales) + floatval($item->amount);
-                        @endphp
                         <tr>
                             <td>{{ $item->item_code }}</td>
                             <td>{{ $item->item_name }}</td>
-                            <td>{{ number_format($item->price,2,'.',',') }}</td>
-                            <td>{{ $item->quantity }}</td>
-                            <td>{{ number_format($item->amount,2,'.',',') }}</td>
+                            <td>{{ $item->previos_quantity }}</td>
+                            <td>{{ $item->issued_quantity }}</td>
+                            <td>{{ $item->items_on_hand }}</td>
                         </tr>
                         <!-- content -->
                     @endforeach    
-                        <tr>
-                            <td colspan="4" class="general-total">Total: </td>
-                            <td class="total-amount">{{ number_format($total_sales,2,'.',',') }}</td>
-                        </tr>               
+                                     
                 </tbody>
             </table>
             <div class="signatories">

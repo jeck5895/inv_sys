@@ -99,10 +99,25 @@ class ReportController extends Controller
             'items' => $items,
             
         );
-
+        //return view('reports.sales-report', compact('data'));
         $pdf = PDF::loadView('reports.sales-report', compact('data'));
         // // // return $pdf->download('firstreport.pdf');
         return $pdf->stream('salesreport.pdf');
         
+    }
+
+    public function daily_stock_report(Request $request)
+    {
+        $date = $request['date'];
+        $items = DB::select(DB::raw("call dailyStocksReport('$date')"));
+
+        $data = array(
+            'date' => strtotime($request['date']),
+            'items' => $items,
+        );
+        //return $items;
+        $pdf = PDF::loadView('reports.daily-stock', compact('data'));
+        
+        return $pdf->stream('daily-stocks-report.pdf');
     }
 }

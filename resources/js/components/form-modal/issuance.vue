@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="input-33" class="col-sm-12 col-form-label">Fund</label>
+            <label for="input-33" class="col-sm-12 col-form-label">Payment</label>
             <div class="col-sm-12">
                 <input 
                     v-validate="'required'"
@@ -162,6 +162,9 @@
             },
             cart () {
                 return this.$store.getters['CART_MODULE/GET_CART_ITEMS'];
+            },
+            total_amount () {
+                return this.$store.getters['CART_MODULE/GET_TOTAL_AMOUNT'];
             }
         },
         methods: {
@@ -170,37 +173,43 @@
                 .then(response => {
                     if(response) {
                         if(this.cart.length > 0) {
-                            this.isLoading = true;
-                            let payload = {
-                                customer_type: this.customer.customer_type,
-                                customer_id: this.customer.customer_id,
-                                fullname: this.customer.fullname,
-                                fund: this.customer.fund,
-                                department: this.customer.department,
-                                items: this.cart,
-                                // item_id: this.customer.item_id,
-                                // quantity: this.customer.quantity,
-                                remarks: this.customer.remarks
-                            };
+                            if(this.customer.fund >= this.total_amount)
+                            {
+                                this.isLoading = true;
+                                let payload = {
+                                    customer_type: this.customer.customer_type,
+                                    customer_id: this.customer.customer_id,
+                                    fullname: this.customer.fullname,
+                                    fund: this.customer.fund,
+                                    department: this.customer.department,
+                                    items: this.cart,
+                                    // item_id: this.customer.item_id,
+                                    // quantity: this.customer.quantity,
+                                    remarks: this.customer.remarks
+                                };
 
-                            this.$store.dispatch('SALES_MODULE/STORE_SALE', payload)
-                            .then(response => {
-                                var baseURL = window.location.protocol + "//" + window.location.host;
-                                window.open(`${baseURL}/sales/receipt?transaction_no=${response.data.transaction_no}`, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
-                                this.isLoading = false;
-                                this.response = [];
-                                this.$store.dispatch('SALES_MODULE/FETCH_SALES');
-                                this.$store.commit('CART_MODULE/CLEAR_ITEMS');
-                                this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
-                                toastr.success('Success', 'Sales has been saved');
-                                
-                            })
-                            .catch(error => {
-                                // toastr.error('Error', error.response.data);
-                                this.response = [];
-                                this.response = error.response;
-                                this.isLoading = false;
-                            })
+                                this.$store.dispatch('SALES_MODULE/STORE_SALE', payload)
+                                .then(response => {
+                                    var baseURL = window.location.protocol + "//" + window.location.host;
+                                    window.open(`${baseURL}/sales/receipt?transaction_no=${response.data.transaction_no}`, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
+                                    this.isLoading = false;
+                                    this.response = [];
+                                    this.$store.dispatch('SALES_MODULE/FETCH_SALES');
+                                    this.$store.commit('CART_MODULE/CLEAR_ITEMS');
+                                    this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
+                                    toastr.success('Success', 'Sales has been saved');
+                                    
+                                })
+                                .catch(error => {
+                                    // toastr.error('Error', error.response.data);
+                                    this.response = [];
+                                    this.response = error.response;
+                                    this.isLoading = false;
+                                })
+                            }
+                            else {
+                                toastr.warning('Insufficient Payment');
+                            }
                         } 
                         else {
                             toastr.warning('Your cart is empty')

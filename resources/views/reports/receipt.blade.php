@@ -111,7 +111,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 70%; padding: 8px 5px; border-right:1px solid black;">Payor: {{ $data['items'][0]['customer_name'] }}</td>
-                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Fund: {{ $data['items'][0]['fund'] }}</td>
+                            <td style="width: 30%; padding: 8px 5px;" colspan="2">Payment: {{ $data['items'][0]['fund'] }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -173,7 +173,7 @@
                             <td style="padding: 1.5px !important; border-bottom:1px solid black;" colspan="3"></td>
                         </tr>
                         <tr>
-                            <td style="padding: 8px 5px; word-wrap:break-word;" colspan="3">Amount in Words: <i>{{ $data['amount_in_words'] }} Pesos Only ASdasdasd</i></td>
+                            <td style="padding: 8px 5px; word-wrap:break-word;" colspan="3">Amount in Words: <i>{{ $data['amount_in_words'] }} Pesos Only</i></td>
                         </tr>
                     </tbody>
                 </table>

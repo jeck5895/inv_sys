@@ -1,7 +1,9 @@
 import VueRouter from 'vue-router';
 import AdminSubRoutes from './sub-routes/adminSubRoutes';
+import UserSubRoutes from './sub-routes/users';
 
 const AdminIndex = () => import('../pages/admin/index.vue');
+const UserIndex = () => import('../pages/admin/users.vue');
 
 let routes = [
     {
@@ -19,6 +21,14 @@ let routes = [
         path: '/administrator',
         component: AdminIndex,
         children: AdminSubRoutes,
+        meta: {
+            forAuthUsers: true
+        }
+    },
+    {
+        path: '/users',
+        component: UserIndex,
+        children: UserSubRoutes,
         meta: {
             forAuthUsers: true
         }

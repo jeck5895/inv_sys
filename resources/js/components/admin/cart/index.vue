@@ -99,7 +99,7 @@ export default {
     //     }
     // },  
     data: () => ({
-        total_amount: 0.00
+        total_amount_temp: 0.00
     }),
     computed: {
         cart () {
@@ -111,6 +111,9 @@ export default {
         items () {
             return this.$store.getters['ITEMS_MODULE/GET_ITEMS_LIST'];
         },
+        total_amount () {
+            return this.$store.getters['CART_MODULE/GET_TOTAL_AMOUNT'];
+        }
     },
     methods: {
         addToCart (form) {
@@ -139,8 +142,8 @@ export default {
                             this.$store.commit('CART_MODULE/SET_CART_ITEMS', payload);
                         }
                         else {
-                            this.cart[x].request_quantity = parseInt(this.cart[x].request_quantity) + 1;
-                            this.cart[x].total_price = parseInt(this.cart[x].total_price) + (parseInt(this.cart[x].price) * 1);
+                            this.cart[x].request_quantity = parseInt(this.cart[x].request_quantity) + parseInt(this.cart_item.quantity);
+                            this.cart[x].total_price = parseInt(this.cart[x].total_price) + (parseInt(this.cart[x].price) * parseInt(this.cart_item.quantity));
                             let payload = {
                                 item: this.cart[x],
                                 index: x
@@ -157,13 +160,15 @@ export default {
         },
         computeTotalAmount () {
             if(this.cart.length > 0) {
-                this.total_amount = 0;
+                this.total_amount_temp = 0;
                 this.cart.forEach(item => {
-                    this.total_amount = parseInt(this.total_amount) + parseInt(item.total_price); 
+                    this.total_amount_temp = parseInt(this.total_amount_temp) + parseInt(item.total_price); 
                 });
+                this.$store.commit('CART_MODULE/SET_TOTAL_AMOUNT', this.total_amount_temp);
             }
             else {
-                this.total_amount = 0.00;
+                this.total_amount_temp = 0.00;
+                this.$store.commit('CART_MODULE/SET_TOTAL_AMOUNT', 0.00);
             }
         }
     },

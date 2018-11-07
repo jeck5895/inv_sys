@@ -62,7 +62,7 @@
                 </div>
                 <div >
                     <h2 style="text-align:center;">NUEVA ECIJA UNIVERSITY OF SCIENCE AND TECHNOLOGY</h2>
-                    <h2 style="text-align:center;">Monthly Sales Report for {{ date("F", mktime(0, 0, 0, $data['month'], 1)) }} - {{ $data['year'] }}</h2>
+                    <h2 style="text-align:center;">Daily Sales Report for {{ date("F", mktime(0, 0, 0, $data['month'], 1)) }} - {{ $data['year'] }}</h2>
                 </div>
             </div>
             <hr>

@@ -1,18 +1,18 @@
 webpackJsonp([0],{
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(258)
+  __webpack_require__(272)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(260)
+var __vue_script__ = __webpack_require__(274)
 /* template */
-var __vue_template__ = __webpack_require__(281)
+var __vue_template__ = __webpack_require__(295)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 230:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(231)
+  __webpack_require__(235)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(233)
+var __vue_script__ = __webpack_require__(237)
 /* template */
-var __vue_template__ = __webpack_require__(234)
+var __vue_template__ = __webpack_require__(238)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,13 +104,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 231:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(232);
+var content = __webpack_require__(236);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -131,7 +131,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 232:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 233:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -262,7 +262,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 234:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -441,13 +441,13 @@ if (false) {
 
 /***/ }),
 
-/***/ 258:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(259);
+var content = __webpack_require__(273);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -468,7 +468,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 259:
+/***/ 273:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -483,7 +483,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 260:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -493,15 +493,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _issuance = __webpack_require__(261);
+var _issuance = __webpack_require__(275);
 
 var _issuance2 = _interopRequireDefault(_issuance);
 
-var _sales = __webpack_require__(266);
+var _sales = __webpack_require__(280);
 
 var _sales2 = _interopRequireDefault(_sales);
 
-var _index = __webpack_require__(276);
+var _index = __webpack_require__(290);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -598,19 +598,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 261:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(262)
+  __webpack_require__(276)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(264)
+var __vue_script__ = __webpack_require__(278)
 /* template */
-var __vue_template__ = __webpack_require__(265)
+var __vue_template__ = __webpack_require__(279)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -650,13 +650,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 262:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(263);
+var content = __webpack_require__(277);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -677,7 +677,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 263:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -685,14 +685,14 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 264:
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -863,6 +863,9 @@ exports.default = {
         },
         cart: function cart() {
             return this.$store.getters['CART_MODULE/GET_CART_ITEMS'];
+        },
+        total_amount: function total_amount() {
+            return this.$store.getters['CART_MODULE/GET_TOTAL_AMOUNT'];
         }
     },
     methods: {
@@ -872,34 +875,38 @@ exports.default = {
             this.$validator.validateAll(form).then(function (response) {
                 if (response) {
                     if (_this.cart.length > 0) {
-                        _this.isLoading = true;
-                        var payload = {
-                            customer_type: _this.customer.customer_type,
-                            customer_id: _this.customer.customer_id,
-                            fullname: _this.customer.fullname,
-                            fund: _this.customer.fund,
-                            department: _this.customer.department,
-                            items: _this.cart,
-                            // item_id: this.customer.item_id,
-                            // quantity: this.customer.quantity,
-                            remarks: _this.customer.remarks
-                        };
+                        if (_this.customer.fund >= _this.total_amount) {
+                            _this.isLoading = true;
+                            var payload = {
+                                customer_type: _this.customer.customer_type,
+                                customer_id: _this.customer.customer_id,
+                                fullname: _this.customer.fullname,
+                                fund: _this.customer.fund,
+                                department: _this.customer.department,
+                                items: _this.cart,
+                                // item_id: this.customer.item_id,
+                                // quantity: this.customer.quantity,
+                                remarks: _this.customer.remarks
+                            };
 
-                        _this.$store.dispatch('SALES_MODULE/STORE_SALE', payload).then(function (response) {
-                            var baseURL = window.location.protocol + "//" + window.location.host;
-                            window.open(baseURL + '/sales/receipt?transaction_no=' + response.data.transaction_no, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
-                            _this.isLoading = false;
-                            _this.response = [];
-                            _this.$store.dispatch('SALES_MODULE/FETCH_SALES');
-                            _this.$store.commit('CART_MODULE/CLEAR_ITEMS');
-                            _this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
-                            toastr.success('Success', 'Sales has been saved');
-                        }).catch(function (error) {
-                            // toastr.error('Error', error.response.data);
-                            _this.response = [];
-                            _this.response = error.response;
-                            _this.isLoading = false;
-                        });
+                            _this.$store.dispatch('SALES_MODULE/STORE_SALE', payload).then(function (response) {
+                                var baseURL = window.location.protocol + "//" + window.location.host;
+                                window.open(baseURL + '/sales/receipt?transaction_no=' + response.data.transaction_no, 'Receipt for ' + response.data.transaction_no, 'width=700,heigth=300');
+                                _this.isLoading = false;
+                                _this.response = [];
+                                _this.$store.dispatch('SALES_MODULE/FETCH_SALES');
+                                _this.$store.commit('CART_MODULE/CLEAR_ITEMS');
+                                _this.$store.commit('SALES_MODULE/CLEAR_CUSTOMER');
+                                toastr.success('Success', 'Sales has been saved');
+                            }).catch(function (error) {
+                                // toastr.error('Error', error.response.data);
+                                _this.response = [];
+                                _this.response = error.response;
+                                _this.isLoading = false;
+                            });
+                        } else {
+                            toastr.warning('Insufficient Payment');
+                        }
                     } else {
                         toastr.warning('Your cart is empty');
                     }
@@ -911,7 +918,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 265:
+/***/ 279:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1216,7 +1223,7 @@ var render = function() {
             staticClass: "col-sm-12 col-form-label",
             attrs: { for: "input-33" }
           },
-          [_vm._v("Fund")]
+          [_vm._v("Payment")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "col-sm-12" }, [
@@ -1398,19 +1405,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 266:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(267)
+  __webpack_require__(281)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(269)
+var __vue_script__ = __webpack_require__(283)
 /* template */
-var __vue_template__ = __webpack_require__(275)
+var __vue_template__ = __webpack_require__(289)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1450,13 +1457,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 267:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(268);
+var content = __webpack_require__(282);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1477,7 +1484,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 268:
+/***/ 282:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -1492,7 +1499,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 269:
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1502,11 +1509,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(230);
+var _index = __webpack_require__(234);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _dateFilter = __webpack_require__(270);
+var _dateFilter = __webpack_require__(284);
 
 var _dateFilter2 = _interopRequireDefault(_dateFilter);
 
@@ -1623,19 +1630,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 270:
+/***/ 284:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(271)
+  __webpack_require__(285)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(273)
+var __vue_script__ = __webpack_require__(287)
 /* template */
-var __vue_template__ = __webpack_require__(274)
+var __vue_template__ = __webpack_require__(288)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1675,13 +1682,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 271:
+/***/ 285:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(272);
+var content = __webpack_require__(286);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1702,7 +1709,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 272:
+/***/ 286:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -1717,7 +1724,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 273:
+/***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1776,7 +1783,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 274:
+/***/ 288:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1866,7 +1873,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 275:
+/***/ 289:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2093,19 +2100,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 276:
+/***/ 290:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(277)
+  __webpack_require__(291)
 }
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(279)
+var __vue_script__ = __webpack_require__(293)
 /* template */
-var __vue_template__ = __webpack_require__(280)
+var __vue_template__ = __webpack_require__(294)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2145,13 +2152,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 277:
+/***/ 291:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(278);
+var content = __webpack_require__(292);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -2172,7 +2179,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 278:
+/***/ 292:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(false);
@@ -2180,14 +2187,14 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 279:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2301,7 +2308,7 @@ exports.default = {
     // },  
     data: function data() {
         return {
-            total_amount: 0.00
+            total_amount_temp: 0.00
         };
     },
     computed: {
@@ -2313,6 +2320,9 @@ exports.default = {
         },
         items: function items() {
             return this.$store.getters['ITEMS_MODULE/GET_ITEMS_LIST'];
+        },
+        total_amount: function total_amount() {
+            return this.$store.getters['CART_MODULE/GET_TOTAL_AMOUNT'];
         }
     },
     methods: {
@@ -2341,8 +2351,8 @@ exports.default = {
                         if (x === false) {
                             _this.$store.commit('CART_MODULE/SET_CART_ITEMS', payload);
                         } else {
-                            _this.cart[x].request_quantity = parseInt(_this.cart[x].request_quantity) + 1;
-                            _this.cart[x].total_price = parseInt(_this.cart[x].total_price) + parseInt(_this.cart[x].price) * 1;
+                            _this.cart[x].request_quantity = parseInt(_this.cart[x].request_quantity) + parseInt(_this.cart_item.quantity);
+                            _this.cart[x].total_price = parseInt(_this.cart[x].total_price) + parseInt(_this.cart[x].price) * parseInt(_this.cart_item.quantity);
                             var _payload = {
                                 item: _this.cart[x],
                                 index: x
@@ -2361,12 +2371,14 @@ exports.default = {
             var _this2 = this;
 
             if (this.cart.length > 0) {
-                this.total_amount = 0;
+                this.total_amount_temp = 0;
                 this.cart.forEach(function (item) {
-                    _this2.total_amount = parseInt(_this2.total_amount) + parseInt(item.total_price);
+                    _this2.total_amount_temp = parseInt(_this2.total_amount_temp) + parseInt(item.total_price);
                 });
+                this.$store.commit('CART_MODULE/SET_TOTAL_AMOUNT', this.total_amount_temp);
             } else {
-                this.total_amount = 0.00;
+                this.total_amount_temp = 0.00;
+                this.$store.commit('CART_MODULE/SET_TOTAL_AMOUNT', 0.00);
             }
         }
     },
@@ -2383,7 +2395,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 280:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2704,7 +2716,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 281:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
