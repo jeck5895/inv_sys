@@ -36,7 +36,7 @@ class ItemController extends Controller
         //     }
             
                 // return Item::orderBy($request->sort_column, $request->order_by)
-                return $items = Item::orderBy('id', 'DESC')
+                $items = Item::orderBy('id', 'DESC')
                         ->where(function($query) use ($request){
                             if($request->has('keyword'))
                             {

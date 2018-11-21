@@ -13,7 +13,7 @@ class StoreSale extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->account_type == 1 ? true : false;
     }
 
     /**
@@ -25,7 +25,7 @@ class StoreSale extends FormRequest
     {
         return [
             'customer_type' => 'required',
-            'fullname' => 'required',
+            'customer_id' => 'required',
             'fund' => 'required',
             'items' => 'required',
             // 'item_id' => 'required|numeric',

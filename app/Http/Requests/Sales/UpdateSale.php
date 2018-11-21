@@ -13,7 +13,7 @@ class UpdateSale extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->user()->account_type == 1 ? true : false;
     }
 
     /**
@@ -26,7 +26,7 @@ class UpdateSale extends FormRequest
         return [
             'customer_type' => 'required',
             'customer_id' => 'required',
-            'fullname' => 'required',
+            // 'fullname' => 'required',
             'fund' => 'required',
             'items' => 'required'
             // 'item_id' => 'required|numeric',

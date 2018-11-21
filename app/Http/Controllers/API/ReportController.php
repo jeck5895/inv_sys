@@ -46,8 +46,9 @@ class ReportController extends Controller
         $total_amount = 0;
         $formatter = new \NumberFormatter('en', \NumberFormatter::SPELLOUT);
         $transactions = DB::table('sales')
+                        ->leftJoin('customers', 'sales.customer_id', '=', 'customers.customer_id')
                         ->leftJoin('items', 'sales.item_id','=','items.id')
-                        ->select('sales.*','items.item_code','items.item_name', 'items.price')
+                        ->select('sales.*','items.item_code','items.item_name', 'items.price', 'customers.fullname')
                         ->where('sales.transaction_no', '=', $request['transaction_no'])
                         ->get();
 

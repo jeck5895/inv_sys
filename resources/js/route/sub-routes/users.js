@@ -1,13 +1,14 @@
-const UsersTable = () => import('../../components/admin/tables/users.vue');
-const UsersForm = () => import('../../components/forms/user.vue');
+// const Index = () => import('../../components/admin/tables/users.vue');
+const Index = () => import('../../pages/users/lists.vue');
+const Registration = () => import('../../pages/users/register.vue');
 
 export default [
     {
         path: '/',
-        component: UsersTable
+        component: Index,
     },
     {
         path: 'register',
-        component: UsersForm
+        component: Registration
     }
 ]

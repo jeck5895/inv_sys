@@ -36,7 +36,7 @@
                         <!-- End Buttons -->
                         <hr>
                         <!-- Table -->
-                        <ItemsTable :items="stocks"/>
+                        <ItemsTable :items="stocks.model"/>
                         <!-- End Table -->
                         
                         <!-- Item Form Modal -->

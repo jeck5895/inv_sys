@@ -32,7 +32,12 @@
             </li> -->
             <li>
                 <router-link to="/administrator/stocks" class="waves-effect">
-                    <i class="icon-home"></i><span>Stocks</span>
+                    <i class="fa fa-cubes"></i><span>Stocks</span>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/administrator/purchases" class="waves-effect">
+                    <i class="fa fa-shopping-cart"></i><span>Purchases</span>
                 </router-link>
             </li>
             <li>
@@ -41,14 +46,14 @@
                 </router-link>
             </li>
             <li>
-                <a href="widgets.html" class="waves-effect"><i class="icon-check"></i><span>Cross Checking</span>
-
-                </a>
+                <router-link to="/administrator/customers" class="waves-effect">
+                    <i class="icon-people"></i><span>Customers</span>
+                </router-link>
             </li>
             <li>
-                <a href="widgets.html" class="waves-effect"><i class="icon-hourglass"></i><span>Audit Trail</span>
-
-                </a>
+                <router-link to="/administrator/suppliers" class="waves-effect">
+                    <i class="fa fa-truck"></i><span>Suppliers</span>
+                </router-link>
             </li>
             <li>
                 <a href="#" @click="toggleReportClass" class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#report-dropdown">
@@ -79,6 +84,11 @@
                         <li><router-link to="/users"><i class="fa fa-long-arrow-right"></i> Account List</router-link></li>
                     </ul>
                 </div>
+            </li>
+            <li>
+                <a href="widgets.html" class="waves-effect"><i class="icon-hourglass"></i><span>Audit Trail</span>
+
+                </a>
             </li>
             <li>
                 <a @click.prevent="handleLogout" href="#" class="waves-effect"><i class="icon-logout">

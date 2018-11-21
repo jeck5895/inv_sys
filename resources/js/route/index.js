@@ -3,7 +3,7 @@ import AdminSubRoutes from './sub-routes/adminSubRoutes';
 import UserSubRoutes from './sub-routes/users';
 
 const AdminIndex = () => import('../pages/admin/index.vue');
-const UserIndex = () => import('../pages/admin/users.vue');
+const UserIndex = () => import('../pages/users/index.vue');
 
 let routes = [
     {

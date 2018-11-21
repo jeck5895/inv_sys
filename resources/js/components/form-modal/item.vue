@@ -136,7 +136,7 @@
                         Close</button>
                     <button @click.prevent="handleSubmit('ITEM_FORM')" :disabled="isLoading" type="button" class="btn btn-primary">
                         <span v-if="!isLoading">
-                            <i class="fa fa-check-square-o"></i> Save Item
+                            <i class="fa fa-floppy-o"></i> Save Item
                         </span>
                         <span v-else>Saving item...</span>
                     </button>

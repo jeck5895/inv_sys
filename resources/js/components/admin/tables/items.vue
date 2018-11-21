@@ -36,11 +36,6 @@
 
                         </td>
                     </tr>
-                    <tr v-else>
-                    <td class="text-center" colspan="9">
-                            <span>Loading....</span>   
-                        </td> 
-                    </tr>
                 </tbody>
                 <!-- <tfoot>
                     <tr>

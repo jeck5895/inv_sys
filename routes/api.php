@@ -22,9 +22,12 @@ Route::middleware('auth:api')->group(function() {
     Route::get('/stocks/lists', 'API\ItemController@lists');
     Route::get('/sites/lists', 'API\SiteController@lists');
     Route::get('/units/lists', 'API\UnitController@lists');
+    Route::get('/customers/search', 'API\CustomerController@search');
 
     Route::apiResource('stocks', 'API\ItemController');
     Route::apiResource('sales', 'API\SalesController');
     Route::apiResource('units', 'API\UnitController');
-    ROute::apiResource('sites', 'API\SiteController');
+    Route::apiResource('sites', 'API\SiteController');
+    Route::apiResource('users', 'API\UserController');
+    Route::apiResource('customers', 'API\CustomerController');
 });
