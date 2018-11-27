@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Items\StoreItem;
 use App\Http\Requests\Items\UpdateItem;
 use App\Model\ItemLog;
+use Illuminate\Support\Facades\DB;
+use App\Model\VwItem;
 
 class ItemController extends Controller
 {
@@ -36,7 +38,7 @@ class ItemController extends Controller
         //     }
             
                 // return Item::orderBy($request->sort_column, $request->order_by)
-                $items = Item::orderBy('id', 'DESC')
+                $items = VwItem::orderBy('id', 'DESC')
                         ->where(function($query) use ($request){
                             if($request->has('keyword'))
                             {

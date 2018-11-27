@@ -22,7 +22,7 @@
                         <td>{{ item.item_code }}</td>
                         <td>{{ item.unit.unit_name }}</td>
 
-                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.remaining_quantity }}</td>
                         <td>{{ item.price }}</td>
                         <td>{{ item.site.site_name }}</td>
                         <td>{{ item.create_at|humanReadableFormat}}</td>

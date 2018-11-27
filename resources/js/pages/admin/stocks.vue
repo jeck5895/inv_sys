@@ -42,6 +42,9 @@
                         <!-- Item Form Modal -->
                         <ItemForm/>
                         <!-- End Item Form Modal -->
+
+                        <!-- Item quantity Form modal -->
+                        <ItemQuantityForm/>
                     </div>
                 </div>
             </div>
@@ -53,6 +56,7 @@
     import NavButtons from '../../components/admin/buttons/item-buttons.vue'
     import ItemsTable from '../../components/admin/tables/items.vue'
     import ItemForm from '../../components/form-modal/item.vue'
+    import ItemQuantityForm from '../../components/form-modal/item-quantity.vue'
     import { store } from '../../store/index.js';
 
     export default {
@@ -63,7 +67,7 @@
                 store.dispatch('SITES_MODULE/FETCH_SITES_LIST')
                 next();
             }); //items data table
-                        
+            store.dispatch('ITEMS_MODULE/FETCH_ITEMS_LIST');
         },
         computed: {
             stocks () {
@@ -73,7 +77,8 @@
         components:{
             NavButtons,
             ItemsTable,
-            ItemForm
+            ItemForm,
+            ItemQuantityForm
         }
     }
 </script>

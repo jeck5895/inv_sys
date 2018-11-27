@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-md-6">
-            <button data-toggle="modal" data-target="#dangermodal" class="btn btn-primary waves-effect waves-light m-1">
+            <button data-toggle="modal" data-target="#dangermodal" class="btn btn-primary waves-effect waves-light mr-1">
                 <i class="fa fa-cloud-upload"></i> <span>Upload</span> 
             </button>
         
@@ -9,9 +9,18 @@
                 @click="$root.setFormType('NEW_ITEM')" 
                 type="button" data-toggle="modal" 
                 data-target="#addmodal" 
-                class="btn btn-primary waves-effect waves-light m-1">
+                class="btn btn-primary waves-effect waves-light mr-1">
                     <i class="fa fa-plus-circle"></i> 
                     <span>New Item</span> 
+            </button>
+
+            <button 
+                type="button"
+                data-toggle="modal"
+                data-target="#itemquantitymodal"
+                class="btn btn-primary waves-effect waves-light mr-1">
+                <i class="fa fa-plus-circle"></i>
+                <span>Add Item Quantity</span>
             </button>
         </div>
         

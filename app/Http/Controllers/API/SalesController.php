@@ -96,8 +96,8 @@ class SalesController extends Controller
                 $sale->remarks = $request['remarks'];
                 $sale->save();
 
-                $item->quantity = intval($item->quantity) - intval($req_item['request_quantity']);
-                $item->save();
+                // $item->quantity = intval($item->quantity) - intval($req_item['request_quantity']);
+                // $item->save();
             }
             else {
                 return response()->json(['message' => 'Not enough stock for request quantity. (Stocks left: '.$item->quantity.')'], 422);

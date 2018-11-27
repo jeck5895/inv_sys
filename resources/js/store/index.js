@@ -9,7 +9,8 @@ import CART_MODULE from './modules/cart/index';
 import USERS_MODULE from './modules/users/index';
 import FILTER_MODULE from './modules/filters/index';
 import FORM_MODULE from './modules/forms/index';
-import CUSTOMERS_MODULE from './modules/customers/index'
+import CUSTOMERS_MODULE from './modules/customers/index';
+import PURCHASES_MODULE from './modules/purchases/index';
 
 Vue.use(Vuex);
 
@@ -24,7 +25,8 @@ export const store = new Vuex.Store({
         USERS_MODULE,
         FILTER_MODULE,
         FORM_MODULE,
-        CUSTOMERS_MODULE
+        CUSTOMERS_MODULE,
+        PURCHASES_MODULE
     }
 });
 

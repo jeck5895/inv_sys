@@ -44593,6 +44593,10 @@ var _index19 = __webpack_require__(187);
 
 var _index20 = _interopRequireDefault(_index19);
 
+var _index21 = __webpack_require__(402);
+
+var _index22 = _interopRequireDefault(_index21);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue2.default.use(_vuex2.default);
@@ -44608,7 +44612,8 @@ var store = exports.store = new _vuex2.default.Store({
         USERS_MODULE: _index14.default,
         FILTER_MODULE: _index16.default,
         FORM_MODULE: _index18.default,
-        CUSTOMERS_MODULE: _index20.default
+        CUSTOMERS_MODULE: _index20.default,
+        PURCHASES_MODULE: _index22.default
     }
 });
 
@@ -81308,6 +81313,291 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _state = __webpack_require__(403);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(404);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _mutations = __webpack_require__(405);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+var _actions = __webpack_require__(406);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    namespaced: true,
+    state: _state2.default,
+    getters: _getters2.default,
+    mutations: _mutations2.default,
+    actions: _actions2.default
+};
+
+/***/ }),
+/* 403 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    purchase: {},
+    purchases: []
+};
+
+/***/ }),
+/* 404 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    GET_PURCHASE: function GET_PURCHASE(state) {
+        return state.purchase;
+    },
+    GET_PURCHASES: function GET_PURCHASES(state) {
+        return state.purchases;
+    }
+};
+
+/***/ }),
+/* 405 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    SET_PURCHASE: function SET_PURCHASE(state, payload) {
+        state.purchase = payload;
+    },
+    SET_PURCHASES: function SET_PURCHASES(state, payload) {
+        state.purchases = payload;
+    }
+};
+
+/***/ }),
+/* 406 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _jsCookie = __webpack_require__(2);
+
+var _jsCookie2 = _interopRequireDefault(_jsCookie);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var token = _jsCookie2.default.get('_a.token');
+
+exports.default = {
+    STORE_PURCHASE: function STORE_PURCHASE(_ref, payload) {
+        var commit = _ref.commit;
+
+        return new Promise(function (resolve, reject) {
+            axios.post('/api/purchases', payload, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                toastr.success('Success', '' + response.data.message);
+                resolve(response);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
+    }
+};
 
 /***/ })
 /******/ ]);
