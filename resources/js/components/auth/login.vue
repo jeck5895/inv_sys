@@ -103,11 +103,14 @@
                     }
                 });
             },
-            async fetchUser() {
-                await this.$store.dispatch('AuthModule/FETCH_USER')
+            fetchUser() {
+                this.$store.dispatch('AuthModule/FETCH_USER')
                     .then(response => {
-                        this.isLoading = false;
-                        this.$router.push('/administrator/dashboard');
+                        setTimeout(() => {
+                            this.isLoading = false;
+                            // this.$router.push('/administrator/stocks');
+                            window.location = window.location.protocol + "//" + window.location.host + "/administrator/stocks";
+                        }, 1000);
                     })
             }
         }

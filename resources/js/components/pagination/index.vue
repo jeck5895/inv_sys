@@ -6,7 +6,7 @@
         
         <div class="col-md-8 float-right">
             <nav aria-label="...">
-                <ul :class="'pagination ' + classSize +' justify-content-end'">
+                <ul :class="'pagination '+' justify-content-end'">
                     <li :class="object.from == object.current_page ? 'page-item disabled' : '' ">
                         <a class="page-link" @click.prevent="firstPage(object.first_page_url)" href="#" tabindex="-1">
                             <span class="fa fa-long-arrow-left"></span>
@@ -17,7 +17,7 @@
                     </li>
                     <template v-for="i in links">
                         <li :class="object.current_page == i ? 'page-item active':'active'"  :key="i">
-                            <a class="page-link" @click.prevent="toPage(i)" href="#">{{ i }}</a>
+                            <a class="page-link" @click.prevent="toPage(i, object)" href="#">{{ i }}</a>
                         </li>
                     </template>
                     <li :class="object.next_page_url == null ? 'page-item disabled' : 'page-item'">
@@ -36,11 +36,15 @@
 
 <script>
     export default {
-        props:['scope','object', 'url', 'classSize', 'query'],
         props: {
             object: {
-                type: Object,
                 required: true
+            },
+            module: {
+                required: true
+            },
+            query: {
+                required: false
             }
         },
         created(){
@@ -75,20 +79,25 @@
             }
         },
         methods:{
-            toPage(page){
-                
+            toPage(page, obj){
+                let path = this.query ? `${obj.path}?page=${page}&${this.query}` :`${obj.path}?page=${page}`; 
+                this.$store.dispatch(this.module, path);
             },
             nextPage (url) {
-               
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             prevPage (url) {
-            
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             firstPage(url){
-                
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
             lastPage(url){
-                
+                url = this.query ? url + '&' + this.query : url;
+                this.$store.dispatch(this.module, url);
             },
         }
     }

@@ -74,7 +74,7 @@
                                         {{  errors.first('ITEM_FORM.unit') }}
                                     </small>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="input-6">Quantity</label>
                                     <input 
                                         v-model="item.quantity"
@@ -84,7 +84,7 @@
                                     <small class="form-text text-danger" v-show="errors.has('ITEM_FORM.quantity')">
                                         {{  errors.first('ITEM_FORM.quantity') }}
                                     </small>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <label for="input-7">Price</label>
                                     <input 
@@ -115,7 +115,7 @@
                                         {{  errors.first('ITEM_FORM.site') }}
                                     </small>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="input-7">DR Number</label>
                                     <input 
                                         v-model="item.dr_number"
@@ -126,7 +126,7 @@
                                     <small class="form-text text-danger" v-show="errors.has('ITEM_FORM.dr_number')">
                                         {{  errors.first('ITEM_FORM.dr_number') }}
                                     </small>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
                         Close</button>
                     <button @click.prevent="handleSubmit('ITEM_FORM')" :disabled="isLoading" type="button" class="btn btn-primary">
                         <span v-if="!isLoading">
-                            <i class="fa fa-check-square-o"></i> Save Item
+                            <i class="fa fa-floppy-o"></i> Save Item
                         </span>
                         <span v-else>Saving item...</span>
                     </button>
@@ -213,6 +213,7 @@
                                 this.isLoading = false;
                                 this.response = [];
                                 this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                                $("#addmodal").modal('hide');
                             })
                             .catch(error => {
                                 

@@ -1,6 +1,8 @@
 const Dashboard = () => import('../../pages/admin/dashboard.vue');
 const Stocks = () => import('../../pages/admin/stocks.vue');
 const Issuance = () => import('../../pages/admin/issueance.vue');
+const Reports = () => import('../../pages/admin/reports.vue');
+const Customers = () => import('../../pages/admin/customers.vue');
 
 export default [
     {
@@ -18,5 +20,13 @@ export default [
     {
         path: 'issueance',
         component: Issuance
+    },
+    {
+        path: 'reports',
+        component: Reports
+    },
+    { 
+        path: 'customers',
+        component: Customers
     }
 ];
