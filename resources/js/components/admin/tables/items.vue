@@ -17,6 +17,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr v-if="items.data.length == 0">
+                        <td colspan="9">
+                            <p class="text-center">
+                                <em>No data to show...</em>
+                            </p>
+                        </td>
+                    </tr>
                     <tr v-if="items.data.length != 0" v-for="(item, i) in items.data" :key="i">
                         <td>{{ item.item_name }}</td>
                         <td>{{ item.item_code }}</td>
@@ -81,7 +88,7 @@
                     site: item.site.id,
                     dr_number: item.dr_number
                 };
-                this.$root.setFormType('EDIT_ITEM');
+                this.$store.commit('FORM_MODULE/SET_FORM_TYPE', 'EDIT_ITEM');
                 this.$store.commit('ITEMS_MODULE/SET_ITEM', payload);
             },
             handleRemove (item) {

@@ -6,7 +6,7 @@
             </button>
         
             <button 
-                @click="$root.setFormType('NEW_ITEM')" 
+                @click="$store.commit('FORM_MODULE/SET_FORM_TYPE', 'NEW_ITEM')" 
                 type="button" data-toggle="modal" 
                 data-target="#addmodal" 
                 class="btn btn-primary waves-effect waves-light mr-1">
