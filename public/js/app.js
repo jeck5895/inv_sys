@@ -47330,6 +47330,7 @@ exports.default = {
         SET_FORM_TYPE: function SET_FORM_TYPE(state, payload) {
             localStorage.setItem('f_type', payload);
             state.form_type = payload;
+            console.log(payload);
         }
     }
 };
@@ -47927,8 +47928,8 @@ exports.default = {
                 if (result) {
                     var payload = {
                         grant_type: 'password',
-                        client_id: 2,
-                        client_secret: 'ZceLweZBN3H07WPoFCmloYS9vmrHL0suiKrgYD8i',
+                        client_id: 1,
+                        client_secret: 'OGDWoGVE9EibTVkiplsdh7OENyhMnam7XksZnFce',
                         username: _this.email,
                         password: _this.password,
                         scope: ''

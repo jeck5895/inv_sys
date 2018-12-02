@@ -800,7 +800,7 @@ var render = function() {
           },
           on: {
             click: function($event) {
-              _vm.$root.setFormType("NEW_ITEM")
+              _vm.$store.commit("FORM_MODULE/SET_FORM_TYPE", "NEW_ITEM")
             }
           }
         },
@@ -1073,7 +1073,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -1114,7 +1114,7 @@ exports.default = {
                 site: item.site.id,
                 dr_number: item.dr_number
             };
-            this.$root.setFormType('EDIT_ITEM');
+            this.$store.commit('FORM_MODULE/SET_FORM_TYPE', 'EDIT_ITEM');
             this.$store.commit('ITEMS_MODULE/SET_ITEM', payload);
         },
         handleRemove: function handleRemove(item) {
@@ -1129,6 +1129,13 @@ exports.default = {
         Pagination: _index2.default
     }
 }; //
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1210,71 +1217,76 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            _vm._l(_vm.items.data, function(item, i) {
-              return _vm.items.data.length != 0
-                ? _c("tr", { key: i }, [
-                    _c("td", [_vm._v(_vm._s(item.item_name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.item_code))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.unit.unit_name))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.remaining_quantity))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.price))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.site.site_name))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        _vm._s(_vm._f("humanReadableFormat")(item.create_at))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.dr_number))]),
-                    _vm._v(" "),
-                    _c("td", { attrs: { align: "center" } }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-primary waves-effect waves-light m-1",
-                          attrs: {
-                            type: "button",
-                            "data-toggle": "modal",
-                            "data-target": "#addmodal"
-                          },
-                          on: {
-                            click: function($event) {
-                              _vm.handleEdit(item)
-                            }
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "fa fa-plus-circle" }),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("UPDATE")])
-                        ]
-                      ),
+            [
+              _vm.items.data.length == 0 ? _c("tr", [_vm._m(1)]) : _vm._e(),
+              _vm._v(" "),
+              _vm._l(_vm.items.data, function(item, i) {
+                return _vm.items.data.length != 0
+                  ? _c("tr", { key: i }, [
+                      _c("td", [_vm._v(_vm._s(item.item_name))]),
                       _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-primary waves-effect waves-light",
-                          attrs: { type: "button", id: "confirm-btn-alert4" },
-                          on: {
-                            click: function($event) {
-                              _vm.handleRemove(item)
+                      _c("td", [_vm._v(_vm._s(item.item_code))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.unit.unit_name))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.remaining_quantity))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.price))]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.site.site_name))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(_vm._f("humanReadableFormat")(item.create_at))
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [_vm._v(_vm._s(item.dr_number))]),
+                      _vm._v(" "),
+                      _c("td", { attrs: { align: "center" } }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-primary waves-effect waves-light m-1",
+                            attrs: {
+                              type: "button",
+                              "data-toggle": "modal",
+                              "data-target": "#addmodal"
+                            },
+                            on: {
+                              click: function($event) {
+                                _vm.handleEdit(item)
+                              }
                             }
-                          }
-                        },
-                        [_vm._v("REMOVE\n                        ")]
-                      )
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-plus-circle" }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v("UPDATE")])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-primary waves-effect waves-light",
+                            attrs: { type: "button", id: "confirm-btn-alert4" },
+                            on: {
+                              click: function($event) {
+                                _vm.handleRemove(item)
+                              }
+                            }
+                          },
+                          [_vm._v("REMOVE\n                        ")]
+                        )
+                      ])
                     ])
-                  ])
-                : _vm._e()
-            })
+                  : _vm._e()
+              })
+            ],
+            2
           )
         ]
       )
@@ -1316,6 +1328,16 @@ var staticRenderFns = [
         _c("th", [_vm._v("DR Number")]),
         _vm._v(" "),
         _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { attrs: { colspan: "9" } }, [
+      _c("p", { staticClass: "text-center" }, [
+        _c("em", [_vm._v("No data to show...")])
       ])
     ])
   }
@@ -1418,7 +1440,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -1600,6 +1622,9 @@ exports.default = {
         },
         sites: function sites() {
             return this.$store.getters['SITES_MODULE/GET_SITES_LIST'];
+        },
+        form_type: function form_type() {
+            return this.$store.getters['FORM_MODULE/GET_FORM_TYPE'];
         }
     },
     methods: {
@@ -1948,6 +1973,81 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.form_type == "NEW_ITEM",
+                          expression: "form_type == 'NEW_ITEM'"
+                        }
+                      ],
+                      staticClass: "form-group"
+                    },
+                    [
+                      _c("label", { attrs: { for: "input-6" } }, [
+                        _vm._v("Quantity")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.item.quantity,
+                            expression: "item.quantity"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required|min_value:1|numeric",
+                            expression: "'required|min_value:1|numeric'"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          name: "quantity",
+                          type: "number",
+                          id: "input-6",
+                          placeholder: "Enter Quantity"
+                        },
+                        domProps: { value: _vm.item.quantity },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.item, "quantity", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors.has("ITEM_FORM.quantity"),
+                              expression: "errors.has('ITEM_FORM.quantity')"
+                            }
+                          ],
+                          staticClass: "form-text text-danger"
+                        },
+                        [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.errors.first("ITEM_FORM.quantity")) +
+                              "\n                                "
+                          )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
                   _c("div", { staticClass: "form-group" }, [
                     _c("label", { attrs: { for: "input-7" } }, [
                       _vm._v("Price")
@@ -2099,7 +2199,83 @@ var render = function() {
                         )
                       ]
                     )
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.form_type == "NEW_ITEM",
+                          expression: "form_type == 'NEW_ITEM'"
+                        }
+                      ],
+                      staticClass: "form-group"
+                    },
+                    [
+                      _c("label", { attrs: { for: "input-7" } }, [
+                        _vm._v("DR Number")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.item.dr_number,
+                            expression: "item.dr_number"
+                          },
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required",
+                            expression: "'required'"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          name: "dr_number",
+                          "data-vv-as": "DR number",
+                          type: "text",
+                          id: "input-7",
+                          placeholder: "Enter DR Number"
+                        },
+                        domProps: { value: _vm.item.dr_number },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.item, "dr_number", $event.target.value)
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "small",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.errors.has("ITEM_FORM.dr_number"),
+                              expression: "errors.has('ITEM_FORM.dr_number')"
+                            }
+                          ],
+                          staticClass: "form-text text-danger"
+                        },
+                        [
+                          _vm._v(
+                            "\n                                    " +
+                              _vm._s(_vm.errors.first("ITEM_FORM.dr_number")) +
+                              "\n                                "
+                          )
+                        ]
+                      )
+                    ]
+                  )
                 ]
               )
             ])

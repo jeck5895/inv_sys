@@ -12,6 +12,7 @@ export default {
         SET_FORM_TYPE: (state, payload) => {
             localStorage.setItem('f_type', payload);
             state.form_type = payload;
+            console.log(payload)
         }
     }
 }
