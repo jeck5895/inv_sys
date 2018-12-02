@@ -82,7 +82,7 @@
                         <tr>
                             <td>{{ $item->item_code }}</td>
                             <td>{{ $item->item_name }}</td>
-                            <td>{{ $item->previos_quantity }}</td>
+                            <td>{{ $item->previous_quantity }}</td>
                             <td>{{ $item->issued_quantity }}</td>
                             <td>{{ $item->items_on_hand }}</td>
                         </tr>
