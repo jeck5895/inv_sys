@@ -26,12 +26,8 @@ let routes = [
         }
     },
     {
-        path: '/users',
-        component: UserIndex,
-        children: UserSubRoutes,
-        meta: {
-            forAuthUsers: true
-        }
+        path: "*",
+        component: require("../pages/404.vue")
     }
 ];  
 

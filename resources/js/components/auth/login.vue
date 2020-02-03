@@ -84,7 +84,7 @@
                         let payload = {
                             grant_type: 'password',
                             client_id: 1,
-                            client_secret: 'OGDWoGVE9EibTVkiplsdh7OENyhMnam7XksZnFce',
+                            client_secret: 'uKgKi1NLCz74b7WR7nlKJ7u3fDV558qiyFbsGj8s',
                             username: this.email,
                             password: this.password,
                             scope: '',

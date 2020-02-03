@@ -1,18 +1,18 @@
 webpackJsonp([0],{
 
-/***/ 256:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(375)
+  __webpack_require__(382)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(377)
+var __vue_script__ = __webpack_require__(384)
 /* template */
-var __vue_template__ = __webpack_require__(388)
+var __vue_template__ = __webpack_require__(395)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 260:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(261)
+  __webpack_require__(268)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(263)
+var __vue_script__ = __webpack_require__(270)
 /* template */
-var __vue_template__ = __webpack_require__(264)
+var __vue_template__ = __webpack_require__(271)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,17 +104,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 261:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(262);
+var content = __webpack_require__(269);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("1b07c9ea", content, false, {});
+var update = __webpack_require__(6)("6f3a7ceb", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -131,10 +131,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 262:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 263:
+/***/ 270:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -262,7 +262,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 264:
+/***/ 271:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -305,7 +305,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.firstPage(_vm.object.first_page_url)
+                        return _vm.firstPage(_vm.object.first_page_url)
                       }
                     }
                   },
@@ -331,7 +331,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.prevPage(_vm.object.prev_page_url)
+                        return _vm.prevPage(_vm.object.prev_page_url)
                       }
                     }
                   },
@@ -360,7 +360,7 @@ var render = function() {
                         on: {
                           click: function($event) {
                             $event.preventDefault()
-                            _vm.toPage(i, _vm.object)
+                            return _vm.toPage(i, _vm.object)
                           }
                         }
                       },
@@ -388,7 +388,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.nextPage(_vm.object.next_page_url)
+                        return _vm.nextPage(_vm.object.next_page_url)
                       }
                     }
                   },
@@ -414,7 +414,7 @@ var render = function() {
                     on: {
                       click: function($event) {
                         $event.preventDefault()
-                        _vm.lastPage(_vm.object.last_page_url)
+                        return _vm.lastPage(_vm.object.last_page_url)
                       }
                     }
                   },
@@ -441,19 +441,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 265:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(266)
+  __webpack_require__(273)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(268)
+var __vue_script__ = __webpack_require__(275)
 /* template */
-var __vue_template__ = __webpack_require__(269)
+var __vue_template__ = __webpack_require__(276)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -493,17 +493,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 266:
+/***/ 273:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(267);
+var content = __webpack_require__(274);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("7ad9c141", content, false, {});
+var update = __webpack_require__(6)("5eb544a1", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -520,10 +520,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 267:
+/***/ 274:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -535,7 +535,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 268:
+/***/ 275:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -573,7 +573,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 269:
+/***/ 276:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -597,7 +597,8 @@ var render = function() {
                 return _c("li", { key: i }, [
                   _vm._v("\n                " + _vm._s(e) + "\n            ")
                 ])
-              })
+              }),
+              0
             )
           ])
         ]
@@ -625,19 +626,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 270:
+/***/ 277:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(271)
+  __webpack_require__(278)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(273)
+var __vue_script__ = __webpack_require__(280)
 /* template */
-var __vue_template__ = __webpack_require__(274)
+var __vue_template__ = __webpack_require__(281)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -677,17 +678,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 271:
+/***/ 278:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(272);
+var content = __webpack_require__(279);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("1b9748c4", content, false, {});
+var update = __webpack_require__(6)("1cf25b71", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -704,10 +705,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 272:
+/***/ 279:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -719,7 +720,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 273:
+/***/ 280:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -729,7 +730,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _error = __webpack_require__(265);
+var _error = __webpack_require__(272);
 
 var _error2 = _interopRequireDefault(_error);
 
@@ -898,7 +899,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 274:
+/***/ 281:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -921,7 +922,7 @@ var render = function() {
           on: {
             submit: function($event) {
               $event.preventDefault()
-              _vm.handleSubmit("userRegistrationForm")
+              return _vm.handleSubmit("userRegistrationForm")
             }
           }
         },
@@ -1358,17 +1359,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 375:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(376);
+var content = __webpack_require__(383);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("1b8ae24c", content, false, {});
+var update = __webpack_require__(6)("490f1834", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1385,10 +1386,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 376:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -1400,7 +1401,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 377:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1410,11 +1411,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(378);
+var _index = __webpack_require__(385);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _user = __webpack_require__(383);
+var _user = __webpack_require__(390);
 
 var _user2 = _interopRequireDefault(_user);
 
@@ -1451,19 +1452,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 378:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(379)
+  __webpack_require__(386)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(381)
+var __vue_script__ = __webpack_require__(388)
 /* template */
-var __vue_template__ = __webpack_require__(382)
+var __vue_template__ = __webpack_require__(389)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1503,17 +1504,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 379:
+/***/ 386:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(380);
+var content = __webpack_require__(387);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("44a49ffe", content, false, {});
+var update = __webpack_require__(6)("5fd042f4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1530,10 +1531,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 380:
+/***/ 387:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -1545,7 +1546,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 381:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1555,7 +1556,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(260);
+var _index = __webpack_require__(267);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -1700,7 +1701,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 382:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1718,7 +1719,10 @@ var render = function() {
               attrs: { "data-toggle": "modal", "data-target": "#usermodal" },
               on: {
                 click: function($event) {
-                  _vm.$store.commit("FORM_MODULE/SET_FORM_TYPE", "NEW_USER")
+                  return _vm.$store.commit(
+                    "FORM_MODULE/SET_FORM_TYPE",
+                    "NEW_USER"
+                  )
                 }
               }
             },
@@ -1787,117 +1791,91 @@ var render = function() {
             !_vm.users.data && !_vm.isLoading
               ? _c("tr", [_vm._m(3)])
               : !_vm.isLoading
-                ? _vm._l(_vm.users.data, function(user, i) {
-                    return _c("tr", { key: i }, [
+              ? _vm._l(_vm.users.data, function(user, i) {
+                  return _c("tr", { key: i }, [
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(user.user_id) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(user.name) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(user.account_type == 1 ? "Admin" : "Student") +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(user.email) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(
+                            _vm._f("humanReadableFormat")(user.created_at)
+                          ) +
+                          "\n                    "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("td", { staticStyle: { "vertical-align": "middle" } }, [
                       _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(user.user_id) +
-                              "\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(user.name) +
-                              "\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(
-                                user.account_type == 1 ? "Admin" : "Student"
-                              ) +
-                              "\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(user.email) +
-                              "\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(
-                                _vm._f("humanReadableFormat")(user.created_at)
-                              ) +
-                              "\n                    "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "td",
-                        { staticStyle: { "vertical-align": "middle" } },
+                        "div",
+                        {
+                          staticClass: "btn-group btn-group-sm",
+                          attrs: { role: "group" }
+                        },
                         [
                           _c(
-                            "div",
+                            "button",
                             {
-                              staticClass: "btn-group btn-group-sm",
-                              attrs: { role: "group" }
+                              staticClass: "btn btn-sm btn-success",
+                              attrs: { type: "button", title: "Edit" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.edit(user)
+                                }
+                              }
                             },
-                            [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-sm btn-success",
-                                  attrs: { type: "button", title: "Edit" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.edit(user)
-                                    }
-                                  }
-                                },
-                                [_c("span", { staticClass: "fa fa-edit" })]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-sm btn-danger",
-                                  attrs: { type: "button" },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.destroy(user)
-                                    }
-                                  }
-                                },
-                                [_c("span", { staticClass: "fa fa-trash" })]
-                              )
-                            ]
+                            [_c("span", { staticClass: "fa fa-edit" })]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              staticClass: "btn btn-sm btn-danger",
+                              attrs: { type: "button" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.destroy(user)
+                                }
+                              }
+                            },
+                            [_c("span", { staticClass: "fa fa-trash" })]
                           )
                         ]
                       )
                     ])
-                  })
-                : _vm._e()
+                  ])
+                })
+              : _vm._e()
           ],
           2
         )
@@ -1990,19 +1968,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 383:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(384)
+  __webpack_require__(391)
 }
-var normalizeComponent = __webpack_require__(6)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(386)
+var __vue_script__ = __webpack_require__(393)
 /* template */
-var __vue_template__ = __webpack_require__(387)
+var __vue_template__ = __webpack_require__(394)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -2042,17 +2020,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 384:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(385);
+var content = __webpack_require__(392);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("03c42f05", content, false, {});
+var update = __webpack_require__(6)("327bddb6", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2069,10 +2047,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 385:
+/***/ 392:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(3)(false);
+exports = module.exports = __webpack_require__(4)(false);
 // imports
 
 
@@ -2084,7 +2062,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 386:
+/***/ 393:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2094,7 +2072,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _register = __webpack_require__(270);
+var _register = __webpack_require__(277);
 
 var _register2 = _interopRequireDefault(_register);
 
@@ -2125,7 +2103,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 387:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -2179,7 +2157,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 388:
+/***/ 395:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
