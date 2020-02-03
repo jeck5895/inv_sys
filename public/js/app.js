@@ -49990,7 +49990,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50075,12 +50075,60 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
         return {
-            email: '',
-            password: '',
+            email: "",
+            password: "",
             isLoading: false,
             response: null
         };
@@ -50092,15 +50140,15 @@ exports.default = {
             this.$validator.validateAll(scope).then(function (result) {
                 if (result) {
                     var payload = {
-                        grant_type: 'password',
-                        client_id: 1,
-                        client_secret: 'uKgKi1NLCz74b7WR7nlKJ7u3fDV558qiyFbsGj8s',
+                        grant_type: "password",
+                        client_id: 2,
+                        client_secret: "GiBJAhYpCiVPV3pxsRlCbAm70Vn7YMtz4meA1z8H",
                         username: _this.email,
                         password: _this.password,
-                        scope: ''
+                        scope: ""
                     };
                     _this.isLoading = true;
-                    _this.$store.dispatch('AuthModule/LOGIN', payload).then(function (response) {
+                    _this.$store.dispatch("AuthModule/LOGIN", payload).then(function (response) {
                         _this.fetchUser();
                         _this.response = null;
                     }).catch(function (error) {
@@ -50114,7 +50162,7 @@ exports.default = {
         fetchUser: function fetchUser() {
             var _this2 = this;
 
-            this.$store.dispatch('AuthModule/FETCH_USER').then(function (response) {
+            this.$store.dispatch("AuthModule/FETCH_USER").then(function (response) {
                 setTimeout(function () {
                     _this2.isLoading = false;
                     // this.$router.push('/administrator/stocks');
@@ -50150,7 +50198,7 @@ var render = function() {
               staticClass:
                 "card-title text-uppercase text-center py-2 text-white"
             },
-            [_vm._v("Sign In")]
+            [_vm._v("\n                Sign In\n            ")]
           ),
           _vm._v(" "),
           _vm.response != null && _vm.response.status == 401
@@ -50167,7 +50215,7 @@ var render = function() {
                       staticClass: "close",
                       attrs: { type: "button", "data-dismiss": "alert" }
                     },
-                    [_vm._v("×")]
+                    [_vm._v("\n                    ×\n                ")]
                   ),
                   _vm._v(" "),
                   _vm._m(1),
