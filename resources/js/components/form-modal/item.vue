@@ -74,7 +74,7 @@
                                         {{  errors.first('ITEM_FORM.unit') }}
                                     </small>
                                 </div>
-                                <div class="form-group">
+                                <div v-show="form_type == 'NEW_ITEM'" class="form-group">
                                     <label for="input-6">Quantity</label>
                                     <input 
                                         v-model="item.quantity"
@@ -115,7 +115,7 @@
                                         {{  errors.first('ITEM_FORM.site') }}
                                     </small>
                                 </div>
-                                <div class="form-group">
+                                <div v-show="form_type == 'NEW_ITEM'" class="form-group">
                                     <label for="input-7">DR Number</label>
                                     <input 
                                         v-model="item.dr_number"
@@ -136,7 +136,7 @@
                         Close</button>
                     <button @click.prevent="handleSubmit('ITEM_FORM')" :disabled="isLoading" type="button" class="btn btn-primary">
                         <span v-if="!isLoading">
-                            <i class="fa fa-check-square-o"></i> Save Item
+                            <i class="fa fa-floppy-o"></i> Save Item
                         </span>
                         <span v-else>Saving item...</span>
                     </button>
@@ -151,7 +151,7 @@
     export default {
         data: () => ({
             isLoading: false,
-            response: [],
+            response: []
         }),
         computed: {
             item () {
@@ -162,6 +162,9 @@
             },
             sites() {
                 return this.$store.getters['SITES_MODULE/GET_SITES_LIST'];
+            },
+            form_type () {
+                return this.$store.getters['FORM_MODULE/GET_FORM_TYPE'];
             }
         },
         methods: {
@@ -213,6 +216,7 @@
                                 this.isLoading = false;
                                 this.response = [];
                                 this.$store.dispatch('ITEMS_MODULE/FETCH_ITEMS');
+                                $("#addmodal").modal('hide');
                             })
                             .catch(error => {
                                 

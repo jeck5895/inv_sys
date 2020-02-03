@@ -5,7 +5,8 @@ import VeeValidate from 'vee-validate';
 import moment from 'moment';
 import toastr from 'toastr';
 import Cookies from 'js-cookie';
-
+import VuejsDialog from 'vuejs-dialog';
+import 'vuejs-dialog/dist/vuejs-dialog.min.css';
 
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
@@ -16,6 +17,7 @@ window.Cookies = Cookies;
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
+Vue.use(VuejsDialog);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

@@ -25,31 +25,75 @@
         </div>
         <ul class="sidebar-menu do-nicescrol">
             <li class="sidebar-header">ADMINISTRATIVE PANEL</li>
-            <li>
+            <!-- <li>
                 <router-link to="/administrator/dashboard" class="waves-effect">
                     <i class="icon-home"></i><span>Dashboard</span><i class="fa fa-angle-left pull-right"></i>
                 </router-link>
-            </li>
+            </li> -->
             <li>
                 <router-link to="/administrator/stocks" class="waves-effect">
-                    <i class="icon-home"></i><span>Stocks</span>
+                    <i class="fa fa-cubes"></i><span>Stocks</span>
                 </router-link>
             </li>
             <li>
-                <router-link to="/administrator/issueance">
+                <router-link to="/administrator/purchases" class="waves-effect">
+                    <i class="fa fa-shopping-cart"></i><span>Purchases</span>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/administrator/issueance" class="waves-effect">
                     <i class="icon-note"></i><span>Issue</span>
                 </router-link>
             </li>
             <li>
-                <a href="#" class="collapsed user-pointer" data-toggle="collapse" data-target="#report-dropdown">
-                    <i class="icon-home"></i><span>Reports</span>
+                <router-link to="/administrator/customers" class="waves-effect">
+                    <i class="icon-people"></i><span>Customers</span>
+                </router-link>
+            </li>
+            <li>
+                <router-link to="/administrator/suppliers" class="waves-effect">
+                    <i class="fa fa-truck"></i><span>Suppliers</span>
+                </router-link>
+            </li>
+            <li>
+                <a href="#" @click="toggleReportClass" class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#report-dropdown">
+                    <div class="media-body">
+                        <i class="fa fa-line-chart"></i>
+                    <span>Reports</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-left float-right"></i> -->
                 </a>
                 <div id="report-dropdown" class="collapse">
                     <ul class="user-setting-menu">
-                        <li><a href="register.html" ><i class="fa fa-long-arrow-right"></i> Generate Report</a></li>
-                        <li><a href="account.html" ><i class="fa fa-long-arrow-right"></i> Sales Table</a></li>
+                        <li><router-link to="/administrator/reports" class="waves-effect"><i class="fa fa-long-arrow-right"></i> Generate Report</router-link></li>
+                        <!-- <li><a href="account.html"><i class="fa fa-long-arrow-right"></i> Sales Table</a></li> -->
                     </ul>
                 </div>
+            </li>
+            <li>
+                 <a href="#" @click="toggleUserClass" class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#account-dropdown">
+                    <div class="media-body">
+                        <i class="icon-user"></i>
+                    <span>User Accounts</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-left float-right"></i> -->
+                </a>
+                <div id="account-dropdown" class="collapse">
+                    <ul class="user-setting-menu">
+                        <li><router-link to="/users/register"><i class="fa fa-long-arrow-right"></i> Register </router-link></li>
+                        <li><router-link to="/users"><i class="fa fa-long-arrow-right"></i> Account List</router-link></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="widgets.html" class="waves-effect"><i class="icon-hourglass"></i><span>Audit Trail</span>
+
+                </a>
+            </li>
+            <li>
+                <a @click.prevent="handleLogout" href="#" class="waves-effect"><i class="icon-logout">
+                    </i><span>Logout</span>
+                </a>
             </li>
         </ul>
 
@@ -58,6 +102,9 @@
 
 <script>
     export default {
+        data: () => ({
+            active: '',
+        }),
         props: {
             user: {
                 type: Object,
@@ -65,18 +112,20 @@
             }
         },
         methods: {
-            handleAccordion (e) {
-                console.log($(e.target))
-                // if($(e.target).parent().hasClass('active')) {
-                //     $(e.target).parent().removeClass('active');
-                //     $(e.target).next().removeClass('menu-open');
-                //     $(e.target).next().css('display', 'none');
-                // }
-                // else {
-                //     $(e.target).parent().addClass('active');
-                //     $(e.target).next().addClass('menu-open');
-                //     $(e.target).next().css('display', 'block');
-                // }
+            toggleReportClass (e) {
+                !($('#report-dropdown').hasClass('show')) ? 
+                $('#report-dropdown').prev().addClass('active') :
+                $('#report-dropdown').prev().removeClass('active');
+            },
+            toggleUserClass (e) {
+                
+                !($('#account-dropdown').hasClass('show')) ? 
+                console.log($('#account-dropdown').prev().addClass('active')) :
+                $('#account-dropdown').prev().removeClass('active');
+            },
+            handleLogout () {
+                this.$store.dispatch('AuthModule/LOGOUT')
+                this.$router.push('/login');
             }
         }
     }   

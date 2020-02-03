@@ -26,5 +26,12 @@
         <!-- <script src="assets/plugins/simplebar/js/simplebar.js"></script> -->
         <!-- waves effect js -->
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{asset('js/simplebar.js')}}"></script>
+        <!-- waves effect js -->
+        <script src="{{asset('js/waves.js')}}"></script>
+        <!-- sidebar-menu js -->
+        <script src="{{asset('js/sidebar-menu.js')}}"></script>
+        <!-- Custom scripts -->
+        <script src="{{asset('js/app-script.js')}}"></script>
     </body>
 </html>

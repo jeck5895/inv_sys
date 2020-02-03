@@ -83,8 +83,8 @@
                     if (result) {
                         let payload = {
                             grant_type: 'password',
-                            client_id: 2,
-                            client_secret: 'ZceLweZBN3H07WPoFCmloYS9vmrHL0suiKrgYD8i',
+                            client_id: 1,
+                            client_secret: 'OGDWoGVE9EibTVkiplsdh7OENyhMnam7XksZnFce',
                             username: this.email,
                             password: this.password,
                             scope: '',
@@ -103,11 +103,14 @@
                     }
                 });
             },
-            async fetchUser() {
-                await this.$store.dispatch('AuthModule/FETCH_USER')
+            fetchUser() {
+                this.$store.dispatch('AuthModule/FETCH_USER')
                     .then(response => {
-                        this.isLoading = false;
-                        this.$router.push('/administrator/dashboard');
+                        setTimeout(() => {
+                            this.isLoading = false;
+                            // this.$router.push('/administrator/stocks');
+                            window.location = window.location.protocol + "//" + window.location.host + "/administrator/stocks";
+                        }, 1000);
                     })
             }
         }

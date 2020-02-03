@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Items\StoreItem;
 use App\Http\Requests\Items\UpdateItem;
+use App\Model\ItemLog;
+use Illuminate\Support\Facades\DB;
+use App\Model\VwItem;
 
 class ItemController extends Controller
 {
@@ -35,7 +38,7 @@ class ItemController extends Controller
         //     }
             
                 // return Item::orderBy($request->sort_column, $request->order_by)
-                return $items = Item::orderBy('id', 'DESC')
+                $items = VwItem::orderBy('id', 'DESC')
                         ->where(function($query) use ($request){
                             if($request->has('keyword'))
                             {
@@ -118,6 +121,11 @@ class ItemController extends Controller
         $item->site = $request['site'];
         $item->dr_number = $request['dr_number'];
         $item->save();
+
+        $log = new ItemLog;
+        $log->item_id = $id;
+        $log->quantity_added = $request['quantity'];
+        $log->save();
 
         return [
             'message' => 'Changes has been save'
