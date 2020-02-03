@@ -14,9 +14,36 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $orderBy = $request->order_by == "false" ? 'asc' : 'desc';
+        $per_page = $request->has('per_page') ? $request->per_page : 10;
+        $applicant = [];
+
+        if ($request->has('order_by') && $request->has('sort_by')) {
+            $purchases = Purchase::orderBy($request->sort_by, $orderBy)
+                ->where(function ($query) use ($request) {
+                    if ($request->has("q")) {
+                        $query->where('name', 'LIKE', '%' . $request->q . '%');
+                    }
+                })
+                ->with('category')
+                ->with('brand')
+                ->with('color')
+                ->with('model')
+                ->with('supplier')
+                ->paginate($per_page);
+        } else {
+
+            $purchases = Purchase::with('category')
+                ->with('brand')
+                ->with('color')
+                ->with('model')
+                ->with('supplier')
+                ->paginate($per_page);
+        }
+
+        return $purchases;
     }
 
     /**
@@ -28,12 +55,29 @@ class PurchaseController extends Controller
     public function store(Store $request)
     {
         $purchase = new Purchase;
-        $purchase->item_id = $request['item_id'];
-        $purchase->purchase_quantity = $request['purchase_quantity'];
-        $purchase->price_per_item = $request['price_per_item'];
-        $purchase->total_amount = $request['total_amount'];
-        $purchase->dr_number = $request['dr_number'];
+        $purchase->imei = $request['imei'];
+        $purchase->category_id = $request['category'];
+        $purchase->model_id = $request['model'];
+        $purchase->brand_id = $request['brand'];
+        $purchase->supplier_id = $request['supplier'];
+        $purchase->purchase_quantity = $request['quantity'];
+        $purchase->color = $request['color'];
+        $purchase->cost = $request['cost'];
+        $purchase->selling_price = $request['selling_price'];
+        $purchase->specs = $request['remarks'];
         $purchase->save();
+
+
+        // $purchase->item_id = $request['item_id'];
+        // $purchase->imei = $request['imei'];
+        // $purchase->category_id = $request['category'];
+        // $purchase->model_id = $request['model'];
+        // $purchase->supplier_id = $request['supplier'];
+        // $purchase->purchase_quantity = $request['purchase_quantity'];
+        // $purchase->price_per_item = $request['price_per_item'];
+        // $purchase->total_amount = $request['total_amount'];
+        // $purchase->dr_number = $request['dr_number'];
+        // $purchase->save();
 
         return ['message' => 'Purchase has been saved'];
     }
