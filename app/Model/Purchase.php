@@ -8,26 +8,26 @@ class Purchase extends Model
 {
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function model()
     {
-        return $this->hasOne(Model::class);
+        return $this->belongsTo(ItemModel::class);
     }
 
     public function color()
     {
-        return $this->hasnOne(Color::class);
+        return $this->belongsTo(Color::class);
     }
 
     public function brand()
     {
-        return $this->hasOne(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 
     public function supplier()
     {
-        return $this->hasOne(Supplier::class);
+        return $this->belongsTo(Supplier::class);
     }
 }
