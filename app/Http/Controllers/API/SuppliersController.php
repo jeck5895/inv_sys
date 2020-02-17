@@ -16,6 +16,8 @@ class SuppliersController extends Controller
     public function index()
     {
         $suppliers = Supplier::all();
+
+        return $suppliers;
     }
 
     /**

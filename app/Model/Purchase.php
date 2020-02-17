@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
+    protected $fillable = ["imei"];
+
     public function category()
     {
         return $this->belongsTo(Category::class);

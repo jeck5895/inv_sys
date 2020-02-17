@@ -68,6 +68,7 @@ class ModelsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ItemModel::destroy($id);
+        return ['message' => 'Record successfully deleted.'];
     }
 }

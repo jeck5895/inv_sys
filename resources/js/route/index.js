@@ -1,24 +1,27 @@
-import VueRouter from 'vue-router';
-import AdminSubRoutes from './sub-routes/adminSubRoutes';
-import UserSubRoutes from './sub-routes/users';
+import VueRouter from "vue-router";
+import AdminSubRoutes from "./sub-routes/adminSubRoutes";
+import UserSubRoutes from "./sub-routes/users";
 
-const AdminIndex = () => import('../pages/admin/index.vue');
-const UserIndex = () => import('../pages/users/index.vue');
+const AdminIndex = () => import("../pages/admin/index.vue");
+const UserIndex = () => import("../pages/users/index.vue");
+const LoginPage = () =>
+    import(/*webpackChunkname:Login */ "../pages/login.vue");
 
-let routes = [
+const routes = [
     {
-        path: '/',
-        redirect: '/login',
+        path: "/",
+        redirect: "/login",
         meta: {
             forAuthUsers: false
         }
     },
     {
-        path: '/login',
-        component: require('../components/auth/login.vue'),
+        path: "/login",
+        name: "login",
+        component: LoginPage
     },
     {
-        path: '/administrator',
+        path: "/administrator",
         component: AdminIndex,
         children: AdminSubRoutes,
         meta: {
@@ -29,11 +32,11 @@ let routes = [
         path: "*",
         component: require("../pages/404.vue")
     }
-];  
+];
 
 export default new VueRouter({
     routes,
-    mode: 'history',
-    linkExactActiveClass: 'active',
-    linkActiveClass: 'active'
+    mode: "history",
+    linkExactActiveClass: "active",
+    linkActiveClass: "active"
 });

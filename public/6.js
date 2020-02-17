@@ -1,18 +1,18 @@
 webpackJsonp([6],{
 
-/***/ 266:
+/***/ 293:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(409)
+  __webpack_require__(429)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(411)
+var __vue_script__ = __webpack_require__(431)
 /* template */
-var __vue_template__ = __webpack_require__(412)
+var __vue_template__ = __webpack_require__(432)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 282:
+/***/ 305:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(283)
+  __webpack_require__(306)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(285)
+var __vue_script__ = __webpack_require__(308)
 /* template */
-var __vue_template__ = __webpack_require__(286)
+var __vue_template__ = __webpack_require__(309)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,17 +104,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 283:
+/***/ 306:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(284);
+var content = __webpack_require__(307);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("6f42c222", content, false, {});
+var update = __webpack_require__(5)("6f42c222", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -131,22 +131,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 284:
+/***/ 307:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 285:
+/***/ 308:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -155,6 +155,65 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -261,7 +320,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {
     data: function data() {
         return {
-            active: ''
+            active: ""
         };
     },
     props: {
@@ -272,22 +331,21 @@ exports.default = {
     },
     methods: {
         toggleReportClass: function toggleReportClass(e) {
-            !$('#report-dropdown').hasClass('show') ? $('#report-dropdown').prev().addClass('active') : $('#report-dropdown').prev().removeClass('active');
+            !$("#report-dropdown").hasClass("show") ? $("#report-dropdown").prev().addClass("active") : $("#report-dropdown").prev().removeClass("active");
         },
         toggleUserClass: function toggleUserClass(e) {
-
-            !$('#account-dropdown').hasClass('show') ? console.log($('#account-dropdown').prev().addClass('active')) : $('#account-dropdown').prev().removeClass('active');
+            !$("#account-dropdown").hasClass("show") ? console.log($("#account-dropdown").prev().addClass("active")) : $("#account-dropdown").prev().removeClass("active");
         },
         handleLogout: function handleLogout() {
-            this.$store.dispatch('AuthModule/LOGOUT');
-            this.$router.push('/login');
+            this.$store.dispatch("AuthModule/LOGOUT");
+            this.$router.push("/login");
         }
     }
 };
 
 /***/ }),
 
-/***/ 286:
+/***/ 309:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -346,47 +404,30 @@ var render = function() {
               "router-link",
               {
                 staticClass: "waves-effect",
-                attrs: { to: "/administrator/stocks" }
+                attrs: { to: "/administrator/dashboard" }
+              },
+              [
+                _c("i", { staticClass: "icon-home" }),
+                _c("span", [_vm._v("Dashboard")]),
+                _c("i", { staticClass: "fa fa-angle-left pull-right" })
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "waves-effect",
+                attrs: { to: "/administrator/inventory" }
               },
               [
                 _c("i", { staticClass: "fa fa-cubes" }),
-                _c("span", [_vm._v("Stocks")])
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "waves-effect",
-                attrs: { to: "/administrator/purchases" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-shopping-cart" }),
-                _c("span", [_vm._v("Purchases")])
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          [
-            _c(
-              "router-link",
-              {
-                staticClass: "waves-effect",
-                attrs: { to: "/administrator/issueance" }
-              },
-              [
-                _c("i", { staticClass: "icon-note" }),
-                _c("span", [_vm._v("Issue")])
+                _c("span", [_vm._v("Inventory")])
               ]
             )
           ],
@@ -460,7 +501,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(" Generate Report")
+                        _vm._v(" Generate\n                            Report")
                       ]
                     )
                   ],
@@ -496,7 +537,7 @@ var render = function() {
                   [
                     _c("router-link", { attrs: { to: "/users/register" } }, [
                       _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                      _vm._v(" Register ")
+                      _vm._v(" Register\n                        ")
                     ])
                   ],
                   1
@@ -507,7 +548,7 @@ var render = function() {
                   [
                     _c("router-link", { attrs: { to: "/users" } }, [
                       _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                      _vm._v(" Account List")
+                      _vm._v(" Account\n                            List")
                     ])
                   ],
                   1
@@ -554,7 +595,7 @@ var staticRenderFns = [
           attrs: { src: "/images/logo-icon.png", alt: "logo icon" }
         }),
         _vm._v(" "),
-        _c("h5", { staticClass: "logo-text" }, [_vm._v(" Inventory")])
+        _c("h5", { staticClass: "logo-text" }, [_vm._v("Inventory")])
       ])
     ])
   },
@@ -565,7 +606,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "avatar" }, [
       _c("img", {
         staticClass: "mr-3 side-user-img",
-        attrs: { src: "/images/avatars/avatar-4.png", alt: "user avatar" }
+        attrs: { src: "/images/avatars/user-avatar.png", alt: "user avatar" }
       })
     ])
   },
@@ -649,19 +690,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 287:
+/***/ 310:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(288)
+  __webpack_require__(311)
 }
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(290)
+var __vue_script__ = __webpack_require__(313)
 /* template */
-var __vue_template__ = __webpack_require__(291)
+var __vue_template__ = __webpack_require__(314)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -701,17 +742,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 288:
+/***/ 311:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(289);
+var content = __webpack_require__(312);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("2f77f6ae", content, false, {});
+var update = __webpack_require__(5)("2f77f6ae", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -728,22 +769,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 289:
+/***/ 312:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 290:
+/***/ 313:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -752,6 +793,140 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -938,22 +1113,22 @@ exports.default = {
     },
     methods: {
         handleToggle: function handleToggle() {
-            if ($("#wrapper").hasClass('toggled')) {
+            if ($("#wrapper").hasClass("toggled")) {
                 $("#wrapper").removeClass("toggled");
             } else {
                 $("#wrapper").addClass("toggled");
             }
         },
         handleLogout: function handleLogout() {
-            this.$store.dispatch('AuthModule/LOGOUT');
-            this.$router.push('/login');
+            this.$store.dispatch("AuthModule/LOGOUT");
+            this.$router.push("/login");
         }
     }
 };
 
 /***/ }),
 
-/***/ 291:
+/***/ 314:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -963,7 +1138,7 @@ var render = function() {
   return _c("header", { staticClass: "topbar-nav" }, [
     _c(
       "nav",
-      { staticClass: "navbar navbar-expand fixed-top gradient-ibiza" },
+      { staticClass: "navbar navbar-expand fixed-top gradient-meridian" },
       [
         _c("ul", { staticClass: "navbar-nav mr-auto align-items-center" }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -1013,11 +1188,19 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "media-body" }, [
                           _c("h6", { staticClass: "mt-2 user-title" }, [
-                            _vm._v(_vm._s(_vm.user.name))
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(_vm.user.name) +
+                                "\n                                    "
+                            )
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "user-subtitle" }, [
-                            _vm._v(_vm._s(_vm.user.email))
+                            _vm._v(
+                              "\n                                        " +
+                                _vm._s(_vm.user.email) +
+                                "\n                                    "
+                            )
                           ])
                         ])
                       ])
@@ -1131,11 +1314,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("Jhon Deo")
+                      _vm._v(
+                        "\n                                            Jhon Deo\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("small", [_vm._v("Today, 4:10 PM")])
@@ -1159,11 +1346,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("Sara Jen")
+                      _vm._v(
+                        "\n                                            Sara Jen\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("small", [_vm._v("Yesterday, 8:30 AM")])
@@ -1187,11 +1378,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("Dannish Josh")
+                      _vm._v(
+                        "\n                                            Dannish Josh\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("small", [_vm._v("5/11/2018, 2:50 PM")])
@@ -1215,11 +1410,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("Katrina Mccoy")
+                      _vm._v(
+                        "\n                                            Katrina Mccoy\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet.")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet.\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("small", [_vm._v("1/11/2018, 2:50 PM")])
@@ -1286,11 +1485,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("New Registered Users")
+                      _vm._v(
+                        "\n                                            New Registered Users\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ])
                   ])
                 ])
@@ -1304,11 +1507,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("New Received Orders")
+                      _vm._v(
+                        "\n                                            New Received Orders\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ])
                   ])
                 ])
@@ -1322,11 +1529,15 @@ var staticRenderFns = [
                   _vm._v(" "),
                   _c("div", { staticClass: "media-body" }, [
                     _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v("New Updates")
+                      _vm._v(
+                        "\n                                            New Updates\n                                        "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("p", { staticClass: "msg-info" }, [
-                      _vm._v("Lorem ipsum dolor sit amet...")
+                      _vm._v(
+                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
+                      )
                     ])
                   ])
                 ])
@@ -1364,22 +1575,22 @@ var staticRenderFns = [
         [
           _c("li", { staticClass: "dropdown-item" }, [
             _c("i", { staticClass: "flag-icon flag-icon-gb mr-2" }),
-            _vm._v(" English")
+            _vm._v(" English\n                    ")
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown-item" }, [
             _c("i", { staticClass: "flag-icon flag-icon-fr mr-2" }),
-            _vm._v(" French")
+            _vm._v(" French\n                    ")
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown-item" }, [
             _c("i", { staticClass: "flag-icon flag-icon-cn mr-2" }),
-            _vm._v(" Chinese")
+            _vm._v(" Chinese\n                    ")
           ]),
           _vm._v(" "),
           _c("li", { staticClass: "dropdown-item" }, [
             _c("i", { staticClass: "flag-icon flag-icon-de mr-2" }),
-            _vm._v(" German")
+            _vm._v(" German\n                    ")
           ])
         ]
       )
@@ -1399,7 +1610,10 @@ var staticRenderFns = [
         _c("span", { staticClass: "user-profile" }, [
           _c("img", {
             staticClass: "img-circle",
-            attrs: { src: "/images/avatars/avatar-17.png", alt: "user avatar" }
+            attrs: {
+              src: "/images/avatars/user-avatar.png",
+              alt: "user avatar"
+            }
           })
         ])
       ]
@@ -1412,7 +1626,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "avatar" }, [
       _c("img", {
         staticClass: "align-self-start mr-3",
-        attrs: { src: "/images/avatars/avatar-17.png", alt: "user avatar" }
+        attrs: { src: "/images/avatars/user-avatar.png", alt: "user avatar" }
       })
     ])
   },
@@ -1422,7 +1636,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "dropdown-item" }, [
       _c("i", { staticClass: "icon-envelope mr-2" }),
-      _vm._v(" Inbox")
+      _vm._v(" Inbox\n                    ")
     ])
   },
   function() {
@@ -1431,7 +1645,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "dropdown-item" }, [
       _c("i", { staticClass: "icon-wallet mr-2" }),
-      _vm._v(" Account")
+      _vm._v(" Account\n                    ")
     ])
   },
   function() {
@@ -1440,7 +1654,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "dropdown-item" }, [
       _c("i", { staticClass: "icon-settings mr-2" }),
-      _vm._v(" Setting")
+      _vm._v(" Setting\n                    ")
     ])
   }
 ]
@@ -1455,17 +1669,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 409:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(410);
+var content = __webpack_require__(430);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(6)("39c6f5ee", content, false, {});
+var update = __webpack_require__(5)("39c6f5ee", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1482,10 +1696,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 410:
+/***/ 430:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(false);
+exports = module.exports = __webpack_require__(2)(false);
 // imports
 
 
@@ -1497,7 +1711,7 @@ exports.push([module.i, "\n#wrapper {\n    width: 100%;\n    position: relative;
 
 /***/ }),
 
-/***/ 411:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1507,11 +1721,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(282);
+var _index = __webpack_require__(305);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(287);
+var _index3 = __webpack_require__(310);
 
 var _index4 = _interopRequireDefault(_index3);
 
@@ -1544,7 +1758,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 412:
+/***/ 432:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

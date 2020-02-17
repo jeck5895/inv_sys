@@ -3,7 +3,19 @@ export default {
         state.items = [];
     },
     CLEAR_ITEM: state => {
-        state.item = {};
+        console.log("asdasds");
+        state.item = {
+            model_id: "",
+            imei: "",
+            color_id: "",
+            brand_id: "",
+            category_id: "",
+            supplier_id: "",
+            selling_price: null,
+            amount: null,
+            cost: null,
+            remarks: ""
+        };
     },
     CLEAR_ITEMS_LIST: state => {
         state.items_list = [];
@@ -16,5 +28,8 @@ export default {
     },
     SET_ITEMS_LIST: (state, payload) => {
         state.items_list = payload;
+    },
+    SET_SUBMIT_STATE: (state, payload) => {
+        state.is_submitting = payload;
     }
-}
+};

@@ -69,6 +69,7 @@ class ColorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Color::destroy($id);
+        return ['message' => 'Record successfully deleted.'];
     }
 }

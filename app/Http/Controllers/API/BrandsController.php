@@ -68,6 +68,7 @@ class BrandsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Brand::destroy($id);
+        return ['message' => 'Record successfully deleted.'];
     }
 }

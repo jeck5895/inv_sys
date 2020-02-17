@@ -24,10 +24,14 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'item_id' => 'required|numeric',
-            'purchase_quantity' => 'required|numeric',
-            'price_per_item' => 'required',
-            'dr_number' => 'required'
+            'imei' => 'required|numeric|unique:purchases',
+            'category' => 'required|numeric',
+            'color' => 'required|numeric',
+            'brand' => 'required|numeric',
+            'model' => 'required|numeric',
+            'supplier' => 'required|numeric',
+            'cost' => 'required|numeric',
+            'price' => 'required|numeric',
         ];
     }
 }

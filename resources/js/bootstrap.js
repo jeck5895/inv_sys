@@ -1,15 +1,15 @@
+window.Vue = require("vue");
+import VueRouter from "vue-router";
+import VeeValidate from "vee-validate";
+import moment from "moment";
+import toastr from "toastr";
+import Cookies from "js-cookie";
+import VuejsDialog from "vuejs-dialog";
+import "vuejs-dialog/dist/vuejs-dialog.min.css";
+import Select2 from "v-select2-component";
 
-window.Vue = require('vue');
-import VueRouter from 'vue-router';
-import VeeValidate from 'vee-validate';
-import moment from 'moment';
-import toastr from 'toastr';
-import Cookies from 'js-cookie';
-import VuejsDialog from 'vuejs-dialog';
-import 'vuejs-dialog/dist/vuejs-dialog.min.css';
-
-window._ = require('lodash');
-window.Popper = require('popper.js').default;
+window._ = require("lodash");
+window.Popper = require("popper.js").default;
 window.VeeValidate = VeeValidate;
 window.moment = moment;
 window.toastr = toastr;
@@ -25,36 +25,33 @@ Vue.use(VuejsDialog);
  * code may be modified to fit the specific needs of your application.
  */
 
+Vue.component("passport-clients", require("./components/passport/Clients.vue"));
+
 Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue')
+    "passport-authorized-clients",
+    require("./components/passport/AuthorizedClients.vue")
 );
 
 Vue.component(
-    'passport-authorized-clients',
-    require('./components/passport/AuthorizedClients.vue')
+    "passport-personal-access-tokens",
+    require("./components/passport/PersonalAccessTokens.vue")
 );
 
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue')
-);
-
+Vue.component("Select2", Select2);
 
 /**
  * Global Filters
  */
-Vue.filter('humanReadableFormat', function(date){
-    return moment(date).format('MMMM D, YYYY');
+Vue.filter("humanReadableFormat", function(date) {
+    return moment(date).format("MMMM D, YYYY");
 });
 
-
 try {
-    window.$ = window.jQuery = require('jquery');
-    window.Popper = require('popper.js').default;//for bootstrap 4 dropdown
-    window.hammerjs = require('hammerjs');
+    window.$ = window.jQuery = require("jquery");
+    window.Popper = require("popper.js").default; //for bootstrap 4 dropdown
+    window.hammerjs = require("hammerjs");
 
-    require('bootstrap');
+    require("bootstrap");
 } catch (e) {}
 
 /**
@@ -63,10 +60,11 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+window.axios = require("axios");
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = window.location.protocol + "//" + window.location.host;
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+window.axios.defaults.baseURL =
+    window.location.protocol + "//" + window.location.host;
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that
@@ -77,10 +75,18 @@ window.axios.defaults.baseURL = window.location.protocol + "//" + window.locatio
 let token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
 } else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error(
+        "CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token"
+    );
 }
+
+/**
+ * GLOBAL COMPONENTS
+ */
+// Vue.component("modal", require("./components/modal.vue").default);
+// Vue.component("card", require("./components/card.vue").default);
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
