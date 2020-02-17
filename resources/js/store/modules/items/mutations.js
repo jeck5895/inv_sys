@@ -3,7 +3,6 @@ export default {
         state.items = [];
     },
     CLEAR_ITEM: state => {
-        console.log("asdasds");
         state.item = {
             model_id: "",
             imei: "",

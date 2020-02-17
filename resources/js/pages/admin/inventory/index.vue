@@ -18,8 +18,9 @@
                             </router-link> -->
                             <button
                                 @click="handleNavigate"
-                                class="btn btn-primary waves-effect text-white"
+                                class="btn btn-success waves-effect text-white"
                             >
+                                <i class="fa fa-cubes"></i>
                                 Add Item
                             </button>
                         </div>
@@ -54,9 +55,17 @@
                             />
                         </div>
                         <div class="col-md-12 justify-content-right">
-                            <Pagination
+                            <!-- <Pagination
                                 :object="purchases"
                                 module="PURCHASES_MODULE/FETCH_PURCHASES"
+                            /> -->
+                            <Pagination
+                                :data="purchases"
+                                @to-page="toPage"
+                                @first-page="firstPage"
+                                @prev-page="prevPage"
+                                @next-page="nextPage"
+                                @last-page="lastPage"
                             />
                         </div>
                     </div>
@@ -72,7 +81,7 @@
                     :item="item"
                     :models="models"
                     :colors="colors"
-                    @on-submit="handleSubmit"
+                    @on-submit="handleSubmitCheckout"
                 ></checkout-form>
             </template>
         </modal>
@@ -81,10 +90,10 @@
 
 <script>
 import InventoryTable from "../../../components/admin/tables/purchases";
-import Pagination from "../../../components/pagination";
+import Pagination from "../../../components/Pagination";
 import Modal from "../../../components/modal";
 import CheckoutForm from "../../../components/forms/checkout-form";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapState } from "vuex";
 
 export default {
     components: {
@@ -99,19 +108,60 @@ export default {
             models: "UNITS/GET_UNITS",
             colors: "COLORS/GET_COLORS",
             item: "ITEMS_MODULE/GET_ITEM"
-        })
+        }),
+        keyword: {
+            get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_KEYWORD"];
+            },
+            set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_KEYWORD", val);
+            }
+        },
+        page_size: {
+            get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_PAGE_SIZE"];
+            },
+            set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        current_page: {
+            get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_CURRENT_PAGE"];
+            },
+            set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        order_by: {
+            get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_ORDER_BY"];
+            },
+            set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_ORDER_BY", val);
+            }
+        },
+        sort_by: {
+            get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_SORT_BY"];
+            },
+            set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_SORT_BY", val);
+            }
+        }
     },
     data: () => ({
         data: [],
-        keyword: ""
+        module: "PURCHASES_MODULE",
+        api_url: ""
     }),
     methods: {
         ...mapActions({
             fetchColors: "COLORS/fetchColors",
             fetchModels: "UNITS/FETCH_UNITS"
         }),
-        fetchItems() {
-            this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES");
+        fetchStocks(url) {
+            this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
         },
         handleEdit(item) {
             console.log(item);
@@ -127,12 +177,37 @@ export default {
         handleDelete(item) {
             console.log(item);
         },
-        handleSubmit(item) {
+        handleSubmitCheckout(item) {
             console.log(item);
         },
         handleNavigate() {
             this.$store.commit("ITEMS_MODULE/CLEAR_ITEM");
             this.$router.push("/administrator/inventory/create");
+        },
+        handleSearch() {
+            this.fetchStocks(
+                `/api/stocks?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+            );
+        },
+        toPage(page) {
+            const url = `/api/stocks?q=${this.keyword}&page=${page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchStocks(url);
+        },
+        firstPage(first_page_url) {
+            const url = `${first_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchStocks(url);
+        },
+        prevPage(prev_page_url) {
+            const url = `${prev_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchStocks(url);
+        },
+        nextPage(next_page_url) {
+            const url = `${next_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchStocks(url);
+        },
+        lastPage(last_page_url) {
+            const url = `${last_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchStocks(url);
         },
         setBreadcrumbs() {
             const breadcrumbs = [
@@ -154,7 +229,10 @@ export default {
     async created() {
         await this.fetchColors("api/colors");
         await this.fetchModels();
-        await this.fetchItems();
+        // await this.fetchStocks();
+        this.fetchStocks(
+            `/api/stocks?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+        );
     }
 };
 </script>

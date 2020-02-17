@@ -4,7 +4,7 @@
             <table id="example" class="table table-bordered">
                 <thead class="thead-primary">
                     <tr>
-                        <th>UNIT</th>
+                        <th>MODEL</th>
                         <th>IMEI</th>
                         <th>BRAND</th>
                         <th>COLOR</th>

@@ -250,7 +250,6 @@ export default {
         }
     },
     mounted() {
-        // console.log(this.$store);
         this.setBreadcrumbs();
     },
     async created() {

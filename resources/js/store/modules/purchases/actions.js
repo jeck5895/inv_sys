@@ -2,8 +2,8 @@ import Cookies from "js-cookie";
 const token = Cookies.get("_a.token");
 
 export default {
-    FETCH_PURCHASES: ({ commit }, payload) => {
-        let url = payload ? payload : "/api/stocks";
+    FETCH_PURCHASES: ({ commit }, url) => {
+        // let url = payload ? payload : "/api/stocks";
         return new Promise((resolve, reject) => {
             axios
                 .get(url, {

@@ -269,9 +269,6 @@ export default {
                 }
             });
         }
-    },
-    mounted() {
-        console.log(this.$validator);
     }
 };
 </script>

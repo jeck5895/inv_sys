@@ -17,16 +17,31 @@ class PurchaseController extends Controller
      */
     public function index(Request $request)
     {
-        $orderBy = $request->order_by == "false" ? 'asc' : 'desc';
         $per_page = $request->has('per_page') ? $request->per_page : 10;
-        $applicant = [];
 
-        if ($request->has('order_by') && $request->has('sort_by')) {
+        if ($request->has('q') || $request->has('order_by') || $request->has('sort_by')) {
+            $orderBy = $request->order_by || 'desc';
+
             $purchases = Purchase::orderBy($request->sort_by, $orderBy)
                 ->where(function ($query) use ($request) {
                     if ($request->has("q")) {
-                        $query->where('name', 'LIKE', '%' . $request->q . '%');
+                        $query->where('imei', 'LIKE', '%' . $request->q . '%');
                     }
+                })
+                ->orWhereHas('brand', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                })
+                ->orWhereHas('color', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                })
+                ->orWhereHas('category', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                })
+                ->orWhereHas('supplier', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                })
+                ->orWhereHas('model', function ($query) use ($request) {
+                    $query->where('name', 'LIKE', '%' . $request->q . '%');
                 })
                 ->with('category')
                 ->with('brand')

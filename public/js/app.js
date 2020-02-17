@@ -36041,57 +36041,7 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(173)
-}
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(175)
-/* template */
-var __vue_template__ = __webpack_require__(176)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/pagination/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7684dc30", Component.options)
-  } else {
-    hotAPI.reload("data-v-7684dc30", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 148 */,
 /* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36516,7 +36466,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -36827,7 +36777,6 @@ exports.default = {
         }
     }),
     mounted: function mounted() {
-        // console.log(this.$store);
         this.setBreadcrumbs();
     },
     created: function () {
@@ -37199,7 +37148,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -37300,14 +37249,23 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var _purchases = __webpack_require__(168);
 
 var _purchases2 = _interopRequireDefault(_purchases);
 
-var _pagination = __webpack_require__(148);
+var _Pagination = __webpack_require__(451);
 
-var _pagination2 = _interopRequireDefault(_pagination);
+var _Pagination2 = _interopRequireDefault(_Pagination);
 
 var _modal = __webpack_require__(177);
 
@@ -37326,7 +37284,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 exports.default = {
     components: {
         InventoryTable: _purchases2.default,
-        Pagination: _pagination2.default,
+        Pagination: _Pagination2.default,
         Modal: _modal2.default,
         CheckoutForm: _checkoutForm2.default
     },
@@ -37335,19 +37293,61 @@ exports.default = {
         models: "UNITS/GET_UNITS",
         colors: "COLORS/GET_COLORS",
         item: "ITEMS_MODULE/GET_ITEM"
-    })),
+    }), {
+        keyword: {
+            get: function get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_KEYWORD"];
+            },
+            set: function set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_KEYWORD", val);
+            }
+        },
+        page_size: {
+            get: function get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_PAGE_SIZE"];
+            },
+            set: function set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        current_page: {
+            get: function get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_CURRENT_PAGE"];
+            },
+            set: function set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        order_by: {
+            get: function get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_ORDER_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_ORDER_BY", val);
+            }
+        },
+        sort_by: {
+            get: function get() {
+                return this.$store.getters["PURCHASES_MODULE/GET_SORT_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("PURCHASES_MODULE/SET_SORT_BY", val);
+            }
+        }
+    }),
     data: function data() {
         return {
             data: [],
-            keyword: ""
+            module: "PURCHASES_MODULE",
+            api_url: ""
         };
     },
     methods: _extends({}, (0, _vuex.mapActions)({
         fetchColors: "COLORS/fetchColors",
         fetchModels: "UNITS/FETCH_UNITS"
     }), {
-        fetchItems: function fetchItems() {
-            this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES");
+        fetchStocks: function fetchStocks(url) {
+            this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
         },
         handleEdit: function handleEdit(item) {
             console.log(item);
@@ -37363,12 +37363,35 @@ exports.default = {
         handleDelete: function handleDelete(item) {
             console.log(item);
         },
-        handleSubmit: function handleSubmit(item) {
+        handleSubmitCheckout: function handleSubmitCheckout(item) {
             console.log(item);
         },
         handleNavigate: function handleNavigate() {
             this.$store.commit("ITEMS_MODULE/CLEAR_ITEM");
             this.$router.push("/administrator/inventory/create");
+        },
+        handleSearch: function handleSearch() {
+            this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+        },
+        toPage: function toPage(page) {
+            var url = "/api/stocks?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchStocks(url);
+        },
+        firstPage: function firstPage(first_page_url) {
+            var url = first_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchStocks(url);
+        },
+        prevPage: function prevPage(prev_page_url) {
+            var url = prev_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchStocks(url);
+        },
+        nextPage: function nextPage(next_page_url) {
+            var url = next_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchStocks(url);
+        },
+        lastPage: function lastPage(last_page_url) {
+            var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchStocks(url);
         },
         setBreadcrumbs: function setBreadcrumbs() {
             var breadcrumbs = [{
@@ -37398,10 +37421,10 @@ exports.default = {
                             return this.fetchModels();
 
                         case 4:
-                            _context.next = 6;
-                            return this.fetchItems();
+                            // await this.fetchStocks();
+                            this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
 
-                        case 6:
+                        case 5:
                         case "end":
                             return _context.stop();
                     }
@@ -38495,7 +38518,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", { staticClass: "thead-primary" }, [
       _c("tr", [
-        _c("th", [_vm._v("UNIT")]),
+        _c("th", [_vm._v("MODEL")]),
         _vm._v(" "),
         _c("th", [_vm._v("IMEI")]),
         _vm._v(" "),
@@ -38532,396 +38555,10 @@ if (false) {
 }
 
 /***/ }),
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(174);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("6f3a7ceb", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7684dc30\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7684dc30\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: {
-        object: {
-            required: true
-        },
-        module: {
-            required: true
-        },
-        query: {
-            required: false
-        }
-    },
-    created: function created() {
-        // console.log(this.$route)
-    },
-
-    data: function data() {
-        return {
-            max_visible: 5
-        };
-    },
-    computed: {
-        startPage: function startPage() {
-            // When on the first page
-            if (this.object.current_page === 1) {
-                return 1;
-            }
-            // When on the last page
-            if (this.object.current_page === this.object.last_page) {
-                return this.object.last_page - 1;
-            }
-            // When in between
-            return this.object.current_page - 1;
-        },
-        links: function links() {
-            var range = [];
-
-            for (var i = this.startPage; i <= Math.min(this.startPage + this.max_visible - 1, this.object.last_page); i++) {
-                range.push(i);
-            }
-
-            return range;
-        }
-    },
-    methods: {
-        toPage: function toPage(page, obj) {
-            var path = this.query ? obj.path + "?page=" + page + "&" + this.query : obj.path + "?page=" + page;
-            this.$store.dispatch(this.module, path);
-        },
-        nextPage: function nextPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        prevPage: function prevPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        firstPage: function firstPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        lastPage: function lastPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        }
-    }
-};
-
-/***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row clearfix" }, [
-    _c("div", { staticClass: "col-md-4 float-left" }, [
-      _vm._v(
-        "\n        Displaying from " +
-          _vm._s(_vm.object.from) +
-          " to " +
-          _vm._s(_vm.object.to) +
-          " total of\n        " +
-          _vm._s(_vm.object.total) +
-          "\n    "
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-8 float-right" }, [
-      _c("nav", { attrs: { "aria-label": "..." } }, [
-        _c(
-          "ul",
-          { class: "pagination " + " justify-content-end" },
-          [
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.from == _vm.object.current_page
-                    ? "page-item disabled"
-                    : ""
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#", tabindex: "-1" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.firstPage(_vm.object.first_page_url)
-                      }
-                    }
-                  },
-                  [_c("span", { staticClass: "fa fa-long-arrow-left" })]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.prev_page_url == null
-                    ? "page-item disabled"
-                    : "page-item"
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#", tabindex: "-1" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.prevPage(_vm.object.prev_page_url)
-                      }
-                    }
-                  },
-                  [_vm._v("Previous")]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.links, function(i) {
-              return [
-                _c(
-                  "li",
-                  {
-                    key: i,
-                    class:
-                      _vm.object.current_page == i
-                        ? "page-item active"
-                        : "active"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.toPage(i, _vm.object)
-                          }
-                        }
-                      },
-                      [_vm._v(_vm._s(i))]
-                    )
-                  ]
-                )
-              ]
-            }),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.next_page_url == null
-                    ? "page-item disabled"
-                    : "page-item"
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.nextPage(_vm.object.next_page_url)
-                      }
-                    }
-                  },
-                  [_vm._v("Next")]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.last_page == _vm.object.current_page
-                    ? "page-item disabled"
-                    : ""
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.lastPage(_vm.object.last_page_url)
-                      }
-                    }
-                  },
-                  [_c("span", { staticClass: "fa fa-long-arrow-right" })]
-                )
-              ]
-            )
-          ],
-          2
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7684dc30", module.exports)
-  }
-}
-
-/***/ }),
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
 /* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39976,10 +39613,11 @@ var render = function() {
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-primary waves-effect text-white",
+                    staticClass: "btn btn-success waves-effect text-white",
                     on: { click: _vm.handleNavigate }
                   },
                   [
+                    _c("i", { staticClass: "fa fa-cubes" }),
                     _vm._v(
                       "\n                            Add Item\n                        "
                     )
@@ -40054,9 +39692,13 @@ var render = function() {
                 { staticClass: "col-md-12 justify-content-right" },
                 [
                   _c("Pagination", {
-                    attrs: {
-                      object: _vm.purchases,
-                      module: "PURCHASES_MODULE/FETCH_PURCHASES"
+                    attrs: { data: _vm.purchases },
+                    on: {
+                      "to-page": _vm.toPage,
+                      "first-page": _vm.firstPage,
+                      "prev-page": _vm.prevPage,
+                      "next-page": _vm.nextPage,
+                      "last-page": _vm.lastPage
                     }
                   })
                 ],
@@ -40094,7 +39736,7 @@ var render = function() {
                           models: _vm.models,
                           colors: _vm.colors
                         },
-                        on: { "on-submit": _vm.handleSubmit }
+                        on: { "on-submit": _vm.handleSubmitCheckout }
                       })
                     ]
                   },
@@ -40103,7 +39745,7 @@ var render = function() {
               ],
               null,
               false,
-              2679635878
+              1948335886
             )
           })
         : _vm._e()
@@ -52830,7 +52472,6 @@ exports.default = {
         state.items = [];
     },
     CLEAR_ITEM: function CLEAR_ITEM(state) {
-        console.log("asdasds");
         state.item = {
             model_id: "",
             imei: "",
@@ -53551,7 +53192,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     purchase: {},
-    purchases: []
+    purchases: [],
+    keyword: "",
+    current_page: 1,
+    page_size: 15,
+    order_by: "desc",
+    sort_by: "created_at"
 };
 
 /***/ }),
@@ -53570,6 +53216,21 @@ exports.default = {
     },
     GET_PURCHASES: function GET_PURCHASES(state) {
         return state.purchases;
+    },
+    GET_KEYWORD: function GET_KEYWORD(state) {
+        return state.keyword;
+    },
+    GET_CURRENT_PAGE: function GET_CURRENT_PAGE(state) {
+        return state.current_page;
+    },
+    GET_PAGE_SIZE: function GET_PAGE_SIZE(state) {
+        return state.page_size;
+    },
+    GET_ORDER_BY: function GET_ORDER_BY(state) {
+        return state.order_by;
+    },
+    GET_SORT_BY: function GET_SORT_BY(state) {
+        return state.sort_by;
     }
 };
 
@@ -53589,6 +53250,21 @@ exports.default = {
     },
     SET_PURCHASES: function SET_PURCHASES(state, payload) {
         state.purchases = payload;
+    },
+    SET_KEYWORD: function SET_KEYWORD(state, payload) {
+        state.keyword = payload;
+    },
+    SET_CURRENT_PAGE: function SET_CURRENT_PAGE(state, payload) {
+        state.current_page = payload;
+    },
+    SET_PAGE_SIZE: function SET_PAGE_SIZE(state, payload) {
+        state.page_size = payload;
+    },
+    SET_ORDER_BY: function SET_ORDER_BY(state, payload) {
+        state.order_by = payload;
+    },
+    SET_SORT_BY: function SET_SORT_BY(state, payload) {
+        state.sort_by = payload;
     }
 };
 
@@ -53612,10 +53288,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var token = _jsCookie2.default.get("_a.token");
 
 exports.default = {
-    FETCH_PURCHASES: function FETCH_PURCHASES(_ref, payload) {
+    FETCH_PURCHASES: function FETCH_PURCHASES(_ref, url) {
         var commit = _ref.commit;
 
-        var url = payload ? payload : "/api/stocks";
+        // let url = payload ? payload : "/api/stocks";
         return new Promise(function (resolve, reject) {
             axios.get(url, {
                 headers: {
@@ -100792,7 +100468,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -101082,9 +100758,6 @@ exports.default = {
                 }
             });
         }
-    },
-    mounted: function mounted() {
-        console.log(this.$validator);
     }
 };
 
@@ -101861,6 +101534,376 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-0b1b8d04", module.exports)
+  }
+}
+
+/***/ }),
+/* 451 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(452)
+/* template */
+var __vue_template__ = __webpack_require__(453)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Pagination.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d7acf176", Component.options)
+  } else {
+    hotAPI.reload("data-v-d7acf176", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 452 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: {
+        data: {
+            required: true
+        }
+    },
+    data: function data() {
+        return {
+            max_visible: 5
+        };
+    },
+    computed: {
+        startPage: function startPage() {
+            // When on the first page
+            if (this.data.current_page === 1) {
+                return 1;
+            }
+            // When on the last page
+            if (this.data.current_page === this.data.last_page) {
+                return this.data.last_page - 1;
+            }
+            // When in between
+            return this.data.current_page - 1;
+        },
+        links: function links() {
+            var range = [];
+
+            for (var i = this.startPage; i <= Math.min(this.startPage + this.max_visible - 1, this.data.last_page); i++) {
+                range.push(i);
+            }
+
+            return range;
+        }
+    }
+};
+
+/***/ }),
+/* 453 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row clearfix" }, [
+    _c("div", { staticClass: "col-md-4 float-left" }, [
+      _vm._v(
+        "\n        Displaying from " +
+          _vm._s(_vm.data.from) +
+          " to " +
+          _vm._s(_vm.data.to) +
+          " total of\n        " +
+          _vm._s(_vm.data.total) +
+          "\n    "
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-md-8 float-right" }, [
+      _c("nav", { attrs: { "aria-label": "..." } }, [
+        _c(
+          "ul",
+          { class: "pagination pagination-sm justify-content-end" },
+          [
+            _c(
+              "li",
+              {
+                class:
+                  _vm.data.from == _vm.data.current_page
+                    ? "page-item disabled"
+                    : ""
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#", tabindex: "-1" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("first-page", _vm.data.first_page_url)
+                      }
+                    }
+                  },
+                  [_c("span", { staticClass: "fa fa-long-arrow-left" })]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class:
+                  _vm.data.prev_page_url == null
+                    ? "page-item disabled"
+                    : "page-item"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#", tabindex: "-1" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("prev-page", _vm.data.prev_page_url)
+                      }
+                    }
+                  },
+                  [_vm._v("Previous")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.links, function(i) {
+              return [
+                _c(
+                  "li",
+                  {
+                    key: i,
+                    class:
+                      _vm.data.current_page == i ? "page-item active" : "active"
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("to-page", i)
+                          }
+                        }
+                      },
+                      [_vm._v(_vm._s(i))]
+                    )
+                  ]
+                )
+              ]
+            }),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class:
+                  _vm.data.next_page_url == null
+                    ? "page-item disabled"
+                    : "page-item"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("next-page", _vm.data.next_page_url)
+                      }
+                    }
+                  },
+                  [_vm._v("Next")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                class:
+                  _vm.data.last_page == _vm.data.current_page
+                    ? "page-item disabled"
+                    : ""
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.$emit("last-page", _vm.data.last_page_url)
+                      }
+                    }
+                  },
+                  [_c("span", { staticClass: "fa fa-long-arrow-right" })]
+                )
+              ]
+            )
+          ],
+          2
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d7acf176", module.exports)
   }
 }
 
