@@ -24,7 +24,11 @@
                             </p>
                         </td>
                     </tr>
-                    <tr v-if="items.data.length != 0" v-for="(item, i) in items.data" :key="i">
+                    <tr
+                        v-if="items.data.length != 0"
+                        v-for="(item, i) in items.data"
+                        :key="i"
+                    >
                         <td>{{ item.item_name }}</td>
                         <td>{{ item.item_code }}</td>
                         <td>{{ item.unit.unit_name }}</td>
@@ -32,15 +36,27 @@
                         <td>{{ item.remaining_quantity }}</td>
                         <td>{{ item.price }}</td>
                         <td>{{ item.site.site_name }}</td>
-                        <td>{{ item.create_at|humanReadableFormat}}</td>
+                        <td>{{ item.create_at | humanReadableFormat }}</td>
                         <td>{{ item.dr_number }}</td>
                         <td align="center">
-                            <button @click="handleEdit(item)" type="button" data-toggle="modal" data-target="#addmodal" class="btn btn-primary waves-effect waves-light m-1">
-                                <i class="fa fa-plus-circle"></i> <span>UPDATE</span> 
+                            <button
+                                @click="handleEdit(item)"
+                                type="button"
+                                data-toggle="modal"
+                                data-target="#addmodal"
+                                class="btn btn-primary waves-effect waves-light m-1"
+                            >
+                                <i class="fa fa-plus-circle"></i>
+                                <span>UPDATE</span>
                             </button>
-                            <button @click="handleRemove(item)" type="button" class="btn btn-primary waves-effect waves-light" id="confirm-btn-alert4">REMOVE
+                            <button
+                                @click="handleRemove(item)"
+                                type="button"
+                                class="btn btn-primary waves-effect waves-light"
+                                id="confirm-btn-alert4"
+                            >
+                                REMOVE
                             </button>
-
                         </td>
                     </tr>
                 </tbody>
@@ -58,53 +74,51 @@
                     </tr>
                 </tfoot> -->
             </table>
-        </div>  
+        </div>
         <div class="col-md-12 justify-content-right">
-            <Pagination 
+            <!-- <Pagination 
                 :object="items"
-                module="ITEMS_MODULE/FETCH_ITEMS"/>    
-        </div>            
+                module="ITEMS_MODULE/FETCH_ITEMS"/>     -->
+        </div>
     </div>
 </template>
 
 <script>
-    import Pagination from '../../pagination/index.vue';
+// import Pagination from '../../pagination/index.vue';
 
-    export default {
-        props: {
-            items: {
-                required: true
-            }
-        },
-        methods: {
-            handleEdit (item) {
-                let payload = {
-                    id: item.id,
-                    item_code: item.item_code,
-                    item_name: item.item_name,
-                    price: item.price,
-                    quantity: item.quantity,
-                    unit: item.unit.id,
-                    site: item.site.id,
-                    dr_number: item.dr_number
-                };
-                this.$store.commit('FORM_MODULE/SET_FORM_TYPE', 'EDIT_ITEM');
-                this.$store.commit('ITEMS_MODULE/SET_ITEM', payload);
-            },
-            handleRemove (item) {
-                let bool = confirm(`Delete ${item.item_name} ?`);
-
-                if(bool) {
-                    this.$store.dispatch('ITEMS_MODULE/DELETE_ITEM', item.id);
-                }
-            }
-        },
-        components: {
-            Pagination
+export default {
+    props: {
+        items: {
+            required: true
         }
+    },
+    methods: {
+        handleEdit(item) {
+            let payload = {
+                id: item.id,
+                item_code: item.item_code,
+                item_name: item.item_name,
+                price: item.price,
+                quantity: item.quantity,
+                unit: item.unit.id,
+                site: item.site.id,
+                dr_number: item.dr_number
+            };
+            this.$store.commit("FORM_MODULE/SET_FORM_TYPE", "EDIT_ITEM");
+            this.$store.commit("ITEMS_MODULE/SET_ITEM", payload);
+        },
+        handleRemove(item) {
+            let bool = confirm(`Delete ${item.item_name} ?`);
+
+            if (bool) {
+                this.$store.dispatch("ITEMS_MODULE/DELETE_ITEM", item.id);
+            }
+        }
+    },
+    components: {
+        Pagination
     }
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

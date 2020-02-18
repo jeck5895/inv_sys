@@ -1,5 +1,5 @@
 <template>
-    <div class="py-2 form-inline">
+    <div class="form-inline">
         <div class="form-group">
             <label for="exampleDropdownFormEmail1" class="mr-1"
                 >Date From</label

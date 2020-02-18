@@ -8,17 +8,28 @@
                 <template v-slot:card-body>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="d-flex justify-content-between">
-                                <date-filter
-                                    :date-from="date_from"
-                                    :date-to="date_to"
-                                    @on-submit="handleFilter"
-                                ></date-filter>
-                                <search-form
-                                    :keyword="keyword"
-                                    @on-change="onChange"
-                                    @on-submit="handleSearch"
-                                ></search-form>
+                            <div class="clearfix">
+                                <div class="float-left py-2">
+                                    <date-filter
+                                        :date-from="date_from"
+                                        :date-to="date_to"
+                                        @on-submit="handleFilter"
+                                    ></date-filter>
+                                </div>
+                                <div class="float-right d-flex py-2">
+                                    <button
+                                        @click="handleModal"
+                                        class="btn btn-sm btn-success mr-2"
+                                    >
+                                        Generate Sales Report
+                                    </button>
+
+                                    <search-form
+                                        :keyword="keyword"
+                                        @on-change="onChange"
+                                        @on-submit="handleSearch"
+                                    ></search-form>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-12 mb-3">
@@ -40,6 +51,19 @@
                     </div>
                 </template>
             </card>
+            <modal>
+                <template v-slot:modal-title>
+                    <h5 class="modal-title text-white">
+                        Generate Report
+                    </h5>
+                </template>
+                <template v-slot:modal-body>
+                    <report-form
+                        :is-loading="is_submitting"
+                        @on-submit="onReportSubmit"
+                    ></report-form>
+                </template>
+            </modal>
         </div>
     </div>
 </template>
@@ -52,6 +76,8 @@ import SalesTable from "../../components/admin/tables/sales-table";
 import SearchForm from "../../components/filters/search";
 import DateFilter from "../../components/filters/date-filter";
 import Pagination from "../../components/Pagination";
+import Modal from "../../components/modal";
+import ReportForm from "../../components/forms/report";
 import { mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
@@ -60,7 +86,9 @@ export default {
         SalesTable,
         SearchForm,
         DateFilter,
-        Pagination
+        Pagination,
+        ReportForm,
+        Modal
     },
     computed: {
         ...mapGetters({
@@ -119,7 +147,8 @@ export default {
     },
     data: function() {
         return {
-            data: []
+            data: [],
+            is_submitting: false
         };
     },
     methods: {
@@ -138,6 +167,75 @@ export default {
             let url = `/api/sales?date_from=${date_from}&date_to=${date_to}`;
             console.log(url);
             //this.fetchSales(url);
+        },
+        onReportSubmit(evt) {
+            const token = Cookies.get("_a.token");
+            const { type } = evt;
+            const baseURL =
+                window.location.protocol + "//" + window.location.host;
+
+            const anchor_tag = document.createElement("a");
+            anchor_tag.style = "display:none";
+
+            switch (type) {
+                case "daily":
+                    const { date_from, date_to } = evt;
+                    this.is_submitting = true;
+                    axios
+                        .get(
+                            `/api/sales/report/daily?date_from=${date_from}&date_to=${date_to}`,
+                            {
+                                headers: {
+                                    Accept: "application/json",
+                                    Authorization: `Bearer ${token}`
+                                }
+                            }
+                        )
+                        .then(({ data }) => {
+                            this.is_submitting = false;
+                            // ref: sofi-locatorslist
+                            anchor_tag.href = data.file;
+                            anchor_tag.target = "_blank";
+                            anchor_tag.download = data.filename;
+                            anchor_tag.click();
+                        });
+
+                    // window.open(
+                    //     `${baseURL}/api/sales/report/daily?date_from=${date_from}&date_to=${date_to}`,
+                    //     "Daily Sales Report",
+                    //     "width=700,heigth=300"
+                    // );
+                    break;
+                case "monthly":
+                    const { month, year } = evt;
+
+                    axios
+                        .get(
+                            `/api/sales/report/monthly?month=${month}&year=${year}`,
+                            {
+                                headers: {
+                                    Accept: "application/json",
+                                    Authorization: `Bearer ${token}`
+                                }
+                            }
+                        )
+                        .then(({ data }) => {
+                            this.is_submitting = true;
+
+                            // axios.post("api/reports/kpi-analysis/export", payload)
+                            // .then(response => {
+                            //    console.log(response);
+                            //     self.$store.commit('setSubmitState', false);
+                            anchor_tag.href = response.data.file;
+                            anchor_tag.target = "_blank";
+                            anchor_tag.download = response.data.filename;
+                            anchor_tag.click();
+                        });
+
+                    break;
+                default:
+                    break;
+            }
         },
         toPage(page) {
             const url = `/api/sales?q=${this.keyword}&page=${page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}&date_from=${this.date_from}&date_to=${this.date_to}`;
@@ -158,6 +256,9 @@ export default {
         lastPage(last_page_url) {
             const url = `${last_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}&date_from=${this.date_from}&date_to=${this.date_to}`;
             this.fetchSales(url);
+        },
+        handleModal() {
+            $("#generic-modal").modal("show");
         },
         setBreadcrumbs() {
             const breadcrumbs = [

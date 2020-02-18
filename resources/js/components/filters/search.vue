@@ -1,16 +1,16 @@
 <template>
-    <form @submit.prevent="handleSearch" class="form-inline float-right">
+    <form @submit.prevent="handleSearch" class="form-inline">
         <div class="form-group">
             <input
                 type="text"
                 :value="keyword"
                 @input="$emit('on-change', $event.target.value)"
-                class="form-control mb-2 mr-sm-2"
+                class="form-control form-control-sm mr-sm-2"
                 id="inlineFormInputName2"
                 placeholder="Search item"
             />
         </div>
-        <button type="submit" class="btn btn-success mb-2">
+        <button type="submit" class="btn btn-sm btn-success">
             <i class="fa fa-search"></i>SEARCH
         </button>
     </form>

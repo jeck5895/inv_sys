@@ -20,6 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('auth:api')->group(function () {
 
+    Route::get('sales/report/daily', 'API\ReportController@daily');
+    Route::get('sales/report/monthly', 'API\ReportController@monthly');
+
     Route::post('stocks/bulk', 'API\PurchaseController@bulk');
 
     // Route::apiResource('stocks', 'API\PurchaseController');
@@ -30,7 +33,8 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('brands', 'API\BrandsController');
     Route::apiResource('colors', 'API\ColorsController');
     Route::apiResource('suppliers', 'API\SuppliersController');
-
+    Route::apiResource('sales', 'API\SalesController');
+    Route::apiResource('stocks', 'API\PurchaseController');
 
     // Route::get('/stocks/lists', 'API\ItemController@lists');
     // Route::get('/sites/lists', 'API\SiteController@lists');
@@ -44,5 +48,3 @@ Route::middleware('auth:api')->group(function () {
     // Route::apiResource('users', 'API\UserController');
 
 });
-Route::apiResource('sales', 'API\SalesController');
-Route::apiResource('stocks', 'API\PurchaseController');

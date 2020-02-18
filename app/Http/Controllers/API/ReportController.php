@@ -4,121 +4,94 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Services\ReportService;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use PDF;
 
 class ReportController extends Controller
 {
-  
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        
+        //
     }
 
-   
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         //
     }
 
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-    
+        //
     }
 
-   
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
-        
+        //
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
-        
+        //
     }
 
-    public function receipt(Request $request){
-        $data = [];
-        $items = [];
-        $total_amount = 0;
-        $formatter = new \NumberFormatter('en', \NumberFormatter::SPELLOUT);
-        $transactions = DB::table('sales')
-                        ->leftJoin('customers', 'sales.customer_id', '=', 'customers.customer_id')
-                        ->leftJoin('items', 'sales.item_id','=','items.id')
-                        ->select('sales.*','items.item_code','items.item_name', 'items.price', 'customers.fullname')
-                        ->where('sales.transaction_no', '=', $request['transaction_no'])
-                        ->get();
-
-        if(count($transactions) > 0) 
-        {
-            foreach ($transactions as $key => $transaction) 
-            {    
-                $items[] = array(
-                    'transaction_id' => $transaction->id,
-                    'customer_name' => $transaction->fullname,
-                    'item_code' => $transaction->item_code,
-                    'item_name' => $transaction->item_name,
-                    'fund' => $transaction->fund,
-                    'transaction_date' => Carbon::parse($transaction->created_at)->format('F d, Y'),
-                    'amount' => $transaction->amount
-                );
-                $total_amount = floatval($total_amount) + floatval($transaction->amount);
-            }
-            $data['items'] = $items;
-            $data['total_amount'] = $total_amount;
-            $data['transaction_no'] = $request['transaction_no'];
-            $data['amount_in_words'] = ucwords($formatter->format($data['total_amount']));
-            $data['total_items'] = count($transactions);
-            //dd($data);
-            //return view('reports.receipt', compact('data'));
-            $pdf = PDF::loadView('reports.receipt',compact('data'));
-            // // return $pdf->download('firstreport.pdf');
-            return $pdf->stream('receipt.pdf');
-
-            
-        }
-        else {
-            return response()->json(['status' => FALSE, 'message' => 'Transaction receipt could not be found'], 400);
-        }
-    }
-
-    public function sales_report(Request $request) 
+    public function daily(Request $request)
     {
-        $items = DB::table('sales')
-                    ->leftJoin('items', 'sales.item_id','=','items.id')
-                    ->select('sales.*','items.item_code','items.item_name', 'items.price')
-                    ->whereMonth('sales.created_at', $request['month'])
-                    ->whereYear('sales.created_at', $request['year'])
-                    ->get();
 
-        $data = array(
-            'month' => $request['month'],
-            'year' => $request['year'],
-            'items' => $items,
-            
-        );
-        //return view('reports.sales-report', compact('data'));
-        $pdf = PDF::loadView('reports.sales-report', compact('data'));
-        // // // return $pdf->download('firstreport.pdf');
-        return $pdf->stream('salesreport.pdf');
-        
+        // return ['request' => $request->all()];
+        $dateFrom = $request->date_from;
+        $dateTo = $request->date_to;
+        $from_date = date('F j, Y', strtotime($dateFrom));
+        $to_date = date('F j, Y', strtotime($dateTo));
+
+        $data = [
+            "date_from" => $dateFrom,
+            "date_to" => $dateTo,
+            "from_date" => $from_date,
+            "to" => $to_date
+        ];
+
+
+        $pdf = PDF::loadView('reports.daily-sales', compact('data'));
+        $filename = $dateFrom . ' - ' . $dateTo . '.pdf';
+
+        return [
+            "filename" => $filename,
+            "file" => "data:application/pdf;base64," . base64_encode($pdf->download($filename)),
+        ];
     }
 
-    public function daily_stock_report(Request $request)
+    public function monthly(Request $request)
     {
-        $date = $request['date'];
-        $items = DB::select(DB::raw("call dailyStocksReport('$date')"));
-
-        $data = array(
-            'date' => strtotime($request['date']),
-            'items' => $items,
-        );
-        //return $items;
-        $pdf = PDF::loadView('reports.daily-stock', compact('data'));
-        
-        return $pdf->stream('daily-stocks-report.pdf');
+        return ['request' => $request->all()];
     }
 }

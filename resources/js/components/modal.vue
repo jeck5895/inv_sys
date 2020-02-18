@@ -3,11 +3,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header gradient-meridian">
-                    <h5 class="modal-title text-white">
-                        <slot name="modal-title">
-                            Modal Title
-                        </slot>
-                    </h5>
+                    <slot name="modal-title">
+                        Modal Title
+                    </slot>
+
                     <slot name="modal-tools">
                         <button
                             type="button"

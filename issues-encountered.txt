@@ -1,0 +1,6 @@
+DOMPDF with PHP 7.3
+- "continue" targeting switch is equivalent to "break" 
+SOLUTION : composer update (dompdf 0.8.3 >)
+
+Font erros
+- https://github.com/barryvdh/laravel-dompdf/issues/256
