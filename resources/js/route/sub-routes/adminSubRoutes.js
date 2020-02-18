@@ -7,6 +7,7 @@ const Reports = () => import("../../pages/admin/reports.vue");
 const Customers = () => import("../../pages/admin/customers.vue");
 const Inventory = () => import("../../pages/admin/purchases.vue");
 const Supplier = () => import("../../pages/admin/suppliers.vue");
+const Sales = () => import("../../pages/admin/sales.vue");
 
 export default [
     {
@@ -21,6 +22,10 @@ export default [
         path: "stocks",
         component: Stocks,
         redirect: "inventory"
+    },
+    {
+        path: "sales",
+        component: Sales
     },
     {
         path: "suppliers",

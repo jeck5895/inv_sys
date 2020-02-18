@@ -24,7 +24,9 @@
                             />
                         </td>
                     </tr>
-                    <tr v-if="items.data.length < 1 && !isLoading">
+                    <tr
+                        v-if="items.data && items.data.length < 1 && !isLoading"
+                    >
                         <td colspan="8">
                             <p class="mb-0 text-center">
                                 <i>No customers has been found</i>

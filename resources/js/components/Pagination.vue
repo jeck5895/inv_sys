@@ -111,15 +111,18 @@ export default {
     computed: {
         startPage() {
             // When on the first page
-            if (this.data.current_page === 1) {
+            if (this.data.length > 0 && this.data.current_page === 1) {
                 return 1;
             }
             // When on the last page
-            if (this.data.current_page === this.data.last_page) {
+            if (
+                this.data.length > 0 &&
+                this.data.current_page === this.data.last_page
+            ) {
                 return this.data.last_page - 1;
             }
             // When in between
-            return this.data.current_page - 1;
+            return this.data.length > 0 ? this.data.current_page - 1 : 1;
         },
         links() {
             const range = [];

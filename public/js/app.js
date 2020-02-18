@@ -36305,23 +36305,26 @@ var _inventory2 = _interopRequireDefault(_inventory);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 284));
+    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 284));
 };
 var Stocks = function Stocks() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 285));
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 285));
 };
 // const Issuance = () => import("../../pages/admin/issueance.vue");
 var Reports = function Reports() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 286));
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 286));
 };
 var Customers = function Customers() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 287));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 287));
 };
 var Inventory = function Inventory() {
-    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 288));
+    return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 288));
 };
 var Supplier = function Supplier() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 289));
+    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 289));
+};
+var Sales = function Sales() {
+    return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 454));
 };
 
 exports.default = [{
@@ -36334,6 +36337,9 @@ exports.default = [{
     path: "stocks",
     component: Stocks,
     redirect: "inventory"
+}, {
+    path: "sales",
+    component: Sales
 }, {
     path: "suppliers",
     component: Supplier
@@ -37148,7 +37154,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -37169,6 +37175,8 @@ var _regenerator = __webpack_require__(165);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
 //
 //
 //
@@ -37290,6 +37298,8 @@ exports.default = {
     },
     computed: _extends({}, (0, _vuex.mapGetters)({
         purchases: "PURCHASES_MODULE/GET_PURCHASES",
+        isLoading: "PURCHASES_MODULE/IS_LOADING",
+        isSubmitting: "SALES_MODULE/GET_SUBMIT_STATE",
         models: "UNITS/GET_UNITS",
         colors: "COLORS/GET_COLORS",
         item: "ITEMS_MODULE/GET_ITEM"
@@ -37344,7 +37354,8 @@ exports.default = {
     },
     methods: _extends({}, (0, _vuex.mapActions)({
         fetchColors: "COLORS/fetchColors",
-        fetchModels: "UNITS/FETCH_UNITS"
+        fetchModels: "UNITS/FETCH_UNITS",
+        checkout: "SALES_MODULE/STORE"
     }), {
         fetchStocks: function fetchStocks(url) {
             this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
@@ -37353,6 +37364,7 @@ exports.default = {
             console.log(item);
         },
         handleCheckout: function handleCheckout(item) {
+            item = _extends({}, item, { payment_mode: "" });
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
             // this.selected_item = { ...item };
             // this.$set(this.selected_item, "imei", item.imei);
@@ -37363,8 +37375,43 @@ exports.default = {
         handleDelete: function handleDelete(item) {
             console.log(item);
         },
-        handleSubmitCheckout: function handleSubmitCheckout(item) {
-            console.log(item);
+        handleSubmitCheckout: function handleSubmitCheckout(evt) {
+            var _this = this;
+
+            console.log(evt);
+            var item_id = evt.item_id,
+                model = evt.model,
+                imei = evt.imei,
+                color = evt.color,
+                price = evt.price,
+                amount = evt.amount,
+                payment_mode = evt.payment_mode,
+                credit_term = evt.credit_term,
+                freebies = evt.freebies,
+                form = evt.form,
+                errors = evt.errors;
+
+
+            var payload = {
+                item_id: item_id,
+                // model,
+                // imei,
+                // color,
+                // price,
+                amount: amount,
+                payment_mode: payment_mode,
+                credit_term: credit_term
+            };
+            if (credit_term != undefined) {
+                payload = _extends({}, payload, { credit_term: credit_term });
+            }
+            if (freebies != undefined && freebies.length > 0) {
+                payload = _extends({}, payload, { freebies: freebies });
+            }
+            this.checkout(payload).then(function () {
+                _this.reset(form, errors);
+                $("#generic-modal").modal("hide");
+            });
         },
         handleNavigate: function handleNavigate() {
             this.$store.commit("ITEMS_MODULE/CLEAR_ITEM");
@@ -37392,6 +37439,18 @@ exports.default = {
         lastPage: function lastPage(last_page_url) {
             var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
             this.fetchStocks(url);
+        },
+        reset: function reset(form, errors) {
+            this.$set(this.item, "model_id", "");
+            this.$set(this.item, "imei", "");
+            this.$set(this.item, "color_id", "");
+            this.$set(this.item, "selling_price", "");
+            this.$set(this.item, "payment_mode", "");
+            this.$set(this.item, "freebies", "");
+            this.$set(this.item, "credit_term", null);
+
+            form.reset();
+            errors.clear();
         },
         setBreadcrumbs: function setBreadcrumbs() {
             var breadcrumbs = [{
@@ -38389,11 +38448,16 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
     props: {
         items: {
             required: true
+        },
+        isLoading: {
+            type: Boolean
         }
     }
 };
@@ -38406,110 +38470,105 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "col-md-12 mb-3" }, [
+  return _c(
+    "table",
+    { staticClass: "table table-bordered", attrs: { id: "example" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
       _c(
-        "table",
-        { staticClass: "table table-bordered", attrs: { id: "example" } },
+        "tbody",
         [
-          _vm._m(0),
+          _vm.isLoading ? _c("tr", [_vm._m(1)]) : _vm._e(),
           _vm._v(" "),
-          _c(
-            "tbody",
-            [
-              _vm.items.data && _vm.items.data.length == 0
-                ? _c("tr", [_vm._m(1)])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.items.data && _vm.items.data.length != 0
-                ? _vm._l(_vm.items.data, function(item, i) {
-                    return _c("tr", { key: i }, [
-                      _c("td", [_vm._v(_vm._s(item.model.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.imei))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.brand.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.color.name))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.selling_price))]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(item.specs))]),
+          !_vm.isLoading && _vm.items.data && _vm.items.data.length == 0
+            ? _c("tr", [_vm._m(2)])
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.isLoading && _vm.items.data && _vm.items.data.length != 0
+            ? _vm._l(_vm.items.data, function(item, i) {
+                return _c("tr", { key: i }, [
+                  _c("td", [_vm._v(_vm._s(item.model.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.imei))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.brand.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.color.name))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.selling_price))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.specs))]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    { staticClass: "px-1", attrs: { align: "center" } },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-success btn-sm waves-effect waves-light m-1",
+                          attrs: {
+                            type: "button",
+                            "data-toggle": "modal",
+                            "data-target": "#addmodal"
+                          },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("on-checkout", item)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-cart-plus fa-lg" })]
+                      ),
                       _vm._v(" "),
                       _c(
-                        "td",
-                        { staticClass: "px-1", attrs: { align: "center" } },
-                        [
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn-success btn-sm waves-effect waves-light m-1",
-                              attrs: {
-                                type: "button",
-                                "data-toggle": "modal",
-                                "data-target": "#addmodal"
-                              },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$emit("on-checkout", item)
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "fa fa-cart-plus fa-lg" })]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn-warning btn-sm waves-effect waves-light m-1",
-                              attrs: {
-                                type: "button",
-                                "data-toggle": "modal",
-                                "data-target": "#addmodal"
-                              },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$emit("on-edit", item)
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "fa fa-edit" })]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn-danger btn-sm waves-effect waves-light",
-                              attrs: {
-                                type: "button",
-                                id: "confirm-btn-alert4"
-                              },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.$emit("on-delete", item)
-                                }
-                              }
-                            },
-                            [_c("i", { staticClass: "fa fa-trash fa-lg" })]
-                          )
-                        ]
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-warning btn-sm waves-effect waves-light m-1",
+                          attrs: {
+                            type: "button",
+                            "data-toggle": "modal",
+                            "data-target": "#addmodal"
+                          },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("on-edit", item)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-edit" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass:
+                            "btn btn-danger btn-sm waves-effect waves-light",
+                          attrs: { type: "button", id: "confirm-btn-alert4" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.$emit("on-delete", item)
+                            }
+                          }
+                        },
+                        [_c("i", { staticClass: "fa fa-trash fa-lg" })]
                       )
-                    ])
-                  })
-                : _vm._e()
-            ],
-            2
-          )
-        ]
+                    ]
+                  )
+                ])
+              })
+            : _vm._e()
+        ],
+        2
       )
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -38532,6 +38591,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("ACTIONS")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center", attrs: { colspan: "8" } }, [
+      _vm._v("\n                Loading\n                "),
+      _c("img", {
+        attrs: { src: "/images/ajax-loader.gif", alt: "Loading...." }
+      })
     ])
   },
   function() {
@@ -38704,10 +38774,10 @@ var render = function() {
     { staticClass: "modal fade", attrs: { id: "generic-modal" } },
     [
       _c("div", { staticClass: "modal-dialog" }, [
-        _c("div", { staticClass: "modal-content border-primary" }, [
+        _c("div", { staticClass: "modal-content" }, [
           _c(
             "div",
-            { staticClass: "modal-header bg-primary" },
+            { staticClass: "modal-header gradient-meridian" },
             [
               _c(
                 "h5",
@@ -38847,7 +38917,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -39028,6 +39098,24 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     props: {
@@ -39042,6 +39130,10 @@ exports.default = {
         colors: {
             type: Array,
             required: true
+        },
+        isLoading: {
+            type: Boolean,
+            required: true
         }
     },
     data: function data() {
@@ -39050,6 +39142,39 @@ exports.default = {
             payments: ["Cash", "Home Credit", "BDO", "BPI", "METROBANK"],
             card_types: ["BDO", "BPI", "METROBANK"]
         };
+    },
+    methods: {
+        onSubmit: function onSubmit(form) {
+            var _this = this;
+
+            var payload = {
+                item_id: this.item.id,
+                // model: this.item.model_id,
+                // imei: this.item.imei,
+                // color: this.item.color_id,
+                // price: this.item.selling_price,
+                amount: this.item.amount,
+                payment_mode: this.item.payment_mode,
+                credit_term: this.item.credit_term,
+                freebies: this.item.freebies,
+                form: this.$validator, // for resetting form on parent
+                errors: this.errors // for clearing errors on paren
+            };
+
+            // if (this.item.payment_mode === "Home Credit") {
+            //     payload = { ...payload, credit_term: this.item.credit_term };
+            // }
+
+            // if (this.item.freebies.length > 0) {
+            //     payload = { ...payload, freebies: this.item.freebies };
+            // }
+
+            this.$validator.validateAll(form).then(function (valid) {
+                if (valid) {
+                    _this.$emit("on-submit", payload);
+                }
+            });
+        }
     }
 };
 
@@ -39068,7 +39193,7 @@ var render = function() {
       on: {
         submit: function($event) {
           $event.preventDefault()
-          return _vm.$emit("on-submit")
+          return _vm.onSubmit("CHECKOUT_FORM")
         }
       }
     },
@@ -39171,8 +39296,8 @@ var render = function() {
             ],
             staticClass: "form-control",
             attrs: {
-              name: "item_code",
-              "data-vv-as": "item code",
+              name: "imei",
+              "data-vv-as": "imei",
               type: "text",
               id: "input-4",
               placeholder: ""
@@ -39375,7 +39500,7 @@ var render = function() {
               name: "amount",
               type: "text",
               id: "input-1",
-              placeholder: ""
+              placeholder: "0.00"
             },
             domProps: { value: _vm.item.amount },
             on: {
@@ -39425,10 +39550,20 @@ var render = function() {
                   rawName: "v-model",
                   value: _vm.item.payment_mode,
                   expression: "item.payment_mode"
+                },
+                {
+                  name: "validate",
+                  rawName: "v-validate",
+                  value: "required",
+                  expression: "'required'"
                 }
               ],
               staticClass: "form-control",
-              attrs: { name: "payment_mode", id: "" },
+              attrs: {
+                name: "payment_mode",
+                id: "",
+                "data-vv-as": "mode of payment"
+              },
               on: {
                 change: function($event) {
                   var $$selectedVal = Array.prototype.filter
@@ -39447,20 +39582,26 @@ var render = function() {
                 }
               }
             },
-            _vm._l(_vm.payments, function(payment) {
-              return _c(
-                "option",
-                { key: payment, domProps: { value: payment } },
-                [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(payment) +
-                      "\n                "
-                  )
-                ]
-              )
-            }),
-            0
+            [
+              _c("option", { attrs: { value: "" } }, [
+                _vm._v("Select Mode of Payment")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.payments, function(payment) {
+                return _c(
+                  "option",
+                  { key: payment, domProps: { value: payment } },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(payment) +
+                        "\n                "
+                    )
+                  ]
+                )
+              })
+            ],
+            2
           ),
           _vm._v(" "),
           _c(
@@ -39498,12 +39639,15 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.item.home_credit_term,
-                    expression: "item.home_credit_term"
+                    value: _vm.item.credit_term,
+                    expression: "item.credit_term"
                   }
                 ],
                 staticClass: "form-control",
-                attrs: { name: "home_credit_terms" },
+                attrs: {
+                  name: "home_credit_terms",
+                  "data-vv-as": "credit term"
+                },
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -39516,7 +39660,7 @@ var render = function() {
                       })
                     _vm.$set(
                       _vm.item,
-                      "home_credit_term",
+                      "credit_term",
                       $event.target.multiple ? $$selectedVal : $$selectedVal[0]
                     )
                   }
@@ -39528,6 +39672,28 @@ var render = function() {
                 _c("option", { attrs: { value: "6" } }, [_vm._v("6 Months")]),
                 _vm._v(" "),
                 _c("option", { attrs: { value: "3" } }, [_vm._v("3 Months")])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "small",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.errors.has("CHECKOUT_FORM.payment_mode"),
+                    expression: "errors.has('CHECKOUT_FORM.payment_mode')"
+                  }
+                ],
+                staticClass: "form-text text-danger"
+              },
+              [
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.errors.first("CHECKOUT_FORM.payment_mode")) +
+                    "\n        "
+                )
               ]
             )
           ])
@@ -39561,27 +39727,24 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success waves-effect",
+            attrs: { disabled: _vm.isLoading, type: "submit" }
+          },
+          [
+            !_vm.isLoading
+              ? _c("span", [_vm._v("Checkout")])
+              : _c("span", [_vm._v("Processing...")])
+          ]
+        )
+      ])
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-success waves-effect",
-          attrs: { type: "submit" }
-        },
-        [_vm._v("\n            Save\n        ")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -39673,10 +39836,13 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-lg-12" },
+                { staticClass: "col-lg-12 mb-3" },
                 [
                   _c("InventoryTable", {
-                    attrs: { items: _vm.purchases },
+                    attrs: {
+                      items: _vm.purchases,
+                      "is-loading": _vm.isLoading
+                    },
                     on: {
                       "on-edit": _vm.handleEdit,
                       "on-checkout": _vm.handleCheckout,
@@ -39733,6 +39899,7 @@ var render = function() {
                       _c("checkout-form", {
                         attrs: {
                           item: _vm.item,
+                          "is-loading": _vm.isSubmitting,
                           models: _vm.models,
                           colors: _vm.colors
                         },
@@ -39745,7 +39912,7 @@ var render = function() {
               ],
               null,
               false,
-              1948335886
+              541412755
             )
           })
         : _vm._e()
@@ -52223,10 +52390,12 @@ exports.default = {
     customer: {},
     sale: {},
     sales: [],
+    is_submitting: false,
+    is_loading: false,
     filters: {
-        keyword: '',
-        date_from: '',
-        date_to: ''
+        keyword: "",
+        date_from: "",
+        date_to: ""
     }
 };
 
@@ -52258,6 +52427,12 @@ exports.default = {
     },
     GET_FILTER_KEYWORD: function GET_FILTER_KEYWORD(state) {
         return state.filters.keyword;
+    },
+    GET_SUBMIT_STATE: function GET_SUBMIT_STATE(state) {
+        return state.is_submitting;
+    },
+    GET_LOADING_STATE: function GET_LOADING_STATE(state) {
+        return state.is_loading;
     }
 };
 
@@ -52298,6 +52473,12 @@ exports.default = {
     },
     SET_FILTER_KEYWORD: function SET_FILTER_KEYWORD(state, payload) {
         state.filters.keyword = payload;
+    },
+    SET_SUBMIT_STATE: function SET_SUBMIT_STATE(state, payload) {
+        state.is_submitting = payload;
+    },
+    SET_LOADING_STATE: function SET_LOADING_STATE(state, payload) {
+        state.is_loading = payload;
     }
 };
 
@@ -52318,52 +52499,66 @@ var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var token = _jsCookie2.default.get('_a.token');
+var token = _jsCookie2.default.get("_a.token");
 
 exports.default = {
-    FETCH_SALES: function FETCH_SALES(_ref, payload) {
+    FETCH_SALES: function FETCH_SALES(_ref, url) {
         var commit = _ref.commit;
 
-        var url = payload ? payload : '/api/sales';
+        commit("SET_LOADING_STATE", true);
+
         return new Promise(function (resolve, reject) {
             axios.get(url, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                commit('CLEAR_SALES');
-                commit('SET_SALES', response.data.model);
-                resolve(response);
+                setTimeout(function () {
+                    commit("CLEAR_SALES");
+                    commit("SET_SALES", response.data);
+                    commit("SET_LOADING_STATE", false);
+                    resolve(response);
+                }, 500);
             }).catch(function (error) {
-                reject(error);
+                setTimeout(function () {
+                    commit("SET_LOADING_STATE", false);
+                    reject(error);
+                }, 500);
             });
         });
     },
     FETCH_SALE: function FETCH_SALE(_ref2, payload) {
         var context = _ref2.context;
     },
-    FETCH_CUSTOMER: function FETCH_CUSTOMER(_ref3, payload) {
-        var context = _ref3.context;
-    },
-    STORE_SALE: function STORE_SALE(_ref4, payload) {
-        var commit = _ref4.commit;
+    STORE: function STORE(_ref3, payload) {
+        var commit = _ref3.commit;
+
+        commit("SET_SUBMIT_STATE", true);
 
         return new Promise(function (resolve, reject) {
-            axios.post('/api/sales', payload, {
+            axios.post("/api/sales", payload, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                resolve(response);
+                setTimeout(function () {
+                    commit("SET_SUBMIT_STATE", false);
+                    resolve(response);
+                    toastr.success("Success", "" + response.data.message);
+                }, 500);
             }).catch(function (error) {
-                reject(error);
+                setTimeout(function () {
+                    toastr.error("Error", "Oops something went wrong");
+                    commit("SET_SUBMIT_STATE", false);
+                    reject(error);
+                }, 500);
             });
         });
     },
-    UPDATE_SALE: function UPDATE_SALE(_ref5, payload) {
-        var context = _ref5.context;
+    UPDATE_SALE: function UPDATE_SALE(_ref4, payload) {
+        var context = _ref4.context;
     }
 };
 
@@ -52426,6 +52621,7 @@ exports.default = {
         supplier_id: "",
         selling_price: null,
         amount: null,
+        payment_mode: "",
         cost: null,
         remarks: ""
     },
@@ -52815,10 +53011,21 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _moment = __webpack_require__(0);
+
+var _moment2 = _interopRequireDefault(_moment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 exports.default = {
-    keyword: '',
-    date_from: '',
-    date_to: ''
+    keyword: "",
+    current_page: 1,
+    page_size: 15,
+    order_by: "desc",
+    sort_by: "created_at",
+    date_from: (0, _moment2.default)().format("YYYY-MM-DD"),
+    date_to: (0, _moment2.default)().format("YYYY-MM-DD")
 };
 
 /***/ }),
@@ -52840,6 +53047,18 @@ exports.default = {
     },
     GET_DATE_TO: function GET_DATE_TO(state) {
         return state.date_to;
+    },
+    GET_CURRENT_PAGE: function GET_CURRENT_PAGE(state) {
+        return state.current_page;
+    },
+    GET_PAGE_SIZE: function GET_PAGE_SIZE(state) {
+        return state.page_size;
+    },
+    GET_ORDER_BY: function GET_ORDER_BY(state) {
+        return state.order_by;
+    },
+    GET_SORT_BY: function GET_SORT_BY(state) {
+        return state.sort_by;
     }
 };
 
@@ -52862,6 +53081,18 @@ exports.default = {
     },
     SET_DATE_TO: function SET_DATE_TO(state, payload) {
         state.date_to = payload;
+    },
+    SET_CURRENT_PAGE: function SET_CURRENT_PAGE(state, payload) {
+        state.current_page = payload;
+    },
+    SET_PAGE_SIZE: function SET_PAGE_SIZE(state, payload) {
+        state.page_size = payload;
+    },
+    SET_ORDER_BY: function SET_ORDER_BY(state, payload) {
+        state.order_by = payload;
+    },
+    SET_SORT_BY: function SET_SORT_BY(state, payload) {
+        state.sort_by = payload;
     }
 };
 
@@ -53014,53 +53245,52 @@ var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var token = _jsCookie2.default.get('_a.token');
+var token = _jsCookie2.default.get("_a.token");
 
 exports.default = {
     FETCH_CUSTOMER: function FETCH_CUSTOMER(_ref, payload) {
         var commit = _ref.commit;
 
         return new Promise(function (resolve, reject) {
-            axios.get('api/customers/' + payload, {
+            axios.get("api/customers/" + payload, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                commit('CLEAR_CUSTOMER');
-                commit('SET_CUSTOMER', response.data);
+                commit("CLEAR_CUSTOMER");
+                commit("SET_CUSTOMER", response.data);
                 resolve(response);
             }).catch(function (error) {
                 reject(error);
             });
         });
     },
-    FETCH_CUSTOMERS: function FETCH_CUSTOMERS(_ref2, payload) {
+    FETCH_CUSTOMERS: function FETCH_CUSTOMERS(_ref2, url) {
         var commit = _ref2.commit;
 
+        // let url = payload ? payload : '/api/customers';
 
-        var url = payload ? payload : '/api/customers';
-
-        commit('SET_LOADING', true);
+        commit("SET_LOADING", true);
 
         return new Promise(function (resolve, reject) {
             axios.get(url, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                commit('CLEAR_CUSTOMERS');
-                commit('SET_CUSTOMERS', response.data);
+                commit("CLEAR_CUSTOMERS");
+                commit("SET_CUSTOMERS", response.data);
                 setTimeout(function () {
-                    commit('SET_LOADING', false);
+                    commit("SET_LOADING", false);
                     resolve(response);
-                }, 1000);
+                }, 300);
             }).catch(function (error) {
                 reject(error);
                 setTimeout(function () {
-                    commit('SET_LOADING', false);
-                }, 1000);
+                    commit("SET_LOADING", false);
+                }, 300);
             });
         });
     },
@@ -53068,14 +53298,14 @@ exports.default = {
         var commit = _ref3.commit;
 
         return new Promise(function (resolve, reject) {
-            axios.post('api/customers', payload, {
+            axios.post("api/customers", payload, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                toastr.success('Success', '' + response.data.message);
-                commit('CLEAR_CUSTOMER');
+                toastr.success("Success", "" + response.data.message);
+                commit("CLEAR_CUSTOMER");
                 resolve(response);
             }).catch(function (error) {
                 reject(error);
@@ -53086,14 +53316,14 @@ exports.default = {
         var commit = _ref4.commit;
 
         return new Promise(function (resolve, reject) {
-            axios.patch('api/customers/' + payload.id, payload, {
+            axios.patch("api/customers/" + payload.id, payload, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                toastr.success('Success', '' + response.data.message);
-                commit('CLEAR_CUSTOMER');
+                toastr.success("Success", "" + response.data.message);
+                commit("CLEAR_CUSTOMER");
                 resolve(response);
             }).catch(function (error) {
                 reject(error);
@@ -53104,17 +53334,17 @@ exports.default = {
         var commit = _ref5.commit;
 
         return new Promise(function (resolve, reject) {
-            axios.delete('api/customers/' + payload.id, {
+            axios.delete("api/customers/" + payload.id, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
-                toastr.success('Success', response.data.message);
+                toastr.success("Success", response.data.message);
                 resolve(response);
             }).catch(function (error) {
                 if (error.response.status == 403) {
-                    toastr.error('Error', error.response.data.message);
+                    toastr.error("Error", error.response.data.message);
                 }
                 reject(error);
             });
@@ -53123,14 +53353,13 @@ exports.default = {
     SEARCH_CUSTOMER: function SEARCH_CUSTOMER(_ref6, payload) {
         var commit = _ref6.commit;
 
-
-        var q = payload.customer_type ? 'customer_id=' + payload.customer_id + '&customer_type=' + payload.customer_type : 'customer_id=' + payload.customer_id;
+        var q = payload.customer_type ? "customer_id=" + payload.customer_id + "&customer_type=" + payload.customer_type : "customer_id=" + payload.customer_id;
 
         return new Promise(function (resolve, reject) {
-            axios.get('api/customers/search?' + q, {
+            axios.get("api/customers/search?" + q, {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'Bearer ' + token
+                    Accept: "application/json",
+                    Authorization: "Bearer " + token
                 }
             }).then(function (response) {
                 // commit('CLEAR_CUSTOMER');
@@ -53197,7 +53426,8 @@ exports.default = {
     current_page: 1,
     page_size: 15,
     order_by: "desc",
-    sort_by: "created_at"
+    sort_by: "created_at",
+    is_loading: false
 };
 
 /***/ }),
@@ -53231,6 +53461,9 @@ exports.default = {
     },
     GET_SORT_BY: function GET_SORT_BY(state) {
         return state.sort_by;
+    },
+    IS_LOADING: function IS_LOADING(state) {
+        return state.is_loading;
     }
 };
 
@@ -53265,6 +53498,9 @@ exports.default = {
     },
     SET_SORT_BY: function SET_SORT_BY(state, payload) {
         state.sort_by = payload;
+    },
+    SET_IS_LOADING: function SET_IS_LOADING(state, payload) {
+        state.is_loading = payload;
     }
 };
 
@@ -53292,6 +53528,7 @@ exports.default = {
         var commit = _ref.commit;
 
         // let url = payload ? payload : "/api/stocks";
+        commit("SET_IS_LOADING", true);
         return new Promise(function (resolve, reject) {
             axios.get(url, {
                 headers: {
@@ -53303,9 +53540,15 @@ exports.default = {
 
                 commit("SET_PURCHASES", data);
                 resolve(data);
+                setTimeout(function () {
+                    commit("SET_IS_LOADING", false);
+                }, 1000);
             }).catch(function (_ref3) {
                 var response = _ref3.response;
 
+                setTimeout(function () {
+                    commit("SET_IS_LOADING", false);
+                }, 1000);
                 reject(response);
             });
         });
@@ -53809,7 +54052,7 @@ Vue.component("Select2", _vSelect2Component2.default);
 /**
  * Global Filters
  */
-Vue.filter("humanReadableFormat", function (date) {
+Vue.filter("humanReadable", function (date) {
     return (0, _moment2.default)(date).format("MMMM D, YYYY");
 });
 
@@ -100742,8 +100985,8 @@ exports.default = {
                 category: this.item.category_id,
                 remarks: this.item.remarks,
                 supplier: this.item.supplier_id,
-                form: this.$validator,
-                errors: this.errors
+                form: this.$validator, // for resetting form on parent
+                errors: this.errors // for clearing errors on paren
             };
 
             if (this.mode === "single") {
@@ -101709,15 +101952,15 @@ exports.default = {
     computed: {
         startPage: function startPage() {
             // When on the first page
-            if (this.data.current_page === 1) {
+            if (this.data.length > 0 && this.data.current_page === 1) {
                 return 1;
             }
             // When on the last page
-            if (this.data.current_page === this.data.last_page) {
+            if (this.data.length > 0 && this.data.current_page === this.data.last_page) {
                 return this.data.last_page - 1;
             }
             // When in between
-            return this.data.current_page - 1;
+            return this.data.length > 0 ? this.data.current_page - 1 : 1;
         },
         links: function links() {
             var range = [];

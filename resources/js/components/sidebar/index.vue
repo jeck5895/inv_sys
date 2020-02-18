@@ -62,6 +62,11 @@
                     <i class="fa fa-cubes"></i><span>Inventory</span>
                 </router-link>
             </li>
+            <li>
+                <router-link to="/administrator/sales" class="waves-effect">
+                    <i class="fa fa-money"></i><span>Sales</span>
+                </router-link>
+            </li>
             <!-- <li>
                 <router-link to="/administrator/stocks" class="waves-effect">
                     <i class="fa fa-cubes"></i><span>Stocks</span>

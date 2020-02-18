@@ -4,6 +4,7 @@ const token = Cookies.get("_a.token");
 export default {
     FETCH_PURCHASES: ({ commit }, url) => {
         // let url = payload ? payload : "/api/stocks";
+        commit("SET_IS_LOADING", true);
         return new Promise((resolve, reject) => {
             axios
                 .get(url, {
@@ -15,8 +16,14 @@ export default {
                 .then(({ data }) => {
                     commit("SET_PURCHASES", data);
                     resolve(data);
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
                 })
                 .catch(({ response }) => {
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
                     reject(response);
                 });
         });

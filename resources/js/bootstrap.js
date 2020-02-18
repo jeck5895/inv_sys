@@ -42,7 +42,7 @@ Vue.component("Select2", Select2);
 /**
  * Global Filters
  */
-Vue.filter("humanReadableFormat", function(date) {
+Vue.filter("humanReadable", function(date) {
     return moment(date).format("MMMM D, YYYY");
 });
 

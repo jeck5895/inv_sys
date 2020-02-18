@@ -5,7 +5,7 @@ export default {
     CLEAR_SALES: state => {
         state.sales = [];
     },
-    CLEAR_SALE : state => {
+    CLEAR_SALE: state => {
         state.sale = {};
     },
     SET_CUSTOMER: (state, payload) => {
@@ -25,5 +25,11 @@ export default {
     },
     SET_FILTER_KEYWORD: (state, payload) => {
         state.filters.keyword = payload;
+    },
+    SET_SUBMIT_STATE: (state, payload) => {
+        state.is_submitting = payload;
+    },
+    SET_LOADING_STATE: (state, payload) => {
+        state.is_loading = payload;
     }
-}
+};

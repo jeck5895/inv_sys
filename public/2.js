@@ -1,451 +1,5 @@
 webpackJsonp([2],{
 
-/***/ 148:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(173)
-}
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(175)
-/* template */
-var __vue_template__ = __webpack_require__(176)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/pagination/index.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7684dc30", Component.options)
-  } else {
-    hotAPI.reload("data-v-7684dc30", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 173:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(174);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("6f3a7ceb", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7684dc30\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7684dc30\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 174:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 175:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: {
-        object: {
-            required: true
-        },
-        module: {
-            required: true
-        },
-        query: {
-            required: false
-        }
-    },
-    created: function created() {
-        // console.log(this.$route)
-    },
-
-    data: function data() {
-        return {
-            max_visible: 5
-        };
-    },
-    computed: {
-        startPage: function startPage() {
-            // When on the first page
-            if (this.object.current_page === 1) {
-                return 1;
-            }
-            // When on the last page
-            if (this.object.current_page === this.object.last_page) {
-                return this.object.last_page - 1;
-            }
-            // When in between
-            return this.object.current_page - 1;
-        },
-        links: function links() {
-            var range = [];
-
-            for (var i = this.startPage; i <= Math.min(this.startPage + this.max_visible - 1, this.object.last_page); i++) {
-                range.push(i);
-            }
-
-            return range;
-        }
-    },
-    methods: {
-        toPage: function toPage(page, obj) {
-            var path = this.query ? obj.path + "?page=" + page + "&" + this.query : obj.path + "?page=" + page;
-            this.$store.dispatch(this.module, path);
-        },
-        nextPage: function nextPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        prevPage: function prevPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        firstPage: function firstPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        },
-        lastPage: function lastPage(url) {
-            url = this.query ? url + "&" + this.query : url;
-            this.$store.dispatch(this.module, url);
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 176:
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row clearfix" }, [
-    _c("div", { staticClass: "col-md-4 float-left" }, [
-      _vm._v(
-        "\n        Displaying from " +
-          _vm._s(_vm.object.from) +
-          " to " +
-          _vm._s(_vm.object.to) +
-          " total of\n        " +
-          _vm._s(_vm.object.total) +
-          "\n    "
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "col-md-8 float-right" }, [
-      _c("nav", { attrs: { "aria-label": "..." } }, [
-        _c(
-          "ul",
-          { class: "pagination " + " justify-content-end" },
-          [
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.from == _vm.object.current_page
-                    ? "page-item disabled"
-                    : ""
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#", tabindex: "-1" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.firstPage(_vm.object.first_page_url)
-                      }
-                    }
-                  },
-                  [_c("span", { staticClass: "fa fa-long-arrow-left" })]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.prev_page_url == null
-                    ? "page-item disabled"
-                    : "page-item"
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#", tabindex: "-1" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.prevPage(_vm.object.prev_page_url)
-                      }
-                    }
-                  },
-                  [_vm._v("Previous")]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.links, function(i) {
-              return [
-                _c(
-                  "li",
-                  {
-                    key: i,
-                    class:
-                      _vm.object.current_page == i
-                        ? "page-item active"
-                        : "active"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.toPage(i, _vm.object)
-                          }
-                        }
-                      },
-                      [_vm._v(_vm._s(i))]
-                    )
-                  ]
-                )
-              ]
-            }),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.next_page_url == null
-                    ? "page-item disabled"
-                    : "page-item"
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.nextPage(_vm.object.next_page_url)
-                      }
-                    }
-                  },
-                  [_vm._v("Next")]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              {
-                class:
-                  _vm.object.last_page == _vm.object.current_page
-                    ? "page-item disabled"
-                    : ""
-              },
-              [
-                _c(
-                  "a",
-                  {
-                    staticClass: "page-link",
-                    attrs: { href: "#" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.lastPage(_vm.object.last_page_url)
-                      }
-                    }
-                  },
-                  [_c("span", { staticClass: "fa fa-long-arrow-right" })]
-                )
-              ]
-            )
-          ],
-          2
-        )
-      ])
-    ])
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-7684dc30", module.exports)
-  }
-}
-
-/***/ }),
-
 /***/ 287:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -718,7 +272,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -735,6 +289,82 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _regenerator = __webpack_require__(165);
+
+var _regenerator2 = _interopRequireDefault(_regenerator);
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 var _customer = __webpack_require__(365);
 
 var _customer2 = _interopRequireDefault(_customer);
@@ -743,99 +373,31 @@ var _index = __webpack_require__(375);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _pagination = __webpack_require__(148);
+var _Pagination = __webpack_require__(451);
 
-var _pagination2 = _interopRequireDefault(_pagination);
+var _Pagination2 = _interopRequireDefault(_Pagination);
 
 var _index3 = __webpack_require__(149);
 
+var _vuex = __webpack_require__(11);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 exports.default = {
-    beforeRouteEnter: function beforeRouteEnter(to, from, next) {
-        // next(vm => {
-        //    vm.$store.dispatch('CUSTOMERS_MODULE/FETCH_CUSTOMERS');
-        // })
-        _index3.store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS").then(function () {
-            next();
-        });
-    },
-
+    // beforeRouteEnter(to, from, next) {
+    //     // next(vm => {
+    //     //    vm.$store.dispatch('CUSTOMERS_MODULE/FETCH_CUSTOMERS');
+    //     // })
+    //     store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS").then(() => {
+    //         next();
+    //     });
+    // },
     components: {
         CustomerFormModal: _customer2.default,
         CustomersTable: _index2.default,
-        Pagination: _pagination2.default
+        Pagination: _Pagination2.default
     },
     computed: {
         customers: function customers() {
@@ -850,6 +412,38 @@ exports.default = {
                 this.$store.commit("FILTER_MODULE/SET_KEYWORD", newVal);
             }
         },
+        page_size: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        current_page: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        order_by: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
+            }
+        },
+        sort_by: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
+            }
+        },
         date_from: function date_from() {
             return this.$store.getters["FILTER_MODULE/GET_DATE_FROM"];
         },
@@ -857,12 +451,56 @@ exports.default = {
             return this.$store.getters["FILTER_MODULE/GET_DATE_TO"];
         }
     },
-    methods: {
+    methods: _extends({}, (0, _vuex.mapActions)({
+        fetchCustomers: "CUSTOMERS_MODULE/FETCH_CUSTOMERS"
+    }), {
         handleSearch: function handleSearch() {
-            var url = "/api/customers?keyword=" + this.keyword + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS", url);
+            this.fetchCustomers("/api/customers?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+        },
+        toPage: function toPage(page) {
+            var url = "/api/customers?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchCustomers(url);
+        },
+        firstPage: function firstPage(first_page_url) {
+            var url = first_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchCustomers(url);
+        },
+        prevPage: function prevPage(prev_page_url) {
+            var url = prev_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchCustomers(url);
+        },
+        nextPage: function nextPage(next_page_url) {
+            var url = next_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchCustomers(url);
+        },
+        lastPage: function lastPage(last_page_url) {
+            var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetchCustomers(url);
         }
-    }
+    }),
+    created: function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+            return _regenerator2.default.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return this.fetchCustomers("/api/customers?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+
+                        case 2:
+                        case "end":
+                            return _context.stop();
+                    }
+                }
+            }, _callee, this);
+        }));
+
+        function created() {
+            return _ref.apply(this, arguments);
+        }
+
+        return created;
+    }()
 };
 
 /***/ }),
@@ -1858,7 +1496,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -1874,6 +1512,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
 //
 //
 //
@@ -2017,7 +1657,7 @@ var render = function() {
           [
             _vm.isLoading ? _c("tr", [_vm._m(1)]) : _vm._e(),
             _vm._v(" "),
-            _vm.items.data.length < 1 && !_vm.isLoading
+            _vm.items.data && _vm.items.data.length < 1 && !_vm.isLoading
               ? _c("tr", [_vm._m(2)])
               : !_vm.isLoading
               ? _vm._l(_vm.items.data, function(customer, i) {
@@ -2298,16 +1938,13 @@ var render = function() {
                 { staticClass: "col-md-12 justify-content-right" },
                 [
                   _c("Pagination", {
-                    attrs: {
-                      object: _vm.customers,
-                      module: "CUSTOMERS_MODULE/FETCH_CUSTOMERS",
-                      query:
-                        "keyword=" +
-                        _vm.keyword +
-                        "&date_from=" +
-                        _vm.date_from +
-                        "&date_to=" +
-                        _vm.date_to
+                    attrs: { data: _vm.customers },
+                    on: {
+                      "to-page": _vm.toPage,
+                      "first-page": _vm.firstPage,
+                      "prev-page": _vm.prevPage,
+                      "next-page": _vm.nextPage,
+                      "last-page": _vm.lastPage
                     }
                   })
                 ],

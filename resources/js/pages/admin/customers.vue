@@ -53,11 +53,12 @@
                         </div>
                         <div class="col-md-12 justify-content-right">
                             <Pagination
-                                :object="customers"
-                                module="CUSTOMERS_MODULE/FETCH_CUSTOMERS"
-                                :query="
-                                    `keyword=${keyword}&date_from=${date_from}&date_to=${date_to}`
-                                "
+                                :data="customers"
+                                @to-page="toPage"
+                                @first-page="firstPage"
+                                @prev-page="prevPage"
+                                @next-page="nextPage"
+                                @last-page="lastPage"
                             />
                         </div>
                     </div>
@@ -71,18 +72,19 @@
 <script>
 import CustomerFormModal from "../../components/form-modal/customer";
 import CustomersTable from "../../components/customers/tables/index";
-import Pagination from "../../components/pagination";
+import Pagination from "../../components/Pagination";
 import { store } from "../../store/index.js";
+import { mapActions } from "vuex";
 
 export default {
-    beforeRouteEnter(to, from, next) {
-        // next(vm => {
-        //    vm.$store.dispatch('CUSTOMERS_MODULE/FETCH_CUSTOMERS');
-        // })
-        store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS").then(() => {
-            next();
-        });
-    },
+    // beforeRouteEnter(to, from, next) {
+    //     // next(vm => {
+    //     //    vm.$store.dispatch('CUSTOMERS_MODULE/FETCH_CUSTOMERS');
+    //     // })
+    //     store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS").then(() => {
+    //         next();
+    //     });
+    // },
     components: {
         CustomerFormModal,
         CustomersTable,
@@ -100,6 +102,38 @@ export default {
                 this.$store.commit("FILTER_MODULE/SET_KEYWORD", newVal);
             }
         },
+        page_size: {
+            get() {
+                return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
+            },
+            set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        current_page: {
+            get() {
+                return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
+            },
+            set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
+        },
+        order_by: {
+            get() {
+                return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
+            },
+            set(val) {
+                this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
+            }
+        },
+        sort_by: {
+            get() {
+                return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
+            },
+            set(val) {
+                this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
+            }
+        },
         date_from() {
             return this.$store.getters["FILTER_MODULE/GET_DATE_FROM"];
         },
@@ -108,10 +142,39 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            fetchCustomers: "CUSTOMERS_MODULE/FETCH_CUSTOMERS"
+        }),
         handleSearch() {
-            let url = `/api/customers?keyword=${this.keyword}&date_from=${this.date_from}&date_to=${this.date_to}`;
-            this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS", url);
+            this.fetchCustomers(
+                `/api/customers?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+            );
+        },
+        toPage(page) {
+            const url = `/api/customers?q=${this.keyword}&page=${page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchCustomers(url);
+        },
+        firstPage(first_page_url) {
+            const url = `${first_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchCustomers(url);
+        },
+        prevPage(prev_page_url) {
+            const url = `${prev_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchCustomers(url);
+        },
+        nextPage(next_page_url) {
+            const url = `${next_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchCustomers(url);
+        },
+        lastPage(last_page_url) {
+            const url = `${last_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
+            this.fetchCustomers(url);
         }
+    },
+    async created() {
+        await this.fetchCustomers(
+            `/api/customers?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+        );
     }
 };
 </script>

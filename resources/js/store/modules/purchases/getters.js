@@ -19,5 +19,8 @@ export default {
     },
     GET_SORT_BY: state => {
         return state.sort_by;
+    },
+    IS_LOADING: state => {
+        return state.is_loading;
     }
 };

@@ -19,5 +19,8 @@ export default {
     },
     SET_SORT_BY: (state, payload) => {
         state.sort_by = payload;
+    },
+    SET_IS_LOADING: (state, payload) => {
+        state.is_loading = payload;
     }
 };

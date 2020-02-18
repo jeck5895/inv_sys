@@ -30,7 +30,7 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('brands', 'API\BrandsController');
     Route::apiResource('colors', 'API\ColorsController');
     Route::apiResource('suppliers', 'API\SuppliersController');
-    Route::apiResource('sales', 'API\SalesController');
+
 
     // Route::get('/stocks/lists', 'API\ItemController@lists');
     // Route::get('/sites/lists', 'API\SiteController@lists');
@@ -44,4 +44,5 @@ Route::middleware('auth:api')->group(function () {
     // Route::apiResource('users', 'API\UserController');
 
 });
+Route::apiResource('sales', 'API\SalesController');
 Route::apiResource('stocks', 'API\PurchaseController');

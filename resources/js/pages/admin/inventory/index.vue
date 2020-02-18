@@ -46,9 +46,10 @@
                                 </button>
                             </form>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-12 mb-3">
                             <InventoryTable
                                 :items="purchases"
+                                :is-loading="isLoading"
                                 @on-edit="handleEdit"
                                 @on-checkout="handleCheckout"
                                 @on-delete="handleDelete"
@@ -79,6 +80,7 @@
             <template v-slot:modal-body>
                 <checkout-form
                     :item="item"
+                    :is-loading="isSubmitting"
                     :models="models"
                     :colors="colors"
                     @on-submit="handleSubmitCheckout"
@@ -105,6 +107,8 @@ export default {
     computed: {
         ...mapGetters({
             purchases: "PURCHASES_MODULE/GET_PURCHASES",
+            isLoading: "PURCHASES_MODULE/IS_LOADING",
+            isSubmitting: "SALES_MODULE/GET_SUBMIT_STATE",
             models: "UNITS/GET_UNITS",
             colors: "COLORS/GET_COLORS",
             item: "ITEMS_MODULE/GET_ITEM"
@@ -158,7 +162,8 @@ export default {
     methods: {
         ...mapActions({
             fetchColors: "COLORS/fetchColors",
-            fetchModels: "UNITS/FETCH_UNITS"
+            fetchModels: "UNITS/FETCH_UNITS",
+            checkout: "SALES_MODULE/STORE"
         }),
         fetchStocks(url) {
             this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
@@ -167,6 +172,7 @@ export default {
             console.log(item);
         },
         handleCheckout(item) {
+            item = { ...item, payment_mode: "" };
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
             // this.selected_item = { ...item };
             // this.$set(this.selected_item, "imei", item.imei);
@@ -177,8 +183,42 @@ export default {
         handleDelete(item) {
             console.log(item);
         },
-        handleSubmitCheckout(item) {
-            console.log(item);
+        handleSubmitCheckout(evt) {
+            console.log(evt);
+            const {
+                item_id,
+                model,
+                imei,
+                color,
+                price,
+                amount,
+                payment_mode,
+                credit_term,
+                freebies,
+                form,
+                errors
+            } = evt;
+
+            let payload = {
+                item_id,
+                // model,
+                // imei,
+                // color,
+                // price,
+                amount,
+                payment_mode,
+                credit_term
+            };
+            if (credit_term != undefined) {
+                payload = { ...payload, credit_term };
+            }
+            if (freebies != undefined && freebies.length > 0) {
+                payload = { ...payload, freebies };
+            }
+            this.checkout(payload).then(() => {
+                this.reset(form, errors);
+                $("#generic-modal").modal("hide");
+            });
         },
         handleNavigate() {
             this.$store.commit("ITEMS_MODULE/CLEAR_ITEM");
@@ -208,6 +248,18 @@ export default {
         lastPage(last_page_url) {
             const url = `${last_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
             this.fetchStocks(url);
+        },
+        reset(form, errors) {
+            this.$set(this.item, "model_id", "");
+            this.$set(this.item, "imei", "");
+            this.$set(this.item, "color_id", "");
+            this.$set(this.item, "selling_price", "");
+            this.$set(this.item, "payment_mode", "");
+            this.$set(this.item, "freebies", "");
+            this.$set(this.item, "credit_term", null);
+
+            form.reset();
+            errors.clear();
         },
         setBreadcrumbs() {
             const breadcrumbs = [

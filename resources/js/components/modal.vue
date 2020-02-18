@@ -1,8 +1,8 @@
 <template>
     <div class="modal fade" id="generic-modal">
         <div class="modal-dialog">
-            <div class="modal-content border-primary">
-                <div class="modal-header bg-primary">
+            <div class="modal-content">
+                <div class="modal-header gradient-meridian">
                     <h5 class="modal-title text-white">
                         <slot name="modal-title">
                             Modal Title

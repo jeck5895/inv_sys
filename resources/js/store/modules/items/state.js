@@ -10,6 +10,7 @@ export default {
         supplier_id: "",
         selling_price: null,
         amount: null,
+        payment_mode: "",
         cost: null,
         remarks: ""
     },

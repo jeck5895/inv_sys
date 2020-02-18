@@ -16,5 +16,11 @@ export default {
     },
     GET_FILTER_KEYWORD: state => {
         return state.filters.keyword;
-    } 
-}
+    },
+    GET_SUBMIT_STATE: state => {
+        return state.is_submitting;
+    },
+    GET_LOADING_STATE: state => {
+        return state.is_loading;
+    }
+};

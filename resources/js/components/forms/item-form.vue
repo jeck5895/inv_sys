@@ -252,8 +252,8 @@ export default {
                 category: this.item.category_id,
                 remarks: this.item.remarks,
                 supplier: this.item.supplier_id,
-                form: this.$validator,
-                errors: this.errors
+                form: this.$validator, // for resetting form on parent
+                errors: this.errors // for clearing errors on paren
             };
 
             if (this.mode === "single") {

@@ -20,9 +20,10 @@ class PurchaseController extends Controller
         $per_page = $request->has('per_page') ? $request->per_page : 10;
 
         if ($request->has('q') || $request->has('order_by') || $request->has('sort_by')) {
-            $orderBy = $request->order_by || 'desc';
+            $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
+            $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
-            $purchases = Purchase::orderBy($request->sort_by, $orderBy)
+            $purchases = Purchase::orderBy($sortBy, $orderBy)
                 ->where(function ($query) use ($request) {
                     if ($request->has("q")) {
                         $query->where('imei', 'LIKE', '%' . $request->q . '%');
@@ -43,11 +44,8 @@ class PurchaseController extends Controller
                 ->orWhereHas('model', function ($query) use ($request) {
                     $query->where('name', 'LIKE', '%' . $request->q . '%');
                 })
-                ->with('category')
-                ->with('brand')
-                ->with('color')
-                ->with('model')
-                ->with('supplier')
+                ->with(['category', 'brand', 'color', 'model', 'supplier'])
+
                 ->paginate($per_page);
 
             $purchases->map(function ($item) {
