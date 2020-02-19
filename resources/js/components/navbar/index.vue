@@ -313,7 +313,10 @@ export default {
     props: {
         user: {
             type: Object,
-            required: true
+            default: {
+                name: "User",
+                email: "user@gmail.com"
+            }
         }
     },
     methods: {

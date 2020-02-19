@@ -5,14 +5,18 @@
                 >Date From</label
             >
             <input
-                v-model="dateFrom"
+                :value="dateFrom"
+                @input="$emit('on-change', $event)"
+                name="date_from"
                 type="date"
                 class="form-control form-control-sm mr-sm-2"
                 id="exampleDropdownFormEmail1"
             />
             <label for="exampleDropdownFormPassword1" class="mr-1">To</label>
             <input
-                v-model="dateFrom"
+                :value="dateTo"
+                @input="$emit('on-change', $event)"
+                name="date_to"
                 type="date"
                 class="form-control form-control-sm mr-sm-2"
                 id="exampleDropdownFormPassword1"
@@ -39,8 +43,8 @@ export default {
     methods: {
         handleFilter() {
             const payload = {
-                date_from,
-                date_to
+                date_from: this.dateFrom,
+                date_to: this.dateTo
             };
             this.$emit("on-submit", payload);
         }

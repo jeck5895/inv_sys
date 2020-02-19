@@ -45,7 +45,10 @@ export default {
                     }, 1000);
                 })
                 .catch(error => {
-                    toastr.error("Error", "Oops something went wrong");
+                    toastr.error(
+                        "Server Response Error",
+                        "Oops something went wrong"
+                    );
                     setTimeout(() => {
                         reject(error);
                     }, 1000);
@@ -75,6 +78,60 @@ export default {
                     );
                     setTimeout(() => {
                         reject(error);
+                    }, 1000);
+                });
+        });
+    },
+    UPDATE: ({ commit }, payload) => {
+        return new Promise((resolve, reject) => {
+            axios
+                .patch(`/api/stocks/${payload.id}`, payload, {
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                .then(response => {
+                    setTimeout(() => {
+                        toastr.success("Success", `${response.data.message}`);
+                        resolve(response);
+                    }, 1000);
+                })
+                .catch(error => {
+                    toastr.error(
+                        "Server Response Error",
+                        "Oops something went wrong"
+                    );
+                    setTimeout(() => {
+                        console.log(error);
+                        reject(error);
+                    }, 1000);
+                });
+        });
+    },
+    DELETE: ({ commit }, payload) => {
+        return new Promise((resolve, reject) => {
+            axios
+                .delete(`/api/stocks/${payload}`, {
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                .then(response => {
+                    setTimeout(() => {
+                        toastr.success("Success", `${response.data.message}`);
+                        resolve(response);
+                    }, 1000);
+                })
+                .catch(({ response }) => {
+                    console.log(response);
+                    toastr.error(
+                        "Server Response Error",
+                        "Oops something went wrong"
+                    );
+                    setTimeout(() => {
+                        reject(response);
                     }, 1000);
                 });
         });

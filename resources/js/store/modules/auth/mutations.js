@@ -4,5 +4,11 @@ export default {
     },
     SET_USER: (state, payload) => {
         state.auth.user = payload;
+    },
+    CLEAR_USER: state => {
+        state.auth.user = {
+            name: "",
+            email: ""
+        };
     }
-}
+};

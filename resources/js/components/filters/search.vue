@@ -3,8 +3,9 @@
         <div class="form-group">
             <input
                 type="text"
+                name="keyword"
                 :value="keyword"
-                @input="$emit('on-change', $event.target.value)"
+                @input="$emit('on-change', $event)"
                 class="form-control form-control-sm mr-sm-2"
                 id="inlineFormInputName2"
                 placeholder="Search item"

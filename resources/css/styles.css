@@ -1,0 +1,15 @@
+.dg-btn {
+    padding: 0.25rem 0.5rem !important;
+}
+
+.dg-btn--ok {
+    background-color: #fd3550 !important;
+    color: #fff !important;
+    border-color: #fd3550 !important;
+}
+
+.dg-btn--cancel {
+    background-color: #fff !important;
+    border: 1px solid #fd3550 !important;
+    color: #fd3550 !important;
+}

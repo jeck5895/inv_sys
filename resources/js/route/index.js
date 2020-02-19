@@ -5,7 +5,7 @@ import UserSubRoutes from "./sub-routes/users";
 const AdminIndex = () => import("../pages/admin/index.vue");
 const UserIndex = () => import("../pages/users/index.vue");
 const LoginPage = () =>
-    import(/*webpackChunkname:Login */ "../pages/login.vue");
+    import(/*webpackChunkname: "login" */ "../pages/login.vue");
 
 const routes = [
     {

@@ -1,0 +1,4 @@
+
+- set heroku .env variables for database, etc. (heroku config:set/add DB_CONNECTION=mysql)
+- create database 
+- deploy passport

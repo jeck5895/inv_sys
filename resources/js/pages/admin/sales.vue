@@ -13,6 +13,7 @@
                                     <date-filter
                                         :date-from="date_from"
                                         :date-to="date_to"
+                                        @on-change="onChange"
                                         @on-submit="handleFilter"
                                     ></date-filter>
                                 </div>
@@ -155,8 +156,30 @@ export default {
         ...mapActions({
             fetchSales: "SALES_MODULE/FETCH_SALES"
         }),
-        onChange(value) {
-            this.$store.commit("FILTER_MODULE/SET_KEYWORD", value);
+        ...mapMutations({
+            setKeyword: "FILTER_MODULE/SET_KEYWORD",
+            setDateFrom: "FILTER_MODULE/SET_DATE_FROM",
+            setDateTo: "FILTER_MODULE/SET_DATE_TO"
+        }),
+        onChange(e) {
+            const name = e.target.name;
+            const value = e.target.value;
+
+            switch (name) {
+                case "keyword":
+                    this.setKeyword(value);
+                    break;
+                case "date_from":
+                    this.setDateFrom(value);
+                    break;
+                case "date_to":
+                    this.setDateTo(value);
+                    break;
+                default:
+                    break;
+            }
+
+            // this.$store.commit("FILTER_MODULE/SET_KEYWORD", value);
         },
         handleSearch(keyword) {
             const url = `/api/sales?q=${keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}&date_from=${this.date_from}&date_to=${this.date_to}`;
@@ -164,9 +187,9 @@ export default {
         },
         handleFilter(evt) {
             const { date_from, date_to } = evt;
-            let url = `/api/sales?date_from=${date_from}&date_to=${date_to}`;
-            console.log(url);
-            //this.fetchSales(url);
+            const url = `/api/sales?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}&date_from=${date_from}&date_to=${date_to}`;
+
+            this.fetchSales(url);
         },
         onReportSubmit(evt) {
             const token = Cookies.get("_a.token");

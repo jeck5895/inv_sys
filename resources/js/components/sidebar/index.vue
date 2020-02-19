@@ -92,7 +92,7 @@
                     <i class="fa fa-truck"></i><span>Suppliers</span>
                 </router-link>
             </li>
-            <li>
+            <!-- <li>
                 <a
                     href="#"
                     @click="toggleReportClass"
@@ -104,7 +104,7 @@
                         <i class="fa fa-line-chart"></i>
                         <span>Reports</span>
                     </div>
-                    <!-- <i class="fa fa-angle-left float-right"></i> -->
+                    <i class="fa fa-angle-left float-right"></i>
                 </a>
                 <div id="report-dropdown" class="collapse">
                     <ul class="user-setting-menu">
@@ -116,10 +116,9 @@
                                 Report</router-link
                             >
                         </li>
-                        <!-- <li><a href="account.html"><i class="fa fa-long-arrow-right"></i> Sales Table</a></li> -->
                     </ul>
                 </div>
-            </li>
+            </li> -->
             <li>
                 <a
                     href="#"
@@ -166,13 +165,12 @@
 
 <script>
 export default {
-    data: () => ({
-        active: ""
-    }),
     props: {
         user: {
             type: Object,
-            required: true
+            default: {
+                name: "User"
+            }
         }
     },
     methods: {

@@ -244,7 +244,8 @@ export default {
     methods: {
         handleSubmit(form) {
             let payload = {
-                model: this.item.unit,
+                id: this.item.id,
+                model: this.item.model_id,
                 brand: this.item.brand_id,
                 color: this.item.color_id,
                 price: this.item.selling_price,

@@ -28,40 +28,67 @@ class SalesController extends Controller
   public function index(Request $request)
   {
     $per_page = $request->has('per_page') ? $request->per_page : 10;
+    $keywords = $request->has('q') ? explode(' ', $request->q) : null;
 
     if ($request->has('q') || $request->has('order_by') || $request->has('sort_by')) {
       $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
       $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
       $sales = Sale::orderBy($sortBy, $orderBy)
-        ->where(function ($query) use ($request) {
-          if ($request->has("q")) {
-            $query->where('transaction_no', 'LIKE', '%' . $request->q . '%')
-              ->orWhere('amount', 'LIKE', '%' . $request->q . '%')
-              ->orWhere('payment_mode', 'LIKE', '%' . $request->q . '%');
+        ->where(function ($query) use ($request, $keywords) {
+          if ($request->has("q") && $request->q != null) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('transaction_no', 'LIKE', '%' . $keyword . '%')
+                ->orWhere('amount', 'LIKE', '%' . $keyword . '%')
+                ->orWhere('payment_mode', 'LIKE', '%' . $keyword . '%');
+            }
           }
-          // if ($request->has('date_from') && $request->has('date_to')) {
-          //   //
-          // }
         })
-        ->orWhereHas('item.model', function ($query) use ($request) {
-          $query->where('name', 'LIKE', '%' . $request->q . '%');
+        ->whereHas('item.model', function ($query) use ($request, $keywords) {
+          if ($request->has('q')) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+            }
+          }
         })
-        ->orWhereHas('item.brand', function ($query) use ($request) {
-          $query->where('name', 'LIKE', '%' . $request->q . '%');
+        ->whereHas('item.brand', function ($query) use ($request, $keywords) {
+          if ($request->has('q')) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+            }
+          }
         })
-        ->orWhereHas('item.color', function ($query) use ($request) {
-          $query->where('name', 'LIKE', '%' . $request->q . '%');
+        ->whereHas('item.color', function ($query) use ($request, $keywords) {
+          if ($request->has('q')) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+            }
+          }
         })
-        ->orWhereHas('item.category', function ($query) use ($request) {
-          $query->where('name', 'LIKE', '%' . $request->q . '%');
+        ->whereHas('item.category', function ($query) use ($request, $keywords) {
+          if ($request->has('q')) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+            }
+          }
         })
-        ->orWhereHas('item.supplier', function ($query) use ($request) {
-          $query->where('name', 'LIKE', '%' . $request->q . '%');
+        ->whereHas('item.supplier', function ($query) use ($request, $keywords) {
+          if ($request->has('q')) {
+            foreach ($keywords as $keyword) {
+              $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+            }
+          }
         })
-        // ->orWhereHas('freebies', function ($query) use ($request) {
-        //   $query->where('freebie', 'LIKE', '%' . $request->q . '%');
+        // ->whereHas('freebies', function ($query) use ($request) {
+        //   $query->orWhere('freebie', 'LIKE', '%' . $request->q . '%');
         // })
+        ->where(function ($query) use ($request) {
+          if ($request->has('date_from') && $request->has('date_to')) {
+            $query->whereBetween(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"), [$request->date_from, $request->date_to]);
+            // dd($query->toSql());
+          }
+        })
+        // ->toSql();
         ->with(['item.model', 'item.brand', 'item.color', 'item.category', 'item.supplier'])
         ->with('freebies')
         ->paginate($per_page);

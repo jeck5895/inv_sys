@@ -373,7 +373,7 @@ var _index = __webpack_require__(387);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _Pagination = __webpack_require__(151);
+var _Pagination = __webpack_require__(152);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 

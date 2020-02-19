@@ -6,6 +6,7 @@ use App\Model\Purchase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Purchases\Store;
+use App\Http\Requests\Purchases\Update;
 use Exception;
 
 class PurchaseController extends Controller
@@ -18,31 +19,54 @@ class PurchaseController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->has('per_page') ? $request->per_page : 10;
+        $keywords = $request->has('q') ? explode(' ', $request->q) : null;
 
         if ($request->has('q') || $request->has('order_by') || $request->has('sort_by')) {
             $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
             $purchases = Purchase::orderBy($sortBy, $orderBy)
-                ->where(function ($query) use ($request) {
+                ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q")) {
-                        $query->where('imei', 'LIKE', '%' . $request->q . '%');
+                        foreach ($keywords as $keyword) {
+                            $query->where('imei', 'LIKE', '%' . $keyword . '%');
+                        }
                     }
                 })
-                ->orWhereHas('brand', function ($query) use ($request) {
-                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                ->orWhereHas('brand', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
                 })
-                ->orWhereHas('color', function ($query) use ($request) {
-                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                ->orWhereHas('color', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
                 })
-                ->orWhereHas('category', function ($query) use ($request) {
-                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                ->orWhereHas('category', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
                 })
-                ->orWhereHas('supplier', function ($query) use ($request) {
-                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                ->orWhereHas('supplier', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
                 })
-                ->orWhereHas('model', function ($query) use ($request) {
-                    $query->where('name', 'LIKE', '%' . $request->q . '%');
+                ->orWhereHas('model', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
                 })
                 ->with(['category', 'brand', 'color', 'model', 'supplier'])
 
@@ -114,9 +138,22 @@ class PurchaseController extends Controller
      * @param  \App\Model\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Purchase $purchase)
+    public function update(Update $request, $id)
     {
-        //
+        $item = Purchase::findOrFail($id);
+        $item->imei = $request['imei'];
+        $item->category_id = $request['category'];
+        $item->model_id = $request['model'];
+        $item->brand_id = $request['brand'];
+        $item->supplier_id = $request['supplier'];
+
+        $item->color_id = $request['color'];
+        $item->cost = floatval($request['cost']);
+        $item->selling_price = floatval($request['price']);
+        $item->specs = $request['remarks'];
+        $item->save();
+
+        return ['message' => 'Stocks has been saved', 'item_id' => $item->id];
     }
 
     /**
@@ -125,9 +162,11 @@ class PurchaseController extends Controller
      * @param  \App\Model\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Purchase $purchase)
+    public function destroy($id)
     {
-        //
+        Purchase::destroy($id);
+
+        return ['message' => 'Record deleted.'];
     }
 
     public function bulk(Request $request)

@@ -73,18 +73,33 @@
                 </div>
             </div>
         </div>
-        <modal v-if="item.model && item.model.name">
+        <modal>
             <template v-slot:modal-title>
-                Checkout {{ item.model.name }}
+                <h5 v-if="item.model && item.model.name" class="text-white">
+                    Checkout {{ item.model.name }}
+                </h5>
             </template>
             <template v-slot:modal-body>
                 <checkout-form
+                    v-if="form_type === 'CHECKOUT'"
                     :item="item"
                     :is-loading="isSubmitting"
                     :models="models"
                     :colors="colors"
                     @on-submit="handleSubmitCheckout"
                 ></checkout-form>
+                <item-form
+                    v-if="form_type === 'EDIT'"
+                    :item="item"
+                    :mode="'single'"
+                    :brands="brands"
+                    :categories="categories"
+                    :colors="colors"
+                    :suppliers="suppliers"
+                    :models="models"
+                    :is-loading="submit_state"
+                    @on-submit="handleSubmitUpdate"
+                ></item-form>
             </template>
         </modal>
     </div>
@@ -95,14 +110,16 @@ import InventoryTable from "../../../components/admin/tables/purchases";
 import Pagination from "../../../components/Pagination";
 import Modal from "../../../components/modal";
 import CheckoutForm from "../../../components/forms/checkout-form";
-import { mapGetters, mapActions, mapState } from "vuex";
+import ItemForm from "../../../components/forms/item-form";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 
 export default {
     components: {
         InventoryTable,
         Pagination,
         Modal,
-        CheckoutForm
+        CheckoutForm,
+        ItemForm
     },
     computed: {
         ...mapGetters({
@@ -111,8 +128,26 @@ export default {
             isSubmitting: "SALES_MODULE/GET_SUBMIT_STATE",
             models: "UNITS/GET_UNITS",
             colors: "COLORS/GET_COLORS",
-            item: "ITEMS_MODULE/GET_ITEM"
+            brands: "BRANDS/GET_BRANDS",
+            categories: "CATEGORIES/GET_CATEGORIES",
+            suppliers: "SUPPLIERS/GET_SUPPLIERS",
+            submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
         }),
+        item() {
+            let item = this.$store.getters["ITEMS_MODULE/GET_ITEM"];
+            return {
+                id: item.id,
+                imei: item.imei,
+                model_id: item.model_id,
+                brand_id: item.brand_id,
+                supplier_id: item.supplier_id,
+                category_id: item.supplier_id,
+                color_id: item.color_id,
+                cost: item.cost,
+                selling_price: item.selling_price,
+                remarks: item.specs
+            };
+        },
         keyword: {
             get() {
                 return this.$store.getters["PURCHASES_MODULE/GET_KEYWORD"];
@@ -157,34 +192,96 @@ export default {
     data: () => ({
         data: [],
         module: "PURCHASES_MODULE",
-        api_url: ""
+        form_type: null
     }),
     methods: {
         ...mapActions({
             fetchColors: "COLORS/fetchColors",
             fetchModels: "UNITS/FETCH_UNITS",
-            checkout: "SALES_MODULE/STORE"
+            checkout: "SALES_MODULE/STORE",
+            fetchBrands: "BRANDS/fetchBrands",
+            fetchCategories: "CATEGORIES/fetchCategories",
+            fetchSuppliers: "SUPPLIERS/fetchSuppliers",
+            updateItem: "PURCHASES_MODULE/UPDATE",
+            deleteItem: "PURCHASES_MODULE/DELETE"
+        }),
+        ...mapMutations({
+            setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
+            clearItem: "ITEMS_MODULE/CLEAR_ITEM"
         }),
         fetchStocks(url) {
             this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
         },
         handleEdit(item) {
-            console.log(item);
+            this.form_type = "EDIT";
+            this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
+            setTimeout(() => {
+                $("#generic-modal").modal("show");
+            }, 300);
+        },
+        handleSubmitUpdate(item) {
+            const {
+                id,
+                imei,
+                model,
+                brand,
+                supplier,
+                category,
+                color,
+                cost,
+                price,
+                remarks
+            } = item;
+            this.setSubmitState(true);
+            this.updateItem({
+                id,
+                imei,
+                model,
+                brand,
+                supplier,
+                category,
+                color,
+                cost,
+                price,
+                remarks
+            })
+                .then(() => {
+                    this.setSubmitState(false);
+                    this.fetchStocks(
+                        `/api/stocks?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+                    );
+                    $("#generic-modal").modal("hide");
+                })
+                .catch(() => {
+                    this.setSubmitState(false);
+                });
         },
         handleCheckout(item) {
+            this.form_type = "CHECKOUT";
+
             item = { ...item, payment_mode: "" };
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
-            // this.selected_item = { ...item };
-            // this.$set(this.selected_item, "imei", item.imei);
+
             setTimeout(() => {
                 $("#generic-modal").modal("show");
             }, 300);
         },
         handleDelete(item) {
-            console.log(item);
+            let options = { html: true, loader: true };
+            //https://github.com/Godofbrowser/vuejs-dialog
+            this.$dialog
+                .confirm(`<h5>Delete this item ?</h5>`, options)
+                .then(dialog => {
+                    this.deleteItem(item.id).then(() => {
+                        dialog.close();
+                        this.fetchStocks(
+                            `/api/stocks?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
+                        );
+                    });
+                })
+                .catch(() => {});
         },
         handleSubmitCheckout(evt) {
-            console.log(evt);
             const {
                 item_id,
                 model,
@@ -221,7 +318,7 @@ export default {
             });
         },
         handleNavigate() {
-            this.$store.commit("ITEMS_MODULE/CLEAR_ITEM");
+            this.clearItem();
             this.$router.push("/administrator/inventory/create");
         },
         handleSearch() {
@@ -281,8 +378,10 @@ export default {
     async created() {
         await this.fetchColors("api/colors");
         await this.fetchModels();
-        // await this.fetchStocks();
-        this.fetchStocks(
+        await this.fetchBrands("api/brands");
+        await this.fetchCategories("api/categories");
+        await this.fetchSuppliers("api/suppliers");
+        await this.fetchStocks(
             `/api/stocks?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
         );
     }
