@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="clearfix">
-                                <div class="float-left py-2">
+                                <div class="float-lg-left py-2">
                                     <date-filter
                                         :date-from="date_from"
                                         :date-to="date_to"
@@ -17,7 +17,7 @@
                                         @on-submit="handleFilter"
                                     ></date-filter>
                                 </div>
-                                <div class="float-right d-flex py-2">
+                                <div class="float-lg-right d-lg-flex py-2">
                                     <button
                                         @click="handleModal"
                                         class="btn btn-sm btn-success mr-2"
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-12 mb-3">
+                        <div class="col-lg-12 mb-3 table-responsive">
                             <sales-table
                                 :items="sales"
                                 :is-loading="is_loading"
@@ -221,6 +221,14 @@ export default {
                             anchor_tag.target = "_blank";
                             anchor_tag.download = data.filename;
                             anchor_tag.click();
+                        })
+                        .catch(({ response }) => {
+                            this.is_submitting = false;
+                            toastr.error(
+                                "Server Response Error",
+                                "Oops something went wrong"
+                            );
+                            console.log(response);
                         });
 
                     // window.open(
@@ -232,6 +240,7 @@ export default {
                 case "monthly":
                     const { month, year } = evt;
 
+                    this.is_submitting = true;
                     axios
                         .get(
                             `/api/sales/report/monthly?month=${month}&year=${year}`,
@@ -243,16 +252,20 @@ export default {
                             }
                         )
                         .then(({ data }) => {
-                            this.is_submitting = true;
-
-                            // axios.post("api/reports/kpi-analysis/export", payload)
-                            // .then(response => {
-                            //    console.log(response);
-                            //     self.$store.commit('setSubmitState', false);
-                            anchor_tag.href = response.data.file;
+                            this.is_submitting = false;
+                            // ref: sofi-locatorslist
+                            anchor_tag.href = data.file;
                             anchor_tag.target = "_blank";
-                            anchor_tag.download = response.data.filename;
+                            anchor_tag.download = data.filename;
                             anchor_tag.click();
+                        })
+                        .catch(({ response }) => {
+                            this.is_submitting = false;
+                            toastr.error(
+                                "Server Response Error",
+                                "Oops something went wrong"
+                            );
+                            console.log(response);
                         });
 
                     break;

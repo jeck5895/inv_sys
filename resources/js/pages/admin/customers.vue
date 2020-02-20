@@ -20,7 +20,7 @@
                                         "
                                         data-toggle="modal"
                                         data-target="#customermodal"
-                                        class="btn btn-success"
+                                        class="btn btn-sm btn-success"
                                     >
                                         <i class="fa fa-user-plus"></i>
                                         ADD CUSTOMER
@@ -34,13 +34,13 @@
                                         <input
                                             type="text"
                                             v-model="keyword"
-                                            class="form-control mb-2 mr-sm-2"
+                                            class="form-control form-control-sm mb-2 mr-sm-2"
                                             id="inlineFormInputName2"
                                             placeholder="Search students"
                                         />
                                         <button
                                             type="submit"
-                                            class="btn btn-success mb-2"
+                                            class="btn btn-sm btn-success mb-2"
                                         >
                                             <i class="fa fa-search"></i>SEARCH
                                         </button>
@@ -169,9 +169,23 @@ export default {
         lastPage(last_page_url) {
             const url = `${last_page_url}?q=${this.keyword}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`;
             this.fetchCustomers(url);
+        },
+        setBreadcrumbs() {
+            const breadcrumbs = [
+                {
+                    text: "Administrator",
+                    link: "/administrator"
+                },
+                {
+                    text: "Customers",
+                    link: "/administrator/customers"
+                }
+            ];
+            this.$store.commit("setBreadcrumbs", breadcrumbs);
         }
     },
     async created() {
+        this.setBreadcrumbs();
         await this.fetchCustomers(
             `/api/customers?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`
         );

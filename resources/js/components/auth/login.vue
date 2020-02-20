@@ -6,8 +6,11 @@
             >
                 <div class="card-body">
                     <div class="card-content p-2">
-                        <div class="text-center">
-                            <img src="/images/logo-icon.png" />
+                        <div
+                            style="width: 50px; margin:auto;"
+                            class="text-center"
+                        >
+                            <img class="img-fluid" src="/images/logo.png" />
                         </div>
                         <div
                             class="card-title text-uppercase text-center py-2 text-white"

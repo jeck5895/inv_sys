@@ -2,13 +2,9 @@
     <table id="example" class="table table-bordered">
         <thead class="thead-primary">
             <tr>
-                <th>DATE</th>
-                <th>TRANSACTION #</th>
-                <th>IMEI</th>
-                <th>MODEL</th>
-                <th>AMOUNT</th>
-                <th>PAYMENT TYPE</th>
-                <th>CREDIT TERM</th>
+                <th width="10%">#</th>
+                <th width="70%">NAME</th>
+                <th width="20%" style="witdh: 10%">OPTIONS</th>
             </tr>
         </thead>
         <tbody>
@@ -27,15 +23,26 @@
             </tr>
             <template v-if="!isLoading && items.data && items.data.length != 0">
                 <tr v-for="(item, i) in items.data" :key="i">
-                    <td>{{ item.created_at | humanReadable }}</td>
-                    <td>{{ item.transaction_no }}</td>
-                    <td>{{ item.item.imei }}</td>
-                    <td>{{ item.item.model.name }}</td>
-                    <td>{{ item.amount }}</td>
-                    <td>{{ item.payment_mode }}</td>
+                    <td style="vertical-align: middle;">{{ item.id }}</td>
+                    <td style="vertical-align: middle;">{{ item.name }}</td>
                     <td>
-                        <span v-if="item.payment_terms === null">N/A</span>
-                        <span v-else>{{ item.payment_terms }} months</span>
+                        <button
+                            @click.prevent="$emit('on-edit', item)"
+                            type="button"
+                            data-toggle="modal"
+                            data-target="#addmodal"
+                            class="btn btn-secondary btn-sm waves-effect waves-light m-1"
+                        >
+                            <i class="fa fa-edit fa-lg"></i> EDIT
+                        </button>
+                        <button
+                            @click.prevent="$emit('on-delete', item)"
+                            type="button"
+                            class="btn btn-danger btn-sm waves-effect waves-light"
+                            id="confirm-btn-alert4"
+                        >
+                            <i class="fa fa-trash fa-lg"></i> DELETE
+                        </button>
                     </td>
                 </tr>
             </template>

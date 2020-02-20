@@ -8,6 +8,11 @@ const Customers = () => import("../../pages/admin/customers.vue");
 const Inventory = () => import("../../pages/admin/purchases.vue");
 const Supplier = () => import("../../pages/admin/suppliers.vue");
 const Sales = () => import("../../pages/admin/sales.vue");
+const Brands = () => import("../../pages/admin/brands.vue");
+const Categories = () => import("../../pages/admin/categories.vue");
+const Colors = () => import("../../pages/admin/colors.vue");
+const Freebies = () => import("../../pages/admin/freebies.vue");
+const Models = () => import("../../pages/admin/models.vue");
 
 export default [
     {
@@ -43,5 +48,25 @@ export default [
         path: "inventory",
         component: Inventory,
         children: InventoryRoutes
+    },
+    {
+        path: "brands",
+        component: Brands
+    },
+    {
+        path: "categories",
+        component: Categories
+    },
+    {
+        path: "colors",
+        component: Colors
+    },
+    {
+        path: "freebies",
+        component: Freebies
+    },
+    {
+        path: "models",
+        component: Models
     }
 ];

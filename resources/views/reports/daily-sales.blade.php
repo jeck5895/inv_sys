@@ -43,15 +43,23 @@
         }
 
         .signatories {
+            margin-top: 10rem;
             width: 100%;
             text-align: center;
         }
 
         .signature {
+            width: 300px;
             padding: 0px 20px;
-            margin: 0 80px;
             border-top: 0.5px solid black;
+            display: inline-block;
         }
+
+        .signature-1 {
+            margin-right: 5rem;
+        }
+
+        .signature-2 {}
 
         .report-header {
             position: relative;
@@ -68,30 +76,54 @@
 <body>
     <div class="report-hedear">
         <div class="logo-container">
-            <img height="65" width="65" src="./images/app/neust_logo.png" alt="">
+            <img height="65" width="65" src="./images/logo.png" alt="">
         </div>
         <div>
-            <h2 style="text-align:center;">COMPANY NAME</h2>
+            <h2 style="text-align:center;">Company Name</h2>
+            @if($data['from_date'] === $data['to_date'])
+            <h2 style="text-align:center;">Daily Sales Report for {{ $data['from_date'] }}</h2>
+            @else
             <h2 style="text-align:center;">Daily Sales Report for {{ $data['from_date'] }} - {{ $data['to_date'] }}</h2>
+            @endif
         </div>
     </div>
     <hr>
     <table>
         <thead>
             <tr>
-                <th>IMIE</th>
                 <th>Model</th>
-                <th>Amount</th>
+                <th>Sub Total</th>
             </tr>
+        <tbody>
+        <tbody>
+            @php
+            $total_sales = 0.00;
+            @endphp
+            @foreach($data['sales'] as $key => $item)
+            @php
+            $total_sales = floatval($total_sales) + floatval($item->sub_total);
+            @endphp
+            <tr>
+                <td>{{ $item->item->model->name }}</td>
+
+                <td>{{ number_format($item->sub_total,2,'.',',') }}</td>
+            </tr>
+
+            @endforeach
+            <tr>
+                <td class="general-total">Total: </td>
+                <td class="total-amount">{{ number_format($total_sales,2,'.',',') }}</td>
+            </tr>
+        </tbody>
         </thead>
         <tbody>
 
         </tbody>
     </table>
-    <div class="signatories">
-        <span class="signature">Prepared By</span>
-        <span class="signature">Approved By</span>
-    </div>
+    <!-- <div class="signatories">
+        <div class="signature signature-1">Prepared By: </div>
+        <div class="signature signature-2">Approved By: </div>
+    </div> -->
 
 </body>
 

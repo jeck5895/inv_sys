@@ -20086,6 +20086,13 @@ module.exports = defaults;
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(164);
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
@@ -20187,13 +20194,6 @@ var store = exports.store = new _vuex2.default.Store({
         }
     }
 });
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(164);
-
 
 /***/ }),
 /* 13 */
@@ -36209,6 +36209,53 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(230)
+/* template */
+var __vue_template__ = __webpack_require__(231)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/Pagination.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-d7acf176", Component.options)
+  } else {
+    hotAPI.reload("data-v-d7acf176", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
   __webpack_require__(166)
@@ -36246,53 +36293,6 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-c170f44a", Component.options)
   } else {
     hotAPI.reload("data-v-c170f44a", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 152 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(1)
-/* script */
-var __vue_script__ = __webpack_require__(230)
-/* template */
-var __vue_template__ = __webpack_require__(231)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/Pagination.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-d7acf176", Component.options)
-  } else {
-    hotAPI.reload("data-v-d7acf176", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -36372,7 +36372,7 @@ var _index = __webpack_require__(156);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(11);
+var _index3 = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36461,7 +36461,7 @@ var UserIndex = function UserIndex() {
     return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 305));
 };
 var LoginPage = function LoginPage() {
-    return __webpack_require__.e/* import() */(8).then(__webpack_require__.bind(null, 306));
+    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 306));
 };
 
 var routes = [{
@@ -36511,26 +36511,41 @@ var _inventory2 = _interopRequireDefault(_inventory);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Dashboard = function Dashboard() {
-    return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 295));
+    return __webpack_require__.e/* import() */(23).then(__webpack_require__.bind(null, 295));
 };
 var Stocks = function Stocks() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 296));
+    return __webpack_require__.e/* import() */(15).then(__webpack_require__.bind(null, 296));
 };
 // const Issuance = () => import("../../pages/admin/issueance.vue");
 var Reports = function Reports() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 297));
+    return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 297));
 };
 var Customers = function Customers() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 298));
+    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 298));
 };
 var Inventory = function Inventory() {
-    return __webpack_require__.e/* import() */(11).then(__webpack_require__.bind(null, 299));
+    return __webpack_require__.e/* import() */(24).then(__webpack_require__.bind(null, 299));
 };
 var Supplier = function Supplier() {
-    return __webpack_require__.e/* import() */(9).then(__webpack_require__.bind(null, 300));
+    return __webpack_require__.e/* import() */(17).then(__webpack_require__.bind(null, 300));
 };
 var Sales = function Sales() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 301));
+    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 301));
+};
+var Brands = function Brands() {
+    return __webpack_require__.e/* import() */(22).then(__webpack_require__.bind(null, 479));
+};
+var Categories = function Categories() {
+    return __webpack_require__.e/* import() */(21).then(__webpack_require__.bind(null, 480));
+};
+var Colors = function Colors() {
+    return __webpack_require__.e/* import() */(20).then(__webpack_require__.bind(null, 481));
+};
+var Freebies = function Freebies() {
+    return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 482));
+};
+var Models = function Models() {
+    return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 483));
 };
 
 exports.default = [{
@@ -36559,6 +36574,21 @@ exports.default = [{
     path: "inventory",
     component: Inventory,
     children: _inventory2.default
+}, {
+    path: "brands",
+    component: Brands
+}, {
+    path: "categories",
+    component: Categories
+}, {
+    path: "colors",
+    component: Colors
+}, {
+    path: "freebies",
+    component: Freebies
+}, {
+    path: "models",
+    component: Models
 }];
 
 /***/ }),
@@ -36727,7 +36757,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _regenerator = __webpack_require__(12);
+var _regenerator = __webpack_require__(11);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -36824,7 +36854,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _card = __webpack_require__(151);
+var _card = __webpack_require__(152);
 
 var _card2 = _interopRequireDefault(_card);
 
@@ -36838,7 +36868,7 @@ var _validationErrors2 = _interopRequireDefault(_validationErrors);
 
 var _vuex = __webpack_require__(8);
 
-var _store = __webpack_require__(11);
+var _store = __webpack_require__(12);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52111,8 +52141,10 @@ exports.default = {
     page_size: 15,
     order_by: "desc",
     sort_by: "created_at",
-    date_from: (0, _moment2.default)().format("YYYY-MM-DD"),
-    date_to: (0, _moment2.default)().format("YYYY-MM-DD")
+    date_from: "",
+    date_to: ""
+    // date_from: moment().format("YYYY-MM-DD"),
+    // date_to: moment().format("YYYY-MM-DD")
 };
 
 /***/ }),
@@ -53244,7 +53276,9 @@ exports.default = {
     namespaced: true,
     state: {
         suppliers: [],
-        supplier: {}
+        supplier: {},
+        is_loading: false,
+        is_submitting: false
     },
     getters: {
         GET_SUPPLIERS: function GET_SUPPLIERS(state) {
@@ -53252,6 +53286,12 @@ exports.default = {
         },
         GET_SUPPLIER: function GET_SUPPLIER(state) {
             return state.supplier;
+        },
+        GET_LOADING_STATE: function GET_LOADING_STATE(state) {
+            return state.is_loading;
+        },
+        GET_SUBMIT_STATE: function GET_SUBMIT_STATE(state) {
+            return state.is_submitting;
         }
     },
     mutations: {
@@ -53260,11 +53300,19 @@ exports.default = {
         },
         SET_SUPPLIERS: function SET_SUPPLIERS(state, payload) {
             state.suppliers = payload;
+        },
+        SET_LOADING_STATE: function SET_LOADING_STATE(state, payload) {
+            state.is_loading = payload;
+        },
+        GET_SUBMIT_STATE: function GET_SUBMIT_STATE(state, payload) {
+            state.is_submitting = payload;
         }
     },
     actions: {
         fetchSuppliers: function fetchSuppliers(_ref, payload) {
             var commit = _ref.commit;
+
+            commit("SET_LOADING_STATE", true);
 
             return new Promise(function (resolve, reject) {
                 axios.get(payload, {
@@ -53275,9 +53323,16 @@ exports.default = {
                 }).then(function (response) {
                     commit("CLEAR_SUPPLIERS");
                     commit("SET_SUPPLIERS", response.data);
-                    resolve(response);
+                    setTimeout(function () {
+                        commit("SET_LOADING_STATE", false);
+                        resolve(response);
+                    }, 1000);
                 }).catch(function (error) {
-                    reject(error);
+                    setTimeout(function () {
+                        toastr.error("Server Response Error", "Oops something went wrong.");
+                        commit("SET_LOADING_STATE", false);
+                        reject(error);
+                    }, 1000);
                 });
             });
         }
@@ -53628,7 +53683,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _regenerator = __webpack_require__(12);
+var _regenerator = __webpack_require__(11);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -53744,7 +53799,7 @@ var _purchases = __webpack_require__(225);
 
 var _purchases2 = _interopRequireDefault(_purchases);
 
-var _Pagination = __webpack_require__(152);
+var _Pagination = __webpack_require__(151);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 

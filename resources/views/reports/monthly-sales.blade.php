@@ -68,50 +68,45 @@
 <body>
   <div class="report-hedear">
     <div class="logo-container">
-      <img height="65" width="65" src="./images/app/neust_logo.png" alt="">
+      <img height="65" width="65" src="./images/logo.png" alt="">
     </div>
     <div>
       <h2 style="text-align:center;">COMPANY NAME</h2>
-      <h2 style="text-align:center;">Monthly Sales Report for {{ date("F", mktime(0, 0, 0, $data['month'], 1)) }} - {{ $data['year'] }}</h2>
+      <h2 style="text-align:center;">Monthly Sales Report for {{ $data['month'] }} - {{ $data['year'] }}</h2>
     </div>
   </div>
   <hr>
   <table>
     <thead>
       <tr>
-        <th>MONTH</th>
-        <th>YEAR</th>
         <th>MODEL</th>
         <th>SUB TOTAL</th>
       </tr>
     </thead>
-    <!-- <tbody>
-      @php
-      $total_sales = 0.00;
-      @endphp
-      @foreach($data['items'] as $key => $item)
-      @php
-      $total_sales = floatval($total_sales) + floatval($item->amount);
-      @endphp
-      <tr>
-        <td>{{ $item->month }}</td>
-        <td>{{ $item->year }}</td>
-        <td>{{ $item->year }}</td>
+    @php
+    $total_sales = 0.00;
+    @endphp
+    @foreach($data['sales'] as $key => $item)
+    @php
+    $total_sales = floatval($total_sales) + floatval($item->sub_total);
+    @endphp
+    <tr>
+      <td>{{ $item->item->model->name }}</td>
 
-        <td>{{ number_format($item->amount,2,'.',',') }}</td>
-      </tr>
+      <td>{{ number_format($item->sub_total,2,'.',',') }}</td>
+    </tr>
 
-      @endforeach
-      <tr>
-        <td colspan="4" class="general-total">Total: </td>
-        <td class="total-amount">{{ number_format($total_sales,2,'.',',') }}</td>
-      </tr> -->
+    @endforeach
+    <tr>
+      <td class="general-total">Total: </td>
+      <td class="total-amount">{{ number_format($total_sales,2,'.',',') }}</td>
+    </tr>
     </tbody>
   </table>
-  <div class="signatories">
+  <!-- <div class="signatories">
     <span class="signature">Prepared By</span>
     <span class="signature">Approved By</span>
-  </div>
+  </div> -->
 
 </body>
 

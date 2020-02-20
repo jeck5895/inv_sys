@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <card>
                 <template v-slot:card-header>
-                    <h3 class="card-title mb-0 float-left">SUPPLIERS</h3>
+                    <h3 class="card-title mb-0 float-left">MANAGE COLORS</h3>
                 </template>
                 <template v-slot:card-body>
                     <div class="row">
@@ -137,8 +137,8 @@ export default {
                     link: "/administrator"
                 },
                 {
-                    text: "Suppliers",
-                    link: "/administrator/suppliers"
+                    text: "Colors",
+                    link: "/administrator/colors"
                 }
             ];
             this.$store.commit("setBreadcrumbs", breadcrumbs);

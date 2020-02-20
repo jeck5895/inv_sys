@@ -1,4 +1,4 @@
-webpackJsonp([18],{
+webpackJsonp([19],{
 
 /***/ 312:
 /***/ (function(module, exports, __webpack_require__) {
@@ -508,19 +508,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 483:
+/***/ 482:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(500)
+  __webpack_require__(496)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(502)
+var __vue_script__ = __webpack_require__(498)
 /* template */
-var __vue_template__ = __webpack_require__(503)
+var __vue_template__ = __webpack_require__(499)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -537,7 +537,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/pages/admin/models.vue"
+Component.options.__file = "resources/js/pages/admin/freebies.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -546,9 +546,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-81e4fbda", Component.options)
+    hotAPI.createRecord("data-v-26d0f0ec", Component.options)
   } else {
-    hotAPI.reload("data-v-81e4fbda", Component.options)
+    hotAPI.reload("data-v-26d0f0ec", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -560,23 +560,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 500:
+/***/ 496:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(501);
+var content = __webpack_require__(497);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("33baf658", content, false, {});
+var update = __webpack_require__(4)("616d554e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-81e4fbda\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./models.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-81e4fbda\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./models.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26d0f0ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./freebies.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26d0f0ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./freebies.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -587,7 +587,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 501:
+/***/ 497:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -602,7 +602,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 502:
+/***/ 498:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -765,8 +765,8 @@ exports.default = {
                 text: "Administrator",
                 link: "/administrator"
             }, {
-                text: "Models",
-                link: "/administrator/models"
+                text: "Freebies",
+                link: "/administrator/freebies"
             }];
             this.$store.commit("setBreadcrumbs", breadcrumbs);
         }
@@ -800,7 +800,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 503:
+/***/ 499:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -819,7 +819,7 @@ var render = function() {
               fn: function() {
                 return [
                   _c("h3", { staticClass: "card-title mb-0 float-left" }, [
-                    _vm._v("MANAGE MODELS")
+                    _vm._v("MANAGE FREEBIES")
                   ])
                 ]
               },
@@ -898,7 +898,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-81e4fbda", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-26d0f0ec", module.exports)
   }
 }
 

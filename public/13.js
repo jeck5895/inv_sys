@@ -1,18 +1,18 @@
 webpackJsonp([13],{
 
-/***/ 287:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(362)
+  __webpack_require__(379)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(364)
+var __vue_script__ = __webpack_require__(381)
 /* template */
-var __vue_template__ = __webpack_require__(380)
+var __vue_template__ = __webpack_require__(397)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 295:
+/***/ 307:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(296)
+  __webpack_require__(308)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(298)
+var __vue_script__ = __webpack_require__(310)
 /* template */
-var __vue_template__ = __webpack_require__(299)
+var __vue_template__ = __webpack_require__(311)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,17 +104,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 296:
+/***/ 308:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(297);
+var content = __webpack_require__(309);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("5eb544a1", content, false, {});
+var update = __webpack_require__(4)("5eb544a1", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -131,7 +131,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 297:
+/***/ 309:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 298:
+/***/ 310:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -184,7 +184,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 299:
+/***/ 311:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -237,17 +237,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 362:
+/***/ 379:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(363);
+var content = __webpack_require__(380);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("3bc58832", content, false, {});
+var update = __webpack_require__(4)("3bc58832", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -264,7 +264,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 363:
+/***/ 380:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -272,14 +272,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 364:
+/***/ 381:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -289,7 +289,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _regenerator = __webpack_require__(165);
+var _regenerator = __webpack_require__(11);
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
@@ -365,21 +365,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _customer = __webpack_require__(365);
+var _customer = __webpack_require__(382);
 
 var _customer2 = _interopRequireDefault(_customer);
 
-var _index = __webpack_require__(375);
+var _index = __webpack_require__(392);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _Pagination = __webpack_require__(451);
+var _Pagination = __webpack_require__(151);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _index3 = __webpack_require__(149);
+var _index3 = __webpack_require__(12);
 
-var _vuex = __webpack_require__(11);
+var _vuex = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -476,6 +476,16 @@ exports.default = {
         lastPage: function lastPage(last_page_url) {
             var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
             this.fetchCustomers(url);
+        },
+        setBreadcrumbs: function setBreadcrumbs() {
+            var breadcrumbs = [{
+                text: "Administrator",
+                link: "/administrator"
+            }, {
+                text: "Customers",
+                link: "/administrator/customers"
+            }];
+            this.$store.commit("setBreadcrumbs", breadcrumbs);
         }
     }),
     created: function () {
@@ -484,10 +494,11 @@ exports.default = {
                 while (1) {
                     switch (_context.prev = _context.next) {
                         case 0:
-                            _context.next = 2;
+                            this.setBreadcrumbs();
+                            _context.next = 3;
                             return this.fetchCustomers("/api/customers?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
 
-                        case 2:
+                        case 3:
                         case "end":
                             return _context.stop();
                     }
@@ -505,19 +516,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 365:
+/***/ 382:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(366)
+  __webpack_require__(383)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(368)
+var __vue_script__ = __webpack_require__(385)
 /* template */
-var __vue_template__ = __webpack_require__(374)
+var __vue_template__ = __webpack_require__(391)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -557,17 +568,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 366:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(367);
+var content = __webpack_require__(384);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("0a03ae32", content, false, {});
+var update = __webpack_require__(4)("0a03ae32", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -584,7 +595,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 367:
+/***/ 384:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -599,7 +610,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 368:
+/***/ 385:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -609,7 +620,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(369);
+var _index = __webpack_require__(386);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -640,19 +651,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 369:
+/***/ 386:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(370)
+  __webpack_require__(387)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(372)
+var __vue_script__ = __webpack_require__(389)
 /* template */
-var __vue_template__ = __webpack_require__(373)
+var __vue_template__ = __webpack_require__(390)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -692,17 +703,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 370:
+/***/ 387:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(371);
+var content = __webpack_require__(388);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("2a9c1222", content, false, {});
+var update = __webpack_require__(4)("2a9c1222", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -719,7 +730,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 371:
+/***/ 388:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -727,14 +738,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 372:
+/***/ 389:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -744,7 +755,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _error = __webpack_require__(295);
+var _error = __webpack_require__(307);
 
 var _error2 = _interopRequireDefault(_error);
 
@@ -940,404 +951,386 @@ exports.default = {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /***/ }),
 
-/***/ 373:
+/***/ 390:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card bg-primary" }, [
-    _c("div", { staticClass: "card-body" }, [
+  return _c(
+    "form",
+    {
+      attrs: { "data-vv-scope": "customerForm" },
+      on: {
+        submit: function($event) {
+          $event.preventDefault()
+          return _vm.handleSubmit("customerForm")
+        }
+      }
+    },
+    [
       _c(
-        "form",
-        {
-          staticClass: "color-form",
-          attrs: { "data-vv-scope": "customerForm" },
-          on: {
-            submit: function($event) {
-              $event.preventDefault()
-              return _vm.handleSubmit("customerForm")
-            }
-          }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "form-group" },
-            [_c("AlertError", { attrs: { response: _vm.response } })],
-            1
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c(
-              "select",
+        "div",
+        { staticClass: "form-group" },
+        [_c("AlertError", { attrs: { response: _vm.response } })],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "select",
+          {
+            directives: [
               {
-                directives: [
-                  {
-                    name: "validate",
-                    rawName: "v-validate",
-                    value: "required",
-                    expression: "'required'"
-                  },
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.customer.customer_type,
-                    expression: "customer.customer_type"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  name: "customer_type",
-                  "data-vv-as": "customer type",
-                  id: "basic-select"
-                },
-                on: {
-                  change: function($event) {
-                    var $$selectedVal = Array.prototype.filter
-                      .call($event.target.options, function(o) {
-                        return o.selected
-                      })
-                      .map(function(o) {
-                        var val = "_value" in o ? o._value : o.value
-                        return val
-                      })
-                    _vm.$set(
-                      _vm.customer,
-                      "customer_type",
-                      $event.target.multiple ? $$selectedVal : $$selectedVal[0]
-                    )
-                  }
-                }
+                name: "validate",
+                rawName: "v-validate",
+                value: "required",
+                expression: "'required'"
               },
-              [
-                _c(
-                  "option",
-                  { staticStyle: { color: "gray" }, attrs: { value: "" } },
-                  [_vm._v("Please Select Item")]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.customer_types, function(item) {
-                  return _c(
-                    "option",
-                    { key: item.value, domProps: { value: item.value } },
-                    [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(item.label) +
-                          "\n                    "
-                      )
-                    ]
-                  )
-                })
-              ],
-              2
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.customer.customer_type,
+                expression: "customer.customer_type"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: {
+              name: "customer_type",
+              "data-vv-as": "customer type",
+              id: "basic-select"
+            },
+            on: {
+              change: function($event) {
+                var $$selectedVal = Array.prototype.filter
+                  .call($event.target.options, function(o) {
+                    return o.selected
+                  })
+                  .map(function(o) {
+                    var val = "_value" in o ? o._value : o.value
+                    return val
+                  })
+                _vm.$set(
+                  _vm.customer,
+                  "customer_type",
+                  $event.target.multiple ? $$selectedVal : $$selectedVal[0]
+                )
+              }
+            }
+          },
+          [
+            _c(
+              "option",
+              { staticStyle: { color: "gray" }, attrs: { value: "" } },
+              [_vm._v("Please Select Item")]
             ),
             _vm._v(" "),
-            _c(
-              "small",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.errors.has("customerForm.customer_type"),
-                    expression: "errors.has('customerForm.customer_type')"
-                  }
-                ],
-                staticClass: "form-text text-danger"
-              },
-              [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.errors.first("customerForm.customer_type")) +
-                    "\n                "
-                )
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group " }, [
-            _c("label", { attrs: { for: "input-1" } }, [_vm._v("Name")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.customer.fullname,
-                  expression: "customer.fullname"
-                },
-                {
-                  name: "validate",
-                  rawName: "v-validate",
-                  value: "required",
-                  expression: "'required'"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "name",
-                type: "text",
-                id: "input-1",
-                placeholder: "Enter Customer Name"
-              },
-              domProps: { value: _vm.customer.fullname },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.customer, "fullname", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "small",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.errors.has("customerForm.name"),
-                    expression: "errors.has('customerForm.name')"
-                  }
-                ],
-                staticClass: "form-text text-danger"
-              },
-              [_vm._v(_vm._s(_vm.errors.first("customerForm.name")))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group " }, [
-            _c("label", { attrs: { for: "input-1" } }, [_vm._v("ID")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.customer.customer_id,
-                  expression: "customer.customer_id"
-                },
-                {
-                  name: "validate",
-                  rawName: "v-validate",
-                  value: "",
-                  expression: "''"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "customer_id",
-                type: "text",
-                id: "input-1",
-                placeholder: "Enter ID"
-              },
-              domProps: { value: _vm.customer.customer_id },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.customer, "customer_id", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "small",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.errors.has("customerForm.customer_id"),
-                    expression: "errors.has('customerForm.customer_id')"
-                  }
-                ],
-                staticClass: "form-text text-danger"
-              },
-              [_vm._v(_vm._s(_vm.errors.first("customerForm.customer_id")))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group " }, [
-            _c("label", { attrs: { for: "input-1" } }, [_vm._v("Course")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.customer.course,
-                  expression: "customer.course"
-                },
-                {
-                  name: "validate",
-                  rawName: "v-validate",
-                  value: "",
-                  expression: "''"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "course",
-                type: "text",
-                id: "input-1",
-                placeholder: "Enter course"
-              },
-              domProps: { value: _vm.customer.course },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.customer, "course", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "small",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.errors.has("customerForm.course"),
-                    expression: "errors.has('customerForm.course')"
-                  }
-                ],
-                staticClass: "form-text text-danger"
-              },
-              [_vm._v(_vm._s(_vm.errors.first("customerForm.course")))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group " }, [
-            _c("label", { attrs: { for: "input-1" } }, [_vm._v("Year")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.customer.year,
-                  expression: "customer.year"
-                },
-                {
-                  name: "validate",
-                  rawName: "v-validate",
-                  value: "",
-                  expression: "''"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "year",
-                type: "text",
-                id: "input-1",
-                placeholder: "Enter year"
-              },
-              domProps: { value: _vm.customer.year },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.customer, "year", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "small",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.errors.has("customerForm.year"),
-                    expression: "errors.has('customerForm.year')"
-                  }
-                ],
-                staticClass: "form-text text-danger"
-              },
-              [_vm._v(_vm._s(_vm.errors.first("customerForm.year")))]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("label", { attrs: { for: "input-35" } }, [_vm._v("Department")]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.customer.department,
-                  expression: "customer.department"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                name: "department",
-                type: "text",
-                id: "input-35",
-                placeholder: "Enter Department"
-              },
-              domProps: { value: _vm.customer.department },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.customer, "department", $event.target.value)
-                }
-              }
+            _vm._l(_vm.customer_types, function(item) {
+              return _c(
+                "option",
+                { key: item.value, domProps: { value: item.value } },
+                [
+                  _vm._v(
+                    "\n                " + _vm._s(item.label) + "\n            "
+                  )
+                ]
+              )
             })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c(
-              "button",
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "small",
+          {
+            directives: [
               {
-                staticClass: "btn btn-block bg-white text-primary shadow px-5",
-                attrs: { disabled: _vm.isLoading, type: "submit" }
-              },
-              [
-                _c("i", { staticClass: "fa fa-floppy-o" }),
-                _vm._v(" "),
-                !_vm.isLoading
-                  ? _c("span", [_vm._v("Save")])
-                  : _c("span", [
-                      _c("i", { staticClass: "fa fa-spinner fa-spin" }),
-                      _vm._v(" Saving...\n                    ")
-                    ])
-              ]
+                name: "show",
+                rawName: "v-show",
+                value: _vm.errors.has("customerForm.customer_type"),
+                expression: "errors.has('customerForm.customer_type')"
+              }
+            ],
+            staticClass: "form-text text-danger"
+          },
+          [
+            _vm._v(
+              "\n            " +
+                _vm._s(_vm.errors.first("customerForm.customer_type")) +
+                "\n        "
             )
-          ])
-        ]
-      )
-    ])
-  ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group " }, [
+        _c("label", { attrs: { for: "input-1" } }, [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.customer.fullname,
+              expression: "customer.fullname"
+            },
+            {
+              name: "validate",
+              rawName: "v-validate",
+              value: "required",
+              expression: "'required'"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            name: "name",
+            type: "text",
+            id: "input-1",
+            placeholder: "Enter Customer Name"
+          },
+          domProps: { value: _vm.customer.fullname },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.customer, "fullname", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "small",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.errors.has("customerForm.name"),
+                expression: "errors.has('customerForm.name')"
+              }
+            ],
+            staticClass: "form-text text-danger"
+          },
+          [_vm._v(_vm._s(_vm.errors.first("customerForm.name")))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group " }, [
+        _c("label", { attrs: { for: "input-1" } }, [_vm._v("ID")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.customer.customer_id,
+              expression: "customer.customer_id"
+            },
+            {
+              name: "validate",
+              rawName: "v-validate",
+              value: "",
+              expression: "''"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            name: "customer_id",
+            type: "text",
+            id: "input-1",
+            placeholder: "Enter ID"
+          },
+          domProps: { value: _vm.customer.customer_id },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.customer, "customer_id", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "small",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.errors.has("customerForm.customer_id"),
+                expression: "errors.has('customerForm.customer_id')"
+              }
+            ],
+            staticClass: "form-text text-danger"
+          },
+          [_vm._v(_vm._s(_vm.errors.first("customerForm.customer_id")))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group " }, [
+        _c("label", { attrs: { for: "input-1" } }, [_vm._v("Course")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.customer.course,
+              expression: "customer.course"
+            },
+            {
+              name: "validate",
+              rawName: "v-validate",
+              value: "",
+              expression: "''"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            name: "course",
+            type: "text",
+            id: "input-1",
+            placeholder: "Enter course"
+          },
+          domProps: { value: _vm.customer.course },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.customer, "course", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "small",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.errors.has("customerForm.course"),
+                expression: "errors.has('customerForm.course')"
+              }
+            ],
+            staticClass: "form-text text-danger"
+          },
+          [_vm._v(_vm._s(_vm.errors.first("customerForm.course")))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group " }, [
+        _c("label", { attrs: { for: "input-1" } }, [_vm._v("Year")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.customer.year,
+              expression: "customer.year"
+            },
+            {
+              name: "validate",
+              rawName: "v-validate",
+              value: "",
+              expression: "''"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            name: "year",
+            type: "text",
+            id: "input-1",
+            placeholder: "Enter year"
+          },
+          domProps: { value: _vm.customer.year },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.customer, "year", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "small",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.errors.has("customerForm.year"),
+                expression: "errors.has('customerForm.year')"
+              }
+            ],
+            staticClass: "form-text text-danger"
+          },
+          [_vm._v(_vm._s(_vm.errors.first("customerForm.year")))]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "input-35" } }, [_vm._v("Department")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.customer.department,
+              expression: "customer.department"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            name: "department",
+            type: "text",
+            id: "input-35",
+            placeholder: "Enter Department"
+          },
+          domProps: { value: _vm.customer.department },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.customer, "department", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "form-group" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-block btn-success shadow px-5",
+            attrs: { disabled: _vm.isLoading, type: "submit" }
+          },
+          [
+            _c("i", { staticClass: "fa fa-floppy-o" }),
+            _vm._v(" "),
+            !_vm.isLoading
+              ? _c("span", [_vm._v("Save")])
+              : _c("span", [
+                  _c("i", { staticClass: "fa fa-spinner fa-spin" }),
+                  _vm._v(" Saving...\n            ")
+                ])
+          ]
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1351,7 +1344,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 374:
+/***/ 391:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1409,19 +1402,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 375:
+/***/ 392:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(376)
+  __webpack_require__(393)
 }
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(378)
+var __vue_script__ = __webpack_require__(395)
 /* template */
-var __vue_template__ = __webpack_require__(379)
+var __vue_template__ = __webpack_require__(396)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1461,17 +1454,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 376:
+/***/ 393:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(377);
+var content = __webpack_require__(394);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("6167ed1c", content, false, {});
+var update = __webpack_require__(4)("6167ed1c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1488,7 +1481,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 377:
+/***/ 394:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1503,7 +1496,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 378:
+/***/ 395:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1640,7 +1633,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 379:
+/***/ 396:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1834,7 +1827,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 380:
+/***/ 397:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1857,7 +1850,7 @@ var render = function() {
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-success",
+                        staticClass: "btn btn-sm btn-success",
                         attrs: {
                           "data-toggle": "modal",
                           "data-target": "#customermodal"
@@ -1902,7 +1895,8 @@ var render = function() {
                               expression: "keyword"
                             }
                           ],
-                          staticClass: "form-control mb-2 mr-sm-2",
+                          staticClass:
+                            "form-control form-control-sm mb-2 mr-sm-2",
                           attrs: {
                             type: "text",
                             id: "inlineFormInputName2",
@@ -1976,7 +1970,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "button",
-      { staticClass: "btn btn-success mb-2", attrs: { type: "submit" } },
+      { staticClass: "btn btn-sm btn-success mb-2", attrs: { type: "submit" } },
       [
         _c("i", { staticClass: "fa fa-search" }),
         _vm._v("SEARCH\n                                    ")

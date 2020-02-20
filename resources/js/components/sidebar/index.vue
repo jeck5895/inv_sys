@@ -2,11 +2,7 @@
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
             <a href="index.html">
-                <img
-                    src="/images/logo-icon.png"
-                    class="logo-icon"
-                    alt="logo icon"
-                />
+                <img src="/images/logo.png" class="logo-icon" alt="logo icon" />
                 <h5 class="logo-text">Inventory</h5>
             </a>
         </div>
@@ -91,6 +87,53 @@
                 <router-link to="/administrator/suppliers" class="waves-effect">
                     <i class="fa fa-truck"></i><span>Suppliers</span>
                 </router-link>
+            </li>
+            <li>
+                <a
+                    href="#"
+                    @click="toggleReportClass"
+                    class="media align-items-center user-pointer collapsed"
+                    data-toggle="collapse"
+                    data-target="#report-dropdown"
+                >
+                    <!-- <div class="media-body"> -->
+                    <i class="fa fa-gears"></i>
+                    <span>Settings</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    <!-- </div> -->
+                </a>
+                <div id="report-dropdown" class="collapse">
+                    <ul class="user-setting-menu">
+                        <li>
+                            <router-link
+                                to="/administrator/brands"
+                                class="waves-effect"
+                                ><i class="fa fa-long-arrow-right"></i> Brands
+                            </router-link>
+                            <router-link
+                                to="/administrator/categories"
+                                class="waves-effect"
+                                ><i class="fa fa-long-arrow-right"></i>
+                                Categories
+                            </router-link>
+                            <router-link
+                                to="/administrator/colors"
+                                class="waves-effect"
+                                ><i class="fa fa-long-arrow-right"></i> Colors
+                            </router-link>
+                            <router-link
+                                to="/administrator/freebies"
+                                class="waves-effect"
+                                ><i class="fa fa-long-arrow-right"></i> Freebies
+                            </router-link>
+                            <router-link
+                                to="/administrator/models"
+                                class="waves-effect"
+                                ><i class="fa fa-long-arrow-right"></i> Models
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <!-- <li>
                 <a

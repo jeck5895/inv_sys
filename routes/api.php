@@ -17,11 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('sales/report/daily', 'API\ReportController@daily');
+Route::get('sales/report/monthly', 'API\ReportController@monthly');
 
 Route::middleware('auth:api')->group(function () {
 
-    Route::get('sales/report/daily', 'API\ReportController@daily');
-    Route::get('sales/report/monthly', 'API\ReportController@monthly');
+
 
     Route::post('stocks/bulk', 'API\PurchaseController@bulk');
 

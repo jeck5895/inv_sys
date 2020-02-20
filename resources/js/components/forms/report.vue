@@ -88,45 +88,45 @@ export default {
     data: () => ({
         type: "monthly",
         year: moment().format("YYYY"),
-        month: moment().format("M"),
+        month: moment().format("MM"),
         date_from: moment().format("YYYY-MM-DD"),
         date_to: moment().format("YYYY-MM-DD"),
         months: [
             {
                 name: "January",
-                value: 1
+                value: "01"
             },
             {
                 name: "February",
-                value: 2
+                value: "02"
             },
             {
                 name: "March",
-                value: 3
+                value: "03"
             },
             {
                 name: "April",
-                value: 4
+                value: "04"
             },
             {
                 name: "May",
-                value: 5
+                value: "05"
             },
             {
                 name: "June",
-                value: 6
+                value: "06"
             },
             {
                 name: "July",
-                value: 7
+                value: "07"
             },
             {
                 name: "August",
-                value: 8
+                value: "08"
             },
             {
                 name: "September",
-                value: 9
+                value: "09"
             },
             {
                 name: "October",

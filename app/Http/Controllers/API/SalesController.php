@@ -83,9 +83,8 @@ class SalesController extends Controller
         //   $query->orWhere('freebie', 'LIKE', '%' . $request->q . '%');
         // })
         ->where(function ($query) use ($request) {
-          if ($request->has('date_from') && $request->has('date_to')) {
+          if (($request->has('date_from') && $request->date_from != null) && ($request->has('date_to') && $request->date_to != null)) {
             $query->whereBetween(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"), [$request->date_from, $request->date_to]);
-            // dd($query->toSql());
           }
         })
         // ->toSql();
