@@ -11,7 +11,7 @@
                         <i class="icon-menu menu-icon"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <form class="search-bar">
                         <input
                             type="text"
@@ -22,7 +22,7 @@
                             ><i class="icon-magnifier"></i
                         ></a>
                     </form>
-                </li>
+                </li> -->
             </ul>
 
             <ul class="navbar-nav align-items-center right-nav-link">

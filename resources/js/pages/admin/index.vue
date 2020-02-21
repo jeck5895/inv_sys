@@ -42,9 +42,6 @@ export default {
         Navbar,
         Breadcrumb,
         HeaderTools
-    },
-    mounted() {
-        console.log(this.user);
     }
 };
 </script>
