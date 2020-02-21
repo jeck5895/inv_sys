@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateColorsTable extends Migration
+class RenameFreebieToNameInFreebiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateColorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('colors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->longText('value')->nullable();
-            $table->timestamps();
+        Schema::table('freebies', function (Blueprint $table) {
+            $table->renameColumn('freebie', 'name');
         });
     }
 
@@ -28,6 +25,8 @@ class CreateColorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('colors');
+        Schema::table('freebies', function (Blueprint $table) {
+            //
+        });
     }
 }

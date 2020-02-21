@@ -47,6 +47,9 @@ class SuppliersController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|unique:suppliers',
+        ]);
 
         $supplier  = new Supplier;
         $supplier->name = $request['name'];
@@ -77,7 +80,11 @@ class SuppliersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $supplier = Supplier::firstOrFail($id);
+        $request->validate([
+            'name' => 'required|unique:suppliers,name,' . $id,
+        ]);
+
+        $supplier = Supplier::findOrFail($id);
         $supplier->name = $request['name'];
         $supplier->save();
 
@@ -92,6 +99,8 @@ class SuppliersController extends Controller
      */
     public function destroy($id)
     {
-        $supplier = Supplier::destroy($id);
+        Supplier::destroy($id);
+
+        return ['message' => 'Success'];
     }
 }

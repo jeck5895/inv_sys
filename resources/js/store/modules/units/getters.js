@@ -3,9 +3,12 @@ export default {
         return state.unit;
     },
     GET_UNITS: state => {
-        return state.units
+        return state.units;
     },
     GET_UNITS_LIST: state => {
         return state.units_list;
+    },
+    GET_SUBMIT_STATE: state => {
+        return state.submitting;
     }
-}
+};

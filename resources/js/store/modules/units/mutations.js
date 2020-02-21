@@ -16,5 +16,8 @@ export default {
     },
     SET_UNITS_LIST: (state, payload) => {
         state.units_list = payload;
+    },
+    SET_SUBMIT_STATE: (state, payload) => {
+        state.submitting = payload;
     }
-}
+};

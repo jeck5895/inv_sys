@@ -51,7 +51,7 @@
                 <template v-slot:card-body>
                     <div v-if="response_errors !== null" class="form-group">
                         <validation-error-component
-                            :errors="response_errors"
+                            :error-object="response_errors"
                         ></validation-error-component>
                     </div>
                     <item-form

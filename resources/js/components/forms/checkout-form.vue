@@ -239,6 +239,12 @@ export default {
                 }
             });
         }
+    },
+    watch: {
+        item: function() {
+            this.$validator.reset();
+            this.errors.clear();
+        }
     }
 };
 </script>

@@ -1,18 +1,18 @@
 webpackJsonp([3],{
 
-/***/ 301:
+/***/ 302:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(409)
+  __webpack_require__(415)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(411)
+var __vue_script__ = __webpack_require__(417)
 /* template */
-var __vue_template__ = __webpack_require__(427)
+var __vue_template__ = __webpack_require__(433)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 312:
+/***/ 313:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(313)
+  __webpack_require__(314)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(315)
+var __vue_script__ = __webpack_require__(316)
 /* template */
-var __vue_template__ = __webpack_require__(316)
+var __vue_template__ = __webpack_require__(317)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,17 +104,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 313:
+/***/ 314:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(314);
+var content = __webpack_require__(315);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("66177662", content, false, {});
+var update = __webpack_require__(5)("66177662", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -131,7 +131,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 314:
+/***/ 315:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -191,7 +191,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 316:
+/***/ 317:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -255,17 +255,17 @@ if (false) {
 
 /***/ }),
 
-/***/ 409:
+/***/ 415:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(410);
+var content = __webpack_require__(416);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("4093880c", content, false, {});
+var update = __webpack_require__(5)("4093880c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -282,7 +282,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 410:
+/***/ 416:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -297,7 +297,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 411:
+/***/ 417:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -309,15 +309,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _salesTable = __webpack_require__(412);
+var _salesTable = __webpack_require__(418);
 
 var _salesTable2 = _interopRequireDefault(_salesTable);
 
-var _search = __webpack_require__(312);
+var _search = __webpack_require__(313);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _dateFilter = __webpack_require__(417);
+var _dateFilter = __webpack_require__(423);
 
 var _dateFilter2 = _interopRequireDefault(_dateFilter);
 
@@ -329,7 +329,7 @@ var _modal = __webpack_require__(153);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _report = __webpack_require__(422);
+var _report = __webpack_require__(428);
 
 var _report2 = _interopRequireDefault(_report);
 
@@ -644,19 +644,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 412:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(413)
+  __webpack_require__(419)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(415)
+var __vue_script__ = __webpack_require__(421)
 /* template */
-var __vue_template__ = __webpack_require__(416)
+var __vue_template__ = __webpack_require__(422)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -696,17 +696,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 413:
+/***/ 419:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(414);
+var content = __webpack_require__(420);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("1edbb768", content, false, {});
+var update = __webpack_require__(5)("1edbb768", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -723,7 +723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 414:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -731,14 +731,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 415:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -747,6 +747,9 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+//
+//
+//
 //
 //
 //
@@ -804,7 +807,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 416:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -843,7 +846,13 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.payment_mode))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.payment_terms))])
+                  _c("td", [
+                    item.payment_terms === null
+                      ? _c("span", [_vm._v("N/A")])
+                      : _c("span", [
+                          _vm._v(_vm._s(item.payment_terms) + " months")
+                        ])
+                  ])
                 ])
               })
             : _vm._e()
@@ -909,19 +918,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 417:
+/***/ 423:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(418)
+  __webpack_require__(424)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(420)
+var __vue_script__ = __webpack_require__(426)
 /* template */
-var __vue_template__ = __webpack_require__(421)
+var __vue_template__ = __webpack_require__(427)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -961,17 +970,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 418:
+/***/ 424:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(419);
+var content = __webpack_require__(425);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("990b444e", content, false, {});
+var update = __webpack_require__(5)("990b444e", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -988,7 +997,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 419:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1003,7 +1012,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 420:
+/***/ 426:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1067,7 +1076,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 421:
+/***/ 427:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1143,19 +1152,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 422:
+/***/ 428:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(423)
+  __webpack_require__(429)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(425)
+var __vue_script__ = __webpack_require__(431)
 /* template */
-var __vue_template__ = __webpack_require__(426)
+var __vue_template__ = __webpack_require__(432)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1195,17 +1204,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 423:
+/***/ 429:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(424);
+var content = __webpack_require__(430);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("314cf694", content, false, {});
+var update = __webpack_require__(5)("314cf694", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -1222,7 +1231,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 424:
+/***/ 430:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1237,7 +1246,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 425:
+/***/ 431:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1412,7 +1421,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 426:
+/***/ 432:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1657,7 +1666,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 427:
+/***/ 433:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

@@ -35,6 +35,12 @@ export default {
         },
         GET_SUBMIT_STATE: (state, payload) => {
             state.is_submitting = payload;
+        },
+        SET_SUPPLIER: (state, payload) => {
+            state.supplier = payload;
+        },
+        CLEAR_SUPPLIER: state => {
+            state.supplier = {};
         }
     },
     actions: {
@@ -66,6 +72,57 @@ export default {
                             commit("SET_LOADING_STATE", false);
                             reject(error);
                         }, 1000);
+                    });
+            });
+        },
+        store: ({ commit, dispatch }, payload) => {
+            return new Promise((resolve, reject) => {
+                axios
+                    .post("api/suppliers", payload, {
+                        headers: {
+                            Accept: "application/json",
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        resolve(response);
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            });
+        },
+        update: ({ commit }, payload) => {
+            return new Promise((resolve, reject) => {
+                axios
+                    .patch(`api/suppliers/${payload.id}`, payload, {
+                        headers: {
+                            Accept: "application/json",
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        resolve(response);
+                    })
+                    .catch(error => {
+                        reject(error);
+                    });
+            });
+        },
+        delete: ({ commit }, payload) => {
+            return new Promise((resolve, reject) => {
+                axios
+                    .delete(`api/suppliers/${payload}`, {
+                        headers: {
+                            Accept: "application/json",
+                            Authorization: `Bearer ${token}`
+                        }
+                    })
+                    .then(response => {
+                        resolve(response);
+                    })
+                    .catch(error => {
+                        reject(error);
                     });
             });
         }

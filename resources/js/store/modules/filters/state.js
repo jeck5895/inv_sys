@@ -7,7 +7,8 @@ export default {
     order_by: "desc",
     sort_by: "created_at",
     date_from: "",
-    date_to: ""
+    date_to: "",
+    loading: false
     // date_from: moment().format("YYYY-MM-DD"),
     // date_to: moment().format("YYYY-MM-DD")
 };

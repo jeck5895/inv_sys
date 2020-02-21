@@ -17,13 +17,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('sales/report/daily', 'API\ReportController@daily');
-Route::get('sales/report/monthly', 'API\ReportController@monthly');
 
 Route::middleware('auth:api')->group(function () {
 
-
-
+    Route::get('sales/report/daily', 'API\ReportController@daily');
+    Route::get('sales/report/monthly', 'API\ReportController@monthly');
     Route::post('stocks/bulk', 'API\PurchaseController@bulk');
 
     // Route::apiResource('stocks', 'API\PurchaseController');
@@ -36,6 +34,7 @@ Route::middleware('auth:api')->group(function () {
     Route::apiResource('suppliers', 'API\SuppliersController');
     Route::apiResource('sales', 'API\SalesController');
     Route::apiResource('stocks', 'API\PurchaseController');
+    Route::apiResource('freebies', 'API\FreebiesController');
 
     // Route::get('/stocks/lists', 'API\ItemController@lists');
     // Route::get('/sites/lists', 'API\SiteController@lists');

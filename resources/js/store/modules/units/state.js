@@ -1,5 +1,6 @@
 export default {
     units_list: [],
     units: [],
-    unit: {}
-}
+    unit: {},
+    submitting: false
+};

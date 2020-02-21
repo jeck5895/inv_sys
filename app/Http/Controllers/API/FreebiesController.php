@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\ItemModel;
+use App\Model\Freebie;
 
-class ModelsController extends Controller
+class FreebiesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,7 @@ class ModelsController extends Controller
             $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
-            $models = ItemModel::orderBy($sortBy, $orderBy)
+            $freebies = Freebie::orderBy($sortBy, $orderBy)
                 ->where(function ($query) use ($request, $keywords) {
 
                     if ($request->has('q') && $request->q != null) {
@@ -33,10 +33,10 @@ class ModelsController extends Controller
                     }
                 })->paginate($per_page);
         } else {
-            $models = ItemModel::all();
+            $freebies = Freebie::all();
         }
 
-        return $models;
+        return $freebies;
     }
 
     /**
@@ -48,16 +48,14 @@ class ModelsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:models'
+            'name' => 'required|unique:freebies',
         ]);
 
-        $model = new ItemModel;
+        $freebie = new Freebie;
+        $freebie->name = $request->name;
+        $freebie->save();
 
-        $model->name = $request['name'];
-
-        $model->save();
-
-        return ['message' => 'success'];
+        return ['message' => 'Success'];
     }
 
     /**
@@ -68,9 +66,7 @@ class ModelsController extends Controller
      */
     public function show($id)
     {
-        $model = ItemModel::findOrFail($id);
-
-        return $model;
+        $freebie = Freebie::findOrFail($id);
     }
 
     /**
@@ -83,13 +79,12 @@ class ModelsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|unique:models,name,' . $id
+            'name' => 'required|unique:freebies,name,' . $id,
         ]);
-        $model = ItemModel::findOrFail($id);
 
-        $model->name = $request['name'];
-
-        $model->save();
+        $freebie =  Freebie::findOrFail($id);
+        $freebie->name = $request->name;
+        $freebie->save();
 
         return ['message' => 'Success'];
     }
@@ -102,7 +97,6 @@ class ModelsController extends Controller
      */
     public function destroy($id)
     {
-        ItemModel::destroy($id);
-        return ['message' => 'Record successfully deleted.'];
+        // Freebie::destroy($id);
     }
 }

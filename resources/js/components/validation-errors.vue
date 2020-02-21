@@ -16,12 +16,12 @@
 
 <script>
 export default {
-    props: ["errors"],
+    props: ["errorObject"],
     computed: {
         validationErrors() {
-            let errors = Object.values(this.errors);
-            errors = errors.flat();
-            return errors;
+            let errors_obj = Object.values(this.errorObject);
+            errors_obj = errors_obj.flat();
+            return errors_obj;
         }
     }
 };

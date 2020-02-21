@@ -13,9 +13,28 @@ class ColorsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $colors = Color::all();
+        $keywords = $request->has('q') ? explode(' ', $request->q) : null;
+        $per_page = $request->has('per_page') ? $request->per_page : 10;
+
+        if ($request->has('order_by') || $request->has('sort_by') || $request->has('per_page') || $request->has('page')) {
+
+            $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
+            $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
+
+            $colors = Color::orderBy($sortBy, $orderBy)
+                ->where(function ($query) use ($request, $keywords) {
+
+                    if ($request->has('q') && $request->q != null) {
+                        foreach ($keywords as $keyword) {
+                            $query->where('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })->paginate($per_page);
+        } else {
+            $colors = Color::all();
+        }
 
         return $colors;
     }
@@ -28,6 +47,11 @@ class ColorsController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|unique:colors',
+            // 'value' => 'required|unique:colors'
+        ]);
         $color = new Color;
 
         $color->name = $request['name'];
@@ -46,7 +70,9 @@ class ColorsController extends Controller
      */
     public function show($id)
     {
-        //
+        $color = Color::findOrFail($id);
+
+        return $color;
     }
 
     /**
@@ -58,7 +84,16 @@ class ColorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:colors,name,' . $id,
+            // 'value' => 'required|unique:colors,value,' . $id
+        ]);
+        $color = Color::findOrFail($id);
+
+        $color->name = $request['name'];
+        $color->value = $request['value'];
+
+        $color->save();
     }
 
     /**

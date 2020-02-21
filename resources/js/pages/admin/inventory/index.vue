@@ -18,7 +18,7 @@
                             </router-link> -->
                             <button
                                 @click="handleNavigate"
-                                class="btn btn-success waves-effect text-white"
+                                class="btn btn-sm btn-success waves-effect text-white"
                             >
                                 <i class="fa fa-cubes"></i>
                                 Add Item
@@ -33,14 +33,14 @@
                                     <input
                                         type="text"
                                         v-model="keyword"
-                                        class="form-control mb-2 mr-sm-2"
+                                        class="form-control form-control-sm mb-2 mr-sm-2"
                                         id="inlineFormInputName2"
                                         placeholder="Search item"
                                     />
                                 </div>
                                 <button
                                     type="submit"
-                                    class="btn btn-success mb-2"
+                                    class="btn btn-sm btn-success mb-2"
                                 >
                                     <i class="fa fa-search"></i>SEARCH
                                 </button>
@@ -197,7 +197,7 @@ export default {
     methods: {
         ...mapActions({
             fetchColors: "COLORS/fetchColors",
-            fetchModels: "UNITS/FETCH_UNITS",
+            fetchModels: "UNITS/fetchUnits",
             checkout: "SALES_MODULE/STORE",
             fetchBrands: "BRANDS/fetchBrands",
             fetchCategories: "CATEGORIES/fetchCategories",
