@@ -158,9 +158,8 @@ export default {
                 if (result) {
                     let payload = {
                         grant_type: "password",
-                        client_id: 2,
-                        client_secret:
-                            "GiBJAhYpCiVPV3pxsRlCbAm70Vn7YMtz4meA1z8H",
+                        client_id: process.env.MIX_PASSPORT_CLIENT_ID,
+                        client_secret: process.env.MIX_PASSPORT_CLIENT_SECRET,
                         username: this.email,
                         password: this.password,
                         scope: ""
