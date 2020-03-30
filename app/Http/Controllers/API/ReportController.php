@@ -72,7 +72,7 @@ class ReportController extends Controller
 
         $request->validate([
             'date_from' => 'required|date_format:"Y-m-d"',
-            'date_to' => 'required|date_format:"Y-m-d"|before:date_from'
+            'date_to' => 'required|date_format:"Y-m-d"|after_or_equal:date_from'
         ]);
 
         $dateFrom = $request->date_from;
