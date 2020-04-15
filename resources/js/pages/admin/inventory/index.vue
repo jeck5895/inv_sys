@@ -75,8 +75,10 @@
         </div>
         <modal>
             <template v-slot:modal-title>
-                <h5 v-if="item.model && item.model.name" class="text-white">
-                    Checkout {{ item.model.name }}
+                <h5 v-if="selected_item !== null" class="text-white">
+                    <span v-if="form_type === 'CHECKOUT'">Checkout</span>
+                    <span v-else-if="form_type === 'EDIT'">Edit</span>
+                    {{ selected_item.model.name }}
                 </h5>
             </template>
             <template v-slot:modal-body>
@@ -121,6 +123,7 @@ export default {
         CheckoutForm,
         ItemForm
     },
+
     computed: {
         ...mapGetters({
             purchases: "PURCHASES_MODULE/GET_PURCHASES",
@@ -192,7 +195,8 @@ export default {
     data: () => ({
         data: [],
         module: "PURCHASES_MODULE",
-        form_type: null
+        form_type: null,
+        selected_item: null
     }),
     methods: {
         ...mapActions({
@@ -214,6 +218,7 @@ export default {
         },
         handleEdit(item) {
             this.form_type = "EDIT";
+            this.selected_item = item;
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
             setTimeout(() => {
                 $("#generic-modal").modal("show");
@@ -260,6 +265,7 @@ export default {
             this.form_type = "CHECKOUT";
 
             item = { ...item, payment_mode: "" };
+            this.selected_item = item;
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
 
             setTimeout(() => {
@@ -377,7 +383,7 @@ export default {
     },
     async created() {
         await this.fetchColors("api/colors");
-        await this.fetchModels();
+        await this.fetchModels("api/models");
         await this.fetchBrands("api/brands");
         await this.fetchCategories("api/categories");
         await this.fetchSuppliers("api/suppliers");

@@ -3,9 +3,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header gradient-meridian">
-                    <slot name="modal-title">
-                        Modal Title
-                    </slot>
+                    <slot name="modal-title"> </slot>
 
                     <slot name="modal-tools">
                         <button

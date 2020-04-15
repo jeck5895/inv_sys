@@ -26,6 +26,7 @@ class PurchaseController extends Controller
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
             $purchases = Purchase::orderBy($sortBy, $orderBy)
+                ->with(['category', 'brand', 'color', 'model', 'supplier'])
                 ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q")) {
                         foreach ($keywords as $keyword) {
@@ -68,8 +69,6 @@ class PurchaseController extends Controller
                         }
                     }
                 })
-                ->with(['category', 'brand', 'color', 'model', 'supplier'])
-
                 ->paginate($per_page);
 
             $purchases->map(function ($item) {
@@ -78,17 +77,17 @@ class PurchaseController extends Controller
             });
         } else {
 
-            $purchases = Purchase::orderBy('created_at', 'desc')->with('category')
-                ->with('brand')
-                ->with('color')
-                ->with('model')
-                ->with('supplier')
-                ->paginate($per_page);
+            // $purchases = Purchase::orderBy('created_at', 'desc')->with('category')
+            //     ->with('brand')
+            //     ->with('color')
+            //     ->with('model')
+            //     ->with('supplier')
+            //     ->paginate($per_page);
 
-            $purchases->map(function ($item) {
-                $item->selling_price = number_format($item->selling_price, 2, '.', ',');
-                return $item;
-            });
+            // $purchases->map(function ($item) {
+            //     $item->selling_price = number_format($item->selling_price, 2, '.', ',');
+            //     return $item;
+            // });
         }
 
         return $purchases;

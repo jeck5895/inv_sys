@@ -54110,7 +54110,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54131,6 +54131,8 @@ var _regenerator = __webpack_require__(11);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
 //
 //
 //
@@ -54272,6 +54274,7 @@ exports.default = {
         CheckoutForm: _checkoutForm2.default,
         ItemForm: _itemForm2.default
     },
+
     computed: _extends({}, (0, _vuex.mapGetters)({
         purchases: "PURCHASES_MODULE/GET_PURCHASES",
         isLoading: "PURCHASES_MODULE/IS_LOADING",
@@ -54344,7 +54347,8 @@ exports.default = {
         return {
             data: [],
             module: "PURCHASES_MODULE",
-            form_type: null
+            form_type: null,
+            selected_item: null
         };
     },
     methods: _extends({}, (0, _vuex.mapActions)({
@@ -54365,6 +54369,7 @@ exports.default = {
         },
         handleEdit: function handleEdit(item) {
             this.form_type = "EDIT";
+            this.selected_item = item;
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
             setTimeout(function () {
                 $("#generic-modal").modal("show");
@@ -54408,6 +54413,7 @@ exports.default = {
             this.form_type = "CHECKOUT";
 
             item = _extends({}, item, { payment_mode: "" });
+            this.selected_item = item;
             this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
 
             setTimeout(function () {
@@ -54527,7 +54533,7 @@ exports.default = {
 
                         case 2:
                             _context.next = 4;
-                            return this.fetchModels();
+                            return this.fetchModels("api/models");
 
                         case 4:
                             _context.next = 6;
@@ -55263,7 +55269,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55278,8 +55284,6 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
 //
 //
 //
@@ -55327,9 +55331,7 @@ var render = function() {
             "div",
             { staticClass: "modal-header gradient-meridian" },
             [
-              _vm._t("modal-title", [
-                _vm._v("\n                    Modal Title\n                ")
-              ]),
+              _vm._t("modal-title"),
               _vm._v(" "),
               _vm._t("modal-tools", [_vm._m(0)])
             ],
@@ -56428,11 +56430,16 @@ var render = function() {
             key: "modal-title",
             fn: function() {
               return [
-                _vm.item.model && _vm.item.model.name
+                _vm.selected_item !== null
                   ? _c("h5", { staticClass: "text-white" }, [
+                      _vm.form_type === "CHECKOUT"
+                        ? _c("span", [_vm._v("Checkout")])
+                        : _vm.form_type === "EDIT"
+                        ? _c("span", [_vm._v("Edit")])
+                        : _vm._e(),
                       _vm._v(
-                        "\n                Checkout " +
-                          _vm._s(_vm.item.model.name) +
+                        "\n                " +
+                          _vm._s(_vm.selected_item.model.name) +
                           "\n            "
                       )
                     ])
