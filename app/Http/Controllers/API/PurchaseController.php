@@ -72,22 +72,22 @@ class PurchaseController extends Controller
                 ->paginate($per_page);
 
             $purchases->map(function ($item) {
-                $item->selling_price = number_format($item->selling_price, 2, '.', ',');
+                $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
                 return $item;
             });
         } else {
 
-            // $purchases = Purchase::orderBy('created_at', 'desc')->with('category')
-            //     ->with('brand')
-            //     ->with('color')
-            //     ->with('model')
-            //     ->with('supplier')
-            //     ->paginate($per_page);
+            $purchases = Purchase::orderBy('created_at', 'desc')->with('category')
+                ->with('brand')
+                ->with('color')
+                ->with('model')
+                ->with('supplier')
+                ->paginate($per_page);
 
-            // $purchases->map(function ($item) {
-            //     $item->selling_price = number_format($item->selling_price, 2, '.', ',');
-            //     return $item;
-            // });
+            $purchases->map(function ($item) {
+                $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
+                return $item;
+            });
         }
 
         return $purchases;

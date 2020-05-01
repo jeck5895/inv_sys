@@ -885,7 +885,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -899,10 +899,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-//
-//
 //
 //
 //
@@ -1213,28 +1211,28 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    props: {
-        user: {
-            type: Object,
-            default: {
-                name: "User",
-                email: "user@gmail.com"
-            }
-        }
-    },
-    methods: {
-        handleToggle: function handleToggle() {
-            if ($("#wrapper").hasClass("toggled")) {
-                $("#wrapper").removeClass("toggled");
-            } else {
-                $("#wrapper").addClass("toggled");
-            }
-        },
-        handleLogout: function handleLogout() {
-            this.$store.dispatch("AuthModule/LOGOUT");
-            this.$router.push("/login");
-        }
+  props: {
+    user: {
+      type: Object,
+      default: {
+        name: "User",
+        email: "user@gmail.com"
+      }
     }
+  },
+  methods: {
+    handleToggle: function handleToggle() {
+      if ($("#wrapper").hasClass("toggled")) {
+        $("#wrapper").removeClass("toggled");
+      } else {
+        $("#wrapper").addClass("toggled");
+      }
+    },
+    handleLogout: function handleLogout() {
+      this.$store.dispatch("AuthModule/LOGOUT");
+      this.$router.push("/login");
+    }
+  }
 };
 
 /***/ }),
@@ -1274,14 +1272,8 @@ var render = function() {
           "ul",
           { staticClass: "navbar-nav align-items-center right-nav-link" },
           [
-            _vm._m(0),
-            _vm._v(" "),
-            _vm._m(1),
-            _vm._v(" "),
-            _vm._m(2),
-            _vm._v(" "),
             _c("li", { staticClass: "nav-item" }, [
-              _vm._m(3),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "ul",
@@ -1293,40 +1285,28 @@ var render = function() {
                   _c("li", { staticClass: "dropdown-item user-details" }, [
                     _c("a", { attrs: { href: "javaScript:void();" } }, [
                       _c("div", { staticClass: "media" }, [
-                        _vm._m(4),
+                        _vm._m(1),
                         _vm._v(" "),
                         _c("div", { staticClass: "media-body" }, [
                           _c("h6", { staticClass: "mt-2 user-title" }, [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                    " +
                                 _vm._s(_vm.user.name) +
-                                "\n                                    "
+                                "\n                  "
                             )
                           ]),
                           _vm._v(" "),
                           _c("p", { staticClass: "user-subtitle" }, [
                             _vm._v(
-                              "\n                                        " +
+                              "\n                    " +
                                 _vm._s(_vm.user.email) +
-                                "\n                                    "
+                                "\n                  "
                             )
                           ])
                         ])
                       ])
                     ])
                   ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _vm._m(6),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _vm._m(7),
                   _vm._v(" "),
                   _c("li", { staticClass: "dropdown-divider" }),
                   _vm._v(" "),
@@ -1361,337 +1341,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item dropdown-lg" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect",
-          attrs: { "data-toggle": "dropdown", href: "javascript:void();" }
-        },
-        [_c("i", { staticClass: "icon-envelope-open" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "dropdown-menu dropdown-menu-right animated fadeIn" },
-        [
-          _c("ul", { staticClass: "list-group list-group-flush" }, [
-            _c(
-              "li",
-              {
-                staticClass:
-                  "list-group-item d-flex justify-content-between align-items-center"
-              },
-              [
-                _vm._v(
-                  "\n                            You have 4 new messages\n                            "
-                ),
-                _c("span", { staticClass: "badge badge-danger" }, [_vm._v("4")])
-              ]
-            ),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("div", { staticClass: "avatar" }, [
-                    _c("img", {
-                      staticClass: "align-self-start mr-3",
-                      attrs: {
-                        src: "/images/avatars/avatar-1.png",
-                        alt: "user avatar"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            Jhon Deo\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("small", [_vm._v("Today, 4:10 PM")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("div", { staticClass: "avatar" }, [
-                    _c("img", {
-                      staticClass: "align-self-start mr-3",
-                      attrs: {
-                        src: "/images/avatars/avatar-2.png",
-                        alt: "user avatar"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            Sara Jen\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("small", [_vm._v("Yesterday, 8:30 AM")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("div", { staticClass: "avatar" }, [
-                    _c("img", {
-                      staticClass: "align-self-start mr-3",
-                      attrs: {
-                        src: "/images/avatars/avatar-3.png",
-                        alt: "user avatar"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            Dannish Josh\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("small", [_vm._v("5/11/2018, 2:50 PM")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("div", { staticClass: "avatar" }, [
-                    _c("img", {
-                      staticClass: "align-self-start mr-3",
-                      attrs: {
-                        src: "/images/avatars/avatar-4.png",
-                        alt: "user avatar"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            Katrina Mccoy\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet.\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("small", [_vm._v("1/11/2018, 2:50 PM")])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _vm._v("See All Messages")
-              ])
-            ])
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item dropdown-lg" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect",
-          attrs: { "data-toggle": "dropdown", href: "javascript:void();" }
-        },
-        [
-          _c("i", { staticClass: "icon-bell" }),
-          _c("span", { staticClass: "badge badge-primary badge-up" }, [
-            _vm._v("10")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "dropdown-menu dropdown-menu-right animated fadeIn" },
-        [
-          _c("ul", { staticClass: "list-group list-group-flush" }, [
-            _c(
-              "li",
-              {
-                staticClass:
-                  "list-group-item d-flex justify-content-between align-items-center"
-              },
-              [
-                _vm._v(
-                  "\n                            You have 10 Notifications\n                            "
-                ),
-                _c("span", { staticClass: "badge badge-primary" }, [
-                  _vm._v("10")
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("i", { staticClass: "icon-people fa-2x mr-3 text-info" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            New Registered Users\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("i", { staticClass: "icon-cup fa-2x mr-3 text-warning" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            New Received Orders\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _c("div", { staticClass: "media" }, [
-                  _c("i", { staticClass: "icon-bell fa-2x mr-3 text-danger" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-body" }, [
-                    _c("h6", { staticClass: "mt-0 msg-title" }, [
-                      _vm._v(
-                        "\n                                            New Updates\n                                        "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "msg-info" }, [
-                      _vm._v(
-                        "\n                                            Lorem ipsum dolor sit amet...\n                                        "
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "list-group-item" }, [
-              _c("a", { attrs: { href: "javaScript:void();" } }, [
-                _vm._v("See All Notifications")
-              ])
-            ])
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item language" }, [
-      _c(
-        "a",
-        {
-          staticClass:
-            "nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect",
-          attrs: { "data-toggle": "dropdown", href: "#" }
-        },
-        [_c("i", { staticClass: "flag-icon flag-icon-gb" })]
-      ),
-      _vm._v(" "),
-      _c(
-        "ul",
-        { staticClass: "dropdown-menu dropdown-menu-right animated fadeIn" },
-        [
-          _c("li", { staticClass: "dropdown-item" }, [
-            _c("i", { staticClass: "flag-icon flag-icon-gb mr-2" }),
-            _vm._v(" English\n                    ")
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown-item" }, [
-            _c("i", { staticClass: "flag-icon flag-icon-fr mr-2" }),
-            _vm._v(" French\n                    ")
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown-item" }, [
-            _c("i", { staticClass: "flag-icon flag-icon-cn mr-2" }),
-            _vm._v(" Chinese\n                    ")
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "dropdown-item" }, [
-            _c("i", { staticClass: "flag-icon flag-icon-de mr-2" }),
-            _vm._v(" German\n                    ")
-          ])
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c(
       "a",
       {
@@ -1720,33 +1369,6 @@ var staticRenderFns = [
         staticClass: "align-self-start mr-3",
         attrs: { src: "/images/avatars/user-avatar.png", alt: "user avatar" }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-item" }, [
-      _c("i", { staticClass: "icon-envelope mr-2" }),
-      _vm._v(" Inbox\n                    ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-item" }, [
-      _c("i", { staticClass: "icon-wallet mr-2" }),
-      _vm._v(" Account\n                    ")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "dropdown-item" }, [
-      _c("i", { staticClass: "icon-settings mr-2" }),
-      _vm._v(" Setting\n                    ")
     ])
   }
 ]

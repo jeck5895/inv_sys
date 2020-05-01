@@ -45,12 +45,12 @@ export default {
                     }, 1000);
                 })
                 .catch(error => {
+
                     toastr.error(
-                        "Server Response Error",
-                        "Oops something went wrong"
+                        "An error occured",
                     );
                     setTimeout(() => {
-                        reject(error);
+                        reject(error.response);
                     }, 1000);
                 });
         });
@@ -74,7 +74,7 @@ export default {
                 .catch(({ response }) => {
                     toastr.error(
                         response.data.message,
-                        "Server Response Error"
+                        "An error occured"
                     );
                     setTimeout(() => {
                         reject(error);
@@ -99,11 +99,9 @@ export default {
                 })
                 .catch(error => {
                     toastr.error(
-                        "Server Response Error",
-                        "Oops something went wrong"
+                        "An error occured"
                     );
                     setTimeout(() => {
-                        console.log(error);
                         reject(error);
                     }, 1000);
                 });
@@ -124,14 +122,13 @@ export default {
                         resolve(response);
                     }, 1000);
                 })
-                .catch(({ response }) => {
-                    console.log(response);
+                .catch(error => {
+                    console.log(error.response);
                     toastr.error(
-                        "Server Response Error",
-                        "Oops something went wrong"
+                        "An error occured",
                     );
                     setTimeout(() => {
-                        reject(response);
+                        reject(error);
                     }, 1000);
                 });
         });

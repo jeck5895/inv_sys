@@ -38036,7 +38036,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -38049,7 +38049,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -38259,81 +38259,78 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
-//
-//
 
 exports.default = {
-    props: {
-        item: {
-            required: true,
-            type: Object
-        },
-        mode: {
-            type: String
-        },
-        brands: {
-            type: Array,
-            required: true
-        },
-        categories: {
-            type: Array,
-            required: true
-        },
-        colors: {
-            type: Array,
-            required: true
-        },
-        suppliers: {
-            type: Array,
-            required: true
-        },
-        models: {
-            type: Array,
-            required: true
-        },
-        isLoading: {
-            required: true,
-            type: Boolean
-        }
+  props: {
+    item: {
+      required: true,
+      type: Object
     },
-    methods: {
-        handleSubmit: function handleSubmit(form) {
-            var _this = this;
-
-            var payload = {
-                id: this.item.id,
-                model: this.item.model_id,
-                brand: this.item.brand_id,
-                color: this.item.color_id,
-                price: this.item.selling_price,
-                cost: this.item.cost,
-                category: this.item.category_id,
-                remarks: this.item.remarks,
-                supplier: this.item.supplier_id,
-                form: this.$validator, // for resetting form on parent
-                errors: this.errors // for clearing errors on paren
-            };
-
-            if (this.mode === "single") {
-                payload = _extends({}, payload, {
-                    imei: this.item.imei
-                });
-            }
-
-            this.$validator.validateAll(form).then(function (valid) {
-                if (valid) {
-                    _this.$emit("on-submit", payload);
-                }
-            });
-        }
+    mode: {
+      type: String
     },
-    watch: {
-        item: function item() {
-            this.$validator.reset();
-            this.errors.clear();
-        }
+    brands: {
+      type: Array,
+      required: true
+    },
+    categories: {
+      type: Array,
+      required: true
+    },
+    colors: {
+      type: Array,
+      required: true
+    },
+    suppliers: {
+      type: Array,
+      required: true
+    },
+    models: {
+      type: Array,
+      required: true
+    },
+    isLoading: {
+      required: true,
+      type: Boolean
     }
+  },
+  methods: {
+    handleSubmit: function handleSubmit(form) {
+      var _this = this;
+
+      var payload = {
+        id: this.item.id,
+        model: this.item.model_id,
+        brand: this.item.brand_id,
+        color: this.item.color_id,
+        price: this.item.selling_price,
+        cost: this.item.cost,
+        category: this.item.category_id,
+        remarks: this.item.remarks,
+        supplier: this.item.supplier_id,
+        form: this.$validator, // for resetting form on parent
+        errors: this.errors // for clearing errors on paren
+      };
+
+      if (this.mode === "single") {
+        payload = _extends({}, payload, {
+          imei: this.item.imei
+        });
+      }
+
+      this.$validator.validateAll(form).then(function (valid) {
+        if (valid) {
+          _this.$emit("on-submit", payload);
+        }
+      });
+    }
+  },
+  watch: {
+    item: function item() {
+      this.$validator.reset();
+      this.errors.clear();
+    }
+  }
 };
 
 /***/ }),
@@ -38410,9 +38407,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.imei")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38464,7 +38461,7 @@ var render = function() {
               _vm._l(_vm.models, function(model) {
                 return _c(
                   "option",
-                  { key: model.name, domProps: { value: model.id } },
+                  { key: model.name + "-unit", domProps: { value: model.id } },
                   [_vm._v(_vm._s(model.name))]
                 )
               })
@@ -38487,9 +38484,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.unit")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38543,7 +38540,7 @@ var render = function() {
               _vm._l(_vm.brands, function(brand) {
                 return _c(
                   "option",
-                  { key: brand.name, domProps: { value: brand.id } },
+                  { key: brand.name + "-brand", domProps: { value: brand.id } },
                   [_vm._v(_vm._s(brand.name))]
                 )
               })
@@ -38566,9 +38563,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.brand")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38622,7 +38619,10 @@ var render = function() {
               _vm._l(_vm.suppliers, function(supplier) {
                 return _c(
                   "option",
-                  { key: supplier.name, domProps: { value: supplier.id } },
+                  {
+                    key: supplier.name + "-supplier",
+                    domProps: { value: supplier.id }
+                  },
                   [_vm._v(_vm._s(supplier.name))]
                 )
               })
@@ -38645,9 +38645,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.supplier")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38703,7 +38703,10 @@ var render = function() {
               _vm._l(_vm.categories, function(category) {
                 return _c(
                   "option",
-                  { key: category.name, domProps: { value: category.id } },
+                  {
+                    key: category.name + "-category",
+                    domProps: { value: category.id }
+                  },
                   [_vm._v(_vm._s(category.name))]
                 )
               })
@@ -38726,9 +38729,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.category")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38803,9 +38806,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.color")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38864,9 +38867,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.cost")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -38924,9 +38927,9 @@ var render = function() {
             },
             [
               _vm._v(
-                "\n                " +
+                "\n        " +
                   _vm._s(_vm.errors.first("ITEM_FORM.price")) +
-                  "\n            "
+                  "\n      "
               )
             ]
           )
@@ -53053,9 +53056,10 @@ exports.default = {
                     resolve(response);
                 }, 1000);
             }).catch(function (error) {
-                toastr.error("Server Response Error", "Oops something went wrong");
+
+                toastr.error("An error occured");
                 setTimeout(function () {
-                    reject(error);
+                    reject(error.response);
                 }, 1000);
             });
         });
@@ -53078,7 +53082,7 @@ exports.default = {
             }).catch(function (_ref6) {
                 var response = _ref6.response;
 
-                toastr.error(response.data.message, "Server Response Error");
+                toastr.error(response.data.message, "An error occured");
                 setTimeout(function () {
                     reject(error);
                 }, 1000);
@@ -53100,9 +53104,8 @@ exports.default = {
                     resolve(response);
                 }, 1000);
             }).catch(function (error) {
-                toastr.error("Server Response Error", "Oops something went wrong");
+                toastr.error("An error occured");
                 setTimeout(function () {
-                    console.log(error);
                     reject(error);
                 }, 1000);
             });
@@ -53122,13 +53125,11 @@ exports.default = {
                     toastr.success("Success", "" + response.data.message);
                     resolve(response);
                 }, 1000);
-            }).catch(function (_ref9) {
-                var response = _ref9.response;
-
-                console.log(response);
-                toastr.error("Server Response Error", "Oops something went wrong");
+            }).catch(function (error) {
+                console.log(error.response);
+                toastr.error("An error occured");
                 setTimeout(function () {
-                    reject(response);
+                    reject(error);
                 }, 1000);
             });
         });
@@ -54110,7 +54111,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -54123,7 +54124,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _regenerator = __webpack_require__(11);
@@ -54131,8 +54132,6 @@ var _regenerator = __webpack_require__(11);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
-//
-//
 //
 //
 //
@@ -54262,309 +54261,325 @@ var _itemForm2 = _interopRequireDefault(_itemForm);
 
 var _vuex = __webpack_require__(8);
 
+var _error = __webpack_require__(328);
+
+var _error2 = _interopRequireDefault(_error);
+
+var _parser = __webpack_require__(511);
+
+var _parser2 = _interopRequireDefault(_parser);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 exports.default = {
-    components: {
-        InventoryTable: _purchases2.default,
-        Pagination: _Pagination2.default,
-        Modal: _modal2.default,
-        CheckoutForm: _checkoutForm2.default,
-        ItemForm: _itemForm2.default
+  components: {
+    InventoryTable: _purchases2.default,
+    Pagination: _Pagination2.default,
+    Modal: _modal2.default,
+    CheckoutForm: _checkoutForm2.default,
+    ItemForm: _itemForm2.default,
+    Alert: _error2.default
+  },
+
+  computed: _extends({}, (0, _vuex.mapGetters)({
+    purchases: "PURCHASES_MODULE/GET_PURCHASES",
+    isLoading: "PURCHASES_MODULE/IS_LOADING",
+    isSubmitting: "SALES_MODULE/GET_SUBMIT_STATE",
+    models: "UNITS/GET_UNITS",
+    colors: "COLORS/GET_COLORS",
+    brands: "BRANDS/GET_BRANDS",
+    categories: "CATEGORIES/GET_CATEGORIES",
+    suppliers: "SUPPLIERS/GET_SUPPLIERS",
+    submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
+  }), {
+    item: function item() {
+      var item = this.$store.getters["ITEMS_MODULE/GET_ITEM"];
+      return {
+        id: item.id,
+        imei: item.imei,
+        model_id: item.model_id,
+        brand_id: item.brand_id,
+        supplier_id: item.supplier_id,
+        category_id: item.supplier_id,
+        color_id: item.color_id,
+        cost: item.cost,
+        selling_price: item.selling_price,
+        remarks: item.specs
+      };
     },
 
-    computed: _extends({}, (0, _vuex.mapGetters)({
-        purchases: "PURCHASES_MODULE/GET_PURCHASES",
-        isLoading: "PURCHASES_MODULE/IS_LOADING",
-        isSubmitting: "SALES_MODULE/GET_SUBMIT_STATE",
-        models: "UNITS/GET_UNITS",
-        colors: "COLORS/GET_COLORS",
-        brands: "BRANDS/GET_BRANDS",
-        categories: "CATEGORIES/GET_CATEGORIES",
-        suppliers: "SUPPLIERS/GET_SUPPLIERS",
-        submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
-    }), {
-        item: function item() {
-            var item = this.$store.getters["ITEMS_MODULE/GET_ITEM"];
-            return {
-                id: item.id,
-                imei: item.imei,
-                model_id: item.model_id,
-                brand_id: item.brand_id,
-                supplier_id: item.supplier_id,
-                category_id: item.supplier_id,
-                color_id: item.color_id,
-                cost: item.cost,
-                selling_price: item.selling_price,
-                remarks: item.specs
-            };
-        },
-
-        keyword: {
-            get: function get() {
-                return this.$store.getters["PURCHASES_MODULE/GET_KEYWORD"];
-            },
-            set: function set(val) {
-                this.$store.commit("PURCHASES_MODULE/SET_KEYWORD", val);
-            }
-        },
-        page_size: {
-            get: function get() {
-                return this.$store.getters["PURCHASES_MODULE/GET_PAGE_SIZE"];
-            },
-            set: function set(val) {
-                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
-            }
-        },
-        current_page: {
-            get: function get() {
-                return this.$store.getters["PURCHASES_MODULE/GET_CURRENT_PAGE"];
-            },
-            set: function set(val) {
-                this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
-            }
-        },
-        order_by: {
-            get: function get() {
-                return this.$store.getters["PURCHASES_MODULE/GET_ORDER_BY"];
-            },
-            set: function set(val) {
-                this.$store.commit("PURCHASES_MODULE/SET_ORDER_BY", val);
-            }
-        },
-        sort_by: {
-            get: function get() {
-                return this.$store.getters["PURCHASES_MODULE/GET_SORT_BY"];
-            },
-            set: function set(val) {
-                this.$store.commit("PURCHASES_MODULE/SET_SORT_BY", val);
-            }
-        }
-    }),
-    data: function data() {
-        return {
-            data: [],
-            module: "PURCHASES_MODULE",
-            form_type: null,
-            selected_item: null
-        };
+    keyword: {
+      get: function get() {
+        return this.$store.getters["PURCHASES_MODULE/GET_KEYWORD"];
+      },
+      set: function set(val) {
+        this.$store.commit("PURCHASES_MODULE/SET_KEYWORD", val);
+      }
     },
-    methods: _extends({}, (0, _vuex.mapActions)({
-        fetchColors: "COLORS/fetchColors",
-        fetchModels: "UNITS/fetchUnits",
-        checkout: "SALES_MODULE/STORE",
-        fetchBrands: "BRANDS/fetchBrands",
-        fetchCategories: "CATEGORIES/fetchCategories",
-        fetchSuppliers: "SUPPLIERS/fetchSuppliers",
-        updateItem: "PURCHASES_MODULE/UPDATE",
-        deleteItem: "PURCHASES_MODULE/DELETE"
-    }), (0, _vuex.mapMutations)({
-        setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
-        clearItem: "ITEMS_MODULE/CLEAR_ITEM"
-    }), {
-        fetchStocks: function fetchStocks(url) {
-            this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
-        },
-        handleEdit: function handleEdit(item) {
-            this.form_type = "EDIT";
-            this.selected_item = item;
-            this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
-            setTimeout(function () {
-                $("#generic-modal").modal("show");
-            }, 300);
-        },
-        handleSubmitUpdate: function handleSubmitUpdate(item) {
-            var _this = this;
-
-            var id = item.id,
-                imei = item.imei,
-                model = item.model,
-                brand = item.brand,
-                supplier = item.supplier,
-                category = item.category,
-                color = item.color,
-                cost = item.cost,
-                price = item.price,
-                remarks = item.remarks;
-
-            this.setSubmitState(true);
-            this.updateItem({
-                id: id,
-                imei: imei,
-                model: model,
-                brand: brand,
-                supplier: supplier,
-                category: category,
-                color: color,
-                cost: cost,
-                price: price,
-                remarks: remarks
-            }).then(function () {
-                _this.setSubmitState(false);
-                _this.fetchStocks("/api/stocks?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by);
-                $("#generic-modal").modal("hide");
-            }).catch(function () {
-                _this.setSubmitState(false);
-            });
-        },
-        handleCheckout: function handleCheckout(item) {
-            this.form_type = "CHECKOUT";
-
-            item = _extends({}, item, { payment_mode: "" });
-            this.selected_item = item;
-            this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
-
-            setTimeout(function () {
-                $("#generic-modal").modal("show");
-            }, 300);
-        },
-        handleDelete: function handleDelete(item) {
-            var _this2 = this;
-
-            var options = { html: true, loader: true };
-            //https://github.com/Godofbrowser/vuejs-dialog
-            this.$dialog.confirm("<h5>Delete this item ?</h5>", options).then(function (dialog) {
-                _this2.deleteItem(item.id).then(function () {
-                    dialog.close();
-                    _this2.fetchStocks("/api/stocks?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
-                });
-            }).catch(function () {});
-        },
-        handleSubmitCheckout: function handleSubmitCheckout(evt) {
-            var _this3 = this;
-
-            var item_id = evt.item_id,
-                model = evt.model,
-                imei = evt.imei,
-                color = evt.color,
-                price = evt.price,
-                amount = evt.amount,
-                payment_mode = evt.payment_mode,
-                credit_term = evt.credit_term,
-                freebies = evt.freebies,
-                form = evt.form,
-                errors = evt.errors;
-
-
-            var payload = {
-                item_id: item_id,
-                // model,
-                // imei,
-                // color,
-                // price,
-                amount: amount,
-                payment_mode: payment_mode,
-                credit_term: credit_term
-            };
-            if (credit_term != undefined) {
-                payload = _extends({}, payload, { credit_term: credit_term });
-            }
-            if (freebies != undefined && freebies.length > 0) {
-                payload = _extends({}, payload, { freebies: freebies });
-            }
-            this.checkout(payload).then(function () {
-                _this3.reset(form, errors);
-                $("#generic-modal").modal("hide");
-            });
-        },
-        handleNavigate: function handleNavigate() {
-            this.clearItem();
-            this.$router.push("/administrator/inventory/create");
-        },
-        handleSearch: function handleSearch() {
-            this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
-        },
-        toPage: function toPage(page) {
-            var url = "/api/stocks?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-            this.fetchStocks(url);
-        },
-        firstPage: function firstPage(first_page_url) {
-            var url = first_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-            this.fetchStocks(url);
-        },
-        prevPage: function prevPage(prev_page_url) {
-            var url = prev_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-            this.fetchStocks(url);
-        },
-        nextPage: function nextPage(next_page_url) {
-            var url = next_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-            this.fetchStocks(url);
-        },
-        lastPage: function lastPage(last_page_url) {
-            var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-            this.fetchStocks(url);
-        },
-        reset: function reset(form, errors) {
-            this.$set(this.item, "model_id", "");
-            this.$set(this.item, "imei", "");
-            this.$set(this.item, "color_id", "");
-            this.$set(this.item, "selling_price", "");
-            this.$set(this.item, "payment_mode", "");
-            this.$set(this.item, "freebies", "");
-            this.$set(this.item, "credit_term", null);
-
-            form.reset();
-            errors.clear();
-        },
-        setBreadcrumbs: function setBreadcrumbs() {
-            var breadcrumbs = [{
-                text: "Administrator",
-                link: "/administrator"
-            }, {
-                text: "Inventory",
-                link: "/administrator/inventory"
-            }];
-            this.$store.commit("setBreadcrumbs", breadcrumbs);
-        }
-    }),
-    mounted: function mounted() {
-        this.setBreadcrumbs();
+    page_size: {
+      get: function get() {
+        return this.$store.getters["PURCHASES_MODULE/GET_PAGE_SIZE"];
+      },
+      set: function set(val) {
+        this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+      }
     },
-    created: function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-            return _regenerator2.default.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return this.fetchColors("api/colors");
+    current_page: {
+      get: function get() {
+        return this.$store.getters["PURCHASES_MODULE/GET_CURRENT_PAGE"];
+      },
+      set: function set(val) {
+        this.$store.commit("PURCHASES_MODULE/SET_PAGE_SIZE", val);
+      }
+    },
+    order_by: {
+      get: function get() {
+        return this.$store.getters["PURCHASES_MODULE/GET_ORDER_BY"];
+      },
+      set: function set(val) {
+        this.$store.commit("PURCHASES_MODULE/SET_ORDER_BY", val);
+      }
+    },
+    sort_by: {
+      get: function get() {
+        return this.$store.getters["PURCHASES_MODULE/GET_SORT_BY"];
+      },
+      set: function set(val) {
+        this.$store.commit("PURCHASES_MODULE/SET_SORT_BY", val);
+      }
+    }
+  }),
+  data: function data() {
+    return {
+      data: [],
+      module: "PURCHASES_MODULE",
+      form_type: null,
+      selected_item: null,
+      errs: null,
+      responseStatus: null
+    };
+  },
+  methods: _extends({}, (0, _vuex.mapActions)({
+    fetchColors: "COLORS/fetchColors",
+    fetchModels: "UNITS/fetchUnits",
+    checkout: "SALES_MODULE/STORE",
+    fetchBrands: "BRANDS/fetchBrands",
+    fetchCategories: "CATEGORIES/fetchCategories",
+    fetchSuppliers: "SUPPLIERS/fetchSuppliers",
+    updateItem: "PURCHASES_MODULE/UPDATE",
+    deleteItem: "PURCHASES_MODULE/DELETE"
+  }), (0, _vuex.mapMutations)({
+    setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
+    clearItem: "ITEMS_MODULE/CLEAR_ITEM"
+  }), {
+    fetchStocks: function fetchStocks(url) {
+      this.$store.dispatch("PURCHASES_MODULE/FETCH_PURCHASES", url);
+    },
+    handleEdit: function handleEdit(item) {
+      this.form_type = "EDIT";
+      this.selected_item = item;
+      this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
+      setTimeout(function () {
+        $("#generic-modal").modal("show");
+      }, 300);
+    },
+    handleSubmitUpdate: function handleSubmitUpdate(item) {
+      var _this = this;
 
-                        case 2:
-                            _context.next = 4;
-                            return this.fetchModels("api/models");
+      var id = item.id,
+          imei = item.imei,
+          model = item.model,
+          brand = item.brand,
+          supplier = item.supplier,
+          category = item.category,
+          color = item.color,
+          cost = item.cost,
+          price = item.price,
+          remarks = item.remarks;
 
-                        case 4:
-                            _context.next = 6;
-                            return this.fetchBrands("api/brands");
+      this.setSubmitState(true);
+      this.updateItem({
+        id: id,
+        imei: imei,
+        model: model,
+        brand: brand,
+        supplier: supplier,
+        category: category,
+        color: color,
+        cost: cost,
+        price: price,
+        remarks: remarks
+      }).then(function () {
+        _this.setSubmitState(false);
+        _this.fetchStocks("/api/stocks?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by);
+        $("#generic-modal").modal("hide");
+      }).catch(function (error) {
+        console.log(error.response);
+        var response = error.response;
+        _this.responseStatus = response.status;
+        _this.errs = (0, _parser2.default)(error);
+        console.log(_this.errs);
+        _this.setSubmitState(false);
+      });
+    },
+    handleCheckout: function handleCheckout(item) {
+      this.form_type = "CHECKOUT";
 
-                        case 6:
-                            _context.next = 8;
-                            return this.fetchCategories("api/categories");
+      item = _extends({}, item, { payment_mode: "" });
+      this.selected_item = item;
+      this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
 
-                        case 8:
-                            _context.next = 10;
-                            return this.fetchSuppliers("api/suppliers");
+      setTimeout(function () {
+        $("#generic-modal").modal("show");
+      }, 300);
+    },
+    handleDelete: function handleDelete(item) {
+      var _this2 = this;
 
-                        case 10:
-                            _context.next = 12;
-                            return this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+      var options = { html: true, loader: true };
+      //https://github.com/Godofbrowser/vuejs-dialog
+      this.$dialog.confirm("<h5>Delete this item ?</h5>", options).then(function (dialog) {
+        _this2.deleteItem(item.id).then(function () {
+          dialog.close();
+          _this2.fetchStocks("/api/stocks?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
+        });
+      }).catch(function () {});
+    },
+    handleSubmitCheckout: function handleSubmitCheckout(evt) {
+      var _this3 = this;
 
-                        case 12:
-                        case "end":
-                            return _context.stop();
-                    }
-                }
-            }, _callee, this);
-        }));
+      var item_id = evt.item_id,
+          model = evt.model,
+          imei = evt.imei,
+          color = evt.color,
+          price = evt.price,
+          amount = evt.amount,
+          payment_mode = evt.payment_mode,
+          credit_term = evt.credit_term,
+          freebies = evt.freebies,
+          form = evt.form,
+          errors = evt.errors;
 
-        function created() {
-            return _ref.apply(this, arguments);
+
+      var payload = {
+        item_id: item_id,
+        // model,
+        // imei,
+        // color,
+        // price,
+        amount: amount,
+        payment_mode: payment_mode,
+        credit_term: credit_term
+      };
+      if (credit_term != undefined) {
+        payload = _extends({}, payload, { credit_term: credit_term });
+      }
+      if (freebies != undefined && freebies.length > 0) {
+        payload = _extends({}, payload, { freebies: freebies });
+      }
+      this.checkout(payload).then(function () {
+        _this3.reset(form, errors);
+        $("#generic-modal").modal("hide");
+      });
+    },
+    handleNavigate: function handleNavigate() {
+      this.clearItem();
+      this.$router.push("/administrator/inventory/create");
+    },
+    handleSearch: function handleSearch() {
+      this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+    },
+    toPage: function toPage(page) {
+      var url = "/api/stocks?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      this.fetchStocks(url);
+    },
+    firstPage: function firstPage(first_page_url) {
+      var url = first_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      this.fetchStocks(url);
+    },
+    prevPage: function prevPage(prev_page_url) {
+      var url = prev_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      this.fetchStocks(url);
+    },
+    nextPage: function nextPage(next_page_url) {
+      var url = next_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      this.fetchStocks(url);
+    },
+    lastPage: function lastPage(last_page_url) {
+      var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      this.fetchStocks(url);
+    },
+    reset: function reset(form, errors) {
+      this.$set(this.item, "model_id", "");
+      this.$set(this.item, "imei", "");
+      this.$set(this.item, "color_id", "");
+      this.$set(this.item, "selling_price", "");
+      this.$set(this.item, "payment_mode", "");
+      this.$set(this.item, "freebies", "");
+      this.$set(this.item, "credit_term", null);
+
+      form.reset();
+      errors.clear();
+    },
+    setBreadcrumbs: function setBreadcrumbs() {
+      var breadcrumbs = [{
+        text: "Administrator",
+        link: "/administrator"
+      }, {
+        text: "Inventory",
+        link: "/administrator/inventory"
+      }];
+      this.$store.commit("setBreadcrumbs", breadcrumbs);
+    }
+  }),
+  mounted: function mounted() {
+    this.setBreadcrumbs();
+  },
+  created: function () {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+      return _regenerator2.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchColors("api/colors");
+
+            case 2:
+              _context.next = 4;
+              return this.fetchModels("api/models");
+
+            case 4:
+              _context.next = 6;
+              return this.fetchBrands("api/brands");
+
+            case 6:
+              _context.next = 8;
+              return this.fetchCategories("api/categories");
+
+            case 8:
+              _context.next = 10;
+              return this.fetchSuppliers("api/suppliers");
+
+            case 10:
+              _context.next = 12;
+              return this.fetchStocks("/api/stocks?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
         }
+      }, _callee, this);
+    }));
 
-        return created;
-    }()
+    function created() {
+      return _ref.apply(this, arguments);
+    }
+
+    return created;
+  }()
 };
 
 /***/ }),
@@ -54653,7 +54668,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.fa {\n    font-size: 1rem;\n}\n", ""]);
+exports.push([module.i, "\n.fa {\n  font-size: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -54666,7 +54681,7 @@ exports.push([module.i, "\n.fa {\n    font-size: 1rem;\n}\n", ""]);
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 //
 //
@@ -54739,14 +54754,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    props: {
-        items: {
-            required: true
-        },
-        isLoading: {
-            type: Boolean
-        }
+  props: {
+    items: {
+      required: true
+    },
+    isLoading: {
+      type: Boolean
     }
+  }
 };
 
 /***/ }),
@@ -54783,7 +54798,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.color.name))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.selling_price))]),
+                  _c("td", [_vm._v(_vm._s(item.formatted_selling_price))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.specs))]),
                   _vm._v(" "),
@@ -54885,7 +54900,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", { staticClass: "text-center", attrs: { colspan: "8" } }, [
-      _vm._v("\n                Loading\n                "),
+      _vm._v("\n        Loading\n        "),
       _c("img", {
         attrs: { src: "/images/ajax-loader.gif", alt: "Loading...." }
       })
@@ -56329,9 +56344,7 @@ var render = function() {
                   },
                   [
                     _c("i", { staticClass: "fa fa-cubes" }),
-                    _vm._v(
-                      "\n                            Add Item\n                        "
-                    )
+                    _vm._v("\n              Add Item\n            ")
                   ]
                 )
               ]),
@@ -56438,9 +56451,9 @@ var render = function() {
                         ? _c("span", [_vm._v("Edit")])
                         : _vm._e(),
                       _vm._v(
-                        "\n                " +
+                        "\n        " +
                           _vm._s(_vm.selected_item.model.name) +
-                          "\n            "
+                          "\n      "
                       )
                     ])
                   : _vm._e()
@@ -56452,6 +56465,15 @@ var render = function() {
             key: "modal-body",
             fn: function() {
               return [
+                _vm.errs !== null && _vm.responseStatus === 422
+                  ? _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [_c("Alert", { attrs: { response: _vm.errs } })],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
                 _vm.form_type === "CHECKOUT"
                   ? _c("checkout-form", {
                       attrs: {
@@ -56496,7 +56518,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
       _c("i", { staticClass: "fa fa-clone" }),
-      _vm._v(" My Inventory\n            ")
+      _vm._v(" My Inventory")
     ])
   },
   function() {
@@ -56508,7 +56530,7 @@ var staticRenderFns = [
       { staticClass: "btn btn-sm btn-success mb-2", attrs: { type: "submit" } },
       [
         _c("i", { staticClass: "fa fa-search" }),
-        _vm._v("SEARCH\n                            ")
+        _vm._v("SEARCH\n              ")
       ]
     )
   }
@@ -102681,6 +102703,427 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(329)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(331)
+/* template */
+var __vue_template__ = __webpack_require__(332)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/alerts/error.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-c5dbd74a", Component.options)
+  } else {
+    hotAPI.reload("data-v-c5dbd74a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(330);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("5eb544a1", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c5dbd74a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./error.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-c5dbd74a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./error.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: {
+        response: {
+            required: true,
+            type: Array
+        }
+    }
+};
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm.response.length
+    ? _c(
+        "div",
+        {
+          staticClass: "alert alert-danger alert-dismissible",
+          attrs: { role: "alert" }
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "alert-message" }, [
+            _c(
+              "ul",
+              _vm._l(_vm.response, function(e, i) {
+                return _c("li", { key: i }, [
+                  _vm._v("\n                " + _vm._s(e) + "\n            ")
+                ])
+              }),
+              0
+            )
+          ])
+        ]
+      )
+    : _vm._e()
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "alert-icon" }, [
+      _c("i", { staticClass: "icon-close" })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-c5dbd74a", module.exports)
+  }
+}
+
+/***/ }),
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var parseError = function parseError(error) {
+    var obj = error.response;
+    var keys = Object.keys(obj.data.errors);
+    var response = [];
+
+    response = [];
+
+    if (keys.length > 0) {
+        keys.forEach(function (e) {
+            obj.data.errors[e].forEach(function (d) {
+                response.push(d);
+            });
+        });
+
+        return response;
+    }
+    return;
+};
+
+exports.default = parseError;
 
 /***/ })
 /******/ ]);
