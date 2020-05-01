@@ -14,7 +14,7 @@ class ModifyColorColumnInPurchaseTable extends Migration
     public function up()
     {
         Schema::table('purchases', function (Blueprint $table) {
-            $table->integer('color')->foreign('color')->references('id')->on('colors')->charset(null)->change();
+            $table->string('color')->foreign('color')->references('id')->on('colors')->change();
         });
     }
 
