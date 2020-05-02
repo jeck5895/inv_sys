@@ -139,7 +139,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -153,17 +153,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -365,26 +356,26 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    props: {
-        user: {
-            type: Object,
-            default: {
-                name: "User"
-            }
-        }
-    },
-    methods: {
-        toggleReportClass: function toggleReportClass(e) {
-            !$("#report-dropdown").hasClass("show") ? $("#report-dropdown").prev().addClass("active") : $("#report-dropdown").prev().removeClass("active");
-        },
-        toggleUserClass: function toggleUserClass(e) {
-            !$("#account-dropdown").hasClass("show") ? console.log($("#account-dropdown").prev().addClass("active")) : $("#account-dropdown").prev().removeClass("active");
-        },
-        handleLogout: function handleLogout() {
-            this.$store.dispatch("AuthModule/LOGOUT");
-            this.$router.push("/login");
-        }
+  props: {
+    user: {
+      type: Object,
+      default: {
+        name: "User"
+      }
     }
+  },
+  methods: {
+    toggleReportClass: function toggleReportClass(e) {
+      !$("#report-dropdown").hasClass("show") ? $("#report-dropdown").prev().addClass("active") : $("#report-dropdown").prev().removeClass("active");
+    },
+    toggleUserClass: function toggleUserClass(e) {
+      !$("#account-dropdown").hasClass("show") ? console.log($("#account-dropdown").prev().addClass("active")) : $("#account-dropdown").prev().removeClass("active");
+    },
+    handleLogout: function handleLogout() {
+      this.$store.dispatch("AuthModule/LOGOUT");
+      this.$router.push("/login");
+    }
+  }
 };
 
 /***/ }),
@@ -409,31 +400,15 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "user-details" }, [
-        _c(
-          "div",
-          {
-            staticClass: "media align-items-center user-pointer collapsed",
-            attrs: {
-              "data-toggle": "collapse",
-              "data-target": "#user-dropdown"
-            }
-          },
-          [
-            _vm._m(1),
-            _vm._v(" "),
-            _c("div", { staticClass: "media-body" }, [
-              _c("h6", { staticClass: "side-user-name" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(_vm.user.name) +
-                    "\n                "
-                )
-              ])
+        _c("div", { staticClass: "media align-items-center collapsed" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "media-body" }, [
+            _c("h6", { staticClass: "side-user-name" }, [
+              _vm._v("\n          " + _vm._s(_vm.user.name) + "\n        ")
             ])
-          ]
-        ),
-        _vm._v(" "),
-        _vm._m(2)
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("ul", { staticClass: "sidebar-menu do-nicescrol" }, [
@@ -569,7 +544,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(" Brands\n                        ")
+                        _vm._v(" Brands\n            ")
                       ]
                     ),
                     _vm._v(" "),
@@ -581,9 +556,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(
-                          "\n                            Categories\n                        "
-                        )
+                        _vm._v("\n              Categories\n            ")
                       ]
                     ),
                     _vm._v(" "),
@@ -595,7 +568,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(" Colors\n                        ")
+                        _vm._v(" Colors\n            ")
                       ]
                     ),
                     _vm._v(" "),
@@ -607,7 +580,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(" Freebies\n                        ")
+                        _vm._v(" Freebies\n            ")
                       ]
                     ),
                     _vm._v(" "),
@@ -619,7 +592,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                        _vm._v(" Models\n                        ")
+                        _vm._v(" Models\n            ")
                       ]
                     )
                   ],
@@ -642,7 +615,7 @@ var render = function() {
               },
               on: { click: _vm.toggleUserClass }
             },
-            [_vm._m(3)]
+            [_vm._m(2)]
           ),
           _vm._v(" "),
           _c(
@@ -655,7 +628,7 @@ var render = function() {
                   [
                     _c("router-link", { attrs: { to: "/users/register" } }, [
                       _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                      _vm._v(" Register\n                        ")
+                      _vm._v(" Register\n            ")
                     ])
                   ],
                   1
@@ -666,7 +639,7 @@ var render = function() {
                   [
                     _c("router-link", { attrs: { to: "/users" } }, [
                       _c("i", { staticClass: "fa fa-long-arrow-right" }),
-                      _vm._v(" Account\n                            List")
+                      _vm._v(" Account\n              List")
                     ])
                   ],
                   1
@@ -676,7 +649,7 @@ var render = function() {
           )
         ]),
         _vm._v(" "),
-        _vm._m(4),
+        _vm._m(3),
         _vm._v(" "),
         _c("li", [
           _c(
@@ -727,39 +700,6 @@ var staticRenderFns = [
         attrs: { src: "/images/avatars/user-avatar.png", alt: "user avatar" }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "collapse", attrs: { id: "user-dropdown" } },
-      [
-        _c("ul", { staticClass: "user-setting-menu" }, [
-          _c("li", [
-            _c("a", { attrs: { href: "javaScript:void();" } }, [
-              _c("i", { staticClass: "icon-user" }),
-              _vm._v(" My Profile")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "javaScript:void();" } }, [
-              _c("i", { staticClass: "icon-settings" }),
-              _vm._v(" Setting")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "javaScript:void();" } }, [
-              _c("i", { staticClass: "icon-power" }),
-              _vm._v(" Logout")
-            ])
-          ])
-        ])
-      ]
-    )
   },
   function() {
     var _vm = this
