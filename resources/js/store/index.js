@@ -6,7 +6,7 @@ import ITEMS_MODULE from "./modules/items";
 import UNITS from "./modules/units/index";
 // import SITES_MODULE from "./modules/sites/index";
 // import CART_MODULE from "./modules/cart/index";
-// import USERS_MODULE from "./modules/users/index";
+import USERS from "./modules/users";
 import FILTER_MODULE from "./modules/filters";
 import FORM_MODULE from "./modules/forms";
 import CUSTOMERS_MODULE from "./modules/customers";
@@ -27,7 +27,7 @@ export const store = new Vuex.Store({
         UNITS,
         // SITES_MODULE,
         // CART_MODULE,
-        // USERS_MODULE,
+        USERS,
         FILTER_MODULE,
         FORM_MODULE,
         CUSTOMERS_MODULE,

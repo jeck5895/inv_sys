@@ -1,18 +1,18 @@
-const parseError = error => {
-    let obj = error.response;
-    let keys = Object.keys(obj.data.errors);
-    let response = [];
+const parseError = response => {
+    // let obj = error.response;
+    let keys = Object.keys(response.data.errors);
+    let errors = [];
 
-    response = [];
+    errors = [];
 
     if (keys.length > 0) {
         keys.forEach(e => {
-            obj.data.errors[e].forEach(d => {
-                response.push(d);
+            response.data.errors[e].forEach(d => {
+                errors.push(d);
             });
         });
 
-        return response;
+        return errors;
     }
     return;
 }

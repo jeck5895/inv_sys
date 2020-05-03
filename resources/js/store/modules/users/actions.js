@@ -2,107 +2,115 @@ import Cookies from 'js-cookie';
 const token = Cookies.get('_a.token');
 
 export default {
-    FETCH_USER: ({commit}, payload) => {
+    FETCH_USER: ({ commit }, payload) => {
         return new Promise((resolve, reject) => {
             axios.get(`api/users/${payload}`, {
-                headers:{
+                headers: {
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`
                 }
             })
-            .then(response => {
-                commit('CLEAR_USERS');
-                commit('SET_USERS', response.data);
-                resolve(response);
-            })
-            .catch(error => {
-                reject(error);
-            });
+                .then(response => {
+                    commit('CLEAR_USERS');
+                    commit('SET_USER', response.data);
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error);
+                });
         })
     },
-    FETCH_USERS: ({commit}, payload) => {
-        
+    FETCH_USERS: ({ commit }, payload) => {
+
         let url = payload ? payload : '/api/users';
-        
+
         commit('SET_LOADING', true);
 
         return new Promise((resolve, reject) => {
             axios.get(url, {
-                headers:{
+                headers: {
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`
                 }
             })
-            .then(response => {
-                commit('CLEAR_USERS');
-                commit('SET_USERS', response.data);
-                setTimeout(() => {
-                    commit('SET_LOADING', false);
-                    resolve(response)
-                }, 1000);
-            })
-            .catch(error => {
-                reject(error);
-                setTimeout(() => {
-                    commit('SET_LOADING', false);
-                }, 1000);
-            });
+                .then(response => {
+                    commit('CLEAR_USERS');
+                    // commit('SET_PAGINATION', response.data);
+                    commit('SET_USERS', response.data);
+                    setTimeout(() => {
+                        commit('SET_LOADING', false);
+                        resolve(response)
+                    }, 1000);
+                })
+                .catch(error => {
+                    reject(error);
+                    setTimeout(() => {
+                        commit('SET_LOADING', false);
+                    }, 1000);
+                });
         });
     },
-    STORE_USER: ({commit}, payload) => {
+    STORE_USER: ({ commit }, payload) => {
+        commit("SET_SAVING", true);
         return new Promise((resolve, reject) => {
             axios.post('api/users', payload, {
-                headers:{
+                headers: {
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`
                 }
             })
-            .then(response => {
-                toastr.success('Success', `${response.data.message}`);
-                commit('CLEAR_USER');
-                resolve(response);
-            })
-            .catch(error => {
-                reject(error);
-            });
+                .then(response => {
+                    toastr.success('Success', `${response.data.message}`);
+                    commit("SET_SAVING", false);
+                    commit('CLEAR_USER');
+                    resolve(response);
+                })
+                .catch(error => {
+                    commit("SET_SAVING", false);
+                    reject(error);
+                });
         });
     },
-    UPDATE_USER: ({commit}, payload) => {
+    UPDATE_USER: ({ commit }, payload) => {
+        commit("SET_SAVING", true);
         return new Promise((resolve, reject) => {
             axios.patch('api/users/' + payload.id, payload, {
-                headers:{
+                headers: {
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`
                 }
             })
-            .then(response => {
-                toastr.success('Success', `${response.data.message}`);
-                commit('CLEAR_USER');
-                resolve(response);
-            })
-            .catch(error => {
-                reject(error);
-            });
+                .then(response => {
+                    toastr.success('Success', `${response.data.message}`);
+                    commit("SET_SAVING", false);
+                    commit('CLEAR_USER');
+                    resolve(response);
+                })
+                .catch(error => {
+                    commit("SET_SAVING", false);
+                    reject(error);
+                });
         });
     },
-    DELETE_USER: ({commit}, payload) => {
+    DELETE_USER: ({ commit }, payload) => {
         return new Promise((resolve, reject) => {
-            axios.delete('api/users/' + payload.id,{
-                headers:{
+            axios.delete('api/users/' + payload.id, {
+                headers: {
                     Accept: 'application/json',
                     Authorization: `Bearer ${token}`
                 }
             })
-            .then(response => {
-                toastr.success('Success', response.data.message);
-                resolve(response);
-            })
-            .catch(error => {
-                if (error.response.status == 403) {
-                    toastr.error('Error', error.response.data.message)
-                }
-                reject(error);
-            });
+                .then(response => {
+                    toastr.success('Success', response.data.message);
+                    resolve(response);
+                })
+                .catch(error => {
+                    commit("SET_SAVING", false);
+                    if (error.response.status == 403) {
+                        toastr.error('Error', error.response.data.message)
+                    }
+                    reject(error);
+                });
         });
     }
 }

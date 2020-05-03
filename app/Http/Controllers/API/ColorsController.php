@@ -33,7 +33,7 @@ class ColorsController extends Controller
                     }
                 })->paginate($per_page);
         } else {
-            $colors = Color::all();
+            $colors = Color::orderBy('name', 'ASC')->get();
         }
 
         return $colors;

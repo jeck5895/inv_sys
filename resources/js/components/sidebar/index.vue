@@ -2,7 +2,7 @@
   <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
     <div class="brand-logo">
       <a href="index.html">
-        <img src="/images/logo.png" class="logo-icon" alt="logo icon" />
+        <img src="/images/inv_logo.jpg" class="logo-icon" alt="logo icon" />
         <h5 class="logo-text">Inventory</h5>
       </a>
     </div>
@@ -156,6 +156,32 @@
       <li>
         <a
           href="#"
+          class="media align-items-center user-pointer collapsed"
+          data-toggle="collapse"
+          data-target="#users-dropdown"
+        >
+          <i class="fa fa-users"></i><span>User Accounts</span
+          ><i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <div id="users-dropdown" class="collapse">
+          <ul class="user-setting-menu">
+            <!-- <li>
+              <router-link to="/administrator/users/register"
+                ><i class="fa fa-long-arrow-right"></i> Register
+              </router-link>
+            </li> -->
+            <li>
+              <router-link to="/administrator/users"
+                ><i class="fa fa-long-arrow-right"></i> Account
+                List</router-link
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <!-- <a
+          href="#"
           @click="toggleUserClass"
           class="media align-items-center user-pointer collapsed"
           data-toggle="collapse"
@@ -164,25 +190,27 @@
           <div class="media-body">
             <i class="icon-user"></i>
             <span>User Accounts</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </div>
-          <!-- <i class="fa fa-angle-left float-right"></i> -->
         </a>
         <div id="account-dropdown" class="collapse">
           <ul class="user-setting-menu">
             <li>
-              <router-link to="/users/register"
+              <router-link to="/administrator/users/register"
                 ><i class="fa fa-long-arrow-right"></i> Register
               </router-link>
             </li>
             <li>
-              <router-link to="/users"
+              <router-link to="/administrator/users"
                 ><i class="fa fa-long-arrow-right"></i> Account
                 List</router-link
               >
             </li>
           </ul>
         </div>
+      </li> -->
       </li>
+
       <li>
         <a href="widgets.html" class="waves-effect"
           ><i class="icon-hourglass"></i><span>Audit Trail</span>

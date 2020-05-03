@@ -20125,6 +20125,10 @@ var _index = __webpack_require__(196);
 
 var _index2 = _interopRequireDefault(_index);
 
+var _users = __webpack_require__(511);
+
+var _users2 = _interopRequireDefault(_users);
+
 var _filters = __webpack_require__(201);
 
 var _filters2 = _interopRequireDefault(_filters);
@@ -20163,10 +20167,10 @@ var _freebies2 = _interopRequireDefault(_freebies);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_vue2.default.use(_vuex2.default);
 // import SITES_MODULE from "./modules/sites/index";
 // import CART_MODULE from "./modules/cart/index";
-// import USERS_MODULE from "./modules/users/index";
+_vue2.default.use(_vuex2.default);
+
 var store = exports.store = new _vuex2.default.Store({
     modules: {
         AuthModule: _auth2.default,
@@ -20175,7 +20179,7 @@ var store = exports.store = new _vuex2.default.Store({
         UNITS: _index2.default,
         // SITES_MODULE,
         // CART_MODULE,
-        // USERS_MODULE,
+        USERS: _users2.default,
         FILTER_MODULE: _filters2.default,
         FORM_MODULE: _forms2.default,
         CUSTOMERS_MODULE: _customers2.default,
@@ -36550,20 +36554,13 @@ var _adminSubRoutes = __webpack_require__(159);
 
 var _adminSubRoutes2 = _interopRequireDefault(_adminSubRoutes);
 
-var _users = __webpack_require__(249);
-
-var _users2 = _interopRequireDefault(_users);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AdminIndex = function AdminIndex() {
-    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 316));
-};
-var UserIndex = function UserIndex() {
-    return __webpack_require__.e/* import() */(13).then(__webpack_require__.bind(null, 317));
+    return __webpack_require__.e/* import() */(18).then(__webpack_require__.bind(null, 316));
 };
 var LoginPage = function LoginPage() {
-    return __webpack_require__.e/* import() */(14).then(__webpack_require__.bind(null, 318));
+    return __webpack_require__.e/* import() */(19).then(__webpack_require__.bind(null, 318));
 };
 
 var routes = [{
@@ -36609,6 +36606,10 @@ Object.defineProperty(exports, "__esModule", {
 var _inventory = __webpack_require__(160);
 
 var _inventory2 = _interopRequireDefault(_inventory);
+
+var _users = __webpack_require__(249);
+
+var _users2 = _interopRequireDefault(_users);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36691,7 +36692,7 @@ exports.default = [{
 }, {
     path: "models",
     component: Models
-}];
+}, _users2.default];
 
 /***/ }),
 /* 160 */
@@ -36810,7 +36811,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -36856,7 +36857,7 @@ module.exports = function listToStyles (parentId, list) {
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _regenerator = __webpack_require__(11);
@@ -36864,10 +36865,6 @@ var _regenerator = __webpack_require__(11);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
-//
-//
-//
-//
 //
 //
 //
@@ -36977,191 +36974,191 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 exports.default = {
-    components: {
-        Card: _card2.default,
-        ItemForm: _itemForm2.default,
-        ValidationErrorComponent: _validationErrors2.default
-    },
-    computed: _extends({}, (0, _vuex.mapGetters)({
-        brands: "BRANDS/GET_BRANDS",
-        categories: "CATEGORIES/GET_CATEGORIES",
-        colors: "COLORS/GET_COLORS",
-        suppliers: "SUPPLIERS/GET_SUPPLIERS",
-        models: "UNITS/GET_UNITS",
-        submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
-    })),
-    data: function data() {
-        return {
-            item: this.$store.state.ITEMS_MODULE.item,
-            mode: "single",
-            quantity: null,
-            total_quantity: 0,
-            submitted: false,
-            batch_items: [],
-            response_errors: null
-        };
-    },
-    methods: _extends({}, (0, _vuex.mapActions)({
-        fetchBrands: "BRANDS/fetchBrands",
-        fetchCategories: "CATEGORIES/fetchCategories",
-        fetchColors: "COLORS/fetchColors",
-        fetchSuppliers: "SUPPLIERS/fetchSuppliers",
-        fetchModels: "UNITS/FETCH_UNITS",
-        store: "PURCHASES_MODULE/STORE",
-        storeBulk: "PURCHASES_MODULE/STORE_BULK"
-    }), (0, _vuex.mapMutations)({
-        setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
-        clearItem: "ITEMS_MODULE/CLEAR_ITEM"
-    }), {
-        handleSubmit: function handleSubmit(evt) {
-            var _this = this;
+  components: {
+    Card: _card2.default,
+    ItemForm: _itemForm2.default,
+    ValidationErrorComponent: _validationErrors2.default
+  },
+  computed: _extends({}, (0, _vuex.mapGetters)({
+    brands: "BRANDS/GET_BRANDS",
+    categories: "CATEGORIES/GET_CATEGORIES",
+    colors: "COLORS/GET_COLORS",
+    suppliers: "SUPPLIERS/GET_SUPPLIERS",
+    models: "UNITS/GET_UNITS",
+    submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
+  })),
+  data: function data() {
+    return {
+      item: this.$store.state.ITEMS_MODULE.item,
+      mode: "single",
+      quantity: null,
+      total_quantity: 0,
+      submitted: false,
+      batch_items: [],
+      response_errors: null
+    };
+  },
+  methods: _extends({}, (0, _vuex.mapActions)({
+    fetchBrands: "BRANDS/fetchBrands",
+    fetchCategories: "CATEGORIES/fetchCategories",
+    fetchColors: "COLORS/fetchColors",
+    fetchSuppliers: "SUPPLIERS/fetchSuppliers",
+    fetchModels: "UNITS/fetchUnits",
+    store: "PURCHASES_MODULE/STORE",
+    storeBulk: "PURCHASES_MODULE/STORE_BULK"
+  }), (0, _vuex.mapMutations)({
+    setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
+    clearItem: "ITEMS_MODULE/CLEAR_ITEM"
+  }), {
+    handleSubmit: function handleSubmit(evt) {
+      var _this = this;
 
-            if (this.mode === "single") {
-                var imei = evt.imei,
-                    model = evt.model,
-                    brand = evt.brand,
-                    supplier = evt.supplier,
-                    category = evt.category,
-                    color = evt.color,
-                    cost = evt.cost,
-                    price = evt.price,
-                    remarks = evt.remarks;
+      if (this.mode === "single") {
+        var imei = evt.imei,
+            model = evt.model,
+            brand = evt.brand,
+            supplier = evt.supplier,
+            category = evt.category,
+            color = evt.color,
+            cost = evt.cost,
+            price = evt.price,
+            remarks = evt.remarks;
 
-                this.setSubmitState(true);
+        this.setSubmitState(true);
 
-                this.store({
-                    imei: imei,
-                    model: model,
-                    brand: brand,
-                    supplier: supplier,
-                    category: category,
-                    color: color,
-                    cost: cost,
-                    price: price,
-                    remarks: remarks
-                }).then(function () {
-                    _this.response_errors = null;
-                    _this.setSubmitState(false);
-                    _this.reset(evt.form, evt.errors);
-                }).catch(function (_ref) {
-                    var response = _ref.response;
+        this.store({
+          imei: imei,
+          model: model,
+          brand: brand,
+          supplier: supplier,
+          category: category,
+          color: color,
+          cost: cost,
+          price: price,
+          remarks: remarks
+        }).then(function () {
+          _this.response_errors = null;
+          _this.setSubmitState(false);
+          _this.reset(evt.form, evt.errors);
+        }).catch(function (_ref) {
+          var response = _ref.response;
 
-                    _this.response_errors = response.data.errors;
-                    _this.setSubmitState(false);
-                });
-            } else {
-                var item = {};
-                var items = [];
-                var _model = evt.model,
-                    _brand = evt.brand,
-                    _supplier = evt.supplier,
-                    _category = evt.category,
-                    _color = evt.color,
-                    _cost = evt.cost,
-                    _price = evt.price,
-                    _remarks = evt.remarks;
+          _this.response_errors = response.data.errors;
+          _this.setSubmitState(false);
+        });
+      } else {
+        var item = {};
+        var items = [];
+        var _model = evt.model,
+            _brand = evt.brand,
+            _supplier = evt.supplier,
+            _category = evt.category,
+            _color = evt.color,
+            _cost = evt.cost,
+            _price = evt.price,
+            _remarks = evt.remarks;
 
-                if (this.batch_items.length > 0) {
-                    this.batch_items.map(function (data) {
-                        item = {
-                            model: _model,
-                            brand: _brand,
-                            supplier: _supplier,
-                            category: _category,
-                            color: _color,
-                            cost: _cost,
-                            price: _price,
-                            remarks: _remarks,
-                            imei: data
-                        };
-                        items.push(item);
-                    });
-                    var payload = {
-                        items: items
-                    };
-                    this.storeBulk(payload).then(function () {
-                        _this.batch_items = [];
-                        _this.reset(evt.form, evt.errors);
-                    });
-                } else {
-                    toastr.error("", "Please fill up IMEI for each item!");
-                }
-            }
-        },
-        handleQuantity: function handleQuantity() {
-            this.submitted = true;
-            this.total_quantity = parseInt(this.quantity);
-        },
-        setBreadcrumbs: function setBreadcrumbs() {
-            var breadcrumbs = [{
-                text: "Administrator",
-                link: "/administrator"
-            }, {
-                text: "Inventory",
-                link: "/administrator/inventory"
-            }, {
-                text: "Add",
-                link: "/administrator/inventory/create"
-            }];
-            this.$store.commit("setBreadcrumbs", breadcrumbs);
-        },
-        reset: function reset(form, errors) {
-            this.$set(this.item, "imei", "");
-            this.$set(this.item, "unit", "");
-            this.$set(this.item, "brand", "");
-            this.$set(this.item, "supplier", "");
-            this.$set(this.item, "category", "");
-            this.$set(this.item, "color", "");
-            this.$set(this.item, "cost", null);
-            this.$set(this.item, "selling_price", null);
-            this.$set(this.item, "remarks", "");
-
-            form.reset();
-            errors.clear();
+        if (this.batch_items.length > 0) {
+          this.batch_items.map(function (data) {
+            item = {
+              model: _model,
+              brand: _brand,
+              supplier: _supplier,
+              category: _category,
+              color: _color,
+              cost: _cost,
+              price: _price,
+              remarks: _remarks,
+              imei: data
+            };
+            items.push(item);
+          });
+          var payload = {
+            items: items
+          };
+          this.storeBulk(payload).then(function () {
+            _this.batch_items = [];
+            _this.reset(evt.form, evt.errors);
+          });
+        } else {
+          toastr.error("", "Please fill up IMEI for each item!");
         }
-    }),
-    mounted: function mounted() {
-        this.setBreadcrumbs();
+      }
     },
-    created: function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-            return _regenerator2.default.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return this.fetchBrands("api/brands");
+    handleQuantity: function handleQuantity() {
+      this.submitted = true;
+      this.total_quantity = parseInt(this.quantity);
+    },
+    setBreadcrumbs: function setBreadcrumbs() {
+      var breadcrumbs = [{
+        text: "Administrator",
+        link: "/administrator"
+      }, {
+        text: "Inventory",
+        link: "/administrator/inventory"
+      }, {
+        text: "Add",
+        link: "/administrator/inventory/create"
+      }];
+      this.$store.commit("setBreadcrumbs", breadcrumbs);
+    },
+    reset: function reset(form, errors) {
+      this.$set(this.item, "imei", "");
+      this.$set(this.item, "unit", "");
+      this.$set(this.item, "brand", "");
+      this.$set(this.item, "supplier", "");
+      this.$set(this.item, "category", "");
+      this.$set(this.item, "color", "");
+      this.$set(this.item, "cost", null);
+      this.$set(this.item, "selling_price", null);
+      this.$set(this.item, "remarks", "");
 
-                        case 2:
-                            _context.next = 4;
-                            return this.fetchCategories("api/categories");
+      form.reset();
+      errors.clear();
+    }
+  }),
+  mounted: function mounted() {
+    this.setBreadcrumbs();
+  },
+  created: function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+      return _regenerator2.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return this.fetchBrands("api/brands");
 
-                        case 4:
-                            _context.next = 6;
-                            return this.fetchColors("api/colors");
+            case 2:
+              _context.next = 4;
+              return this.fetchCategories("api/categories");
 
-                        case 6:
-                            _context.next = 8;
-                            return this.fetchSuppliers("api/suppliers");
+            case 4:
+              _context.next = 6;
+              return this.fetchColors("api/colors");
 
-                        case 8:
-                            _context.next = 10;
-                            return this.fetchModels();
+            case 6:
+              _context.next = 8;
+              return this.fetchSuppliers("api/suppliers");
 
-                        case 10:
-                        case "end":
-                            return _context.stop();
-                    }
-                }
-            }, _callee, this);
-        }));
+            case 8:
+              _context.next = 10;
+              return this.fetchModels("api/models");
 
-        function created() {
-            return _ref2.apply(this, arguments);
+            case 10:
+            case "end":
+              return _context.stop();
+          }
         }
+      }, _callee, this);
+    }));
 
-        return created;
-    }()
+    function created() {
+      return _ref2.apply(this, arguments);
+    }
+
+    return created;
+  }()
 };
 
 /***/ }),
@@ -53965,11 +53962,7 @@ var render = function() {
                             attrs: { disabled: _vm.quantity === null },
                             on: { click: _vm.handleQuantity }
                           },
-                          [
-                            _vm._v(
-                              "\n                        OK\n                    "
-                            )
-                          ]
+                          [_vm._v("\n            OK\n          ")]
                         )
                       ])
                     : _vm._e()
@@ -54467,11 +54460,11 @@ exports.default = {
         _this.fetchStocks("/api/stocks?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by);
         $("#generic-modal").modal("hide");
       }).catch(function (error) {
-        console.log(error.response);
         var response = error.response;
         _this.responseStatus = response.status;
-        _this.errs = (0, _parser2.default)(error);
-        console.log(_this.errs);
+        _this.errs = response;
+        //   this.errs = parseError(error);
+        //   console.log(this.errs);
         _this.setSubmitState(false);
       });
     },
@@ -56402,7 +56395,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -56415,34 +56408,55 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _parser = __webpack_require__(247);
+
+var _parser2 = _interopRequireDefault(_parser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    props: {
-        response: {
-            required: true,
-            type: Array
-        }
+  props: {
+    response: {
+      required: true,
+      type: Object
     }
-};
+  },
+  computed: {
+    errs: function errs() {
+      var list = (0, _parser2.default)(this.response);
+
+      return list;
+    }
+  },
+  mounted: function mounted() {
+    console.log(this.errors);
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 246 */
@@ -56452,7 +56466,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.response.length
+  return _vm.response
     ? _c(
         "div",
         {
@@ -56460,14 +56474,18 @@ var render = function() {
           attrs: { role: "alert" }
         },
         [
-          _vm._m(0),
-          _vm._v(" "),
           _c("div", { staticClass: "alert-message" }, [
+            _vm.response.data
+              ? _c("p", { staticClass: "text-center" }, [
+                  _c("strong", [_vm._v(_vm._s(_vm.response.data.message))])
+                ])
+              : _vm._e(),
+            _vm._v(" "),
             _c(
               "ul",
-              _vm._l(_vm.response, function(e, i) {
+              _vm._l(_vm.errs, function(e, i) {
                 return _c("li", { key: i }, [
-                  _vm._v("\n                " + _vm._s(e) + "\n            ")
+                  _vm._v("\n        " + _vm._s(e) + "\n      ")
                 ])
               }),
               0
@@ -56477,16 +56495,7 @@ var render = function() {
       )
     : _vm._e()
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "alert-icon" }, [
-      _c("i", { staticClass: "icon-close" })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -56506,21 +56515,21 @@ if (false) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var parseError = function parseError(error) {
-    var obj = error.response;
-    var keys = Object.keys(obj.data.errors);
-    var response = [];
+var parseError = function parseError(response) {
+    // let obj = error.response;
+    var keys = Object.keys(response.data.errors);
+    var errors = [];
 
-    response = [];
+    errors = [];
 
     if (keys.length > 0) {
         keys.forEach(function (e) {
-            obj.data.errors[e].forEach(function (d) {
-                response.push(d);
+            response.data.errors[e].forEach(function (d) {
+                errors.push(d);
             });
         });
 
-        return response;
+        return errors;
     }
     return;
 };
@@ -56767,19 +56776,23 @@ Object.defineProperty(exports, "__esModule", {
 });
 // const Index = () => import('../../components/admin/tables/users.vue');
 var Index = function Index() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 314));
+    return __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 314));
 };
 var Registration = function Registration() {
-    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 315));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 315));
+};
+var UserIndex = function UserIndex() {
+    return __webpack_require__.e/* import() */(12).then(__webpack_require__.bind(null, 317));
 };
 
-exports.default = [{
-    path: '/',
-    component: Index
-}, {
-    path: 'register',
-    component: Registration
-}];
+exports.default = {
+    path: "users",
+    component: UserIndex,
+    children: [{
+        path: "",
+        component: Index
+    }]
+};
 
 /***/ }),
 /* 250 */
@@ -102914,6 +102927,465 @@ module.exports = function spread(callback) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */,
+/* 314 */,
+/* 315 */,
+/* 316 */,
+/* 317 */,
+/* 318 */,
+/* 319 */,
+/* 320 */,
+/* 321 */,
+/* 322 */,
+/* 323 */,
+/* 324 */,
+/* 325 */,
+/* 326 */,
+/* 327 */,
+/* 328 */,
+/* 329 */,
+/* 330 */,
+/* 331 */,
+/* 332 */,
+/* 333 */,
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */,
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */,
+/* 481 */,
+/* 482 */,
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _state = __webpack_require__(512);
+
+var _state2 = _interopRequireDefault(_state);
+
+var _getters = __webpack_require__(513);
+
+var _getters2 = _interopRequireDefault(_getters);
+
+var _mutations = __webpack_require__(514);
+
+var _mutations2 = _interopRequireDefault(_mutations);
+
+var _actions = __webpack_require__(515);
+
+var _actions2 = _interopRequireDefault(_actions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    namespaced: true,
+    state: _state2.default,
+    getters: _getters2.default,
+    mutations: _mutations2.default,
+    actions: _actions2.default
+};
+
+/***/ }),
+/* 512 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    is_loading: false,
+    user: {},
+    users: [],
+    pagination: {},
+    is_saving: false
+};
+
+/***/ }),
+/* 513 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    GET_USER: function GET_USER(state) {
+        return state.user;
+    },
+    GET_USERS: function GET_USERS(state) {
+        return state.users;
+    },
+    GET_LOADING_STATE: function GET_LOADING_STATE(state) {
+        return state.is_loading;
+    },
+    GET_PAGINATION: function GET_PAGINATION(state) {
+        return state.pagination;
+    },
+    GET_SUBMIT_STATE: function GET_SUBMIT_STATE(state) {
+        return state.is_saving;
+    }
+};
+
+/***/ }),
+/* 514 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    CLEAR_USER: function CLEAR_USER(state) {
+        state.user = {};
+    },
+    CLEAR_USERS: function CLEAR_USERS(state) {
+        state.users = [];
+    },
+    SET_USER: function SET_USER(state, payload) {
+        state.user = payload;
+    },
+    SET_USERS: function SET_USERS(state, payload) {
+        state.users = payload;
+    },
+    SET_LOADING: function SET_LOADING(state, payload) {
+        state.is_loading = payload;
+    },
+    SET_PAGINATION: function SET_PAGINATION(state, payload) {
+        state.pagination = payload;
+    },
+    SET_SAVING: function SET_SAVING(state, payload) {
+        state.is_saving = payload;
+    }
+};
+
+/***/ }),
+/* 515 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _jsCookie = __webpack_require__(3);
+
+var _jsCookie2 = _interopRequireDefault(_jsCookie);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var token = _jsCookie2.default.get('_a.token');
+
+exports.default = {
+    FETCH_USER: function FETCH_USER(_ref, payload) {
+        var commit = _ref.commit;
+
+        return new Promise(function (resolve, reject) {
+            axios.get('api/users/' + payload, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                commit('CLEAR_USERS');
+                commit('SET_USER', response.data);
+                resolve(response);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
+    },
+    FETCH_USERS: function FETCH_USERS(_ref2, payload) {
+        var commit = _ref2.commit;
+
+
+        var url = payload ? payload : '/api/users';
+
+        commit('SET_LOADING', true);
+
+        return new Promise(function (resolve, reject) {
+            axios.get(url, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                commit('CLEAR_USERS');
+                // commit('SET_PAGINATION', response.data);
+                commit('SET_USERS', response.data);
+                setTimeout(function () {
+                    commit('SET_LOADING', false);
+                    resolve(response);
+                }, 1000);
+            }).catch(function (error) {
+                reject(error);
+                setTimeout(function () {
+                    commit('SET_LOADING', false);
+                }, 1000);
+            });
+        });
+    },
+    STORE_USER: function STORE_USER(_ref3, payload) {
+        var commit = _ref3.commit;
+
+        commit("SET_SAVING", true);
+        return new Promise(function (resolve, reject) {
+            axios.post('api/users', payload, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                toastr.success('Success', '' + response.data.message);
+                commit("SET_SAVING", false);
+                commit('CLEAR_USER');
+                resolve(response);
+            }).catch(function (error) {
+                commit("SET_SAVING", false);
+                reject(error);
+            });
+        });
+    },
+    UPDATE_USER: function UPDATE_USER(_ref4, payload) {
+        var commit = _ref4.commit;
+
+        commit("SET_SAVING", true);
+        return new Promise(function (resolve, reject) {
+            axios.patch('api/users/' + payload.id, payload, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                toastr.success('Success', '' + response.data.message);
+                commit("SET_SAVING", false);
+                commit('CLEAR_USER');
+                resolve(response);
+            }).catch(function (error) {
+                commit("SET_SAVING", false);
+                reject(error);
+            });
+        });
+    },
+    DELETE_USER: function DELETE_USER(_ref5, payload) {
+        var commit = _ref5.commit;
+
+        return new Promise(function (resolve, reject) {
+            axios.delete('api/users/' + payload.id, {
+                headers: {
+                    Accept: 'application/json',
+                    Authorization: 'Bearer ' + token
+                }
+            }).then(function (response) {
+                toastr.success('Success', response.data.message);
+                resolve(response);
+            }).catch(function (error) {
+                commit("SET_SAVING", false);
+                if (error.response.status == 403) {
+                    toastr.error('Error', error.response.data.message);
+                }
+                reject(error);
+            });
+        });
+    }
+};
 
 /***/ })
 /******/ ]);

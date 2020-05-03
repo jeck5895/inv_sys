@@ -261,11 +261,11 @@ export default {
           $("#generic-modal").modal("hide");
         })
         .catch(error => {
-          console.log(error.response);
           const response = error.response;
           this.responseStatus = response.status;
-          this.errs = parseError(error);
-          console.log(this.errs);
+          this.errs = response;
+          //   this.errs = parseError(error);
+          //   console.log(this.errs);
           this.setSubmitState(false);
         });
     },

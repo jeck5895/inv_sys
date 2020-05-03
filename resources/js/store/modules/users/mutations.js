@@ -13,5 +13,11 @@ export default {
     },
     SET_LOADING: (state, payload) => {
         state.is_loading = payload;
+    },
+    SET_PAGINATION: (state, payload) => {
+        state.pagination = payload;
+    },
+    SET_SAVING: (state, payload) => {
+        state.is_saving = payload;
     }
 }

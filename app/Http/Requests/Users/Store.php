@@ -24,7 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|unique:users',
+            // 'user_id' => 'required|unique:users',
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'account_type' => 'required|numeric|in:1,2',

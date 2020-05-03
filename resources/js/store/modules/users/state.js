@@ -1,5 +1,7 @@
 export default {
     is_loading: false,
     user: {},
-    users: []
+    users: [],
+    pagination: {},
+    is_saving: false,
 }
