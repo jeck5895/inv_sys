@@ -24,9 +24,9 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|unique:users,user_id,'.$this->get('id'),
+            // 'user_id' => 'required|unique:users,user_id,'.$this->get('id'),
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$this->get('id'),
+            'email' => 'required|email|unique:users,email,' . $this->get('id'),
             'account_type' => 'required|numeric|in:1,2'
         ];
     }

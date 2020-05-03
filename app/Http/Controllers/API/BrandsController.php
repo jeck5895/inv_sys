@@ -33,7 +33,7 @@ class BrandsController extends Controller
                     }
                 })->paginate($per_page);
         } else {
-            $brands = Brand::all();
+            $brands = Brand::orderBy('name', 'ASC')->get();
         }
 
         return $brands;

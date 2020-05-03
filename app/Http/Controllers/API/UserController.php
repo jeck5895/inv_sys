@@ -19,21 +19,22 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        return $users = User::orderBy('id', 'DESC')
-            ->where(function ($query) use ($request) {
-                if ($request->has('keyword')) {
-                    $query->where('name', 'LIKE', '%' . $request->keyword . '%');
-                } else {
+        $users = User::get();
 
-                }
+        return $users;
+        // return $users = User::orderBy('id', 'DESC')
+        //     ->where(function ($query) use ($request) {
+        //         if ($request->has('keyword')) {
+        //             $query->where('name', 'LIKE', '%' . $request->keyword . '%');
+        //         } else {
+        //         }
+        //     })
+        //     ->paginate(10);
 
-            })
-            ->paginate(10);
-
-        return response()->json([
-            'model' => $users,
-            // 'columns' => Item::$columns,
-        ]);
+        // return response()->json([
+        //     'model' => $users,
+        //     // 'columns' => Item::$columns,
+        // ]);
     }
 
     /**
@@ -48,7 +49,7 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->account_type = $request['account_type'];
-        $user->user_id = $request['user_id'];
+        // $user->user_id = $request['user_id'];
         $user->password = bcrypt($request['password']);
         $user->save();
 
@@ -79,7 +80,7 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->account_type = $request['account_type'];
-        $user->user_id = $request['user_id'];
+        // $user->user_id = $request['user_id'];
         $user->save();
 
         return ['message' => 'Changes has been saved'];
@@ -93,7 +94,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        if(Auth::user()->account_type == 2){
+        if (Auth::user()->account_type == 2) {
             return response()->json(['message' => 'This action is unauthorized.'], 403);
         }
 

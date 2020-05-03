@@ -1,9 +1,7 @@
 import VueRouter from "vue-router";
 import AdminSubRoutes from "./sub-routes/adminSubRoutes";
-import UserSubRoutes from "./sub-routes/users";
 
 const AdminIndex = () => import("../pages/admin/index.vue");
-const UserIndex = () => import("../pages/users/index.vue");
 const LoginPage = () =>
     import(/*webpackChunkname: "login" */ "../pages/login.vue");
 

@@ -1,35 +1,10 @@
 <template>
-    <div id="wrapper">
-        <Sidebar :user="user"/>
-        <Navbar :user="user"/>
-        <div class="clearfix"></div>
-        <div class="content-wrapper">
-            <router-view></router-view>
-            <!-- asdasd -->
-        </div>
-    </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import Sidebar from '../../components/sidebar/index';
-import Navbar from '../../components/navbar/index';
-
-export default {
-    computed: {
-        user () {
-            return this.$store.getters['AuthModule/GET_USER'];
-        }
-    },
-    components: {
-        Sidebar,
-        Navbar
-    }
-}
+export default {};
 </script>
 
 <style>
-    #wrapper {
-        width: 100%;
-        position: relative;
-    }
 </style>

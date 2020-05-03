@@ -33,7 +33,7 @@ class ModelsController extends Controller
                     }
                 })->paginate($per_page);
         } else {
-            $models = ItemModel::all();
+            $models = ItemModel::orderBy('name', 'ASC')->get();
         }
 
         return $models;

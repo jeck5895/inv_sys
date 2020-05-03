@@ -45,6 +45,5 @@ Route::middleware('auth:api')->group(function () {
     // Route::apiResource('sales', 'API\SalesController');
     // Route::apiResource('units', 'API\UnitController');
     // Route::apiResource('sites', 'API\SiteController');
-    // Route::apiResource('users', 'API\UserController');
-
+    Route::apiResource('users', 'API\UserController');
 });

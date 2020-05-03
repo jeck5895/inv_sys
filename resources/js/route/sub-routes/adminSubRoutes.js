@@ -1,4 +1,5 @@
 import InventoryRoutes from "../sub-routes/inventory";
+import UserRoutes from "../sub-routes/users";
 
 const Dashboard = () => import("../../pages/admin/dashboard.vue");
 const Stocks = () => import("../../pages/admin/stocks.vue");
@@ -13,6 +14,8 @@ const Categories = () => import("../../pages/admin/categories.vue");
 const Colors = () => import("../../pages/admin/colors.vue");
 const Freebies = () => import("../../pages/admin/freebies.vue");
 const Models = () => import("../../pages/admin/models.vue");
+
+
 
 export default [
     {
@@ -68,5 +71,6 @@ export default [
     {
         path: "models",
         component: Models
-    }
+    },
+    UserRoutes
 ];

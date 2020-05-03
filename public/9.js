@@ -1,18 +1,18 @@
 webpackJsonp([9],{
 
-/***/ 306:
+/***/ 311:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(451)
+  __webpack_require__(448)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(453)
+var __vue_script__ = __webpack_require__(450)
 /* template */
-var __vue_template__ = __webpack_require__(454)
+var __vue_template__ = __webpack_require__(451)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/pages/admin/freebies.vue"
+Component.options.__file = "resources/js/pages/admin/colors.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-26d0f0ec", Component.options)
+    hotAPI.createRecord("data-v-e3183bce", Component.options)
   } else {
-    hotAPI.reload("data-v-26d0f0ec", Component.options)
+    hotAPI.reload("data-v-e3183bce", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 313:
+/***/ 319:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(314)
+  __webpack_require__(320)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(316)
+var __vue_script__ = __webpack_require__(322)
 /* template */
-var __vue_template__ = __webpack_require__(317)
+var __vue_template__ = __webpack_require__(323)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,13 +104,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 314:
+/***/ 320:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(315);
+var content = __webpack_require__(321);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -131,7 +131,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 315:
+/***/ 321:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 316:
+/***/ 322:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -191,7 +191,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 317:
+/***/ 323:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -255,19 +255,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 318:
+/***/ 324:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(319)
+  __webpack_require__(325)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(321)
+var __vue_script__ = __webpack_require__(327)
 /* template */
-var __vue_template__ = __webpack_require__(322)
+var __vue_template__ = __webpack_require__(328)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -307,13 +307,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 319:
+/***/ 325:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(320);
+var content = __webpack_require__(326);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -334,7 +334,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 320:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -349,7 +349,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 321:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -425,7 +425,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 322:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -560,19 +560,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 323:
+/***/ 329:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(324)
+  __webpack_require__(330)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(326)
+var __vue_script__ = __webpack_require__(332)
 /* template */
-var __vue_template__ = __webpack_require__(327)
+var __vue_template__ = __webpack_require__(333)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -612,13 +612,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 324:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(325);
+var content = __webpack_require__(331);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -639,7 +639,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 325:
+/***/ 331:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -654,7 +654,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 326:
+/***/ 332:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -731,7 +731,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 327:
+/***/ 333:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -833,23 +833,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 451:
+/***/ 448:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(452);
+var content = __webpack_require__(449);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("616d554e", content, false, {});
+var update = __webpack_require__(5)("7b93d245", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26d0f0ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./freebies.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26d0f0ec\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./freebies.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3183bce\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./colors.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-e3183bce\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./colors.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -860,7 +860,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 452:
+/***/ 449:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -875,7 +875,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 453:
+/***/ 450:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -966,7 +966,7 @@ var _card = __webpack_require__(152);
 
 var _card2 = _interopRequireDefault(_card);
 
-var _suppliersTable = __webpack_require__(318);
+var _suppliersTable = __webpack_require__(324);
 
 var _suppliersTable2 = _interopRequireDefault(_suppliersTable);
 
@@ -974,7 +974,7 @@ var _Pagination = __webpack_require__(151);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _search = __webpack_require__(313);
+var _search = __webpack_require__(319);
 
 var _search2 = _interopRequireDefault(_search);
 
@@ -982,7 +982,7 @@ var _modal = __webpack_require__(153);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _settingsForm = __webpack_require__(323);
+var _settingsForm = __webpack_require__(329);
 
 var _settingsForm2 = _interopRequireDefault(_settingsForm);
 
@@ -1014,12 +1014,12 @@ exports.default = {
     };
   },
   computed: _extends({}, (0, _vuex.mapGetters)({
-    freebies: "FREEBIES/GET_FREEBIES",
+    colors: "COLORS/GET_COLORS",
     is_loading: "FILTER_MODULE/GET_LOADING",
     keyword: "FILTER_MODULE/GET_KEYWORD"
   }), {
-    freebie: function freebie() {
-      var item = this.$store.getters["FREEBIES/GET_FREEBIE"];
+    color: function color() {
+      var item = this.$store.getters["COLORS/GET_COLOR"];
 
       return {
         id: item.id,
@@ -1061,24 +1061,24 @@ exports.default = {
     }
   }),
   methods: _extends({}, (0, _vuex.mapActions)({
-    fetchItems: "FREEBIES/fetchFreebies",
-    store: "FREEBIES/store",
-    update: "FREEBIES/update",
-    delete: "FREEBIES/delete"
+    fetchItems: "COLORS/fetchColors",
+    store: "COLORS/store",
+    update: "COLORS/update",
+    delete: "COLORS/delete"
   }), (0, _vuex.mapMutations)({
     setKeyword: "FILTER_MODULE/SET_KEYWORD",
-    clearItem: "FREEBIES/CLEAR_FREEBIE",
-    setItem: "FREEBIES/SET_FREEBIE"
+    clearItem: "COLORS/CLEAR_COLOR",
+    setItem: "COLORS/SET_COLOR"
   }), {
     onChange: function onChange(e) {
       this.setKeyword(e.target.value);
     },
     handleSearch: function handleSearch(keyword) {
-      var url = "/api/freebies?q=" + keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      var url = "/api/colors?q=" + keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
       this.fetchItems(url);
     },
     toPage: function toPage(page) {
-      var url = "/api/freebies?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+      var url = "/api/colors?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
       this.fetchItems(url);
     },
     firstPage: function firstPage(first_page_url) {
@@ -1102,8 +1102,8 @@ exports.default = {
         text: "Administrator",
         link: "/administrator"
       }, {
-        text: "Freebies",
-        link: "/administrator/freebies"
+        text: "Colors",
+        link: "/administrator/colors"
       }];
       this.$store.commit("setBreadcrumbs", breadcrumbs);
     },
@@ -1131,7 +1131,7 @@ exports.default = {
       this.$dialog.confirm("<h5>Delete " + item.name + " ?</h5>", options).then(function (dialog) {
         _this.delete(item.id).then(function () {
           dialog.close();
-          _this.fetchItems("/api/freebies?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by);
+          _this.fetchItems("/api/colors?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by);
         });
       }).catch(function () {});
     },
@@ -1156,7 +1156,7 @@ exports.default = {
               $("#generic-modal").modal("hide");
               // this.resetForm(form, errors);
             }, 300);
-            _this2.fetchItems("/api/freebies?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
+            _this2.fetchItems("/api/colors?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
           }).catch(function (_ref) {
             var response = _ref.response;
 
@@ -1174,7 +1174,7 @@ exports.default = {
             _this2.response_errors = null;
             toastr.success("Changes saved.");
 
-            _this2.fetchItems("/api/freebies?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
+            _this2.fetchItems("/api/colors?q=" + _this2.keyword + "&page=" + _this2.current_page + "&per_page=" + _this2.page_size + "&order_by=" + _this2.order_by + "&sort_by=" + _this2.sort_by);
             setTimeout(function () {
               $("#generic-modal").modal("hide");
               // this.resetForm(form, errors);
@@ -1208,7 +1208,7 @@ exports.default = {
               this.setKeyword("");
 
               _context.next = 4;
-              return this.fetchItems("/api/freebies?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
+              return this.fetchItems("/api/colors?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
 
             case 4:
             case "end":
@@ -1228,7 +1228,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 454:
+/***/ 451:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1247,7 +1247,7 @@ var render = function() {
               fn: function() {
                 return [
                   _c("h3", { staticClass: "card-title mb-0 float-left" }, [
-                    _vm._v("\n          MANAGE FREEBIES\n        ")
+                    _vm._v("\n          MANAGE COLORS\n        ")
                   ])
                 ]
               },
@@ -1272,7 +1272,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                  ADD FREEBIE\n                "
+                                  "\n                  ADD COLOR\n                "
                                 )
                               ]
                             )
@@ -1302,7 +1302,7 @@ var render = function() {
                       [
                         _c("suppliers-table", {
                           attrs: {
-                            items: _vm.freebies,
+                            items: _vm.colors,
                             "is-loading": _vm.is_loading
                           },
                           on: {
@@ -1319,7 +1319,7 @@ var render = function() {
                       { staticClass: "col-lg-12" },
                       [
                         _c("Pagination", {
-                          attrs: { data: _vm.freebies },
+                          attrs: { data: _vm.colors },
                           on: {
                             "to-page": _vm.toPage,
                             "first-page": _vm.firstPage,
@@ -1348,15 +1348,15 @@ var render = function() {
                   _c("h5", { staticClass: "text-white" }, [
                     _vm.form_type === "CREATE"
                       ? _c("span", [
-                          _vm._v("\n            New Freebie\n          ")
+                          _vm._v("\n            New Color\n          ")
                         ])
                       : _vm._e(),
                     _vm._v(" "),
-                    _vm.form_type === "EDIT" && _vm.freebie.name
+                    _vm.form_type === "EDIT" && _vm.color.name
                       ? _c("span", [
                           _vm._v(
-                            "\n            Edit Freebie " +
-                              _vm._s(_vm.freebie.name) +
+                            "\n            Edit Color " +
+                              _vm._s(_vm.color.name) +
                               "\n          "
                           )
                         ])
@@ -1384,7 +1384,7 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _c("Form", {
-                    attrs: { item: _vm.freebie, loading: _vm.submitting },
+                    attrs: { item: _vm.color, loading: _vm.submitting },
                     on: { "on-submit": _vm.onSubmit }
                   })
                 ]
@@ -1404,7 +1404,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-26d0f0ec", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-e3183bce", module.exports)
   }
 }
 

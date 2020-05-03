@@ -33,7 +33,7 @@ class SuppliersController extends Controller
                     }
                 })->paginate($per_page);
         } else {
-            $suppliers = Supplier::all();
+            $suppliers = Supplier::orderBy('name', 'ASC')->get();
         }
 
         return $suppliers;
