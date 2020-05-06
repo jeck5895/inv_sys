@@ -55173,26 +55173,6 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.formatted_cost))]),
                   _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "span",
-                      {
-                        class: {
-                          badge: true,
-                          "badge-success": item.is_available,
-                          "badge-danger": !item.is_available
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n            " +
-                            _vm._s(item.is_available ? "AVAILABLE" : "SOLD") +
-                            "\n          "
-                        )
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
                   _c(
                     "td",
                     { staticClass: "px-1", attrs: { align: "center" } },
@@ -55261,8 +55241,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("PRICE")]),
         _vm._v(" "),
         _c("th", [_vm._v("COST")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("STATUS")]),
         _vm._v(" "),
         _c("th", [_vm._v("ACTIONS")])
       ])
@@ -55795,7 +55773,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55816,17 +55794,6 @@ var _regenerator = __webpack_require__(9);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -56153,7 +56120,6 @@ exports.default = {
         selling_price: "",
         payment_mode: "",
         amount: "",
-        cost: "",
         freebies: []
       }],
       options: ["Powerbank", "Earphone", "Smartwatch"],
@@ -56197,6 +56163,7 @@ exports.default = {
     },
     handleQuantity: function handleQuantity() {
       var i = void 0;
+      this.items = [];
       for (i = 0; i < this.quantity; i++) {
         this.items.push({
           id: "",
@@ -56205,7 +56172,6 @@ exports.default = {
           color_id: "",
           selling_price: "",
           brand_id: "",
-          cost: "",
           freebies: []
         });
       }
@@ -56239,8 +56205,7 @@ exports.default = {
                       brand_id = response.brand_id,
                       color_id = response.color_id,
                       model_id = response.model_id,
-                      selling_price = response.selling_price,
-                      cost = response.cost;
+                      selling_price = response.selling_price;
                   // this.$set(news, "is_bookmarked", true);
 
                   _this2.items[index].id = id;
@@ -56249,7 +56214,6 @@ exports.default = {
                   _this2.items[index].color_id = color_id;
                   _this2.items[index].model_id = model_id;
                   _this2.items[index].selling_price = selling_price;
-                  _this2.items[index].cost = cost;
                 }).catch(function (error) {
                   if (error.status === 404) {
                     toastr.error("No matching item found.", "404");
@@ -56289,7 +56253,6 @@ exports.default = {
           selling_price: "",
           payment_mode: "",
           amount: "",
-          cost: "",
           freebies: []
         }];
         this.receipt_no = "";
@@ -56926,37 +56889,6 @@ var render = function() {
                         return
                       }
                       _vm.$set(item, "selling_price", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-3 form-group" }, [
-                _c("label", [_vm._v("Cost")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: item.cost,
-                      expression: "item.cost"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "number",
-                    name: "cost" + i,
-                    id: "cost",
-                    disabled: ""
-                  },
-                  domProps: { value: item.cost },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(item, "cost", $event.target.value)
                     }
                   }
                 })

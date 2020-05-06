@@ -731,7 +731,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -747,6 +747,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -834,8 +840,6 @@ var render = function() {
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.receipt_no))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.formatted_amount))]),
-                  _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.payment_mode))]),
                   _vm._v(" "),
                   _c("td", [
@@ -844,7 +848,17 @@ var render = function() {
                       : _c("span", [
                           _vm._v(_vm._s(item.payment_terms) + " months")
                         ])
-                  ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.total_item_cost.formatted))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(item.total_freebies_cost.formatted))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.revenue.formatted))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(item.gross_income.formatted))])
                 ])
               })
             : _vm._e()
@@ -865,11 +879,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("RECEIPT")]),
         _vm._v(" "),
-        _c("th", [_vm._v("AMOUNT")]),
-        _vm._v(" "),
         _c("th", [_vm._v("PAYMENT TYPE")]),
         _vm._v(" "),
-        _c("th", [_vm._v("PAYMENT TERM")])
+        _c("th", [_vm._v("PAYMENT TERM")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("TOTAL ITEM COST")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("TOTAL FREEBIES COST")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("GROSS INCOME")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("NET INCOME")])
       ])
     ])
   },

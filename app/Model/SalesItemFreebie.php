@@ -12,4 +12,9 @@ class SalesItemFreebie extends Model
     {
         return $this->belongsTo(SalesItem::class, 'item_id');
     }
+
+    public function freebie()
+    {
+        return $this->hasOne(Freebie::class, 'id', 'freebie_id');
+    }
 }

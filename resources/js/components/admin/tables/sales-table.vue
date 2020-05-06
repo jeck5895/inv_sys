@@ -4,9 +4,12 @@
       <tr>
         <th>DATE</th>
         <th>RECEIPT</th>
-        <th>AMOUNT</th>
         <th>PAYMENT TYPE</th>
         <th>PAYMENT TERM</th>
+        <th>TOTAL ITEM COST</th>
+        <th>TOTAL FREEBIES COST</th>
+        <th>GROSS INCOME</th>
+        <th>NET INCOME</th>
       </tr>
     </thead>
     <tbody>
@@ -27,12 +30,15 @@
         <tr v-for="(item, i) in items.data" :key="i">
           <td>{{ item.created_at | humanReadable }}</td>
           <td>{{ item.receipt_no }}</td>
-          <td>{{ item.formatted_amount }}</td>
           <td>{{ item.payment_mode }}</td>
           <td>
             <span v-if="item.payment_terms === null">N/A</span>
             <span v-else>{{ item.payment_terms }} months</span>
           </td>
+          <td>{{ item.total_item_cost.formatted }}</td>
+          <td>{{ item.total_freebies_cost.formatted }}</td>
+          <td>{{ item.revenue.formatted }}</td>
+          <th>{{ item.gross_income.formatted }}</th>
         </tr>
       </template>
     </tbody>

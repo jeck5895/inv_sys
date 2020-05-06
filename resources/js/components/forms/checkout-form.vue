@@ -216,17 +216,6 @@
           />
         </div>
         <div class="col-lg-3 form-group">
-          <label>Cost</label>
-          <input
-            v-model="item.cost"
-            type="number"
-            :name="'cost' + i"
-            id="cost"
-            class="form-control"
-            disabled
-          />
-        </div>
-        <div class="col-lg-3 form-group">
           <label for="input-1">Brand</label>
           <select
             v-model="item.brand_id"
@@ -332,7 +321,6 @@ export default {
           selling_price: "",
           payment_mode: "",
           amount: "",
-          cost: "",
           freebies: []
         }
       ],
@@ -376,6 +364,7 @@ export default {
     },
     handleQuantity() {
       let i;
+      this.items = [];
       for (i = 0; i < this.quantity; i++) {
         this.items.push({
           id: "",
@@ -384,7 +373,6 @@ export default {
           color_id: "",
           selling_price: "",
           brand_id: "",
-          cost: "",
           freebies: []
         });
       }
@@ -406,8 +394,7 @@ export default {
               brand_id,
               color_id,
               model_id,
-              selling_price,
-              cost
+              selling_price
             } = response;
             // this.$set(news, "is_bookmarked", true);
             this.items[index].id = id;
@@ -416,7 +403,6 @@ export default {
             this.items[index].color_id = color_id;
             this.items[index].model_id = model_id;
             this.items[index].selling_price = selling_price;
-            this.items[index].cost = cost;
           })
           .catch(error => {
             if (error.status === 404) {
@@ -446,7 +432,6 @@ export default {
             selling_price: "",
             payment_mode: "",
             amount: "",
-            cost: "",
             freebies: []
           }
         ];

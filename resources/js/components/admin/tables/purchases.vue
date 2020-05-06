@@ -8,7 +8,7 @@
         <th>COLOR</th>
         <th>PRICE</th>
         <th>COST</th>
-        <th>STATUS</th>
+        <!-- <th>STATUS</th> -->
         <th>ACTIONS</th>
       </tr>
     </thead>
@@ -34,7 +34,7 @@
           <td>{{ item.color.name }}</td>
           <td>{{ item.formatted_selling_price }}</td>
           <td>{{ item.formatted_cost }}</td>
-          <td>
+          <!-- <td>
             <span
               :class="{
                 badge: true,
@@ -44,7 +44,7 @@
             >
               {{ item.is_available ? "AVAILABLE" : "SOLD" }}
             </span>
-          </td>
+          </td> -->
           <td align="center" class="px-1">
             <button
               @click.prevent="$emit('on-edit', item)"

@@ -37,6 +37,7 @@ class SalesController extends Controller
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
             $sales = Sale::orderBy($sortBy, $orderBy)
+                ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
                 ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q") && $request->q != null) {
                         foreach ($keywords as $keyword) {
@@ -54,8 +55,50 @@ class SalesController extends Controller
                 // ->toSql();
 
                 ->paginate($per_page);
+
             $sales->map(function ($item) {
-                $item->formatted_amount = number_format($item->amount, 2, '.', ',');
+                $total_item_cost = 0;
+                $total_freebies_cost = 0;
+
+                foreach ($item['sales_items'] as $sales_item) {
+                    $total_item_cost = (int) $total_item_cost + (int) $sales_item["item"]->cost;
+                }
+
+                foreach ($item['sales_items'] as $sales_item) {
+                    foreach ($sales_item['sales_item_freebies'] as $item_freebie) {
+                        $total_freebies_cost = (int) $total_freebies_cost + (int) $item_freebie["freebie"]->price;
+                    }
+                }
+
+                $total_cost = (int) $total_freebies_cost +  (int) $total_item_cost;
+
+                $gross_income = (int) $item->amount - (int) $total_cost;
+
+                $item->total_item_cost = [
+                    'value' => $total_item_cost,
+                    'formatted' => number_format($total_item_cost, 2, '.', ',')
+                ];
+
+                $item->total_freebies_cost = [
+                    'value' => $total_freebies_cost,
+                    'formatted' => number_format($total_freebies_cost, 2, '.', ',')
+                ];
+
+                $item->revenue = [
+                    'value' => $item->amount,
+                    'formatted' => number_format($item->amount, 2, '.', ',')
+                ];
+
+                $item->gross_income = [
+                    'value' => $gross_income,
+                    'formatted' => number_format($gross_income, 2, '.', ',')
+                ];
+
+                // $item->total_item_cost = $total_freebies_cost;
+                // $item->total_freebies_cost = $total_freebies_cost;
+
+                // $item->formatted_total_freebies_cost = number_format($item->total_freebies_cost, 2, '.', ',');
+
                 return $item;
             });
         } else {
