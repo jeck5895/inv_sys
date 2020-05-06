@@ -26,12 +26,12 @@
               </div>
             </div>
             <div class="col-lg-12 mb-3 table-responsive">
-              <suppliers-table
+              <freebies-table
                 :items="freebies"
                 :is-loading="is_loading"
                 @on-edit="onEdit"
                 @on-delete="onDelete"
-              ></suppliers-table>
+              ></freebies-table>
             </div>
             <div class="col-lg-12">
               <Pagination
@@ -72,11 +72,12 @@
 
 <script>
 import Card from "../../components/card";
-import SuppliersTable from "../../components/admin/tables/suppliers-table";
+import FreebiesTable from "../../components/admin/tables/freebies";
+// import FreebiesTable from "../../components/users/table/index";
 import Pagination from "../../components/Pagination";
 import SearchForm from "../../components/filters/search";
 import Modal from "../../components/modal";
-import Form from "../../components/forms/settings-form";
+import Form from "../../components/forms/freebie-form";
 import ValidationErrorComponent from "../../components/validation-errors";
 
 import { mapGetters, mapActions, mapMutations } from "vuex";
@@ -84,7 +85,8 @@ import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   components: {
     Card,
-    SuppliersTable,
+    FreebiesTable,
+    // FreebiesTable,
     Pagination,
     SearchForm,
     Modal,
@@ -94,7 +96,30 @@ export default {
   data: () => ({
     form_type: "",
     submitting: false,
-    response_errors: null
+    response_errors: null,
+    columns: [
+      {
+        name: "name",
+        required: true,
+        label: "NAME",
+        align: "left",
+        field: row => row.name,
+        sortable: true
+      },
+      {
+        name: "price",
+        required: true,
+        label: "PRICE",
+        align: "left",
+        field: row => row.price,
+        sortable: true
+      },
+      {
+        name: "options",
+        label: "Options",
+        sortable: false
+      }
+    ]
   }),
   computed: {
     ...mapGetters({
@@ -107,7 +132,8 @@ export default {
 
       return {
         id: item.id,
-        name: item.name
+        name: item.name,
+        price: item.price
       };
     },
     page_size: {
@@ -229,7 +255,8 @@ export default {
     onSubmit(item) {
       const payload = {
         id: item.id,
-        name: item.name
+        name: item.name,
+        price: item.price
       };
 
       this.submitting = true;

@@ -1,5 +1,6 @@
 import InventoryRoutes from "../sub-routes/inventory";
 import UserRoutes from "../sub-routes/users";
+import SalesRoutes from "../sub-routes/sales";
 
 const Dashboard = () => import("../../pages/admin/dashboard.vue");
 const Stocks = () => import("../../pages/admin/stocks.vue");
@@ -8,7 +9,6 @@ const Reports = () => import("../../pages/admin/reports.vue");
 const Customers = () => import("../../pages/admin/customers.vue");
 const Inventory = () => import("../../pages/admin/purchases.vue");
 const Supplier = () => import("../../pages/admin/suppliers.vue");
-const Sales = () => import("../../pages/admin/sales.vue");
 const Brands = () => import("../../pages/admin/brands.vue");
 const Categories = () => import("../../pages/admin/categories.vue");
 const Colors = () => import("../../pages/admin/colors.vue");
@@ -30,10 +30,6 @@ export default [
         path: "stocks",
         component: Stocks,
         redirect: "inventory"
-    },
-    {
-        path: "sales",
-        component: Sales
     },
     {
         path: "suppliers",
@@ -72,5 +68,6 @@ export default [
         path: "models",
         component: Models
     },
-    UserRoutes
+    UserRoutes,
+    SalesRoutes
 ];

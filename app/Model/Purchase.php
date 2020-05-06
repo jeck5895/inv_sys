@@ -8,6 +8,11 @@ class Purchase extends Model
 {
     protected $fillable = ["imei"];
 
+    public function scopeAvailable($query)
+    {
+        return $query->where('is_available', 1);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);

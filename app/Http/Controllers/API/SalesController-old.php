@@ -40,28 +40,63 @@ class SalesController extends Controller
                 ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q") && $request->q != null) {
                         foreach ($keywords as $keyword) {
-                            $query->orWhere('receipt_no', 'LIKE', '%' . $keyword . '%')
+                            $query->orWhere('transaction_no', 'LIKE', '%' . $keyword . '%')
                                 ->orWhere('amount', 'LIKE', '%' . $keyword . '%')
                                 ->orWhere('payment_mode', 'LIKE', '%' . $keyword . '%');
                         }
                     }
                 })
+                ->whereHas('item.model', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })
+                ->whereHas('item.brand', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })
+                ->whereHas('item.color', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })
+                ->whereHas('item.category', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })
+                ->whereHas('item.supplier', function ($query) use ($request, $keywords) {
+                    if ($request->has('q')) {
+                        foreach ($keywords as $keyword) {
+                            $query->orWhere('name', 'LIKE', '%' . $keyword . '%');
+                        }
+                    }
+                })
+                // ->whereHas('freebies', function ($query) use ($request) {
+                //   $query->orWhere('freebie', 'LIKE', '%' . $request->q . '%');
+                // })
                 ->where(function ($query) use ($request) {
                     if (($request->has('date_from') && $request->date_from != null) && ($request->has('date_to') && $request->date_to != null)) {
                         $query->whereBetween(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"), [$request->date_from, $request->date_to]);
                     }
                 })
                 // ->toSql();
-
+                ->with(['item.model', 'item.brand', 'item.color', 'item.category', 'item.supplier'])
+                ->with('freebies')
                 ->paginate($per_page);
-            $sales->map(function ($item) {
-                $item->formatted_amount = number_format($item->amount, 2, '.', ',');
-                return $item;
-            });
         } else {
             $sales = Sale::orderBy('created_at', 'desc')
-                // ->with(['item.model', 'item.brand', 'item.color', 'item.category', 'item.supplier'])
-                // ->with('freebies')
+                ->with(['item.model', 'item.brand', 'item.color', 'item.category', 'item.supplier'])
+                ->with('freebies')
                 ->paginate($per_page);
         }
 

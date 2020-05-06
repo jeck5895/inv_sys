@@ -59,26 +59,36 @@
           <i class="fa fa-cubes"></i><span>Inventory</span>
         </router-link>
       </li>
-      <li>
-        <router-link to="/administrator/sales" class="waves-effect">
+
+      <!-- <router-link to="/administrator/sales" class="waves-effect">
           <i class="fa fa-money"></i><span>Sales</span>
-        </router-link>
+        </router-link> -->
+      <li>
+        <a
+          href="#"
+          class="media align-items-center user-pointer collapsed"
+          data-toggle="collapse"
+          data-target="#sales-dropdown"
+        >
+          <i class="fa fa-money"></i><span>Sales</span
+          ><i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <div id="sales-dropdown" class="collapse">
+          <ul class="user-setting-menu">
+            <li>
+              <router-link to="/administrator/sales/create"
+                ><i class="fa fa-long-arrow-right"></i> Add Sales
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/administrator/sales/"
+                ><i class="fa fa-long-arrow-right"></i> Sales
+                Report</router-link
+              >
+            </li>
+          </ul>
+        </div>
       </li>
-      <!-- <li>
-                <router-link to="/administrator/stocks" class="waves-effect">
-                    <i class="fa fa-cubes"></i><span>Stocks</span>
-                </router-link>
-            </li> -->
-      <!-- <li>
-                <router-link to="/administrator/purchases" class="waves-effect">
-                    <i class="fa fa-shopping-cart"></i><span>Purchases</span>
-                </router-link>
-            </li> -->
-      <!-- <li>
-                <router-link to="/administrator/issueance" class="waves-effect">
-                    <i class="icon-note"></i><span>Issue</span>
-                </router-link>
-            </li> -->
       <li>
         <router-link to="/administrator/customers" class="waves-effect">
           <i class="icon-people"></i><span>Customers</span>
@@ -179,38 +189,6 @@
           </ul>
         </div>
       </li>
-      <li>
-        <!-- <a
-          href="#"
-          @click="toggleUserClass"
-          class="media align-items-center user-pointer collapsed"
-          data-toggle="collapse"
-          data-target="#account-dropdown"
-        >
-          <div class="media-body">
-            <i class="icon-user"></i>
-            <span>User Accounts</span>
-            <i class="fa fa-angle-left pull-right"></i>
-          </div>
-        </a>
-        <div id="account-dropdown" class="collapse">
-          <ul class="user-setting-menu">
-            <li>
-              <router-link to="/administrator/users/register"
-                ><i class="fa fa-long-arrow-right"></i> Register
-              </router-link>
-            </li>
-            <li>
-              <router-link to="/administrator/users"
-                ><i class="fa fa-long-arrow-right"></i> Account
-                List</router-link
-              >
-            </li>
-          </ul>
-        </div>
-      </li> -->
-      </li>
-
       <li>
         <a href="widgets.html" class="waves-effect"
           ><i class="icon-hourglass"></i><span>Audit Trail</span>

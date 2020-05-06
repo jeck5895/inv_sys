@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import AuthModule from "./modules/auth";
-import SALES_MODULE from "./modules/sales";
+import SALES from "./modules/sales";
 import ITEMS_MODULE from "./modules/items";
 import UNITS from "./modules/units/index";
 // import SITES_MODULE from "./modules/sites/index";
@@ -10,7 +10,7 @@ import USERS from "./modules/users";
 import FILTER_MODULE from "./modules/filters";
 import FORM_MODULE from "./modules/forms";
 import CUSTOMERS_MODULE from "./modules/customers";
-import PURCHASES_MODULE from "./modules/purchases";
+import PURCHASES from "./modules/purchases";
 import BRANDS from "./modules/brands";
 import CATEGORIES from "./modules/categories";
 import COLORS from "./modules/color";
@@ -22,7 +22,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     modules: {
         AuthModule,
-        SALES_MODULE,
+        SALES,
         ITEMS_MODULE,
         UNITS,
         // SITES_MODULE,
@@ -31,7 +31,7 @@ export const store = new Vuex.Store({
         FILTER_MODULE,
         FORM_MODULE,
         CUSTOMERS_MODULE,
-        PURCHASES_MODULE,
+        PURCHASES,
         BRANDS,
         CATEGORIES,
         COLORS,

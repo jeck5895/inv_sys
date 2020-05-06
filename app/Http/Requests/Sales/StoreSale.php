@@ -24,14 +24,10 @@ class StoreSale extends FormRequest
     public function rules()
     {
         return [
-            // 'customer_type' => 'required',
-            // 'customer_id' => 'required',
-            // 'fund' => 'required',
-            // 'items' => 'required',
-            'item_id' => 'required|numeric',
-            'amount' => 'required',
-            'payment_mode' => 'required'
-            // 'quantity' => 'required|numeric|min:1',
+            'receipt_no' => 'required',
+            'payment_mode' => 'required|string',
+            'total_amount' => 'required|numeric',
+            'items' => 'required|array'
         ];
     }
 }

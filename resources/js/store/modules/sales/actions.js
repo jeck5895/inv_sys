@@ -29,7 +29,7 @@ export default {
                 });
         });
     },
-    FETCH_SALE: ({ context }, payload) => {},
+    FETCH_SALE: ({ context }, payload) => { },
     STORE: ({ commit }, payload) => {
         commit("SET_SUBMIT_STATE", true);
 
@@ -50,12 +50,12 @@ export default {
                 })
                 .catch(error => {
                     setTimeout(() => {
-                        toastr.error("Error", "Oops something went wrong");
+                        toastr.error("An error occured");
                         commit("SET_SUBMIT_STATE", false);
                         reject(error);
                     }, 500);
                 });
         });
     },
-    UPDATE_SALE: ({ context }, payload) => {}
+    UPDATE_SALE: ({ context }, payload) => { }
 };

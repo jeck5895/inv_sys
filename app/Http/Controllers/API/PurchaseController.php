@@ -26,7 +26,8 @@ class PurchaseController extends Controller
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
             $purchases = Purchase::orderBy($sortBy, $orderBy)
-                ->with(['category', 'brand', 'color', 'model', 'supplier'])
+
+
                 ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q")) {
                         foreach ($keywords as $keyword) {
@@ -34,6 +35,7 @@ class PurchaseController extends Controller
                         }
                     }
                 })
+                ->with(['category', 'brand', 'color', 'model', 'supplier'])
                 ->orWhereHas('brand', function ($query) use ($request, $keywords) {
                     if ($request->has('q')) {
                         foreach ($keywords as $keyword) {
@@ -69,10 +71,14 @@ class PurchaseController extends Controller
                         }
                     }
                 })
+
+                ->available()
                 ->paginate($per_page);
+            // ->toSql();
 
             $purchases->map(function ($item) {
                 $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
+                $item->formatted_cost = number_format($item->cost, 2, '.', ',');
                 return $item;
             });
         } else {
@@ -86,6 +92,7 @@ class PurchaseController extends Controller
 
             $purchases->map(function ($item) {
                 $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
+                $item->formatted_cost = number_format($item->cost, 2, '.', ',');
                 return $item;
             });
         }
@@ -125,9 +132,17 @@ class PurchaseController extends Controller
      * @param  \App\Model\Purchase  $purchase
      * @return \Illuminate\Http\Response
      */
-    public function show(Purchase $purchase)
+    public function show($param)
     {
-        //
+        $item = null;
+
+        if (is_numeric($param)) {
+            $item = Purchase::findOrFail($param);
+        }
+
+        // $item = Purchase::where('imei', $param);
+
+        return $item;
     }
 
     /**
@@ -197,5 +212,11 @@ class PurchaseController extends Controller
         }
 
         return ['message' => 'Items has been saved', 'items' => $request->items];
+    }
+
+    public function findBy($field, $val)
+    {
+        $item = Purchase::where($field, $val)->firstOrFail();
+        return $item;
     }
 }

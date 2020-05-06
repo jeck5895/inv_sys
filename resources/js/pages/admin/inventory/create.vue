@@ -127,8 +127,8 @@ export default {
       fetchColors: "COLORS/fetchColors",
       fetchSuppliers: "SUPPLIERS/fetchSuppliers",
       fetchModels: "UNITS/fetchUnits",
-      store: "PURCHASES_MODULE/STORE",
-      storeBulk: "PURCHASES_MODULE/STORE_BULK"
+      store: "PURCHASES/STORE",
+      storeBulk: "PURCHASES/STORE_BULK"
     }),
     ...mapMutations({
       setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",

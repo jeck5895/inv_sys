@@ -22,8 +22,13 @@ class Sale extends Model
         return $this->belongsTo(Customer::class, 'customer_id', 'customer_id');
     }
 
-    public function freebies()
+    // public function freebies()
+    // {
+    //     return $this->hasMany(Freebie::class, 'sales_id');
+    // }
+
+    public function sales_items()
     {
-        return $this->hasMany(Freebie::class, 'sales_id');
+        return $this->hasMany(SalesItem::class, 'sales_id', 'id');
     }
 }

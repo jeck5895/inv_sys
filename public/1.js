@@ -1,18 +1,18 @@
 webpackJsonp([1],{
 
-/***/ 308:
+/***/ 311:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(421)
+  __webpack_require__(360)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(423)
+var __vue_script__ = __webpack_require__(362)
 /* template */
-var __vue_template__ = __webpack_require__(439)
+var __vue_template__ = __webpack_require__(378)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -29,7 +29,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/pages/admin/sales.vue"
+Component.options.__file = "resources/js/pages/admin/sales/list.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -38,9 +38,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3776351a", Component.options)
+    hotAPI.createRecord("data-v-4d6ab92c", Component.options)
   } else {
-    hotAPI.reload("data-v-3776351a", Component.options)
+    hotAPI.reload("data-v-4d6ab92c", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -52,19 +52,19 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 319:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(320)
+  __webpack_require__(327)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(322)
+var __vue_script__ = __webpack_require__(329)
 /* template */
-var __vue_template__ = __webpack_require__(323)
+var __vue_template__ = __webpack_require__(330)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -104,13 +104,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 320:
+/***/ 327:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(321);
+var content = __webpack_require__(328);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -131,7 +131,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 321:
+/***/ 328:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -146,7 +146,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 322:
+/***/ 329:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -191,7 +191,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 323:
+/***/ 330:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -255,23 +255,23 @@ if (false) {
 
 /***/ }),
 
-/***/ 421:
+/***/ 360:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(422);
+var content = __webpack_require__(361);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("4093880c", content, false, {});
+var update = __webpack_require__(5)("49c14158", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3776351a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./sales.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3776351a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./sales.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4d6ab92c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./list.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4d6ab92c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./list.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -282,7 +282,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 422:
+/***/ 361:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -290,46 +290,46 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 423:
+/***/ 362:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _salesTable = __webpack_require__(424);
+var _salesTable = __webpack_require__(363);
 
 var _salesTable2 = _interopRequireDefault(_salesTable);
 
-var _search = __webpack_require__(319);
+var _search = __webpack_require__(326);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _dateFilter = __webpack_require__(429);
+var _dateFilter = __webpack_require__(368);
 
 var _dateFilter2 = _interopRequireDefault(_dateFilter);
 
-var _Pagination = __webpack_require__(151);
+var _Pagination = __webpack_require__(153);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _modal = __webpack_require__(153);
+var _modal = __webpack_require__(154);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _report = __webpack_require__(434);
+var _report = __webpack_require__(373);
 
 var _report2 = _interopRequireDefault(_report);
 
@@ -410,253 +410,253 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 
 var Card = function Card() {
-    return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 152));
+  return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 152));
 };
 
 exports.default = {
-    components: {
-        Card: Card,
-        SalesTable: _salesTable2.default,
-        SearchForm: _search2.default,
-        DateFilter: _dateFilter2.default,
-        Pagination: _Pagination2.default,
-        ReportForm: _report2.default,
-        Modal: _modal2.default
+  components: {
+    Card: Card,
+    SalesTable: _salesTable2.default,
+    SearchForm: _search2.default,
+    DateFilter: _dateFilter2.default,
+    Pagination: _Pagination2.default,
+    ReportForm: _report2.default,
+    Modal: _modal2.default
+  },
+  computed: _extends({}, (0, _vuex.mapGetters)({
+    sales: "SALES/GET_SALES",
+    is_loading: "SALES/GET_LOADING_STATE",
+    keyword: "FILTER_MODULE/GET_KEYWORD"
+  }), {
+    date_from: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_DATE_FROM"];
+      },
+      set: function set(newVal) {
+        this.$store.commit("FILTER_MODULE/SET_DATE_FROM", newVal);
+      }
     },
-    computed: _extends({}, (0, _vuex.mapGetters)({
-        sales: "SALES_MODULE/GET_SALES",
-        is_loading: "SALES_MODULE/GET_LOADING_STATE",
-        keyword: "FILTER_MODULE/GET_KEYWORD"
-    }), {
-        date_from: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_DATE_FROM"];
-            },
-            set: function set(newVal) {
-                this.$store.commit("FILTER_MODULE/SET_DATE_FROM", newVal);
-            }
-        },
-        date_to: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_DATE_TO"];
-            },
-            set: function set(newVal) {
-                this.$store.commit("FILTER_MODULE/SET_DATE_TO", newVal);
-            }
-        },
-        page_size: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
-            },
-            set: function set(val) {
-                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
-            }
-        },
-        current_page: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
-            },
-            set: function set(val) {
-                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
-            }
-        },
-        order_by: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
-            },
-            set: function set(val) {
-                this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
-            }
-        },
-        sort_by: {
-            get: function get() {
-                return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
-            },
-            set: function set(val) {
-                this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
-            }
-        }
-    }),
-    data: function data() {
-        return {
-            data: [],
-            is_submitting: false
-        };
+    date_to: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_DATE_TO"];
+      },
+      set: function set(newVal) {
+        this.$store.commit("FILTER_MODULE/SET_DATE_TO", newVal);
+      }
     },
-    methods: _extends({}, (0, _vuex.mapActions)({
-        fetchSales: "SALES_MODULE/FETCH_SALES"
-    }), (0, _vuex.mapMutations)({
-        setKeyword: "FILTER_MODULE/SET_KEYWORD",
-        setDateFrom: "FILTER_MODULE/SET_DATE_FROM",
-        setDateTo: "FILTER_MODULE/SET_DATE_TO"
-    }), {
-        onChange: function onChange(e) {
-            var name = e.target.name;
-            var value = e.target.value;
-
-            switch (name) {
-                case "keyword":
-                    this.setKeyword(value);
-                    break;
-                case "date_from":
-                    this.setDateFrom(value);
-                    break;
-                case "date_to":
-                    this.setDateTo(value);
-                    break;
-                default:
-                    break;
-            }
-
-            // this.$store.commit("FILTER_MODULE/SET_KEYWORD", value);
-        },
-        handleSearch: function handleSearch(keyword) {
-            var url = "/api/sales?q=" + keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        handleFilter: function handleFilter(evt) {
-            var date_from = evt.date_from,
-                date_to = evt.date_to;
-
-            var url = "/api/sales?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + date_from + "&date_to=" + date_to;
-
-            this.fetchSales(url);
-        },
-        onReportSubmit: function onReportSubmit(evt) {
-            var _this = this;
-
-            var token = Cookies.get("_a.token");
-            var type = evt.type;
-
-            var baseURL = window.location.protocol + "//" + window.location.host;
-
-            var anchor_tag = document.createElement("a");
-            anchor_tag.style = "display:none";
-
-            switch (type) {
-                case "daily":
-                    var date_from = evt.date_from,
-                        date_to = evt.date_to;
-
-                    this.is_submitting = true;
-                    axios.get("/api/sales/report/daily?date_from=" + date_from + "&date_to=" + date_to, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: "Bearer " + token
-                        }
-                    }).then(function (_ref) {
-                        var data = _ref.data;
-
-                        _this.is_submitting = false;
-                        // ref: sofi-locatorslist
-                        anchor_tag.href = data.file;
-                        anchor_tag.target = "_blank";
-                        anchor_tag.download = data.filename;
-                        anchor_tag.click();
-                    }).catch(function (_ref2) {
-                        var response = _ref2.response;
-
-                        _this.is_submitting = false;
-                        toastr.error("Server Response Error", "Oops something went wrong");
-                        console.log(response);
-                    });
-
-                    // window.open(
-                    //     `${baseURL}/api/sales/report/daily?date_from=${date_from}&date_to=${date_to}`,
-                    //     "Daily Sales Report",
-                    //     "width=700,heigth=300"
-                    // );
-                    break;
-                case "monthly":
-                    var month = evt.month,
-                        year = evt.year;
-
-
-                    this.is_submitting = true;
-                    axios.get("/api/sales/report/monthly?month=" + month + "&year=" + year, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: "Bearer " + token
-                        }
-                    }).then(function (_ref3) {
-                        var data = _ref3.data;
-
-                        _this.is_submitting = false;
-                        // ref: sofi-locatorslist
-                        anchor_tag.href = data.file;
-                        anchor_tag.target = "_blank";
-                        anchor_tag.download = data.filename;
-                        anchor_tag.click();
-                    }).catch(function (_ref4) {
-                        var response = _ref4.response;
-
-                        _this.is_submitting = false;
-                        toastr.error("Server Response Error", "Oops something went wrong");
-                        console.log(response);
-                    });
-
-                    break;
-                default:
-                    break;
-            }
-        },
-        toPage: function toPage(page) {
-            var url = "/api/sales?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        firstPage: function firstPage(first_page_url) {
-            var url = first_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        prevPage: function prevPage(prev_page_url) {
-            var url = prev_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        nextPage: function nextPage(next_page_url) {
-            var url = next_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        lastPage: function lastPage(last_page_url) {
-            var url = last_page_url + "?q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
-            this.fetchSales(url);
-        },
-        handleModal: function handleModal() {
-            $("#generic-modal").modal("show");
-        },
-        setBreadcrumbs: function setBreadcrumbs() {
-            var breadcrumbs = [{
-                text: "Administrator",
-                link: "/administrator"
-            }, {
-                text: "Sales",
-                link: "/administrator/sales"
-            }];
-            this.$store.commit("setBreadcrumbs", breadcrumbs);
-        }
-    }),
-    mounted: function mounted() {
-        this.setBreadcrumbs();
+    page_size: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
+      },
+      set: function set(val) {
+        this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+      }
     },
-    created: function created() {
-        this.fetchSales("/api/sales?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to);
+    current_page: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
+      },
+      set: function set(val) {
+        this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+      }
+    },
+    order_by: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
+      },
+      set: function set(val) {
+        this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
+      }
+    },
+    sort_by: {
+      get: function get() {
+        return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
+      },
+      set: function set(val) {
+        this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
+      }
     }
+  }),
+  data: function data() {
+    return {
+      data: [],
+      is_submitting: false
+    };
+  },
+  methods: _extends({}, (0, _vuex.mapActions)({
+    fetchSales: "SALES/FETCH_SALES"
+  }), (0, _vuex.mapMutations)({
+    setKeyword: "FILTER_MODULE/SET_KEYWORD",
+    setDateFrom: "FILTER_MODULE/SET_DATE_FROM",
+    setDateTo: "FILTER_MODULE/SET_DATE_TO"
+  }), {
+    onChange: function onChange(e) {
+      var name = e.target.name;
+      var value = e.target.value;
+
+      switch (name) {
+        case "keyword":
+          this.setKeyword(value);
+          break;
+        case "date_from":
+          this.setDateFrom(value);
+          break;
+        case "date_to":
+          this.setDateTo(value);
+          break;
+        default:
+          break;
+      }
+
+      // this.$store.commit("FILTER_MODULE/SET_KEYWORD", value);
+    },
+    handleSearch: function handleSearch(keyword) {
+      var url = "/api/sales?q=" + keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    handleFilter: function handleFilter(evt) {
+      var date_from = evt.date_from,
+          date_to = evt.date_to;
+
+      var url = "/api/sales?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + date_from + "&date_to=" + date_to;
+
+      this.fetchSales(url);
+    },
+    onReportSubmit: function onReportSubmit(evt) {
+      var _this = this;
+
+      var token = Cookies.get("_a.token");
+      var type = evt.type;
+
+      var baseURL = window.location.protocol + "//" + window.location.host;
+
+      var anchor_tag = document.createElement("a");
+      anchor_tag.style = "display:none";
+
+      switch (type) {
+        case "daily":
+          var date_from = evt.date_from,
+              date_to = evt.date_to;
+
+          this.is_submitting = true;
+          axios.get("/api/sales/report/daily?date_from=" + date_from + "&date_to=" + date_to, {
+            headers: {
+              Accept: "application/json",
+              Authorization: "Bearer " + token
+            }
+          }).then(function (_ref) {
+            var data = _ref.data;
+
+            _this.is_submitting = false;
+            // ref: sofi-locatorslist
+            anchor_tag.href = data.file;
+            anchor_tag.target = "_blank";
+            anchor_tag.download = data.filename;
+            anchor_tag.click();
+          }).catch(function (_ref2) {
+            var response = _ref2.response;
+
+            _this.is_submitting = false;
+            toastr.error("Server Response Error", "Oops something went wrong");
+            console.log(response);
+          });
+
+          // window.open(
+          //     `${baseURL}/api/sales/report/daily?date_from=${date_from}&date_to=${date_to}`,
+          //     "Daily Sales Report",
+          //     "width=700,heigth=300"
+          // );
+          break;
+        case "monthly":
+          var month = evt.month,
+              year = evt.year;
+
+
+          this.is_submitting = true;
+          axios.get("/api/sales/report/monthly?month=" + month + "&year=" + year, {
+            headers: {
+              Accept: "application/json",
+              Authorization: "Bearer " + token
+            }
+          }).then(function (_ref3) {
+            var data = _ref3.data;
+
+            _this.is_submitting = false;
+            // ref: sofi-locatorslist
+            anchor_tag.href = data.file;
+            anchor_tag.target = "_blank";
+            anchor_tag.download = data.filename;
+            anchor_tag.click();
+          }).catch(function (_ref4) {
+            var response = _ref4.response;
+
+            _this.is_submitting = false;
+            toastr.error("Server Response Error", "Oops something went wrong");
+            console.log(response);
+          });
+
+          break;
+        default:
+          break;
+      }
+    },
+    toPage: function toPage(page) {
+      var url = "/api/sales?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    firstPage: function firstPage(first_page_url) {
+      var url = first_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    prevPage: function prevPage(prev_page_url) {
+      var url = prev_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    nextPage: function nextPage(next_page_url) {
+      var url = next_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    lastPage: function lastPage(last_page_url) {
+      var url = last_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to;
+      this.fetchSales(url);
+    },
+    handleModal: function handleModal() {
+      $("#generic-modal").modal("show");
+    },
+    setBreadcrumbs: function setBreadcrumbs() {
+      var breadcrumbs = [{
+        text: "Administrator",
+        link: "/administrator"
+      }, {
+        text: "Sales",
+        link: "/administrator/sales"
+      }];
+      this.$store.commit("setBreadcrumbs", breadcrumbs);
+    }
+  }),
+  mounted: function mounted() {
+    this.setBreadcrumbs();
+  },
+  created: function created() {
+    this.fetchSales("/api/sales?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by + "&date_from=" + this.date_from + "&date_to=" + this.date_to);
+  }
 };
 
 /***/ }),
 
-/***/ 424:
+/***/ 363:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(425)
+  __webpack_require__(364)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(427)
+var __vue_script__ = __webpack_require__(366)
 /* template */
-var __vue_template__ = __webpack_require__(428)
+var __vue_template__ = __webpack_require__(367)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -696,13 +696,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 425:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(426);
+var content = __webpack_require__(365);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -723,7 +723,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 426:
+/***/ 365:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -731,21 +731,21 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 427:
+/***/ 366:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 //
 //
@@ -788,26 +788,22 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
 
 exports.default = {
-    props: {
-        items: {
-            required: true
-        },
-        isLoading: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    items: {
+      required: true
+    },
+    isLoading: {
+      type: Boolean,
+      default: false
     }
+  }
 };
 
 /***/ }),
 
-/***/ 428:
+/***/ 367:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -836,13 +832,9 @@ var render = function() {
                     _vm._v(_vm._s(_vm._f("humanReadable")(item.created_at)))
                   ]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.transaction_no))]),
+                  _c("td", [_vm._v(_vm._s(item.receipt_no))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.item.imei))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.item.model.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(item.amount))]),
+                  _c("td", [_vm._v(_vm._s(item.formatted_amount))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.payment_mode))]),
                   _vm._v(" "),
@@ -871,17 +863,13 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("DATE")]),
         _vm._v(" "),
-        _c("th", [_vm._v("TRANSACTION #")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("IMEI")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("MODEL")]),
+        _c("th", [_vm._v("RECEIPT")]),
         _vm._v(" "),
         _c("th", [_vm._v("AMOUNT")]),
         _vm._v(" "),
         _c("th", [_vm._v("PAYMENT TYPE")]),
         _vm._v(" "),
-        _c("th", [_vm._v("CREDIT TERM")])
+        _c("th", [_vm._v("PAYMENT TERM")])
       ])
     ])
   },
@@ -890,7 +878,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", { staticClass: "text-center", attrs: { colspan: "8" } }, [
-      _vm._v("\n                Loading\n                "),
+      _vm._v("\n        Loading\n        "),
       _c("img", {
         attrs: { src: "/images/ajax-loader.gif", alt: "Loading...." }
       })
@@ -918,19 +906,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 429:
+/***/ 368:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(430)
+  __webpack_require__(369)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(432)
+var __vue_script__ = __webpack_require__(371)
 /* template */
-var __vue_template__ = __webpack_require__(433)
+var __vue_template__ = __webpack_require__(372)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -970,13 +958,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 430:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(431);
+var content = __webpack_require__(370);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -997,7 +985,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 431:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1012,7 +1000,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 432:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1076,7 +1064,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 433:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1152,19 +1140,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 434:
+/***/ 373:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(435)
+  __webpack_require__(374)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(437)
+var __vue_script__ = __webpack_require__(376)
 /* template */
-var __vue_template__ = __webpack_require__(438)
+var __vue_template__ = __webpack_require__(377)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1204,13 +1192,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 435:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(436);
+var content = __webpack_require__(375);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1231,7 +1219,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 436:
+/***/ 375:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1246,7 +1234,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 437:
+/***/ 376:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1421,7 +1409,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 438:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1666,7 +1654,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 439:
+/***/ 378:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1728,7 +1716,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                    Generate Sales Report\n                                "
+                                  "\n                  Generate Sales Report\n                "
                                 )
                               ]
                             ),
@@ -1792,9 +1780,7 @@ var render = function() {
               fn: function() {
                 return [
                   _c("h5", { staticClass: "modal-title text-white" }, [
-                    _vm._v(
-                      "\n                    Generate Report\n                "
-                    )
+                    _vm._v("\n          Generate Report\n        ")
                   ])
                 ]
               },
@@ -1825,7 +1811,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-3776351a", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-4d6ab92c", module.exports)
   }
 }
 

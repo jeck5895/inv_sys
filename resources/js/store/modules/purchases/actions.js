@@ -2,6 +2,56 @@ import Cookies from "js-cookie";
 const token = Cookies.get("_a.token");
 
 export default {
+    FIND: ({ commit }, payload) => {
+        commit("SET_IS_LOADING", true);
+        return new Promise((resolve, reject) => {
+            axios
+                .get(`api/stocks/${payload}`, {
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                .then(({ data }) => {
+                    commit("SET_PURCHASE", data);
+                    resolve(data);
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
+                })
+                .catch(({ response }) => {
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
+                    reject(response);
+                });
+        });
+    },
+    FIND_BY: ({ commit }, payload) => {
+        commit("SET_IS_LOADING", true);
+        return new Promise((resolve, reject) => {
+            axios
+                .get(`api/stocks/find-by/${payload.field}/${payload.value}`, {
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: `Bearer ${token}`
+                    }
+                })
+                .then(({ data }) => {
+                    commit("SET_PURCHASE", data);
+                    resolve(data);
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
+                })
+                .catch(({ response }) => {
+                    setTimeout(() => {
+                        commit("SET_IS_LOADING", false);
+                    }, 1000);
+                    reject(response);
+                });
+        });
+    },
     FETCH_PURCHASES: ({ commit }, url) => {
         // let url = payload ? payload : "/api/stocks";
         commit("SET_IS_LOADING", true);

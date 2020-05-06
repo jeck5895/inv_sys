@@ -32,6 +32,11 @@ class FreebiesController extends Controller
                         }
                     }
                 })->paginate($per_page);
+
+            $freebies->map(function ($item) {
+                $item->formatted_price = number_format($item->price, 2, '.', ',');
+                return $item;
+            });
         } else {
             $freebies = Freebie::all();
         }
@@ -49,10 +54,12 @@ class FreebiesController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:freebies',
+            'price' => 'required|numeric'
         ]);
 
         $freebie = new Freebie;
         $freebie->name = $request->name;
+        $freebie->price = $request->price;
         $freebie->save();
 
         return ['message' => 'Success'];
@@ -67,6 +74,7 @@ class FreebiesController extends Controller
     public function show($id)
     {
         $freebie = Freebie::findOrFail($id);
+        return $freebie;
     }
 
     /**
@@ -80,10 +88,12 @@ class FreebiesController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:freebies,name,' . $id,
+            'price' => 'required|numeric'
         ]);
 
         $freebie =  Freebie::findOrFail($id);
         $freebie->name = $request->name;
+        $freebie->price = $request->price;
         $freebie->save();
 
         return ['message' => 'Success'];
@@ -97,6 +107,6 @@ class FreebiesController extends Controller
      */
     public function destroy($id)
     {
-        // Freebie::destroy($id);
+        Freebie::destroy($id);
     }
 }

@@ -7,7 +7,8 @@
         <th>BRAND</th>
         <th>COLOR</th>
         <th>PRICE</th>
-        <th>SPECS</th>
+        <th>COST</th>
+        <th>STATUS</th>
         <th>ACTIONS</th>
       </tr>
     </thead>
@@ -32,23 +33,25 @@
           <td>{{ item.brand.name }}</td>
           <td>{{ item.color.name }}</td>
           <td>{{ item.formatted_selling_price }}</td>
-          <td>{{ item.specs }}</td>
-          <td align="center" class="px-1">
-            <button
-              @click.prevent="$emit('on-checkout', item)"
-              type="button"
-              data-toggle="modal"
-              data-target="#addmodal"
-              class="btn btn-success btn-sm waves-effect waves-light m-1"
+          <td>{{ item.formatted_cost }}</td>
+          <td>
+            <span
+              :class="{
+                badge: true,
+                'badge-success': item.is_available,
+                'badge-danger': !item.is_available
+              }"
             >
-              <i class="fa fa-cart-plus fa-lg"></i>
-            </button>
+              {{ item.is_available ? "AVAILABLE" : "SOLD" }}
+            </span>
+          </td>
+          <td align="center" class="px-1">
             <button
               @click.prevent="$emit('on-edit', item)"
               type="button"
               data-toggle="modal"
               data-target="#addmodal"
-              class="btn btn-warning btn-sm waves-effect waves-light m-1"
+              class="btn btn-sm waves-effect waves-light m-1"
             >
               <i class="fa fa-edit"></i>
             </button>

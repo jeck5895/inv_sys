@@ -23,6 +23,7 @@ Route::middleware('auth:api')->group(function () {
     Route::get('sales/report/daily', 'API\ReportController@daily');
     Route::get('sales/report/monthly', 'API\ReportController@monthly');
     Route::post('stocks/bulk', 'API\PurchaseController@bulk');
+    Route::get('stocks/find-by/{field}/{value}', 'API\PurchaseController@findBy');
 
     // Route::apiResource('stocks', 'API\PurchaseController');
     Route::apiResource('customers', 'API\CustomerController');

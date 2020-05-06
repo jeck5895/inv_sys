@@ -20,6 +20,22 @@
       </small>
     </div>
     <div class="form-group">
+      <label for="">Price</label>
+      <input
+        v-validate="'required'"
+        name="price"
+        v-model="item.price"
+        type="number"
+        class="form-control"
+      />
+      <small
+        class="form-text text-danger"
+        v-show="errors.has('settings-form.price')"
+      >
+        {{ errors.first("settings-form.price") }}
+      </small>
+    </div>
+    <div class="form-group">
       <button :disabled="loading" class="btn btn-sm btn-success">
         <span v-if="loading">Saving...</span>
         <span v-if="!loading">Save</span>
