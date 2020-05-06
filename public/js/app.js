@@ -55773,7 +55773,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55794,6 +55794,7 @@ var _regenerator = __webpack_require__(9);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
 //
 //
 //
@@ -56288,118 +56289,6 @@ var render = function() {
     },
     [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-lg-12" }, [
-          _c("label", { attrs: { for: "input-4" } }, [_vm._v("Checkout Mode")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-group" }, [
-            _c("div", { staticClass: "form-check form-check-inline" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.mode,
-                    expression: "mode"
-                  }
-                ],
-                staticClass: "form-check-input",
-                attrs: {
-                  type: "radio",
-                  name: "inlineRadioOptions",
-                  id: "inlineRadio1",
-                  value: "single"
-                },
-                domProps: { checked: _vm._q(_vm.mode, "single") },
-                on: {
-                  change: function($event) {
-                    _vm.mode = "single"
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "form-check-label",
-                  attrs: { for: "inlineRadio1" }
-                },
-                [_vm._v("Single")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-check form-check-inline" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.mode,
-                    expression: "mode"
-                  }
-                ],
-                staticClass: "form-check-input",
-                attrs: {
-                  type: "radio",
-                  name: "inlineRadioOptions",
-                  id: "inlineRadio2",
-                  value: "multiple"
-                },
-                domProps: { checked: _vm._q(_vm.mode, "multiple") },
-                on: {
-                  change: function($event) {
-                    _vm.mode = "multiple"
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "form-check-label",
-                  attrs: { for: "inlineRadio2" }
-                },
-                [_vm._v("Multiple")]
-              )
-            ]),
-            _vm._v(" "),
-            _vm.mode === "multiple"
-              ? _c("div", { staticClass: "form-inline mt-1" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.quantity,
-                        expression: "quantity"
-                      }
-                    ],
-                    staticClass: "form-control form-control-sm",
-                    attrs: { type: "number", placeholder: "Quantity" },
-                    domProps: { value: _vm.quantity },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.quantity = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary btn-sm ml-2",
-                      attrs: { type: "button" },
-                      on: { click: _vm.handleQuantity }
-                    },
-                    [_vm._v("\n            OK\n          ")]
-                  )
-                ])
-              : _vm._e()
-          ])
-        ]),
-        _vm._v(" "),
         _c("div", { staticClass: "col-lg-6" }, [
           _c("div", { staticClass: "form-row" }, [
             _c("div", { staticClass: "form-group col-lg-6 col-md-6" }, [
@@ -56661,6 +56550,118 @@ var render = function() {
                 ])
               : _vm._e()
           ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-12" }, [
+          _c("label", { attrs: { for: "input-4" } }, [_vm._v("Checkout Mode")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("div", { staticClass: "form-check form-check-inline" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mode,
+                    expression: "mode"
+                  }
+                ],
+                staticClass: "form-check-input",
+                attrs: {
+                  type: "radio",
+                  name: "inlineRadioOptions",
+                  id: "inlineRadio1",
+                  value: "single"
+                },
+                domProps: { checked: _vm._q(_vm.mode, "single") },
+                on: {
+                  change: function($event) {
+                    _vm.mode = "single"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label",
+                  attrs: { for: "inlineRadio1" }
+                },
+                [_vm._v("Single")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-check form-check-inline" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.mode,
+                    expression: "mode"
+                  }
+                ],
+                staticClass: "form-check-input",
+                attrs: {
+                  type: "radio",
+                  name: "inlineRadioOptions",
+                  id: "inlineRadio2",
+                  value: "multiple"
+                },
+                domProps: { checked: _vm._q(_vm.mode, "multiple") },
+                on: {
+                  change: function($event) {
+                    _vm.mode = "multiple"
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label",
+                  attrs: { for: "inlineRadio2" }
+                },
+                [_vm._v("Multiple")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm.mode === "multiple"
+              ? _c("div", { staticClass: "form-inline mt-1" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.quantity,
+                        expression: "quantity"
+                      }
+                    ],
+                    staticClass: "form-control form-control-sm",
+                    attrs: { type: "number", placeholder: "Quantity" },
+                    domProps: { value: _vm.quantity },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.quantity = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary btn-sm ml-2",
+                      attrs: { type: "button" },
+                      on: { click: _vm.handleQuantity }
+                    },
+                    [_vm._v("\n            OK\n          ")]
+                  )
+                ])
+              : _vm._e()
+          ])
         ])
       ]),
       _vm._v(" "),
@@ -56863,38 +56864,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-lg-3 form-group" }, [
-                _c("label", { attrs: { for: "input-4" } }, [_vm._v("Price")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: item.selling_price,
-                      expression: "item.selling_price"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    name: "price-" + i,
-                    type: "text",
-                    id: "price",
-                    placeholder: "",
-                    disabled: ""
-                  },
-                  domProps: { value: item.selling_price },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(item, "selling_price", $event.target.value)
-                    }
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-3 form-group" }, [
                 _c("label", { attrs: { for: "input-1" } }, [_vm._v("Brand")]),
                 _vm._v(" "),
                 _c(
@@ -56947,9 +56916,41 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "col-lg-3 form-group" }, [
+                _c("label", { attrs: { for: "input-4" } }, [_vm._v("Price")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: item.selling_price,
+                      expression: "item.selling_price"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "price-" + i,
+                    type: "text",
+                    id: "price",
+                    placeholder: "",
+                    disabled: ""
+                  },
+                  domProps: { value: item.selling_price },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "selling_price", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-lg-6 form-group" },
+                { staticClass: "col-lg-9 form-group" },
                 [
                   _c("label", [_vm._v("Freebies")]),
                   _vm._v(" "),

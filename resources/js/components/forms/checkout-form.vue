@@ -4,48 +4,6 @@
     @submit.prevent="onSubmit('CHECKOUT_FORM')"
   >
     <div class="row">
-      <div class="col-lg-12">
-        <label for="input-4">Checkout Mode</label>
-        <div class="form-group">
-          <div class="form-check form-check-inline">
-            <input
-              v-model="mode"
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              value="single"
-            />
-            <label class="form-check-label" for="inlineRadio1">Single</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              v-model="mode"
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              value="multiple"
-            />
-            <label class="form-check-label" for="inlineRadio2">Multiple</label>
-          </div>
-          <div v-if="mode === 'multiple'" class="form-inline mt-1">
-            <input
-              v-model="quantity"
-              type="number"
-              class="form-control form-control-sm"
-              placeholder="Quantity"
-            />
-            <button
-              type="button"
-              @click="handleQuantity"
-              class="btn btn-primary btn-sm ml-2"
-            >
-              OK
-            </button>
-          </div>
-        </div>
-      </div>
       <div class="col-lg-6">
         <div class="form-row">
           <div class="form-group col-lg-6 col-md-6">
@@ -130,6 +88,49 @@
           </div>
         </div>
       </div>
+
+      <div class="col-lg-12">
+        <label for="input-4">Checkout Mode</label>
+        <div class="form-group">
+          <div class="form-check form-check-inline">
+            <input
+              v-model="mode"
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="single"
+            />
+            <label class="form-check-label" for="inlineRadio1">Single</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              v-model="mode"
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="multiple"
+            />
+            <label class="form-check-label" for="inlineRadio2">Multiple</label>
+          </div>
+          <div v-if="mode === 'multiple'" class="form-inline mt-1">
+            <input
+              v-model="quantity"
+              type="number"
+              class="form-control form-control-sm"
+              placeholder="Quantity"
+            />
+            <button
+              type="button"
+              @click="handleQuantity"
+              class="btn btn-primary btn-sm ml-2"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <template v-for="(item, i) in items">
       <div
@@ -204,18 +205,6 @@
           </select>
         </div>
         <div class="col-lg-3 form-group">
-          <label for="input-4">Price</label>
-          <input
-            v-model="item.selling_price"
-            :name="'price-' + i"
-            type="text"
-            class="form-control"
-            id="price"
-            placeholder=""
-            disabled
-          />
-        </div>
-        <div class="col-lg-3 form-group">
           <label for="input-1">Brand</label>
           <select
             v-model="item.brand_id"
@@ -232,8 +221,20 @@
             >
           </select>
         </div>
+        <div class="col-lg-3 form-group">
+          <label for="input-4">Price</label>
+          <input
+            v-model="item.selling_price"
+            :name="'price-' + i"
+            type="text"
+            class="form-control"
+            id="price"
+            placeholder=""
+            disabled
+          />
+        </div>
 
-        <div class="col-lg-6 form-group">
+        <div class="col-lg-9 form-group">
           <label>Freebies</label>
           <Select2
             :name="'freebies-' + i"

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
       <card>
-        <temsplate v-slot:card-header> </temsplate>
+        <template v-slot:card-header> </template>
         Checkout
         <template v-slot:card-body>
           <checkout-form

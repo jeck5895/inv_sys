@@ -309,6 +309,13 @@ var render = function() {
           {
             scopedSlots: _vm._u([
               {
+                key: "card-header",
+                fn: function() {
+                  return undefined
+                },
+                proxy: true
+              },
+              {
                 key: "card-body",
                 fn: function() {
                   return [
@@ -332,21 +339,7 @@ var render = function() {
               }
             ])
           },
-          [
-            _c("temsplate", {
-              scopedSlots: _vm._u([
-                {
-                  key: "card-header",
-                  fn: function() {
-                    return undefined
-                  },
-                  proxy: true
-                }
-              ])
-            }),
-            _vm._v("\n      Checkout\n      ")
-          ],
-          1
+          [_vm._v("\n      Checkout\n      ")]
         )
       ],
       1
