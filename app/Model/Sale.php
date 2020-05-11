@@ -11,24 +11,24 @@ class Sale extends Model
     //     'fullname', 'created_at'
     // ];
 
-    public function item()
-    {
-        return $this->belongsTo(Purchase::class, 'item_id', 'id');
-        // return $this->belongsTo(Item::class);
-    }
-
     public function customer()
     {
         return $this->belongsTo(Customer::class, 'customer_id', 'customer_id');
     }
 
-    // public function freebies()
-    // {
-    //     return $this->hasMany(Freebie::class, 'sales_id');
-    // }
 
     public function sales_items()
     {
         return $this->hasMany(SalesItem::class, 'sales_id', 'id');
+    }
+
+    public function items()
+    {
+        return $this->belongsToMany(Item::class);
+    }
+
+    public function freebies()
+    {
+        return $this->hasManyThrough(SalesItemFreebie::class, SalesItem::class, 'sales_id', 'sales_item_id', 'id');
     }
 }

@@ -17,24 +17,25 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('sales/report/daily', 'API\ReportController@daily');
+Route::get('sales/report/monthly', 'API\ReportController@monthly');
 Route::middleware('auth:api')->group(function () {
 
-    Route::get('sales/report/daily', 'API\ReportController@daily');
-    Route::get('sales/report/monthly', 'API\ReportController@monthly');
-    Route::post('stocks/bulk', 'API\PurchaseController@bulk');
-    Route::get('stocks/find-by/{field}/{value}', 'API\PurchaseController@findBy');
+    Route::get('sales/find-by/{field}/{value}', 'API\SalesController@findBy');
 
-    // Route::apiResource('stocks', 'API\PurchaseController');
+    Route::post('stocks/bulk', 'API\ItemsController@bulk');
+    Route::get('stocks/find-by/{field}/{value}', 'API\ItemsController@findBy');
+
+    // Route::apiResource('stocks', 'API\ItemsController');
     Route::apiResource('customers', 'API\CustomerController');
-    // Route::apiResource('purchases', 'API\PurchaseController');
+    // Route::apiResource('purchases', 'API\ItemsController');
     Route::apiResource('categories', 'API\CategoriesController');
     Route::apiResource('models', 'API\ModelsController');
     Route::apiResource('brands', 'API\BrandsController');
     Route::apiResource('colors', 'API\ColorsController');
     Route::apiResource('suppliers', 'API\SuppliersController');
     Route::apiResource('sales', 'API\SalesController');
-    Route::apiResource('stocks', 'API\PurchaseController');
+    Route::apiResource('stocks', 'API\ItemsController');
     Route::apiResource('freebies', 'API\FreebiesController');
 
     // Route::get('/stocks/lists', 'API\ItemController@lists');

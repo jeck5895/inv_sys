@@ -7,12 +7,7 @@ export default {
 
         return new Promise((resolve, reject) => {
             axios
-                .get(url, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${token}`
-                    }
-                })
+                .get(url)
                 .then(response => {
                     setTimeout(() => {
                         commit("CLEAR_SALES");
@@ -29,18 +24,36 @@ export default {
                 });
         });
     },
-    FETCH_SALE: ({ context }, payload) => { },
+    FIND: ({ commit }, id) => {
+        return new Promise((resolve, reject) => {
+            axios.get(`api/sales/${id}`)
+                .then(response => {
+                    commit("SET_SALES_ITEM", response.data);
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error.response);
+                });
+        });
+    },
+    FIND_BY: ({ commit }, { field, value }) => {
+        return new Promise((resolve, reject) => {
+            axios.get(`api/sales/find-by/${field}/${value}`)
+                .then(response => {
+                    commit("SET_SALES_ITEM", response.data);
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error.response);
+                });
+        });
+    },
     STORE: ({ commit }, payload) => {
         commit("SET_SUBMIT_STATE", true);
 
         return new Promise((resolve, reject) => {
             axios
-                .post("/api/sales", payload, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${token}`
-                    }
-                })
+                .post("/api/sales", payload)
                 .then(response => {
                     setTimeout(() => {
                         commit("SET_SUBMIT_STATE", false);
@@ -57,5 +70,26 @@ export default {
                 });
         });
     },
-    UPDATE_SALE: ({ context }, payload) => { }
+    UPDATE: ({ commit }, payload) => {
+        commit("SET_SUBMIT_STATE", true);
+
+        return new Promise((resolve, reject) => {
+            axios
+                .patch(`/api/sales/${payload.id}`, payload)
+                .then(response => {
+                    setTimeout(() => {
+                        commit("SET_SUBMIT_STATE", false);
+                        resolve(response);
+                        toastr.success("Success", `${response.data.message}`);
+                    }, 500);
+                })
+                .catch(error => {
+                    setTimeout(() => {
+                        toastr.error("An error occured");
+                        commit("SET_SUBMIT_STATE", false);
+                        reject(error);
+                    }, 500);
+                });
+        });
+    }
 };

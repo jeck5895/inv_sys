@@ -23,10 +23,12 @@ class StoreSale extends FormRequest
      */
     public function rules()
     {
+        $payment_mode = "HOME CREDIT";
         return [
-            'receipt_no' => 'required',
+            'receipt_no' => 'required|unique:sales',
             'payment_mode' => 'required|string',
             'total_amount' => 'required|numeric',
+            'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
             'items' => 'required|array'
         ];
     }

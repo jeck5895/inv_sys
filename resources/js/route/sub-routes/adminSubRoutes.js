@@ -3,7 +3,6 @@ import UserRoutes from "../sub-routes/users";
 import SalesRoutes from "../sub-routes/sales";
 
 const Dashboard = () => import("../../pages/admin/dashboard.vue");
-const Stocks = () => import("../../pages/admin/stocks.vue");
 // const Issuance = () => import("../../pages/admin/issueance.vue");
 const Reports = () => import("../../pages/admin/reports.vue");
 const Customers = () => import("../../pages/admin/customers.vue");
@@ -25,11 +24,6 @@ export default [
     {
         path: "dashboard",
         component: Dashboard
-    },
-    {
-        path: "stocks",
-        component: Stocks,
-        redirect: "inventory"
     },
     {
         path: "suppliers",

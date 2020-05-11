@@ -37,6 +37,7 @@
               <sales-table
                 :items="sales"
                 :is-loading="is_loading"
+                @on-edit="handleEdit"
               ></sales-table>
             </div>
             <div class="col-lg-12">
@@ -153,14 +154,23 @@ export default {
     };
   },
   methods: {
-    ...mapActions({
-      fetchSales: "SALES/FETCH_SALES"
+    ...mapActions("SALES", {
+      fetchSales: "FETCH_SALES",
+      find: "FIND"
     }),
     ...mapMutations({
       setKeyword: "FILTER_MODULE/SET_KEYWORD",
       setDateFrom: "FILTER_MODULE/SET_DATE_FROM",
       setDateTo: "FILTER_MODULE/SET_DATE_TO"
     }),
+    handleEdit(sales) {
+      if (sales) {
+        this.$router.push({
+          name: "edit-sales",
+          params: { receipt: sales.receipt_no }
+        });
+      }
+    },
     onChange(e) {
       const name = e.target.name;
       const value = e.target.value;

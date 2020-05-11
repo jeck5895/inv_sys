@@ -9,7 +9,7 @@
           <div class="form-group col-lg-6 col-md-6">
             <label for="input-4">DATE</label>
             <input
-              v-model="checkout_date"
+              v-model="salesItem.checkout_date"
               name="checkout_date"
               type="date"
               class="form-control"
@@ -26,7 +26,7 @@
           <div class="form-group col-lg-6 col-md-6">
             <label for="input-1">Receipt #</label>
             <input
-              v-model="receipt_no"
+              v-model="salesItem.receipt_no"
               type="text"
               v-validate="'required'"
               data-vv-as="Receipt"
@@ -47,7 +47,7 @@
           <div class="col-lg-6 form-group">
             <label for="input-4">Mode of Payment</label>
             <select
-              v-model="payment_mode"
+              v-model="salesItem.payment_mode"
               name="payment_mode"
               id="payment_mode"
               class="form-control"
@@ -71,20 +71,28 @@
             </small>
           </div>
           <div
-            v-if="payment_mode === 'HOME CREDIT'"
+            v-if="salesItem.payment_mode === 'HOME CREDIT'"
             class="col-lg-6 form-group"
           >
             <label for="">Home Credit Term</label>
             <select
-              v-model="payment_terms"
+              v-model="salesItem.payment_terms"
               name="home_credit_terms"
               class="form-control"
               data-vv-as="credit term"
+              v-validate="'required'"
             >
               <option value="12">12 Months</option>
               <option value="6">6 Months</option>
               <option value="3">3 Months</option>
             </select>
+
+            <small
+              class="form-text text-danger"
+              v-show="errors.has('CHECKOUT_FORM.home_credit_terms')"
+            >
+              {{ errors.first("CHECKOUT_FORM.home_credit_terms") }}
+            </small>
           </div>
         </div>
       </div>
@@ -122,6 +130,7 @@
               placeholder="Quantity"
             />
             <button
+              :disabled="quantity === 1 && $route.name === 'create-sales'"
               type="button"
               @click="handleQuantity"
               class="btn btn-primary btn-sm ml-2"
@@ -159,9 +168,9 @@
             data-vv-as="IMEI"
             type="text"
             class="form-control"
-            id="input-4"
+            :disabled="$route.name === 'edit-sales' && !item.is_new"
             placeholder=""
-            @blur="onBlur(item.imei, i)"
+            @blur="onBlur(item.imei, i, item)"
           />
           <small
             class="form-text text-danger"
@@ -177,8 +186,10 @@
             v-model="item.model_id"
             :name="'unit-' + i"
             class="form-control"
+            data-vv-as="model"
+            v-validate="'required'"
           >
-            <option value="">Select Unit</option>
+            <option value="">Select Model</option>
             <option
               v-for="model in models"
               :key="model.name"
@@ -186,6 +197,12 @@
               >{{ model.name }}</option
             >
           </select>
+          <small
+            class="form-text text-danger"
+            v-show="errors.has('CHECKOUT_FORM.model-' + i)"
+          >
+            {{ errors.first("CHECKOUT_FORM.model-" + i) }}
+          </small>
         </div>
         <div class="col-lg-3 form-group">
           <label for="input-1">Color</label>
@@ -194,6 +211,8 @@
             :name="'color-' + i"
             class="form-control"
             disabled
+            data-vv-as="color"
+            v-validate="'required'"
           >
             <option value="">Select Color</option>
             <option
@@ -203,6 +222,13 @@
               >{{ color.name }}</option
             >
           </select>
+
+          <small
+            class="form-text text-danger"
+            v-show="errors.has('CHECKOUT_FORM.color-' + i)"
+          >
+            {{ errors.first("CHECKOUT_FORM.color-" + i) }}
+          </small>
         </div>
         <div class="col-lg-3 form-group">
           <label for="input-1">Brand</label>
@@ -211,6 +237,8 @@
             :name="'color-' + i"
             class="form-control"
             disabled
+            data-vv-as="brand"
+            v-validate="'required'"
           >
             <option value="">Select Brand</option>
             <option
@@ -220,6 +248,13 @@
               >{{ brand.name }}</option
             >
           </select>
+
+          <small
+            class="form-text text-danger"
+            v-show="errors.has('CHECKOUT_FORM.brand-' + i)"
+          >
+            {{ errors.first("CHECKOUT_FORM.brand-" + i) }}
+          </small>
         </div>
         <div class="col-lg-3 form-group">
           <label for="input-4">Price</label>
@@ -231,7 +266,16 @@
             id="price"
             placeholder=""
             disabled
+            dava-vv-as="price"
+            v-validate="'required'"
           />
+
+          <small
+            class="form-text text-danger"
+            v-show="errors.has('CHECKOUT_FORM.price-' + i)"
+          >
+            {{ errors.first("CHECKOUT_FORM.price-" + i) }}
+          </small>
         </div>
 
         <div class="col-lg-9 form-group">
@@ -259,7 +303,12 @@
             type="submit"
             class="btn btn-success waves-effect"
           >
-            <span v-if="!isLoading">Checkout</span>
+            <span v-if="!isLoading && $route.name === 'create-sales'"
+              >Checkout</span
+            >
+            <span v-else-if="!isLoading && $route.name === 'edit-sales'"
+              >Update</span
+            >
             <span v-else>Processing...</span>
           </button>
         </div>
@@ -267,7 +316,8 @@
       <div class="col-lg-6 form-group">
         <label for="total" class="mr-4">Total</label>
         <input
-          v-model="total_amount"
+          disabled
+          v-model="salesItem.total_amount"
           name="total_amount"
           type="text"
           class="form-control"
@@ -281,12 +331,13 @@
 
 <script>
 import { mapActions } from "vuex";
+import { computeTotal, itemsExists } from "../../utils/sales";
 export default {
   props: {
-    // items: {
-    //   required: true,
-    //   type: Array
-    // },
+    salesItem: {
+      required: true,
+      type: Object
+    },
     models: {
       type: Array,
       required: true
@@ -312,20 +363,8 @@ export default {
       required: true
     }
   },
-  data: function() {
+  data() {
     return {
-      items: [
-        {
-          imei: "",
-          model_id: "",
-          color_id: "",
-          selling_price: "",
-          payment_mode: "",
-          amount: "",
-          freebies: []
-        }
-      ],
-      options: ["Powerbank", "Earphone", "Smartwatch"],
       payments: ["CASH", "HOME CREDIT", "BDO", "BPI", "METROBANK"],
       card_types: ["BDO", "BPI", "METROBANK"],
       mode: "single",
@@ -335,26 +374,31 @@ export default {
       checkout_date: moment().format("Y-MM-DD"),
       payment_mode: "",
       payment_terms: "",
-      total_amount: 0
+      total_amount: 0,
+      items: this.salesItem.items
     };
   },
   methods: {
     ...mapActions({
-      findItemBy: "PURCHASES/FIND_BY"
+      findItemBy: "ITEMS/FIND_BY"
     }),
     onSubmit(form) {
       let payload = {
         items: this.items,
-        payment_mode: this.payment_mode,
-        total_amount: this.total_amount,
-        receipt_no: this.receipt_no,
-        checkout_date: this.checkout_date,
+        payment_mode: this.salesItem.payment_mode,
+        total_amount: this.salesItem.total_amount,
+        receipt_no: this.salesItem.receipt_no,
+        checkout_date: this.salesItem.checkout_date,
         form: this.$validator, // for resetting form on parent
         errors: this.errors // for clearing errors on paren
       };
 
-      if (this.payment_mode === "HOME CREDIT") {
-        payload = { ...payload, payment_terms: this.payment_terms };
+      if (this.salesItem.payment_mode === "HOME CREDIT") {
+        payload = { ...payload, payment_terms: this.salesItem.payment_terms };
+      }
+
+      if (this.$route.name === "edit-sales") {
+        payload = { ...payload, id: this.salesItem.id, action: "EDIT" };
       }
 
       this.$validator.validateAll(form).then(valid => {
@@ -365,7 +409,11 @@ export default {
     },
     handleQuantity() {
       let i;
-      this.items = [];
+
+      if (this.$route.name === "create-sales") {
+        this.items = [];
+      }
+
       for (i = 0; i < this.quantity; i++) {
         this.items.push({
           id: "",
@@ -374,18 +422,27 @@ export default {
           color_id: "",
           selling_price: "",
           brand_id: "",
-          freebies: []
+          freebies: [],
+          is_new: true
         });
       }
     },
     removeItem(index) {
       this.items.splice(this.items.indexOf(index), 1);
+      const total_amount = computeTotal(this.items, "selling_price");
+      this.salesItem.total_amount = total_amount;
     },
-    async onBlur(val, index) {
+
+    async onBlur(val, index, item) {
       const payload = {
         field: "imei",
         value: val
       };
+
+      console.log(this.salesItem.items);
+      console.log(this.items);
+      //   console.log(itemsExists(this.salesItem.items, item));
+
       if (val !== "") {
         await this.findItemBy(payload)
           .then(response => {
@@ -397,7 +454,7 @@ export default {
               model_id,
               selling_price
             } = response;
-            // this.$set(news, "is_bookmarked", true);
+
             this.items[index].id = id;
             this.items[index].imei = imei;
             this.items[index].brand_id = brand_id;
@@ -406,16 +463,27 @@ export default {
             this.items[index].selling_price = selling_price;
           })
           .catch(error => {
+            this.items[index].id = "";
+            this.items[index].imei = "";
+            this.items[index].brand_id = "";
+            this.items[index].color_id = "";
+            this.items[index].model_id = "";
+            this.items[index].selling_price = "";
             if (error.status === 404) {
               toastr.error("No matching item found.", "404");
             }
+            console.log(error);
+            if (error.status === 422) {
+              toastr.error(error.data.message);
+            }
           });
 
-        const total_amount = this.items.reduce(
-          (acc, item) => acc + item.selling_price,
-          0
-        );
-        this.total_amount = total_amount;
+        // const total_amount = this.salesItem.items.reduce(
+        //   (acc, item) => acc + item.selling_price,
+        //   0
+        // );
+        const total_amount = computeTotal(this.items, "selling_price");
+        this.salesItem.total_amount = total_amount;
       }
 
       //   this.$emit("on-blur", val);
@@ -436,15 +504,20 @@ export default {
             freebies: []
           }
         ];
-        this.receipt_no = "";
-        this.payment_mode = "";
-        this.payment_terms = "";
-        this.total_amount = 0;
+        this.salesItem.receipt_no = "";
+        this.salesItem.checkout_date = moment().format("Y-MM-DD");
+        this.salesItem.payment_mode = "";
+        this.salesItem.payment_terms = "";
+        this.salesItem.total_amount = 0;
+        this.quantity = 1;
         this.$validator.reset();
         this.errors.clear();
         this.$emit("on-reset", true);
       }
     }
+  },
+  mounted() {
+    console.log(this.items);
   }
 };
 </script>

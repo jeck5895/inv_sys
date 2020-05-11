@@ -43,7 +43,7 @@
             </div>
             <div class="col-lg-12 mb-3 table-responsive">
               <InventoryTable
-                :items="purchases"
+                :items="items"
                 :is-loading="isLoading"
                 @on-edit="handleEdit"
                 @on-delete="handleDelete"
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-12 justify-content-right">
               <Pagination
-                :data="purchases"
+                :data="items"
                 @to-page="toPage"
                 @first-page="firstPage"
                 @prev-page="prevPage"
@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import InventoryTable from "../../../components/admin/tables/purchases";
+import InventoryTable from "../../../components/admin/tables/items";
 import Pagination from "../../../components/Pagination";
 import Modal from "../../../components/modal";
 import CheckoutForm from "../../../components/forms/checkout-form";
@@ -113,18 +113,18 @@ export default {
 
   computed: {
     ...mapGetters({
-      purchases: "PURCHASES/GET_PURCHASES",
-      isLoading: "PURCHASES/IS_LOADING",
+      items: "ITEMS/GET_ITEMS",
+      isLoading: "ITEMS/IS_LOADING",
       isSubmitting: "SALES/GET_SUBMIT_STATE",
       models: "UNITS/GET_UNITS",
       colors: "COLORS/GET_COLORS",
       brands: "BRANDS/GET_BRANDS",
       categories: "CATEGORIES/GET_CATEGORIES",
       suppliers: "SUPPLIERS/GET_SUPPLIERS",
-      submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
+      submit_state: "ITEMS/GET_SUBMIT_STATE"
     }),
     item() {
-      let item = this.$store.getters["ITEMS_MODULE/GET_ITEM"];
+      let item = this.$store.getters["ITEM/GET_ITEM"];
       return {
         id: item.id,
         imei: item.imei,
@@ -140,42 +140,42 @@ export default {
     },
     keyword: {
       get() {
-        return this.$store.getters["PURCHASES/GET_KEYWORD"];
+        return this.$store.getters["ITEMS/GET_KEYWORD"];
       },
       set(val) {
-        this.$store.commit("PURCHASES/SET_KEYWORD", val);
+        this.$store.commit("ITEMS/SET_KEYWORD", val);
       }
     },
     page_size: {
       get() {
-        return this.$store.getters["PURCHASES/GET_PAGE_SIZE"];
+        return this.$store.getters["ITEMS/GET_PAGE_SIZE"];
       },
       set(val) {
-        this.$store.commit("PURCHASES/SET_PAGE_SIZE", val);
+        this.$store.commit("ITEMS/SET_PAGE_SIZE", val);
       }
     },
     current_page: {
       get() {
-        return this.$store.getters["PURCHASES/GET_CURRENT_PAGE"];
+        return this.$store.getters["ITEMS/GET_CURRENT_PAGE"];
       },
       set(val) {
-        this.$store.commit("PURCHASES/SET_PAGE_SIZE", val);
+        this.$store.commit("ITEMS/SET_PAGE_SIZE", val);
       }
     },
     order_by: {
       get() {
-        return this.$store.getters["PURCHASES/GET_ORDER_BY"];
+        return this.$store.getters["ITEMS/GET_ORDER_BY"];
       },
       set(val) {
-        this.$store.commit("PURCHASES/SET_ORDER_BY", val);
+        this.$store.commit("ITEMS/SET_ORDER_BY", val);
       }
     },
     sort_by: {
       get() {
-        return this.$store.getters["PURCHASES/GET_SORT_BY"];
+        return this.$store.getters["ITEMS/GET_SORT_BY"];
       },
       set(val) {
-        this.$store.commit("PURCHASES/SET_SORT_BY", val);
+        this.$store.commit("ITEMS/SET_SORT_BY", val);
       }
     }
   },
@@ -195,20 +195,20 @@ export default {
       fetchBrands: "BRANDS/fetchBrands",
       fetchCategories: "CATEGORIES/fetchCategories",
       fetchSuppliers: "SUPPLIERS/fetchSuppliers",
-      updateItem: "PURCHASES/UPDATE",
-      deleteItem: "PURCHASES/DELETE"
+      updateItem: "ITEMS/UPDATE",
+      deleteItem: "ITEMS/DELETE"
     }),
     ...mapMutations({
-      setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
-      clearItem: "ITEMS_MODULE/CLEAR_ITEM"
+      setSubmitState: "ITEM/SET_SUBMIT_STATE",
+      clearItem: "ITEM/CLEAR_ITEM"
     }),
     fetchStocks(url) {
-      this.$store.dispatch("PURCHASES/FETCH_PURCHASES", url);
+      this.$store.dispatch("ITEMS/FETCH_ITEMS", url);
     },
     handleEdit(item) {
       this.form_type = "EDIT";
       this.selected_item = item;
-      this.$store.commit("ITEMS_MODULE/SET_ITEM", item);
+      this.$store.commit("ITEM/SET_ITEM", item);
       setTimeout(() => {
         $("#generic-modal").modal("show");
       }, 300);

@@ -7,6 +7,8 @@ import Cookies from "js-cookie";
 import VuejsDialog from "vuejs-dialog";
 import "vuejs-dialog/dist/vuejs-dialog.min.css";
 import Select2 from "v-select2-component";
+import { requestHandler, errorHandler } from "./config/handlers";
+import { store } from "./store";
 
 window._ = require("lodash");
 window.Popper = require("popper.js").default;
@@ -14,6 +16,8 @@ window.VeeValidate = VeeValidate;
 window.moment = moment;
 window.toastr = toastr;
 window.Cookies = Cookies;
+
+window.store = store;
 
 Vue.use(VueRouter);
 Vue.use(VeeValidate);
@@ -42,7 +46,7 @@ Vue.component("Select2", Select2);
 /**
  * Global Filters
  */
-Vue.filter("humanReadable", function(date) {
+Vue.filter("humanReadable", function (date) {
     return moment(date).format("MMMM D, YYYY");
 });
 
@@ -52,7 +56,7 @@ try {
     window.hammerjs = require("hammerjs");
 
     require("bootstrap");
-} catch (e) {}
+} catch (e) { }
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -64,6 +68,11 @@ window.axios = require("axios");
 window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 window.axios.defaults.baseURL =
     window.location.protocol + "//" + window.location.host;
+
+window.axios.interceptors.request.use(
+    config => requestHandler(config),
+    error => errorHandler(error)
+);
 
 // if (token) {
 //     window.axios.defaults.headers.common["Authorization"] = token;

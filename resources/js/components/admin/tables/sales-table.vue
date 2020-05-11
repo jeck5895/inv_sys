@@ -4,12 +4,13 @@
       <tr>
         <th>DATE</th>
         <th>RECEIPT</th>
-        <th>PAYMENT TYPE</th>
+        <th>PAYMENT MODE</th>
         <th>PAYMENT TERM</th>
         <th>TOTAL ITEM COST</th>
         <th>TOTAL FREEBIES COST</th>
         <th>GROSS INCOME</th>
         <th>NET INCOME</th>
+        <th>OPTION</th>
       </tr>
     </thead>
     <tbody>
@@ -27,8 +28,12 @@
         </td>
       </tr>
       <template v-if="!isLoading && items.data && items.data.length != 0">
-        <tr v-for="(item, i) in items.data" :key="i">
-          <td>{{ item.created_at | humanReadable }}</td>
+        <tr
+          v-for="(item, i) in items.data"
+          :key="i"
+          @click="$emit('on-edit', item)"
+        >
+          <td>{{ item.checkout_date | humanReadable }}</td>
           <td>{{ item.receipt_no }}</td>
           <td>{{ item.payment_mode }}</td>
           <td>
@@ -38,7 +43,18 @@
           <td>{{ item.total_item_cost.formatted }}</td>
           <td>{{ item.total_freebies_cost.formatted }}</td>
           <td>{{ item.revenue.formatted }}</td>
-          <th>{{ item.gross_income.formatted }}</th>
+          <th>{{ item.net_income.formatted }}</th>
+          <td>
+            <button
+              @click.prevent="$emit('on-edit', item)"
+              type="button"
+              data-toggle="modal"
+              data-target="#addmodal"
+              class="btn btn-sm waves-effect waves-light m-1"
+            >
+              <i class="fa fa-edit fa-lg"></i>
+            </button>
+          </td>
         </tr>
       </template>
     </tbody>
@@ -59,4 +75,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+.table td {
+  cursor: pointer;
+}
+</style>

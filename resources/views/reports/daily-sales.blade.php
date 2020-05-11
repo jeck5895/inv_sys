@@ -32,6 +32,7 @@
             font-size: 16px;
             font-weight: bold;
             border: none;
+            text-align: right;
         }
 
         .total-amount {
@@ -79,7 +80,7 @@
             <img height="65" width="65" src="./images/logo.png" alt="">
         </div>
         <div>
-            <h2 style="text-align:center;">Company Name</h2>
+            <!-- <h2 style="text-align:center;">Company Name</h2> -->
             @if($data['from_date'] === $data['to_date'])
             <h2 style="text-align:center;">Daily Sales Report for {{ $data['from_date'] }}</h2>
             @else
@@ -91,34 +92,44 @@
     <table>
         <thead>
             <tr>
-                <th>Model</th>
-                <th>Sub Total</th>
+                <th>RECEIPT #</th>
+                <th>PAYMENT MODE</th>
+                <th>PAYMENT TERMS</th>
+                <th>TOTAL ITEM COST</th>
+                <th>TOTAL FREEBIES COST</th>
+                <th>GROSS INCOME</th>
+                <th>NET INCOME</th>
             </tr>
-        <tbody>
+        </thead>
         <tbody>
             @php
-            $total_sales = 0.00;
+            $total_net_income = 0.00;
             @endphp
-            @foreach($data['sales'] as $key => $item)
-            @php
-            $total_sales = floatval($total_sales) + floatval($item->sub_total);
-            @endphp
-            <tr>
-                <td>{{ $item->item->model->name }}</td>
 
-                <td>{{ number_format($item->sub_total,2,'.',',') }}</td>
+            @foreach($data['sales'] as $key => $sales)
+
+            @php
+            $total_net_income = floatval($total_net_income) + floatval($sales->net_income["value"]);
+            @endphp
+
+            <tr>
+                <td>{{ $sales->receipt_no }}</td>
+                <td>{{ $sales->payment_mode }}</td>
+                <td>{{ $sales->payment_terms === null ? 'N/A' : $sales->payment_terms }}</td>
+                <td>{{ $sales->total_item_cost["formatted"] }}</td>
+                <td>{{ $sales->total_freebies_cost["formatted"] }}</td>
+                <td>{{ $sales->revenue["formatted"] }}</td>
+                <td>{{ $sales->net_income["formatted"] }}</td>
             </tr>
 
             @endforeach
             <tr>
-                <td class="general-total">Total: </td>
-                <td class="total-amount">{{ number_format($total_sales,2,'.',',') }}</td>
+                <td colspan="6" class="general-total">Total Net Income: </td>
+                <td class="total-amount">{{ number_format($total_net_income,2,'.',',') }}</td>
             </tr>
-        </tbody>
-        </thead>
-        <tbody>
 
         </tbody>
+
     </table>
     <!-- <div class="signatories">
         <div class="signature signature-1">Prepared By: </div>

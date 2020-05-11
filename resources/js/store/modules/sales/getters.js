@@ -2,8 +2,8 @@ export default {
     GET_CUSTOMER: state => {
         return state.customer;
     },
-    GET_SALE: state => {
-        return state.sale;
+    GET_SALES_ITEM: state => {
+        return state.sales_item;
     },
     GET_SALES: state => {
         return state.sales;

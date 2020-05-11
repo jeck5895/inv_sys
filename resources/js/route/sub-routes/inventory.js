@@ -4,10 +4,12 @@ import IndexComponent from "../../pages/admin/inventory/index.vue";
 const routes = [
     {
         path: "",
+        name: "inventory",
         component: IndexComponent
     },
     {
         path: "create",
+        name: "create-inventory",
         component: CreateComponent
     }
 ];

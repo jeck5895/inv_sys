@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Model\Purchase;
+use App\Model\Item;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Purchases\Store;
 use App\Http\Requests\Purchases\Update;
 use Exception;
 
-class PurchaseController extends Controller
+class ItemsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +25,7 @@ class PurchaseController extends Controller
             $orderBy = $request->has('order_by') ? $request->order_by : 'desc';
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
-            $purchases = Purchase::orderBy($sortBy, $orderBy)
+            $items = Item::orderBy($sortBy, $orderBy)
 
 
                 ->where(function ($query) use ($request, $keywords) {
@@ -76,28 +76,28 @@ class PurchaseController extends Controller
                 ->paginate($per_page);
             // ->toSql();
 
-            $purchases->map(function ($item) {
+            $items->map(function ($item) {
                 $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
                 $item->formatted_cost = number_format($item->cost, 2, '.', ',');
                 return $item;
             });
         } else {
 
-            $purchases = Purchase::orderBy('created_at', 'desc')->with('category')
+            $items = Item::orderBy('created_at', 'desc')->with('category')
                 ->with('brand')
                 ->with('color')
                 ->with('model')
                 ->with('supplier')
                 ->paginate($per_page);
 
-            $purchases->map(function ($item) {
+            $items->map(function ($item) {
                 $item->formatted_selling_price = number_format($item->selling_price, 2, '.', ',');
                 $item->formatted_cost = number_format($item->cost, 2, '.', ',');
                 return $item;
             });
         }
 
-        return $purchases;
+        return $items;
     }
 
     /**
@@ -110,18 +110,18 @@ class PurchaseController extends Controller
     {
 
 
-        $purchase = new Purchase;
-        $purchase->imei = $request['imei'];
-        $purchase->category_id = $request['category'];
-        $purchase->model_id = $request['model'];
-        $purchase->brand_id = $request['brand'];
-        $purchase->supplier_id = $request['supplier'];
+        $item = new Item;
+        $item->imei = $request['imei'];
+        $item->category_id = $request['category'];
+        $item->model_id = $request['model'];
+        $item->brand_id = $request['brand'];
+        $item->supplier_id = $request['supplier'];
 
-        $purchase->color_id = $request['color'];
-        $purchase->cost = floatval($request['cost']);
-        $purchase->selling_price = floatval($request['price']);
-        $purchase->specs = $request['remarks'];
-        $purchase->save();
+        $item->color_id = $request['color'];
+        $item->cost = floatval($request['cost']);
+        $item->selling_price = floatval($request['price']);
+        $item->specs = $request['remarks'];
+        $item->save();
 
         return ['message' => 'Stocks has been saved'];
     }
@@ -129,7 +129,7 @@ class PurchaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\Purchase  $purchase
+     * @param  \App\Model\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function show($param)
@@ -137,10 +137,10 @@ class PurchaseController extends Controller
         $item = null;
 
         if (is_numeric($param)) {
-            $item = Purchase::findOrFail($param);
+            $item = Item::findOrFail($param);
         }
 
-        // $item = Purchase::where('imei', $param);
+        // $item = Item::where('imei', $param);
 
         return $item;
     }
@@ -149,12 +149,12 @@ class PurchaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\Purchase  $purchase
+     * @param  \App\Model\Item  $item
      * @return \Illuminate\Http\Response
      */
     public function update(Update $request, $id)
     {
-        $item = Purchase::findOrFail($id);
+        $item = Item::findOrFail($id);
         $item->imei = $request['imei'];
         $item->category_id = $request['category'];
         $item->model_id = $request['model'];
@@ -173,12 +173,12 @@ class PurchaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\Purchase  $purchase
+     * @param  \App\Model\Purchase  $item
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        Purchase::destroy($id);
+        Item::destroy($id);
 
         return ['message' => 'Record deleted.'];
     }
@@ -192,22 +192,22 @@ class PurchaseController extends Controller
 
         try {
             foreach ($request->items as $r) {
-                $purchase = new Purchase;
-                $purchase->imei = $r['imei'];
-                $purchase->category_id = $r['category'];
-                $purchase->model_id = $r['model'];
-                $purchase->brand_id = $r['brand'];
-                $purchase->supplier_id = $r['supplier'];
+                $item = new Item;
+                $item->imei = $r['imei'];
+                $item->category_id = $r['category'];
+                $item->model_id = $r['model'];
+                $item->brand_id = $r['brand'];
+                $item->supplier_id = $r['supplier'];
 
-                $purchase->color_id = $r['color'];
-                $purchase->cost = floatval($r['cost']);
-                $purchase->selling_price = floatval($r['price']);
-                $purchase->specs = $r['remarks'];
-                $purchase->save();
+                $item->color_id = $r['color'];
+                $item->cost = floatval($r['cost']);
+                $item->selling_price = floatval($r['price']);
+                $item->specs = $r['remarks'];
+                $item->save();
             }
         } catch (Exception $e) {
 
-            $item = Purchase::latest('id')->first();
+            $item = Item::latest('id')->first();
             return response(['message' => "Data provided is invalid. Please check if missing fields or IMEI may have been duplicated", 'exception' => $e->getMessage(), 'last_record' => $item], 402);
         }
 
@@ -216,7 +216,12 @@ class PurchaseController extends Controller
 
     public function findBy($field, $val)
     {
-        $item = Purchase::where($field, $val)->firstOrFail();
+        $item = Item::where($field, $val)
+            // ->available()
+            ->firstOrFail();
+        if ($item->is_available === 0) {
+            return response(['message' => $item->imei . ' is already been sold.'], 422);
+        }
         return $item;
     }
 }

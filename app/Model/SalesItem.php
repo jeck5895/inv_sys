@@ -10,11 +10,11 @@ class SalesItem extends Model
 
     public function sales_item_freebies()
     {
-        return $this->hasMany(SalesItemFreebie::class, 'sales_item_id', 'item_id');
+        return $this->hasMany(SalesItemFreebie::class, 'sales_item_id', 'id');
     }
 
     public function item()
     {
-        return $this->hasOne(Purchase::class, 'id', 'item_id');
+        return $this->hasOne(Item::class, 'id', 'item_id');
     }
 }

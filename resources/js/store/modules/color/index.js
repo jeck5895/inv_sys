@@ -35,12 +35,7 @@ export default {
 
             return new Promise((resolve, reject) => {
                 axios
-                    .get(url, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .get(url)
                     .then(response => {
                         commit("CLEAR_COLORS");
                         commit("SET_COLORS", response.data);
@@ -60,12 +55,7 @@ export default {
         store: ({ commit, dispatch }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .post("api/colors", payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .post("api/colors", payload)
                     .then(response => {
                         resolve(response);
                     })
@@ -77,12 +67,7 @@ export default {
         update: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .patch(`api/colors/${payload.id}`, payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .patch(`api/colors/${payload.id}`)
                     .then(response => {
                         resolve(response);
                     })
@@ -94,12 +79,7 @@ export default {
         delete: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .delete(`api/colors/${payload}`, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .delete(`api/colors/${payload}`)
                     .then(response => {
                         resolve(response);
                     })

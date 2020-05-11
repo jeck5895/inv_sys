@@ -32,9 +32,34 @@ const routes = [
     }
 ];
 
-export default new VueRouter({
+const router = new VueRouter({
     routes,
     mode: "history",
     linkExactActiveClass: "active",
     linkActiveClass: "active"
 });
+
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.forAuthUsers)) {
+        if (!store.getters["AuthModule/LOGGED_IN"]) {
+            next({
+                path: "/login"
+            });
+        } else {
+            next();
+        }
+    } else if (
+        !to.matched.some(record => record.meta.forAuthUsers) &&
+        to.fullPath == "/login" &&
+        store.getters["AuthModule/LOGGED_IN"]
+    ) {
+        next({
+            path: "/administrator/stocks"
+        });
+    } else {
+        next();
+    }
+});
+
+export default router

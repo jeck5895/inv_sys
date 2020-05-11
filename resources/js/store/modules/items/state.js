@@ -1,18 +1,11 @@
 export default {
-    items_list: [],
+    item: {},
     items: [],
-    item: {
-        model_id: "",
-        imei: "",
-        color_id: "",
-        brand_id: "",
-        category_id: "",
-        supplier_id: "",
-        selling_price: null,
-        amount: null,
-        payment_mode: "",
-        cost: null,
-        remarks: ""
-    },
+    keyword: "",
+    current_page: 1,
+    page_size: 10,
+    order_by: "desc",
+    sort_by: "created_at",
+    is_loading: false,
     is_submitting: false
 };

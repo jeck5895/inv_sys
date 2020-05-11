@@ -49,12 +49,7 @@ export default {
 
             return new Promise((resolve, reject) => {
                 axios
-                    .get(payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .get(payload)
                     .then(response => {
                         commit("CLEAR_SUPPLIERS");
                         commit("SET_SUPPLIERS", response.data);
@@ -78,12 +73,7 @@ export default {
         store: ({ commit, dispatch }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .post("api/suppliers", payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .post("api/suppliers", payload)
                     .then(response => {
                         resolve(response);
                     })
@@ -95,12 +85,7 @@ export default {
         update: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .patch(`api/suppliers/${payload.id}`, payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .patch(`api/suppliers/${payload.id}`, payload)
                     .then(response => {
                         resolve(response);
                     })
@@ -112,12 +97,7 @@ export default {
         delete: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .delete(`api/suppliers/${payload}`, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .delete(`api/suppliers/${payload}`)
                     .then(response => {
                         resolve(response);
                     })

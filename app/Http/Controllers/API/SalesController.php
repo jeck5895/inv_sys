@@ -7,10 +7,11 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Sales\StoreSale;
 use App\Http\Requests\Sales\UpdateSale;
-use App\Model\Purchase;
+use App\Model\Item;
 use App\Model\Sale;
 use App\Model\SalesItemFreebie;
 use App\Model\SalesItem;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Webpatser\Uuid\Uuid;
 use PDF;
 
@@ -72,7 +73,7 @@ class SalesController extends Controller
 
                 $total_cost = (int) $total_freebies_cost +  (int) $total_item_cost;
 
-                $gross_income = (int) $item->amount - (int) $total_cost;
+                $net_income = (int) $item->amount - (int) $total_cost;
 
                 $item->total_item_cost = [
                     'value' => $total_item_cost,
@@ -89,9 +90,9 @@ class SalesController extends Controller
                     'formatted' => number_format($item->amount, 2, '.', ',')
                 ];
 
-                $item->gross_income = [
-                    'value' => $gross_income,
-                    'formatted' => number_format($gross_income, 2, '.', ',')
+                $item->net_income = [
+                    'value' => $net_income,
+                    'formatted' => number_format($net_income, 2, '.', ',')
                 ];
 
                 // $item->total_item_cost = $total_freebies_cost;
@@ -153,13 +154,13 @@ class SalesController extends Controller
                     $sales_freebie = new SalesItemFreebie(
                         array(
                             'freebie_id' => $freebie,
-                            'sales_item_id' => $sales_item["item_id"]
+                            'sales_item_id' => $sales_item["id"]
                         )
                     );
                     $news_sales_item->sales_item_freebies()->save($sales_freebie);
                 }
 
-                $item = Purchase::find($item["id"]);
+                $item = Item::find($item["id"]);
                 $item->is_available = 0;
                 $item->save();
             }
@@ -181,7 +182,10 @@ class SalesController extends Controller
      */
     public function show($id)
     {
-        //
+        $sales = Sale::findOrFail($id)
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie']);
+
+        return $sales;
     }
 
     /**
@@ -193,7 +197,57 @@ class SalesController extends Controller
      */
     public function update(UpdateSale $request, $id)
     {
-        //
+        /**
+         * Advance Eloquent relationships
+         * https://quickadminpanel.com/blog/eloquent-relationships-the-ultimate-guide/
+         */
+
+        $sales = Sale::findOrFail($id);
+        $sales->receipt_no = $request->receipt_no;
+        $sales->payment_mode = $request->payment_mode;
+        if ($request->has('payment_terms')) {
+            $sales->payment_terms = $request->payment_terms;
+        }
+        $sales->amount = $request->total_amount;
+        $sales->checkout_date = $request->checkout_date;
+        $sales->save();
+
+        if (count($request->items) > 0) {
+
+            $oldSalesItemIds = $sales->sales_items()->pluck("id")->toArray();
+            $oldFreebieIds = $sales->freebies()->pluck("sales_item_freebies.id")->toArray();
+
+            foreach ($request->items as $item) {
+                $sales_item =  $sales->sales_items()->create([
+                    "sales_id" => $sales->id,
+                    "item_id" => $item["id"]
+                ]);
+
+                foreach ($item["freebies"] as $freebie) {
+                    $sales->freebies()->create([
+                        'freebie_id' => $freebie,
+                        'sales_item_id' => $sales_item->id
+                    ]);
+                }
+
+                $item = Item::find($item["id"]);
+                $item->is_available = 0;
+                $item->save();
+            }
+
+            $sales->sales_items()->whereIn("id", $oldSalesItemIds)->delete();
+            SalesItemFreebie::whereIn("id", [1])->delete();
+            // $sales->freebies()->whereIn("sales_item_freebies.id", [1])->delete();
+        }
+
+        return [
+            "message" => "Sales with receipt " . $request->receipt_no . " successfully updated",
+            "request" => $request->all(),
+            "sales_items" => $sales->sales_items()->getResults()->toArray(),
+            "freebies" => $sales->freebies()->getResults()->toArray(),
+            "sales_items_ids" => $sales->sales_items()->pluck("id")->toArray(),
+            "freebie_ids" => $sales->freebies()->pluck("sales_item_freebies.id")->toArray()
+        ];
     }
 
     /**
@@ -205,5 +259,32 @@ class SalesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function findBy($field, $val)
+    {
+        $item = Sale::where($field, $val)
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+            ->firstOrFail();
+        return $item;
+    }
+
+    protected function proccesRelationWithRequest(Relation $relation, array $items)
+    {
+        $relation->getResults()->each(function ($model) use ($items) {
+            foreach ($items as $item) {
+                if ($model->item_id === ($item['id'] ?? null)) {
+                    $model->fill($item)->save();
+                    return;
+                }
+            }
+
+            return $model->delete();
+        });
+
+        foreach ($items as $item) {
+            if (!isset($item['id']))
+                $relation->create($item);
+        };
     }
 }

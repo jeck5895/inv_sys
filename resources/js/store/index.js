@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import AuthModule from "./modules/auth";
 import SALES from "./modules/sales";
-import ITEMS_MODULE from "./modules/items";
+import ITEMS_MODULE from "./modules/items-old";
 import UNITS from "./modules/units/index";
 // import SITES_MODULE from "./modules/sites/index";
 // import CART_MODULE from "./modules/cart/index";
@@ -10,7 +10,7 @@ import USERS from "./modules/users";
 import FILTER_MODULE from "./modules/filters";
 import FORM_MODULE from "./modules/forms";
 import CUSTOMERS_MODULE from "./modules/customers";
-import PURCHASES from "./modules/purchases";
+import ITEMS from "./modules/items";
 import BRANDS from "./modules/brands";
 import CATEGORIES from "./modules/categories";
 import COLORS from "./modules/color";
@@ -25,13 +25,11 @@ export const store = new Vuex.Store({
         SALES,
         ITEMS_MODULE,
         UNITS,
-        // SITES_MODULE,
-        // CART_MODULE,
         USERS,
         FILTER_MODULE,
         FORM_MODULE,
         CUSTOMERS_MODULE,
-        PURCHASES,
+        ITEMS,
         BRANDS,
         CATEGORIES,
         COLORS,

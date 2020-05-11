@@ -23,14 +23,14 @@ class UpdateSale extends FormRequest
      */
     public function rules()
     {
+        $payment_mode = "HOME CREDIT";
+
         return [
-            'customer_type' => 'required',
-            'customer_id' => 'required',
-            // 'fullname' => 'required',
-            'fund' => 'required',
-            'items' => 'required'
-            // 'item_id' => 'required|numeric',
-            // 'quantity' => 'required|numeric',
+            'receipt_no' => 'required|unique:sales,receipt_no,' . $this->get("id"),
+            'payment_mode' => 'required|string',
+            'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
+            'total_amount' => 'required|numeric',
+            'items' => 'required|array'
         ];
     }
 }

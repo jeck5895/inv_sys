@@ -8,10 +8,17 @@ export default {
     children: [
         {
             path: "",
+            name: "sales",
             component: List
         },
         {
             path: "create",
+            name: "create-sales",
+            component: Create
+        },
+        {
+            path: "edit/:receipt",
+            name: "edit-sales",
             component: Create
         }
     ]

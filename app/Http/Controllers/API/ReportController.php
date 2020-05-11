@@ -81,11 +81,60 @@ class ReportController extends Controller
         $to_date = date('F j, Y', strtotime($dateTo));
 
         //https://stackoverflow.com/questions/19852927/get-specific-columns-using-with-function-in-laravel-eloquent
-        $sales = Sale::select('item_id', DB::raw('SUM(amount) as sub_total'))
-            ->whereBetween(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"), [$dateFrom, $dateTo])
-            ->groupBy('item_id')->with(['item.model' => function ($query) {
-                $query->select('id', 'name');
-            }])->get();
+        // $sales = Sale::select('item_id', DB::raw('SUM(amount) as sub_total'))
+        //     ->whereBetween(DB::raw("DATE_FORMAT(created_at, '%Y-%m-%d')"), [$dateFrom, $dateTo])
+        //     ->groupBy('item_id')->with(['item.model' => function ($query) {
+        //         $query->select('id', 'name');
+        //     }])->get();
+        $sales = Sale::whereBetween(DB::raw("DATE_FORMAT(checkout_date, '%Y-%m-%d')"), [$dateFrom, $dateTo])
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+            ->get();
+
+        $sales->map(function ($item) {
+            $total_item_cost = 0;
+            $total_freebies_cost = 0;
+
+            foreach ($item['sales_items'] as $sales_item) {
+                $total_item_cost = (int) $total_item_cost + (int) $sales_item["item"]->cost;
+            }
+
+            foreach ($item['sales_items'] as $sales_item) {
+                foreach ($sales_item['sales_item_freebies'] as $item_freebie) {
+                    $total_freebies_cost = (int) $total_freebies_cost + (int) $item_freebie["freebie"]->price;
+                }
+            }
+
+            $total_cost = (int) $total_freebies_cost +  (int) $total_item_cost;
+
+            $net_income = (int) $item->amount - (int) $total_cost;
+
+            $item->total_item_cost = [
+                'value' => $total_item_cost,
+                'formatted' => number_format($total_item_cost, 2, '.', ',')
+            ];
+
+            $item->total_freebies_cost = [
+                'value' => $total_freebies_cost,
+                'formatted' => number_format($total_freebies_cost, 2, '.', ',')
+            ];
+
+            $item->revenue = [
+                'value' => $item->amount,
+                'formatted' => number_format($item->amount, 2, '.', ',')
+            ];
+
+            $item->net_income = [
+                'value' => $net_income,
+                'formatted' => number_format($net_income, 2, '.', ',')
+            ];
+
+            // $item->total_item_cost = $total_freebies_cost;
+            // $item->total_freebies_cost = $total_freebies_cost;
+
+            // $item->formatted_total_freebies_cost = number_format($item->total_freebies_cost, 2, '.', ',');
+
+            return $item;
+        });
 
         $data = [
             "date_from" => $dateFrom,
@@ -124,12 +173,64 @@ class ReportController extends Controller
          * - verify if sales reference in purchase is increment id or model_id
          */
 
-        $sales = Sale::select('item_id', DB::raw('SUM(amount) as sub_total'))
-            ->where(DB::raw("DATE_FORMAT(created_at, '%m')"), $month)
-            ->where(DB::raw("DATE_FORMAT(created_at, '%Y')"), $year)
-            ->groupBy('item_id')->with(['item.model' => function ($query) {
-                $query->select('id', 'name');
-            }])->get();
+        $sales = Sale::where(DB::raw("DATE_FORMAT(checkout_date, '%m')"), $month)
+            ->where(DB::raw("DATE_FORMAT(checkout_date, '%Y')"), $year)
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+            // ->groupBy('item_id')->with(['item.model' => function ($query) {
+            //     $query->select('id', 'name');
+            // }])
+            ->get();
+
+        $sales->map(function ($item) {
+            $total_item_cost = 0;
+            $total_freebies_cost = 0;
+
+            foreach ($item['sales_items'] as $sales_item) {
+                $total_item_cost = (int) $total_item_cost + (int) $sales_item["item"]->cost;
+            }
+
+            foreach ($item['sales_items'] as $sales_item) {
+                foreach ($sales_item['sales_item_freebies'] as $item_freebie) {
+                    $total_freebies_cost = (int) $total_freebies_cost + (int) $item_freebie["freebie"]->price;
+                }
+            }
+
+            $total_cost = (int) $total_freebies_cost +  (int) $total_item_cost;
+
+            $net_income = (int) $item->amount - (int) $total_cost;
+
+            $item->total_item_cost = [
+                'value' => $total_item_cost,
+                'formatted' => number_format($total_item_cost, 2, '.', ',')
+            ];
+
+            $item->total_freebies_cost = [
+                'value' => $total_freebies_cost,
+                'formatted' => number_format($total_freebies_cost, 2, '.', ',')
+            ];
+
+            $item->revenue = [
+                'value' => $item->amount,
+                'formatted' => number_format($item->amount, 2, '.', ',')
+            ];
+
+            $item->net_income = [
+                'value' => $net_income,
+                'formatted' => number_format($net_income, 2, '.', ',')
+            ];
+
+            $item->checkout_date = [
+                'value' => $item->checkout_date,
+                'formatted' => date('F j, Y', strtotime($item->checkout_date))
+            ];
+
+            // $item->total_item_cost = $total_freebies_cost;
+            // $item->total_freebies_cost = $total_freebies_cost;
+
+            // $item->formatted_total_freebies_cost = number_format($item->total_freebies_cost, 2, '.', ',');
+
+            return $item;
+        });
 
         $data = [
             'month' => $month_name,

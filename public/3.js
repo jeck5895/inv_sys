@@ -1,18 +1,18 @@
 webpackJsonp([3],{
 
-/***/ 316:
+/***/ 317:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(425)
+  __webpack_require__(407)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(427)
+var __vue_script__ = __webpack_require__(409)
 /* template */
-var __vue_template__ = __webpack_require__(443)
+var __vue_template__ = __webpack_require__(425)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -52,13 +52,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 425:
+/***/ 407:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(426);
+var content = __webpack_require__(408);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -79,7 +79,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 426:
+/***/ 408:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -94,7 +94,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 427:
+/***/ 409:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -180,11 +180,11 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
-var _customer = __webpack_require__(428);
+var _customer = __webpack_require__(410);
 
 var _customer2 = _interopRequireDefault(_customer);
 
-var _index = __webpack_require__(438);
+var _index = __webpack_require__(420);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -331,19 +331,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 428:
+/***/ 410:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(429)
+  __webpack_require__(411)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(431)
+var __vue_script__ = __webpack_require__(413)
 /* template */
-var __vue_template__ = __webpack_require__(437)
+var __vue_template__ = __webpack_require__(419)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -383,13 +383,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 429:
+/***/ 411:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(430);
+var content = __webpack_require__(412);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -410,7 +410,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 430:
+/***/ 412:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -425,7 +425,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 431:
+/***/ 413:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -435,7 +435,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _index = __webpack_require__(432);
+var _index = __webpack_require__(414);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -466,19 +466,19 @@ exports.default = {
 
 /***/ }),
 
-/***/ 432:
+/***/ 414:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(433)
+  __webpack_require__(415)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(435)
+var __vue_script__ = __webpack_require__(417)
 /* template */
-var __vue_template__ = __webpack_require__(436)
+var __vue_template__ = __webpack_require__(418)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -518,13 +518,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 433:
+/***/ 415:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(434);
+var content = __webpack_require__(416);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -545,7 +545,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 434:
+/***/ 416:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -553,21 +553,21 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 435:
+/***/ 417:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _error = __webpack_require__(156);
@@ -577,66 +577,67 @@ var _error2 = _interopRequireDefault(_error);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
-    data: function data() {
-        return {
-            isLoading: false,
-            response: [],
-            customer_types: [{ value: "faculty", label: "Faculty" }, { value: "student", label: "Student" }, { value: "others", label: "Others" }]
-        };
+  components: {
+    Alert: _error2.default
+  },
+  data: function data() {
+    return {
+      isLoading: false,
+      response: null,
+      customer_types: [{ value: "faculty", label: "Faculty" }, { value: "student", label: "Student" }, { value: "others", label: "Others" }]
+    };
+  },
+  computed: {
+    customer: function customer() {
+      return this.$store.getters["CUSTOMERS_MODULE/GET_CUSTOMER"];
     },
-    computed: {
-        customer: function customer() {
-            return this.$store.getters["CUSTOMERS_MODULE/GET_CUSTOMER"];
-        },
-        form_type: function form_type() {
-            return this.$store.getters["FORM_MODULE/GET_FORM_TYPE"];
-        }
-    },
-    methods: {
-        handleSubmit: function handleSubmit(form) {
-            var _this = this;
-
-            this.$validator.validateAll(form).then(function (result) {
-                if (result) {
-                    var FORM_TYPE = localStorage.getItem("f_type");
-                    var customer = {
-                        id: _this.customer.id,
-                        customer_type: _this.customer.customer_type,
-                        fullname: _this.customer.fullname,
-                        customer_id: _this.customer.customer_id,
-                        course: _this.customer.course,
-                        year: _this.customer.year,
-                        department: _this.customer.department
-                    };
-
-                    _this.isLoading = true;
-
-                    if (_this.form_type == "NEW_CUSTOMER") {
-                        _this.$store.dispatch("CUSTOMERS_MODULE/STORE_CUSTOMER", customer).then(function () {
-                            _this.isLoading = false;
-                            _this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS");
-                        }).catch(function (errs) {
-                            _this.isLoading = false;
-                            _this.response = _this.$root.convertError(errs);
-                        });
-                    } else if (_this.form_type == "EDIT_CUSTOMER") {
-                        _this.$store.dispatch("CUSTOMERS_MODULE/UPDATE_CUSTOMER", customer).then(function () {
-                            _this.isLoading = false;
-                            _this.response = [];
-                            $("#customermodal").modal("hide");
-                            _this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS");
-                        }).catch(function (errs) {
-                            _this.isLoading = false;
-                            _this.response = _this.$root.convertError(errs);
-                        });
-                    }
-                }
-            });
-        }
-    },
-    components: {
-        AlertError: _error2.default
+    form_type: function form_type() {
+      return this.$store.getters["FORM_MODULE/GET_FORM_TYPE"];
     }
+  },
+  methods: {
+    handleSubmit: function handleSubmit(form) {
+      var _this = this;
+
+      this.$validator.validateAll(form).then(function (result) {
+        if (result) {
+          var FORM_TYPE = localStorage.getItem("f_type");
+          var customer = {
+            id: _this.customer.id,
+            customer_type: _this.customer.customer_type,
+            fullname: _this.customer.fullname,
+            customer_id: _this.customer.customer_id,
+            course: _this.customer.course,
+            year: _this.customer.year,
+            department: _this.customer.department
+          };
+
+          _this.isLoading = true;
+
+          if (_this.form_type == "NEW_CUSTOMER") {
+            _this.$store.dispatch("CUSTOMERS_MODULE/STORE_CUSTOMER", customer).then(function () {
+              _this.isLoading = false;
+              _this.response = null;
+              _this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS");
+            }).catch(function (errs) {
+              _this.isLoading = false;
+              _this.response = errs.response;
+            });
+          } else if (_this.form_type == "EDIT_CUSTOMER") {
+            _this.$store.dispatch("CUSTOMERS_MODULE/UPDATE_CUSTOMER", customer).then(function () {
+              _this.isLoading = false;
+              _this.response = null;
+              $("#customermodal").modal("hide");
+              _this.$store.dispatch("CUSTOMERS_MODULE/FETCH_CUSTOMERS");
+            }).catch(function (errs) {
+              _this.isLoading = false;
+              _this.response = errs.response;
+            });
+          }
+        }
+      });
+    }
+  }
 }; //
 //
 //
@@ -764,12 +765,10 @@ exports.default = {
 //
 //
 //
-//
-//
 
 /***/ }),
 
-/***/ 436:
+/***/ 418:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -788,12 +787,14 @@ var render = function() {
       }
     },
     [
-      _c(
-        "div",
-        { staticClass: "form-group" },
-        [_c("AlertError", { attrs: { response: _vm.response } })],
-        1
-      ),
+      _vm.response != null
+        ? _c(
+            "div",
+            { staticClass: "form-group" },
+            [_c("alert", { attrs: { response: _vm.response } })],
+            1
+          )
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "form-group" }, [
         _c(
@@ -848,11 +849,7 @@ var render = function() {
               return _c(
                 "option",
                 { key: item.value, domProps: { value: item.value } },
-                [
-                  _vm._v(
-                    "\n                " + _vm._s(item.label) + "\n            "
-                  )
-                ]
+                [_vm._v("\n        " + _vm._s(item.label) + "\n      ")]
               )
             })
           ],
@@ -874,9 +871,9 @@ var render = function() {
           },
           [
             _vm._v(
-              "\n            " +
+              "\n      " +
                 _vm._s(_vm.errors.first("customerForm.customer_type")) +
-                "\n        "
+                "\n    "
             )
           ]
         )
@@ -1139,7 +1136,7 @@ var render = function() {
               ? _c("span", [_vm._v("Save")])
               : _c("span", [
                   _c("i", { staticClass: "fa fa-spinner fa-spin" }),
-                  _vm._v(" Saving...\n            ")
+                  _vm._v(" Saving... ")
                 ])
           ]
         )
@@ -1159,7 +1156,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 437:
+/***/ 419:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1217,19 +1214,19 @@ if (false) {
 
 /***/ }),
 
-/***/ 438:
+/***/ 420:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(439)
+  __webpack_require__(421)
 }
 var normalizeComponent = __webpack_require__(1)
 /* script */
-var __vue_script__ = __webpack_require__(441)
+var __vue_script__ = __webpack_require__(423)
 /* template */
-var __vue_template__ = __webpack_require__(442)
+var __vue_template__ = __webpack_require__(424)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -1269,13 +1266,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 439:
+/***/ 421:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(440);
+var content = __webpack_require__(422);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -1296,7 +1293,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 440:
+/***/ 422:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -1311,7 +1308,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 /***/ }),
 
-/***/ 441:
+/***/ 423:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1448,7 +1445,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 442:
+/***/ 424:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -1642,7 +1639,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 443:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

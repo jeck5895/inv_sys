@@ -189,11 +189,11 @@
           </ul>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <a href="widgets.html" class="waves-effect"
           ><i class="icon-hourglass"></i><span>Audit Trail</span>
         </a>
-      </li>
+      </li> -->
       <li>
         <a @click.prevent="handleLogout" href="#" class="waves-effect"
           ><i class="icon-logout"> </i><span>Logout</span>

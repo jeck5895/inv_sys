@@ -1,5 +1,3 @@
-import Cookies from "js-cookie";
-const token = Cookies.get("_a.token");
 
 export default {
     namespaced: true,
@@ -34,12 +32,7 @@ export default {
             commit("FILTER_MODULE/SET_LOADING", true, { root: true });
             return new Promise((resolve, reject) => {
                 axios
-                    .get(payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .get(payload)
                     .then(response => {
                         commit("CLEAR_CATEGORIES");
                         commit("SET_CATEGORIES", response.data);
@@ -59,12 +52,7 @@ export default {
         store: ({ commit, dispatch }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .post("api/categories", payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .post("api/categories", payload)
                     .then(response => {
                         resolve(response);
                     })
@@ -76,12 +64,7 @@ export default {
         update: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .patch(`api/categories/${payload.id}`, payload, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .patch(`api/categories/${payload.id}`, payload)
                     .then(response => {
                         resolve(response);
                     })
@@ -93,12 +76,7 @@ export default {
         delete: ({ commit }, payload) => {
             return new Promise((resolve, reject) => {
                 axios
-                    .delete(`api/categories/${payload}`, {
-                        headers: {
-                            Accept: "application/json",
-                            Authorization: `Bearer ${token}`
-                        }
-                    })
+                    .delete(`api/categories/${payload}`)
                     .then(response => {
                         resolve(response);
                     })
