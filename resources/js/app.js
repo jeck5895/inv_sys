@@ -2,7 +2,11 @@ require("./bootstrap");
 
 import router from "./route/index";
 
-
+if (process.env.MIX_ENV_MODE === 'production') {
+    Vue.config.devtools = false;
+    Vue.config.debug = false;
+    Vue.config.silent = true;
+}
 
 const app = new Vue({
     el: "#app",
