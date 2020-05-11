@@ -20,7 +20,7 @@ mix.js(
         // 'resources/plugins/app-script.js',
     ],
     "public/js"
-)
+).extract(['vue'])
     .sass("resources/sass/app.scss", "public/css")
     .styles(
         [

@@ -25,10 +25,12 @@
         <!-- @yield('content') -->
         <!-- </div> -->
     </div>
-    <!-- <script src="assets/plugins/simplebar/js/simplebar.js"></script> -->
-    <!-- waves effect js -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{asset('js/simplebar.js')}}"></script>
+
+    <script src="/js/manifest.js"></script>
+    <script src="/js/vendor.js"></script>
+    <script src="/js/app.js"></script>
+    <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+    <script src="{{ asset('js/simplebar.js')}}"></script>
     <!-- waves effect js -->
     <script src="{{asset('js/waves.js')}}"></script>
     <!-- sidebar-menu js -->
