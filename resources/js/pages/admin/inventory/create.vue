@@ -1,58 +1,17 @@
 <template>
   <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-12">
       <card>
         <template v-slot:card-header>
           <h3 class="card-title mb-0 float-left">ADD STOCKS</h3>
         </template>
-        <template v-slot:card-action>
-          <div class="form-check form-check-inline">
-            <input
-              v-model="mode"
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              value="single"
-            />
-            <label class="form-check-label" for="inlineRadio1">Single</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              v-model="mode"
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              value="multiple"
-            />
-            <label class="form-check-label" for="inlineRadio2">Multiple</label>
-          </div>
-          <div v-if="mode === 'multiple'" class="form-inline mt-1">
-            <input
-              v-model="quantity"
-              type="number"
-              class="form-control form-control-sm"
-              placeholder="Quantity"
-            />
-            <button
-              @click="handleQuantity"
-              :disabled="quantity === null"
-              class="btn btn-primary btn-sm ml-2"
-            >
-              OK
-            </button>
-          </div>
-        </template>
+        <template v-slot:card-action> </template>
         <template v-slot:card-body>
-          <div v-if="response_errors !== null" class="form-group">
-            <validation-error-component
-              :error-object="response_errors"
-            ></validation-error-component>
+          <div v-if="response !== null" class="col-lg-4 form-group">
+            <alert :response="response"></alert>
           </div>
           <item-form
             :item="item"
-            :mode="mode"
             :brands="brands"
             :categories="categories"
             :colors="colors"
@@ -64,32 +23,13 @@
         </template>
       </card>
     </div>
-    <div v-if="submitted && mode === 'multiple'" class="col-lg-8 px-4">
-      <div class="row">
-        <div v-for="i in total_quantity" :key="i" class="col-lg-3 px-1">
-          <div class="bg-white bordered p-2 mb-2">
-            <div class="form-group">
-              <label for="">Item {{ i }}</label>
-              <input
-                v-model="batch_items[i]"
-                type="text"
-                :name="`item-${i}`"
-                class="form-control"
-                placeholder="IMEI"
-                :key="i"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import Card from "../../../components/card";
 import ItemForm from "../../../components/forms/item-form";
-import ValidationErrorComponent from "../../../components/validation-errors";
+import Alert from "../../../components/alerts/error.vue";
 import { mapActions, mapGetters, mapMutations } from "vuex";
 import { store } from "../../../store";
 
@@ -97,7 +37,7 @@ export default {
   components: {
     Card,
     ItemForm,
-    ValidationErrorComponent
+    Alert
   },
   computed: {
     ...mapGetters({
@@ -111,13 +51,8 @@ export default {
   },
   data: function() {
     return {
-      item: this.$store.state.ITEMS_MODULE.item,
-      mode: "single",
-      quantity: null,
-      total_quantity: 0,
-      submitted: false,
-      batch_items: [],
-      response_errors: null
+      item: this.$store.state.ITEMS.item,
+      response: null
     };
   },
   methods: {
@@ -127,26 +62,28 @@ export default {
       fetchColors: "COLORS/fetchColors",
       fetchSuppliers: "SUPPLIERS/fetchSuppliers",
       fetchModels: "UNITS/fetchUnits",
-      store: "PURCHASES/STORE",
-      storeBulk: "PURCHASES/STORE_BULK"
+      store: "ITEMS/STORE",
+      storeBulk: "ITEMS/STORE_BULK"
     }),
     ...mapMutations({
-      setSubmitState: "ITEMS_MODULE/SET_SUBMIT_STATE",
-      clearItem: "ITEMS_MODULE/CLEAR_ITEM"
+      setSubmitState: "ITEMS/SET_SUBMIT_STATE",
+      clearItem: "ITEMS/CLEAR_ITEM"
     }),
     handleSubmit(evt) {
-      if (this.mode === "single") {
-        const {
-          imei,
-          model,
-          brand,
-          supplier,
-          category,
-          color,
-          cost,
-          price,
-          remarks
-        } = evt;
+      //   console.log(evt);
+      const {
+        imei,
+        model,
+        brand,
+        supplier,
+        category,
+        color,
+        cost,
+        price,
+        remarks,
+        mode
+      } = evt;
+      if (mode === "single") {
         this.setSubmitState(true);
 
         this.store({
@@ -161,58 +98,62 @@ export default {
           remarks
         })
           .then(() => {
-            this.response_errors = null;
+            this.response = null;
             this.setSubmitState(false);
             this.reset(evt.form, evt.errors);
           })
           .catch(({ response }) => {
-            this.response_errors = response.data.errors;
+            this.response = response;
             this.setSubmitState(false);
           });
       } else {
         let item = {};
         let items = [];
-        const {
-          model,
-          brand,
-          supplier,
-          category,
-          color,
-          cost,
-          price,
-          remarks
-        } = evt;
-        if (this.batch_items.length > 0) {
-          this.batch_items.map(data => {
-            item = {
-              model,
-              brand,
-              supplier,
-              category,
-              color,
-              cost,
-              price,
-              remarks,
-              imei: data
-            };
-            items.push(item);
-          });
-          const payload = {
-            items
+        const { batch_items } = evt;
+        //   const {
+        //     model,
+        //     brand,
+        //     supplier,
+        //     category,
+        //     color,
+        //     cost,
+        //     price,
+        //     remarks,
+        //   } = evt;
+
+        batch_items.map(data => {
+          item = {
+            model,
+            brand,
+            supplier,
+            category,
+            color,
+            cost,
+            price,
+            remarks,
+            imei: data
           };
-          this.storeBulk(payload).then(() => {
-            this.batch_items = [];
+          items.push(item);
+        });
+        const payload = {
+          items
+        };
+
+        this.setSubmitState(true);
+
+        this.storeBulk(payload)
+          .then(() => {
+            this.response = null;
+            this.setSubmitState(false);
             this.reset(evt.form, evt.errors);
+          })
+          .catch(({ response }) => {
+            this.response = response;
+            this.setSubmitState(false);
           });
-        } else {
-          toastr.error("", "Please fill up IMEI for each item!");
-        }
       }
     },
-    handleQuantity() {
-      this.submitted = true;
-      this.total_quantity = parseInt(this.quantity);
-    },
+
     setBreadcrumbs() {
       const breadcrumbs = [
         {
@@ -232,11 +173,11 @@ export default {
     },
     reset(form, errors) {
       this.$set(this.item, "imei", "");
-      this.$set(this.item, "unit", "");
-      this.$set(this.item, "brand", "");
-      this.$set(this.item, "supplier", "");
-      this.$set(this.item, "category", "");
-      this.$set(this.item, "color", "");
+      this.$set(this.item, "model_id", "");
+      this.$set(this.item, "brand_id", "");
+      this.$set(this.item, "supplier_id", "");
+      this.$set(this.item, "category_id", "");
+      this.$set(this.item, "color_id", "");
       this.$set(this.item, "cost", null);
       this.$set(this.item, "selling_price", null);
       this.$set(this.item, "remarks", "");

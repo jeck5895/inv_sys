@@ -5,9 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Model\Item;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Purchases\Store;
-use App\Http\Requests\Purchases\Update;
+use App\Http\Requests\Items\Store;
+use App\Http\Requests\Items\Update;
 use Exception;
+use Illuminate\Support\Facades\Validator;
 
 class ItemsController extends Controller
 {
@@ -185,8 +186,9 @@ class ItemsController extends Controller
 
     public function bulk(Request $request)
     {
-        $request->validate([
-            'items' => 'required|array'
+        $validator = Validator::make($request->all(), [
+            'items' => 'required|array',
+            'items.imei' => 'required|numeric',
         ]);
 
 
@@ -202,13 +204,15 @@ class ItemsController extends Controller
                 $item->color_id = $r['color'];
                 $item->cost = floatval($r['cost']);
                 $item->selling_price = floatval($r['price']);
-                $item->specs = $r['remarks'];
+                if (isset($r['remarks'])) {
+                    $item->specs = $r['remarks'];
+                }
                 $item->save();
             }
         } catch (Exception $e) {
 
             $item = Item::latest('id')->first();
-            return response(['message' => "Data provided is invalid. Please check if missing fields or IMEI may have been duplicated", 'exception' => $e->getMessage(), 'last_record' => $item], 402);
+            return response(['message' => "Data provided is invalid. Please check if missing fields or IMEI may have been duplicated", 'exception' => $e->getMessage(), 'last_record' => $item], 422);
         }
 
         return ['message' => 'Items has been saved', 'items' => $request->items];

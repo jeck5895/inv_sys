@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Purchases;
+namespace App\Http\Requests\Items;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Store extends FormRequest
+class Update extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'imei' => 'required|numeric|unique:purchases',
+            'imei' => 'required|numeric|unique:items,imei,' . $this->get('id'),
             'category' => 'required|numeric',
             'color' => 'required|numeric',
             'brand' => 'required|numeric',

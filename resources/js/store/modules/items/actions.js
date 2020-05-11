@@ -95,7 +95,7 @@ export default {
                         "An error occured",
                     );
                     setTimeout(() => {
-                        reject(error.response);
+                        reject(error);
                     }, 1000);
                 });
         });
@@ -130,12 +130,7 @@ export default {
     UPDATE: ({ commit }, payload) => {
         return new Promise((resolve, reject) => {
             axios
-                .patch(`/api/stocks/${payload.id}`, payload, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${token}`
-                    }
-                })
+                .patch(`/api/stocks/${payload.id}`, payload)
                 .then(response => {
                     setTimeout(() => {
                         toastr.success("Success", `${response.data.message}`);

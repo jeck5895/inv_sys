@@ -77,13 +77,13 @@
         <item-form
           v-if="form_type === 'EDIT'"
           :item="item"
-          :mode="'single'"
           :brands="brands"
           :categories="categories"
           :colors="colors"
           :suppliers="suppliers"
           :models="models"
           :is-loading="submit_state"
+          :show-mode="false"
           @on-submit="handleSubmitUpdate"
         ></item-form>
       </template>
@@ -124,7 +124,7 @@ export default {
       submit_state: "ITEMS/GET_SUBMIT_STATE"
     }),
     item() {
-      let item = this.$store.getters["ITEM/GET_ITEM"];
+      let item = this.$store.getters["ITEMS/GET_ITEM"];
       return {
         id: item.id,
         imei: item.imei,
@@ -199,8 +199,8 @@ export default {
       deleteItem: "ITEMS/DELETE"
     }),
     ...mapMutations({
-      setSubmitState: "ITEM/SET_SUBMIT_STATE",
-      clearItem: "ITEM/CLEAR_ITEM"
+      setSubmitState: "ITEMS/SET_SUBMIT_STATE",
+      clearItem: "ITEMS/CLEAR_ITEM"
     }),
     fetchStocks(url) {
       this.$store.dispatch("ITEMS/FETCH_ITEMS", url);
@@ -208,7 +208,7 @@ export default {
     handleEdit(item) {
       this.form_type = "EDIT";
       this.selected_item = item;
-      this.$store.commit("ITEM/SET_ITEM", item);
+      this.$store.commit("ITEMS/SET_ITEM", item);
       setTimeout(() => {
         $("#generic-modal").modal("show");
       }, 300);
