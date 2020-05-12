@@ -36250,7 +36250,7 @@ router.beforeEach(function (to, from, next) {
         return record.meta.forAuthUsers;
     }) && to.fullPath == "/login" && store.getters["AuthModule/LOGGED_IN"]) {
         next({
-            path: "/administrator/stocks"
+            path: "/administrator/inventory/"
         });
     } else {
         next();
@@ -39254,7 +39254,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = {
     LOGIN: function LOGIN(_ref, payload) {
-        var commit = _ref.commit;
+        var commit = _ref.commit,
+            dispatch = _ref.dispatch;
 
         return new Promise(function (resolve, reject) {
             axios.post("/oauth/token", payload).then(function (response) {
@@ -39265,6 +39266,7 @@ exports.default = {
                     expires: response.expires_in
                 });
                 Cookies.set("_a.loggedIn", true, { expires: 31535998 });
+                dispatch("FETCH_USER");
                 commit("SET_LOGGEDIN", true);
                 resolve(response);
             }).catch(function (error) {
@@ -39272,17 +39274,36 @@ exports.default = {
             });
         });
     },
-    FETCH_USER: function FETCH_USER(_ref2) {
+    REFRESH_TOKEN: function REFRESH_TOKEN(_ref2) {
         var commit = _ref2.commit;
 
-        var token = Cookies.get("_a.token");
+        var refresh_token = Cookies.get("_r.token");
+        var client_id = "2";
+        var client_secret = "GiBJAhYpCiVPV3pxsRlCbAm70Vn7YMtz4meA1z8H";
+        var payload = {
+            'grant_type': 'refresh_token',
+            'refresh_token': refresh_token,
+            'client_id': client_id,
+            'client_secret': client_secret,
+            'scope': ''
+        };
         return new Promise(function (resolve, reject) {
-            axios.get("/api/user", {
-                headers: {
-                    Accept: "application/json",
-                    Authorization: "Bearer " + token
-                }
-            }).then(function (response) {
+            axios.post("/oauth/token", payload).then(function (response) {
+                console.log(response);
+
+                commit("SET_LOGGEDIN", true);
+                resolve(response);
+            }).catch(function (error) {
+                reject(error);
+            });
+        });
+    },
+    FETCH_USER: function FETCH_USER(_ref3) {
+        var commit = _ref3.commit;
+
+        // const token = Cookies.get("_a.token");
+        return new Promise(function (resolve, reject) {
+            axios.get("/api/user").then(function (response) {
                 commit("SET_USER", response.data);
                 Cookies.set("_a.user", response.data, {
                     expires: 31535998
@@ -39293,8 +39314,8 @@ exports.default = {
             });
         });
     },
-    LOGOUT: function LOGOUT(_ref3) {
-        var commit = _ref3.commit;
+    LOGOUT: function LOGOUT(_ref4) {
+        var commit = _ref4.commit;
 
         commit("SET_LOGGEDIN", false);
         commit("CLEAR_USER");
@@ -45337,7 +45358,13 @@ window.axios.defaults.baseURL = window.location.protocol + "//" + window.locatio
 window.axios.interceptors.request.use(function (config) {
     return (0, _handlers.requestHandler)(config);
 }, function (error) {
-    return (0, _handlers.errorHandler)(error);
+    return (0, _handlers.errorRequestHandler)(error);
+});
+
+window.axios.interceptors.response.use(function (response) {
+    return (0, _handlers.responseHandler)(response);
+}, function (error) {
+    return (0, _handlers.errorResponseHandler)(error);
 });
 
 // if (token) {
@@ -64023,36 +64050,54 @@ exports.push([module.i, ".select2-container{box-sizing:border-box;display:inline
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.errorHandler = exports.requestHandler = undefined;
+exports.errorResponseHandler = exports.responseHandler = exports.errorRequestHandler = exports.requestHandler = undefined;
 
 var _jsCookie = __webpack_require__(3);
 
 var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
+var _store = __webpack_require__(14);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var accessToken = _jsCookie2.default.get("_a.token"); /**
-                                                       * Interceptors
-                                                       * https://dev.to/teroauralinna/global-http-request-and-response-handling-with-the-axios-interceptor-30ae
-                                                       */
+/**
+ * Interceptors
+ * https://dev.to/teroauralinna/global-http-request-and-response-handling-with-the-axios-interceptor-30ae
+ */
 // import authService from "@/services/auth.service";
-
-
 var requestHandler = function requestHandler(request) {
-
+    var accessToken = _jsCookie2.default.get("_a.token");
     if (accessToken) {
+        request.headers["Accept"] = "application/json";
         request.headers["Authorization"] = "Bearer " + accessToken;
     }
     request.headers["Accept"] = "application/json";
     return request;
 };
 
-var errorHandler = function errorHandler(error) {
+var errorRequestHandler = function errorRequestHandler(error) {
     Promise.reject(error);
 };
 
+var responseHandler = function responseHandler(response) {
+    return response;
+};
+
+var errorResponseHandler = function errorResponseHandler(error) {
+    if (error.response.status === 401) {
+        toastr.error("Your session has expired. You will be redirected to login");
+        setTimeout(function () {
+            _store.store.dispatch("AuthModule/LOGOUT").then(function () {
+                window.location = window.location.protocol + "//" + window.location.host + "/login";
+            });
+        }, 2500);
+    }
+};
+
 exports.requestHandler = requestHandler;
-exports.errorHandler = errorHandler;
+exports.errorRequestHandler = errorRequestHandler;
+exports.responseHandler = responseHandler;
+exports.errorResponseHandler = errorResponseHandler;
 
 /***/ }),
 /* 270 */

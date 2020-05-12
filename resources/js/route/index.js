@@ -55,7 +55,7 @@ router.beforeEach((to, from, next) => {
         store.getters["AuthModule/LOGGED_IN"]
     ) {
         next({
-            path: "/administrator/stocks"
+            path: "/administrator/inventory/"
         });
     } else {
         next();

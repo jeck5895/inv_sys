@@ -7,7 +7,7 @@ import Cookies from "js-cookie";
 import VuejsDialog from "vuejs-dialog";
 import "vuejs-dialog/dist/vuejs-dialog.min.css";
 import Select2 from "v-select2-component";
-import { requestHandler, errorHandler } from "./config/handlers";
+import { requestHandler, errorRequestHandler, responseHandler, errorResponseHandler } from "./config/handlers";
 import { store } from "./store";
 
 window._ = require("lodash");
@@ -71,7 +71,12 @@ window.axios.defaults.baseURL =
 
 window.axios.interceptors.request.use(
     config => requestHandler(config),
-    error => errorHandler(error)
+    error => errorRequestHandler(error)
+);
+
+window.axios.interceptors.response.use(
+    response => responseHandler(response),
+    error => errorResponseHandler(error)
 );
 
 // if (token) {

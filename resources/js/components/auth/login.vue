@@ -148,7 +148,7 @@ export default {
           this.$store
             .dispatch("AuthModule/LOGIN", payload)
             .then(response => {
-              this.fetchUser();
+              this.$router.push({ name: "inventory" });
               this.response = null;
             })
             .catch(error => {
@@ -157,20 +157,6 @@ export default {
               this.response = error.response;
             });
         }
-      });
-    },
-    fetchUser() {
-      this.$store.dispatch("AuthModule/FETCH_USER").then(response => {
-        // setTimeout(() => {
-        this.isLoading = false;
-        // this.$router.push({ name: "inventory" });
-        // this.$router.push('/administrator/stocks');
-        window.location =
-          window.location.protocol +
-          "//" +
-          window.location.host +
-          "/administrator/inventory/";
-        // }, 1000);
       });
     }
   },

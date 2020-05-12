@@ -208,7 +208,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -376,7 +376,7 @@ exports.default = {
           };
           _this.isLoading = true;
           _this.$store.dispatch("AuthModule/LOGIN", payload).then(function (response) {
-            _this.fetchUser();
+            _this.$router.push({ name: "inventory" });
             _this.response = null;
           }).catch(function (error) {
             console.log(error.response);
@@ -384,18 +384,6 @@ exports.default = {
             _this.response = error.response;
           });
         }
-      });
-    },
-    fetchUser: function fetchUser() {
-      var _this2 = this;
-
-      this.$store.dispatch("AuthModule/FETCH_USER").then(function (response) {
-        // setTimeout(() => {
-        _this2.isLoading = false;
-        // this.$router.push({ name: "inventory" });
-        // this.$router.push('/administrator/stocks');
-        window.location = window.location.protocol + "//" + window.location.host + "/administrator/inventory/";
-        // }, 1000);
       });
     }
   },

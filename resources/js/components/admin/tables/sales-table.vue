@@ -54,6 +54,13 @@
             >
               <i class="fa fa-edit fa-lg"></i>
             </button>
+            <button
+              @click.prevent="$emit('on-delete', item)"
+              type="button"
+              class="btn btn-sm btn-danger waves-effect waves-light m-1"
+            >
+              <i class="fa fa-trash fa-lg"></i>
+            </button>
           </td>
         </tr>
       </template>

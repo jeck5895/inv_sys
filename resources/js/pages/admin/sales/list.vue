@@ -165,10 +165,14 @@ export default {
     }),
     handleEdit(sales) {
       if (sales) {
-        this.$router.push({
-          name: "edit-sales",
-          params: { receipt: sales.receipt_no }
-        });
+        this.$router
+          .push({
+            name: "edit-sales",
+            params: { receipt: sales.receipt_no }
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
     },
     onChange(e) {
