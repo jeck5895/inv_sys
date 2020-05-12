@@ -51,7 +51,7 @@
               type="button"
               data-toggle="modal"
               data-target="#addmodal"
-              class="btn btn-sm waves-effect waves-light m-1"
+              class="btn btn-default btn-sm waves-effect waves-light m-1"
             >
               <i class="fa fa-edit"></i>
             </button>

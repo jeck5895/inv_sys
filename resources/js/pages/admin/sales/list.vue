@@ -38,6 +38,7 @@
                 :items="sales"
                 :is-loading="is_loading"
                 @on-edit="handleEdit"
+                @on-delete="handleDelete"
               ></sales-table>
             </div>
             <div class="col-lg-12">
@@ -156,7 +157,8 @@ export default {
   methods: {
     ...mapActions("SALES", {
       fetchSales: "FETCH_SALES",
-      find: "FIND"
+      find: "FIND",
+      delete: "DELETE"
     }),
     ...mapMutations({
       setKeyword: "FILTER_MODULE/SET_KEYWORD",
@@ -174,6 +176,20 @@ export default {
             console.log(err);
           });
       }
+    },
+    handleDelete(sales) {
+      let options = { html: true, loader: true };
+      this.$dialog
+        .confirm(`<h5>Delete ${sales.receipt_no} ?</h5>`, options)
+        .then(dialog => {
+          this.delete(sales.id).then(() => {
+            dialog.close();
+            this.fetchSales(
+              `/api/sales?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}&date_from=${this.date_from}&date_to=${this.date_to}`
+            );
+          });
+        })
+        .catch(() => {});
     },
     onChange(e) {
       const name = e.target.name;

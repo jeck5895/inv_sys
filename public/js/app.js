@@ -39792,7 +39792,7 @@ exports.default = {
                 model_id: item.model_id,
                 color_id: item.color_id,
                 selling_price: item.selling_price,
-                brand_id: item.id
+                brand_id: item.brand_id
             };
             var freebies = sales_item_freebies.map(function (item) {
                 return item.freebie_id;
@@ -39932,6 +39932,17 @@ exports.default = {
                     commit("SET_SUBMIT_STATE", false);
                     reject(error);
                 }, 500);
+            });
+        });
+    },
+    DELETE: function DELETE(_ref7, id) {
+        var commit = _ref7.commit;
+
+        return new Promise(function (resolve, reject) {
+            axios.delete("api/sales/" + id).then(function (response) {
+                resolve(response);
+            }).catch(function (error) {
+                reject(error);
             });
         });
     }
@@ -41281,18 +41292,16 @@ exports.default = {
                 setTimeout(function () {
                     commit("SET_IS_LOADING", false);
                 }, 1000);
-            }).catch(function (_ref6) {
-                var response = _ref6.response;
-
+            }).catch(function (error) {
                 setTimeout(function () {
                     commit("SET_IS_LOADING", false);
                 }, 1000);
-                reject(response);
+                reject(error.response);
             });
         });
     },
-    FETCH_ITEMS: function FETCH_ITEMS(_ref7, url) {
-        var commit = _ref7.commit;
+    FETCH_ITEMS: function FETCH_ITEMS(_ref6, url) {
+        var commit = _ref6.commit;
 
         // let url = payload ? payload : "/api/stocks";
         commit("SET_IS_LOADING", true);
@@ -41302,16 +41311,16 @@ exports.default = {
                     Accept: "application/json",
                     Authorization: "Bearer " + token
                 }
-            }).then(function (_ref8) {
-                var data = _ref8.data;
+            }).then(function (_ref7) {
+                var data = _ref7.data;
 
                 commit("SET_ITEMS", data);
                 resolve(data);
                 setTimeout(function () {
                     commit("SET_IS_LOADING", false);
                 }, 1000);
-            }).catch(function (_ref9) {
-                var response = _ref9.response;
+            }).catch(function (_ref8) {
+                var response = _ref8.response;
 
                 setTimeout(function () {
                     commit("SET_IS_LOADING", false);
@@ -41320,8 +41329,8 @@ exports.default = {
             });
         });
     },
-    STORE: function STORE(_ref10, payload) {
-        var dispatch = _ref10.dispatch;
+    STORE: function STORE(_ref9, payload) {
+        var dispatch = _ref9.dispatch;
 
         return new Promise(function (resolve, reject) {
             axios.post("/api/stocks", payload, {
@@ -41344,8 +41353,8 @@ exports.default = {
             });
         });
     },
-    STORE_BULK: function STORE_BULK(_ref11, payload) {
-        var dispatch = _ref11.dispatch;
+    STORE_BULK: function STORE_BULK(_ref10, payload) {
+        var dispatch = _ref10.dispatch;
 
         return new Promise(function (resolve, reject) {
             axios.post("/api/stocks/bulk", payload, {
@@ -41359,8 +41368,8 @@ exports.default = {
                 setTimeout(function () {
                     resolve(response);
                 }, 1000);
-            }).catch(function (_ref12) {
-                var response = _ref12.response;
+            }).catch(function (_ref11) {
+                var response = _ref11.response;
 
                 toastr.error(response.data.message, "An error occured");
                 setTimeout(function () {
@@ -41369,8 +41378,8 @@ exports.default = {
             });
         });
     },
-    UPDATE: function UPDATE(_ref13, payload) {
-        var commit = _ref13.commit;
+    UPDATE: function UPDATE(_ref12, payload) {
+        var commit = _ref12.commit;
 
         return new Promise(function (resolve, reject) {
             axios.patch("/api/stocks/" + payload.id, payload).then(function (response) {
@@ -41386,8 +41395,8 @@ exports.default = {
             });
         });
     },
-    DELETE: function DELETE(_ref14, payload) {
-        var commit = _ref14.commit;
+    DELETE: function DELETE(_ref13, payload) {
+        var commit = _ref13.commit;
 
         return new Promise(function (resolve, reject) {
             axios.delete("/api/stocks/" + payload, {
@@ -42754,7 +42763,7 @@ var render = function() {
                         "button",
                         {
                           staticClass:
-                            "btn btn-sm waves-effect waves-light m-1",
+                            "btn btn-default btn-sm waves-effect waves-light m-1",
                           attrs: {
                             type: "button",
                             "data-toggle": "modal",
@@ -43836,8 +43845,8 @@ exports.default = {
                   if (error.status === 404) {
                     toastr.error("No matching item found.", "404");
                   }
-                  console.log(error);
-                  if (error.status === 422) {
+
+                  if (error.status === 400) {
                     toastr.error(error.data.message);
                   }
                 });
@@ -64091,6 +64100,8 @@ var errorResponseHandler = function errorResponseHandler(error) {
                 window.location = window.location.protocol + "//" + window.location.host + "/login";
             });
         }, 2500);
+    } else {
+        return Promise.reject(error);
     }
 };
 

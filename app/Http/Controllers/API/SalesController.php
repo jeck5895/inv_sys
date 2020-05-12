@@ -236,7 +236,7 @@ class SalesController extends Controller
             }
 
             $sales->sales_items()->whereIn("id", $oldSalesItemIds)->delete();
-            SalesItemFreebie::whereIn("id", [1])->delete();
+            SalesItemFreebie::whereIn("id", $oldFreebieIds)->delete();
             // $sales->freebies()->whereIn("sales_item_freebies.id", [1])->delete();
         }
 
@@ -258,7 +258,9 @@ class SalesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sales = Sale::findOrFail($id);
+
+        $sales->delete();
     }
 
     public function findBy($field, $val)

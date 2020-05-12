@@ -290,7 +290,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -337,6 +337,7 @@ var _vuex = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
 //
 //
 //
@@ -486,7 +487,8 @@ exports.default = {
   },
   methods: _extends({}, (0, _vuex.mapActions)("SALES", {
     fetchSales: "FETCH_SALES",
-    find: "FIND"
+    find: "FIND",
+    delete: "DELETE"
   }), (0, _vuex.mapMutations)({
     setKeyword: "FILTER_MODULE/SET_KEYWORD",
     setDateFrom: "FILTER_MODULE/SET_DATE_FROM",
@@ -501,6 +503,17 @@ exports.default = {
           console.log(err);
         });
       }
+    },
+    handleDelete: function handleDelete(sales) {
+      var _this = this;
+
+      var options = { html: true, loader: true };
+      this.$dialog.confirm("<h5>Delete " + sales.receipt_no + " ?</h5>", options).then(function (dialog) {
+        _this.delete(sales.id).then(function () {
+          dialog.close();
+          _this.fetchSales("/api/sales?q=" + _this.keyword + "&page=" + _this.current_page + "&per_page=" + _this.page_size + "&order_by=" + _this.order_by + "&sort_by=" + _this.sort_by + "&date_from=" + _this.date_from + "&date_to=" + _this.date_to);
+        });
+      }).catch(function () {});
     },
     onChange: function onChange(e) {
       var name = e.target.name;
@@ -535,7 +548,7 @@ exports.default = {
       this.fetchSales(url);
     },
     onReportSubmit: function onReportSubmit(evt) {
-      var _this = this;
+      var _this2 = this;
 
       var token = Cookies.get("_a.token");
       var type = evt.type;
@@ -559,7 +572,7 @@ exports.default = {
           }).then(function (_ref) {
             var data = _ref.data;
 
-            _this.is_submitting = false;
+            _this2.is_submitting = false;
             // ref: sofi-locatorslist
             anchor_tag.href = data.file;
             anchor_tag.target = "_blank";
@@ -568,7 +581,7 @@ exports.default = {
           }).catch(function (_ref2) {
             var response = _ref2.response;
 
-            _this.is_submitting = false;
+            _this2.is_submitting = false;
             toastr.error("Server Response Error", "Oops something went wrong");
             console.log(response);
           });
@@ -593,7 +606,7 @@ exports.default = {
           }).then(function (_ref3) {
             var data = _ref3.data;
 
-            _this.is_submitting = false;
+            _this2.is_submitting = false;
             // ref: sofi-locatorslist
             anchor_tag.href = data.file;
             anchor_tag.target = "_blank";
@@ -602,7 +615,7 @@ exports.default = {
           }).catch(function (_ref4) {
             var response = _ref4.response;
 
-            _this.is_submitting = false;
+            _this2.is_submitting = false;
             toastr.error("Server Response Error", "Oops something went wrong");
             console.log(response);
           });
@@ -743,7 +756,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.table td {\n  cursor: pointer;\n}\n", ""]);
+exports.push([module.i, "\n.table td {\n  cursor: pointer;\n  text-align: center;\n  padding-left: 0.75rem !important;\n  padding-right: 0.75rem !important;\n}\n", ""]);
 
 // exports
 
@@ -759,9 +772,6 @@ exports.push([module.i, "\n.table td {\n  cursor: pointer;\n}\n", ""]);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
 //
 //
 //
@@ -868,84 +878,71 @@ var render = function() {
           _vm._v(" "),
           !_vm.isLoading && _vm.items.data && _vm.items.data.length != 0
             ? _vm._l(_vm.items.data, function(item, i) {
-                return _c(
-                  "tr",
-                  {
-                    key: i,
-                    on: {
-                      click: function($event) {
-                        return _vm.$emit("on-edit", item)
-                      }
-                    }
-                  },
-                  [
-                    _c("td", [
-                      _vm._v(
-                        _vm._s(_vm._f("humanReadable")(item.checkout_date))
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.receipt_no))]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.payment_mode))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      item.payment_terms === null
-                        ? _c("span", [_vm._v("N/A")])
-                        : _c("span", [
-                            _vm._v(_vm._s(item.payment_terms) + " months")
-                          ])
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.total_item_cost.formatted))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(_vm._s(item.total_freebies_cost.formatted))
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(item.revenue.formatted))]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v(_vm._s(item.net_income.formatted))]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-sm waves-effect waves-light m-1",
-                          attrs: {
-                            type: "button",
-                            "data-toggle": "modal",
-                            "data-target": "#addmodal"
-                          },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.$emit("on-edit", item)
-                            }
-                          }
+                return _c("tr", { key: i }, [
+                  _c("td", [
+                    _vm._v(_vm._s(_vm._f("humanReadable")(item.checkout_date)))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.receipt_no))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.payment_mode))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    item.payment_terms === null
+                      ? _c("span", [_vm._v("N/A")])
+                      : _c("span", [
+                          _vm._v(_vm._s(item.payment_terms) + " months")
+                        ])
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.total_item_cost.formatted))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _vm._v(_vm._s(item.total_freebies_cost.formatted))
+                  ]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(item.revenue.formatted))]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v(_vm._s(item.net_income.formatted))]),
+                  _vm._v(" "),
+                  _c("td", { staticClass: "px-2" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-default btn-sm waves-effect waves-light m-1",
+                        attrs: {
+                          type: "button",
+                          "data-toggle": "modal",
+                          "data-target": "#addmodal"
                         },
-                        [_c("i", { staticClass: "fa fa-edit fa-lg" })]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-sm btn-danger waves-effect waves-light m-1",
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              return _vm.$emit("on-delete", item)
-                            }
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("on-edit", item)
                           }
-                        },
-                        [_c("i", { staticClass: "fa fa-trash fa-lg" })]
-                      )
-                    ])
-                  ]
-                )
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-edit fa-lg" })]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass:
+                          "btn btn-sm btn-danger waves-effect waves-light m-1",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.$emit("on-delete", item)
+                          }
+                        }
+                      },
+                      [_c("i", { staticClass: "fa fa-trash fa-lg" })]
+                    )
+                  ])
+                ])
               })
             : _vm._e()
         ],
@@ -1851,7 +1848,10 @@ var render = function() {
                             items: _vm.sales,
                             "is-loading": _vm.is_loading
                           },
-                          on: { "on-edit": _vm.handleEdit }
+                          on: {
+                            "on-edit": _vm.handleEdit,
+                            "on-delete": _vm.handleDelete
+                          }
                         })
                       ],
                       1

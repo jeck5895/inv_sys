@@ -48,7 +48,7 @@ export default {
                 model_id: item.model_id,
                 color_id: item.color_id,
                 selling_price: item.selling_price,
-                brand_id: item.id,
+                brand_id: item.brand_id,
             }
             let freebies = sales_item_freebies.map(item => item.freebie_id);
             a = { ...a, freebies };

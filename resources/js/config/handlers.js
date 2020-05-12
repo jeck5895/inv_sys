@@ -37,6 +37,8 @@ const errorResponseHandler = error => {
             });
 
         }, 2500)
+    } else {
+        return Promise.reject(error);
     }
 }
 

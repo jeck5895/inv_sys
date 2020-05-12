@@ -91,5 +91,17 @@ export default {
                     }, 500);
                 });
         });
+    },
+    DELETE: ({ commit }, id) => {
+        return new Promise((resolve, reject) => {
+            axios
+                .delete(`api/sales/${id}`)
+                .then(response => {
+                    resolve(response);
+                })
+                .catch(error => {
+                    reject(error);
+                });
+        });
     }
 };

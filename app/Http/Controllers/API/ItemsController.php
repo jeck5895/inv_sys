@@ -224,8 +224,9 @@ class ItemsController extends Controller
             // ->available()
             ->firstOrFail();
         if ($item->is_available === 0) {
-            return response(['message' => $item->imei . ' is already been sold.'], 422);
+            return response(['message' => $item->imei . ' is already been sold.'], 400);
         }
+
         return $item;
     }
 }

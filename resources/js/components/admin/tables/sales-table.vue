@@ -28,11 +28,8 @@
         </td>
       </tr>
       <template v-if="!isLoading && items.data && items.data.length != 0">
-        <tr
-          v-for="(item, i) in items.data"
-          :key="i"
-          @click="$emit('on-edit', item)"
-        >
+        <tr v-for="(item, i) in items.data" :key="i">
+          <!-- @click="$emit('on-edit', item)" -->
           <td>{{ item.checkout_date | humanReadable }}</td>
           <td>{{ item.receipt_no }}</td>
           <td>{{ item.payment_mode }}</td>
@@ -44,13 +41,13 @@
           <td>{{ item.total_freebies_cost.formatted }}</td>
           <td>{{ item.revenue.formatted }}</td>
           <th>{{ item.net_income.formatted }}</th>
-          <td>
+          <td class="px-2">
             <button
               @click.prevent="$emit('on-edit', item)"
               type="button"
               data-toggle="modal"
               data-target="#addmodal"
-              class="btn btn-sm waves-effect waves-light m-1"
+              class="btn btn-default btn-sm waves-effect waves-light m-1"
             >
               <i class="fa fa-edit fa-lg"></i>
             </button>
@@ -85,5 +82,8 @@ export default {
 <style lang="scss">
 .table td {
   cursor: pointer;
+  text-align: center;
+  padding-left: 0.75rem !important;
+  padding-right: 0.75rem !important;
 }
 </style>

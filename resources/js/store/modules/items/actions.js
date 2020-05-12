@@ -39,11 +39,11 @@ export default {
                         commit("SET_IS_LOADING", false);
                     }, 1000);
                 })
-                .catch(({ response }) => {
+                .catch((error) => {
                     setTimeout(() => {
                         commit("SET_IS_LOADING", false);
                     }, 1000);
-                    reject(response);
+                    reject(error.response);
                 });
         });
     },

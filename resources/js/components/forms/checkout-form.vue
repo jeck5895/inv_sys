@@ -472,8 +472,8 @@ export default {
             if (error.status === 404) {
               toastr.error("No matching item found.", "404");
             }
-            console.log(error);
-            if (error.status === 422) {
+
+            if (error.status === 400) {
               toastr.error(error.data.message);
             }
           });

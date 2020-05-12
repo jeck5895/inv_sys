@@ -31,4 +31,12 @@ class Sale extends Model
     {
         return $this->hasManyThrough(SalesItemFreebie::class, SalesItem::class, 'sales_id', 'sales_item_id', 'id');
     }
+
+    public function delete()
+    {
+        $this->freebies()->delete();
+        $this->sales_items()->delete();
+
+        return parent::delete();
+    }
 }
