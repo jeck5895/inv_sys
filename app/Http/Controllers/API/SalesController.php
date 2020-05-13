@@ -131,6 +131,7 @@ class SalesController extends Controller
         }
         $sales->amount = $request->total_amount;
         $sales->checkout_date = $request->checkout_date;
+        $sales->user_id = auth()->user()->id;
         $sales->save();
         $sales_id = $sales->id;
 
@@ -169,8 +170,9 @@ class SalesController extends Controller
         return [
             'message' => 'Sales has been saved.',
             'request' => $request->all(),
-            'sales_items_ids' => $sales_item_ids,
-            'sales_id' => $sales->id
+            // 'sales_items_ids' => $sales_item_ids,
+            // 'sales_id' => $sales->id,
+            // 'user' => auth()->user()->id
         ];
     }
 

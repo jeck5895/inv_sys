@@ -1119,7 +1119,7 @@ var _validationErrors2 = _interopRequireDefault(_validationErrors);
 
 var _vuex = __webpack_require__(8);
 
-var _index = __webpack_require__(14);
+var _index = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 

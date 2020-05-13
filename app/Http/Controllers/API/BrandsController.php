@@ -54,6 +54,7 @@ class BrandsController extends Controller
         $brand = new Brand;
 
         $brand->name = $request['name'];
+        $brand->user_id = auth()->user()->id;
 
         $brand->save();
 

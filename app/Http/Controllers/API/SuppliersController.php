@@ -53,6 +53,7 @@ class SuppliersController extends Controller
 
         $supplier  = new Supplier;
         $supplier->name = $request['name'];
+        $supplier->user_id = auth()->user()->id;
         $supplier->save();
 
         return ['message' => 'success'];

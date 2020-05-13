@@ -52,6 +52,7 @@ class CategoriesController extends Controller
         ]);
         $category = new Category();
         $category->name = $request['name'];
+        $category->user_id = auth()->user()->id;
         $category->save();
 
         return ['message' => 'success'];

@@ -60,6 +60,7 @@ class FreebiesController extends Controller
         $freebie = new Freebie;
         $freebie->name = $request->name;
         $freebie->price = $request->price;
+        $freebie->user_id = auth()->user()->id;
         $freebie->save();
 
         return ['message' => 'Success'];

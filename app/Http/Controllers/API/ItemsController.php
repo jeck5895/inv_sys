@@ -122,6 +122,7 @@ class ItemsController extends Controller
         $item->cost = floatval($request['cost']);
         $item->selling_price = floatval($request['price']);
         $item->specs = $request['remarks'];
+        $item->user_id = auth()->user()->id;
         $item->save();
 
         return ['message' => 'Stocks has been saved'];

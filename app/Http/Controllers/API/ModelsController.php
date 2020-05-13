@@ -55,6 +55,8 @@ class ModelsController extends Controller
 
         $model->name = $request['name'];
 
+        $model->user_id = auth()->user()->id;
+
         $model->save();
 
         return ['message' => 'success'];

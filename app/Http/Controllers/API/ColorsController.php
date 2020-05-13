@@ -56,6 +56,7 @@ class ColorsController extends Controller
 
         $color->name = $request['name'];
         $color->value = $request['value'];
+        $color->user_id = auth()->user()->id;
 
         $color->save();
 

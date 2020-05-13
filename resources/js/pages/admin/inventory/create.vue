@@ -46,7 +46,7 @@ export default {
       colors: "COLORS/GET_COLORS",
       suppliers: "SUPPLIERS/GET_SUPPLIERS",
       models: "UNITS/GET_UNITS",
-      submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
+      submit_state: "ITEMS/GET_SUBMIT_STATE"
     })
   },
   data: function() {

@@ -17188,8 +17188,120 @@ module.exports = __webpack_require__(167);
 
 
 /***/ }),
-/* 10 */,
-/* 11 */
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.store = undefined;
+
+var _vue = __webpack_require__(11);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _vuex = __webpack_require__(8);
+
+var _vuex2 = _interopRequireDefault(_vuex);
+
+var _auth = __webpack_require__(184);
+
+var _auth2 = _interopRequireDefault(_auth);
+
+var _sales = __webpack_require__(189);
+
+var _sales2 = _interopRequireDefault(_sales);
+
+var _itemsOld = __webpack_require__(195);
+
+var _itemsOld2 = _interopRequireDefault(_itemsOld);
+
+var _index = __webpack_require__(200);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _users = __webpack_require__(205);
+
+var _users2 = _interopRequireDefault(_users);
+
+var _filters = __webpack_require__(210);
+
+var _filters2 = _interopRequireDefault(_filters);
+
+var _forms = __webpack_require__(214);
+
+var _forms2 = _interopRequireDefault(_forms);
+
+var _customers = __webpack_require__(215);
+
+var _customers2 = _interopRequireDefault(_customers);
+
+var _items = __webpack_require__(220);
+
+var _items2 = _interopRequireDefault(_items);
+
+var _brands = __webpack_require__(225);
+
+var _brands2 = _interopRequireDefault(_brands);
+
+var _categories = __webpack_require__(226);
+
+var _categories2 = _interopRequireDefault(_categories);
+
+var _color = __webpack_require__(227);
+
+var _color2 = _interopRequireDefault(_color);
+
+var _suppliers = __webpack_require__(228);
+
+var _suppliers2 = _interopRequireDefault(_suppliers);
+
+var _freebies = __webpack_require__(229);
+
+var _freebies2 = _interopRequireDefault(_freebies);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import SITES_MODULE from "./modules/sites/index";
+// import CART_MODULE from "./modules/cart/index";
+_vue2.default.use(_vuex2.default);
+
+var store = exports.store = new _vuex2.default.Store({
+    modules: {
+        AuthModule: _auth2.default,
+        SALES: _sales2.default,
+        ITEMS_MODULE: _itemsOld2.default,
+        UNITS: _index2.default,
+        USERS: _users2.default,
+        FILTER_MODULE: _filters2.default,
+        FORM_MODULE: _forms2.default,
+        CUSTOMERS_MODULE: _customers2.default,
+        ITEMS: _items2.default,
+        BRANDS: _brands2.default,
+        CATEGORIES: _categories2.default,
+        COLORS: _color2.default,
+        SUPPLIERS: _suppliers2.default,
+        FREEBIES: _freebies2.default
+    },
+    state: {
+        breadcrumbs: []
+    },
+    mutations: {
+        clearBreadcrumbs: function clearBreadcrumbs(state) {
+            state.breadcrumbs = [];
+        },
+        setBreadcrumbs: function setBreadcrumbs(state, payload) {
+            state.breadcrumbs = payload;
+        }
+    }
+});
+
+/***/ }),
+/* 11 */,
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19814,7 +19926,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19918,7 +20030,7 @@ module.exports = defaults;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
@@ -19967,118 +20079,6 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.store = undefined;
-
-var _vue = __webpack_require__(10);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _vuex = __webpack_require__(8);
-
-var _vuex2 = _interopRequireDefault(_vuex);
-
-var _auth = __webpack_require__(184);
-
-var _auth2 = _interopRequireDefault(_auth);
-
-var _sales = __webpack_require__(189);
-
-var _sales2 = _interopRequireDefault(_sales);
-
-var _itemsOld = __webpack_require__(195);
-
-var _itemsOld2 = _interopRequireDefault(_itemsOld);
-
-var _index = __webpack_require__(200);
-
-var _index2 = _interopRequireDefault(_index);
-
-var _users = __webpack_require__(205);
-
-var _users2 = _interopRequireDefault(_users);
-
-var _filters = __webpack_require__(210);
-
-var _filters2 = _interopRequireDefault(_filters);
-
-var _forms = __webpack_require__(214);
-
-var _forms2 = _interopRequireDefault(_forms);
-
-var _customers = __webpack_require__(215);
-
-var _customers2 = _interopRequireDefault(_customers);
-
-var _items = __webpack_require__(220);
-
-var _items2 = _interopRequireDefault(_items);
-
-var _brands = __webpack_require__(225);
-
-var _brands2 = _interopRequireDefault(_brands);
-
-var _categories = __webpack_require__(226);
-
-var _categories2 = _interopRequireDefault(_categories);
-
-var _color = __webpack_require__(227);
-
-var _color2 = _interopRequireDefault(_color);
-
-var _suppliers = __webpack_require__(228);
-
-var _suppliers2 = _interopRequireDefault(_suppliers);
-
-var _freebies = __webpack_require__(229);
-
-var _freebies2 = _interopRequireDefault(_freebies);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import SITES_MODULE from "./modules/sites/index";
-// import CART_MODULE from "./modules/cart/index";
-_vue2.default.use(_vuex2.default);
-
-var store = exports.store = new _vuex2.default.Store({
-    modules: {
-        AuthModule: _auth2.default,
-        SALES: _sales2.default,
-        ITEMS_MODULE: _itemsOld2.default,
-        UNITS: _index2.default,
-        USERS: _users2.default,
-        FILTER_MODULE: _filters2.default,
-        FORM_MODULE: _forms2.default,
-        CUSTOMERS_MODULE: _customers2.default,
-        ITEMS: _items2.default,
-        BRANDS: _brands2.default,
-        CATEGORIES: _categories2.default,
-        COLORS: _color2.default,
-        SUPPLIERS: _suppliers2.default,
-        FREEBIES: _freebies2.default
-    },
-    state: {
-        breadcrumbs: []
-    },
-    mutations: {
-        clearBreadcrumbs: function clearBreadcrumbs(state) {
-            state.breadcrumbs = [];
-        },
-        setBreadcrumbs: function setBreadcrumbs(state, payload) {
-            state.breadcrumbs = payload;
-        }
-    }
-});
 
 /***/ }),
 /* 15 */
@@ -36561,13 +36561,13 @@ var _itemForm = __webpack_require__(16);
 
 var _itemForm2 = _interopRequireDefault(_itemForm);
 
-var _error = __webpack_require__(13);
+var _error = __webpack_require__(14);
 
 var _error2 = _interopRequireDefault(_error);
 
 var _vuex = __webpack_require__(8);
 
-var _store = __webpack_require__(14);
+var _store = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36585,7 +36585,7 @@ exports.default = {
     colors: "COLORS/GET_COLORS",
     suppliers: "SUPPLIERS/GET_SUPPLIERS",
     models: "UNITS/GET_UNITS",
-    submit_state: "ITEMS_MODULE/GET_SUBMIT_STATE"
+    submit_state: "ITEMS/GET_SUBMIT_STATE"
   })),
   data: function data() {
     return {
@@ -42259,7 +42259,7 @@ var _itemForm2 = _interopRequireDefault(_itemForm);
 
 var _vuex = __webpack_require__(8);
 
-var _error = __webpack_require__(13);
+var _error = __webpack_require__(14);
 
 var _error2 = _interopRequireDefault(_error);
 
@@ -45305,15 +45305,15 @@ var _vSelect2Component2 = _interopRequireDefault(_vSelect2Component);
 
 var _handlers = __webpack_require__(269);
 
-var _store = __webpack_require__(14);
+var _store = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.Vue = __webpack_require__(10);
+window.Vue = __webpack_require__(11);
 
 
 window._ = __webpack_require__(270);
-window.Popper = __webpack_require__(11).default;
+window.Popper = __webpack_require__(12).default;
 window.VeeValidate = _veeValidate2.default;
 window.moment = _moment2.default;
 window.toastr = _toastr2.default;
@@ -45348,7 +45348,7 @@ Vue.filter("humanReadable", function (date) {
 
 try {
     window.$ = window.jQuery = __webpack_require__(7);
-    window.Popper = __webpack_require__(11).default; //for bootstrap 4 dropdown
+    window.Popper = __webpack_require__(12).default; //for bootstrap 4 dropdown
     window.hammerjs = __webpack_require__(286);
 
     __webpack_require__(287);
@@ -64065,7 +64065,7 @@ var _jsCookie = __webpack_require__(3);
 
 var _jsCookie2 = _interopRequireDefault(_jsCookie);
 
-var _store = __webpack_require__(14);
+var _store = __webpack_require__(10);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -86038,7 +86038,7 @@ if (true) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(7), __webpack_require__(11)) :
+   true ? factory(exports, __webpack_require__(7), __webpack_require__(12)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (global = global || self, factory(global.bootstrap = {}, global.jQuery, global.Popper));
 }(this, (function (exports, $, Popper) { 'use strict';
@@ -90571,7 +90571,7 @@ module.exports = __webpack_require__(289);
 var utils = __webpack_require__(4);
 var bind = __webpack_require__(148);
 var Axios = __webpack_require__(291);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 
 /**
  * Create an instance of Axios
@@ -90644,7 +90644,7 @@ module.exports = function isBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 var utils = __webpack_require__(4);
 var InterceptorManager = __webpack_require__(299);
 var dispatchRequest = __webpack_require__(300);
@@ -91140,7 +91140,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(4);
 var transformData = __webpack_require__(301);
 var isCancel = __webpack_require__(151);
-var defaults = __webpack_require__(12);
+var defaults = __webpack_require__(13);
 var isAbsoluteURL = __webpack_require__(302);
 var combineURLs = __webpack_require__(303);
 
