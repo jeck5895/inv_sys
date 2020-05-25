@@ -28,7 +28,8 @@
           style="vertical-align:middle"
         >
           <slot :name="`table-td-${column.name}`" :item="item">
-            {{ item[column.name] }}
+            <!-- {{ item[column.name] }} -->
+            {{ getCellValue(column, item) }}
           </slot>
         </td>
       </tr>
@@ -50,6 +51,13 @@ export default {
     items: {
       required: true,
       type: Array
+    }
+  },
+  methods: {
+    getCellValue(col, row) {
+      const val =
+        typeof col.field === "function" ? col.field(row) : row[col.field];
+      return col.format !== void 0 ? col.format(val, row) : val;
     }
   }
 };

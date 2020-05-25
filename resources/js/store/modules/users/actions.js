@@ -27,12 +27,7 @@ export default {
         commit('SET_LOADING', true);
 
         return new Promise((resolve, reject) => {
-            axios.get(url, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: `Bearer ${token}`
-                }
-            })
+            axios.get(url)
                 .then(response => {
                     commit('CLEAR_USERS');
                     // commit('SET_PAGINATION', response.data);

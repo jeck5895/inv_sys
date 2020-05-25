@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-const token = Cookies.get("_a.token");
 
 export default {
     namespaced: true,

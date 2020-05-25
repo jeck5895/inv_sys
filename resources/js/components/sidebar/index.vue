@@ -136,33 +136,6 @@
           </ul>
         </div>
       </li>
-      <!-- <li>
-                <a
-                    href="#"
-                    @click="toggleReportClass"
-                    class="media align-items-center user-pointer collapsed"
-                    data-toggle="collapse"
-                    data-target="#report-dropdown"
-                >
-                    <div class="media-body">
-                        <i class="fa fa-line-chart"></i>
-                        <span>Reports</span>
-                    </div>
-                    <i class="fa fa-angle-left float-right"></i>
-                </a>
-                <div id="report-dropdown" class="collapse">
-                    <ul class="user-setting-menu">
-                        <li>
-                            <router-link
-                                to="/administrator/reports"
-                                class="waves-effect"
-                                ><i class="fa fa-long-arrow-right"></i> Generate
-                                Report</router-link
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </li> -->
       <li>
         <a
           href="#"
@@ -189,11 +162,26 @@
           </ul>
         </div>
       </li>
-      <!-- <li>
-        <a href="widgets.html" class="waves-effect"
-          ><i class="icon-hourglass"></i><span>Audit Trail</span>
+      <li>
+        <a
+          href="#"
+          class="media align-items-center user-pointer collapsed"
+          data-toggle="collapse"
+          data-target="#audits-dropdown"
+        >
+          <i class="icon-hourglass"></i><span>Audits</span
+          ><i class="fa fa-angle-left pull-right"></i>
         </a>
-      </li> -->
+        <div id="audits-dropdown" class="collapse">
+          <ul class="user-setting-menu">
+            <li>
+              <router-link :to="{ name: 'audit-logs' }"
+                ><i class="fa fa-long-arrow-right"></i> Main</router-link
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
       <li>
         <a @click.prevent="handleLogout" href="#" class="waves-effect"
           ><i class="icon-logout"> </i><span>Logout</span>
@@ -220,17 +208,6 @@ export default {
             .prev()
             .addClass("active")
         : $("#report-dropdown")
-            .prev()
-            .removeClass("active");
-    },
-    toggleUserClass(e) {
-      !$("#account-dropdown").hasClass("show")
-        ? console.log(
-            $("#account-dropdown")
-              .prev()
-              .addClass("active")
-          )
-        : $("#account-dropdown")
             .prev()
             .removeClass("active");
     },

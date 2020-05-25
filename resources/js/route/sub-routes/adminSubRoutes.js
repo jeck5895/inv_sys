@@ -1,6 +1,7 @@
 import InventoryRoutes from "../sub-routes/inventory";
 import UserRoutes from "../sub-routes/users";
 import SalesRoutes from "../sub-routes/sales";
+import AuditRoutes from "../sub-routes/audits";
 
 const Dashboard = () => import("../../pages/admin/dashboard.vue");
 // const Issuance = () => import("../../pages/admin/issueance.vue");
@@ -63,5 +64,6 @@ export default [
         component: Models
     },
     UserRoutes,
-    SalesRoutes
+    SalesRoutes,
+    AuditRoutes
 ];

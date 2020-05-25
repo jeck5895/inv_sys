@@ -3,9 +3,11 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
 
-class Sale extends Model
+class Sale extends Model implements Auditable
 {
+    use \OwenIt\Auditing\Auditable;
     // public const columns = [
     //     'id', 'transaction_no', ,
     //     'fullname', 'created_at'
