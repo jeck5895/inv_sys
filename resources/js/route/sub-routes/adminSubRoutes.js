@@ -13,8 +13,7 @@ const Categories = () => import("../../pages/admin/categories.vue");
 const Colors = () => import("../../pages/admin/colors.vue");
 const Freebies = () => import("../../pages/admin/freebies.vue");
 const Models = () => import("../../pages/admin/models.vue");
-
-
+const Branches = () => import("../../pages/admin/branches.vue");
 
 export default [
     {
@@ -61,6 +60,10 @@ export default [
     {
         path: "models",
         component: Models
+    },
+    {
+        path: "branches",
+        component: Branches
     },
     UserRoutes,
     SalesRoutes

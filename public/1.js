@@ -321,11 +321,11 @@ var _dateFilter = __webpack_require__(370);
 
 var _dateFilter2 = _interopRequireDefault(_dateFilter);
 
-var _Pagination = __webpack_require__(154);
+var _Pagination = __webpack_require__(155);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _modal = __webpack_require__(155);
+var _modal = __webpack_require__(156);
 
 var _modal2 = _interopRequireDefault(_modal);
 
@@ -412,7 +412,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 
 var Card = function Card() {
-  return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 153));
+  return new Promise(function(resolve) { resolve(); }).then(__webpack_require__.bind(null, 154));
 };
 
 exports.default = {

@@ -516,7 +516,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 // import FreebiesTable from "../../components/users/table/index";
 
 
-var _card = __webpack_require__(153);
+var _card = __webpack_require__(154);
 
 var _card2 = _interopRequireDefault(_card);
 
@@ -524,7 +524,7 @@ var _freebies = __webpack_require__(448);
 
 var _freebies2 = _interopRequireDefault(_freebies);
 
-var _Pagination = __webpack_require__(154);
+var _Pagination = __webpack_require__(155);
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
@@ -532,7 +532,7 @@ var _search = __webpack_require__(325);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _modal = __webpack_require__(155);
+var _modal = __webpack_require__(156);
 
 var _modal2 = _interopRequireDefault(_modal);
 

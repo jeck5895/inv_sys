@@ -30,6 +30,7 @@ Route::middleware('auth:api')->group(function () {
     // Route::apiResource('purchases', 'API\ItemsController');
     Route::apiResource('categories', 'API\CategoriesController');
     Route::apiResource('models', 'API\ModelsController');
+    Route::apiResource('branches', 'API\BranchController');
     Route::apiResource('brands', 'API\BrandsController');
     Route::apiResource('colors', 'API\ColorsController');
     Route::apiResource('suppliers', 'API\SuppliersController');
