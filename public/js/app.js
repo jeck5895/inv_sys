@@ -36363,22 +36363,22 @@ var Inventory = function Inventory() {
     return __webpack_require__.e/* import() */(16).then(__webpack_require__.bind(null, 332));
 };
 var Supplier = function Supplier() {
-    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 333));
+    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 333));
 };
 var Brands = function Brands() {
-    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 334));
+    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 334));
 };
 var Categories = function Categories() {
-    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 335));
+    return __webpack_require__.e/* import() */(6).then(__webpack_require__.bind(null, 335));
 };
 var Colors = function Colors() {
-    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 336));
+    return __webpack_require__.e/* import() */(5).then(__webpack_require__.bind(null, 336));
 };
 var Freebies = function Freebies() {
-    return __webpack_require__.e/* import() */(7).then(__webpack_require__.bind(null, 337));
+    return __webpack_require__.e/* import() */(2).then(__webpack_require__.bind(null, 337));
 };
 var Models = function Models() {
-    return __webpack_require__.e/* import() */(3).then(__webpack_require__.bind(null, 338));
+    return __webpack_require__.e/* import() */(4).then(__webpack_require__.bind(null, 338));
 };
 var Branches = function Branches() {
     return __webpack_require__.e/* import() */(10).then(__webpack_require__.bind(null, 339));
@@ -45697,7 +45697,9 @@ var render = function() {
         _vm.loading ? _c("tr", [_vm._m(0)]) : _vm._e(),
         _vm._v(" "),
         _vm.items.length === 0 && !_vm.loading
-          ? _c("tr", [_vm._m(1)])
+          ? _c("tr", [
+              _c("td", { attrs: { colspan: _vm.columns.length } }, [_vm._m(1)])
+            ])
           : !_vm.loading
           ? _vm._l(_vm.items, function(item, i) {
               return _c(
@@ -45751,10 +45753,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("td", { attrs: { colspan: "6" } }, [
-      _c("p", { staticClass: "mb-0 text-center" }, [
-        _c("i", [_vm._v("No data has been found")])
-      ])
+    return _c("p", { staticClass: "mb-0 text-center" }, [
+      _c("i", [_vm._v("No data has been found")])
     ])
   }
 ]
@@ -46004,7 +46004,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _regenerator = __webpack_require__(9);
@@ -46012,6 +46012,7 @@ var _regenerator = __webpack_require__(9);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
 //
 //
 //
@@ -46063,174 +46064,174 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
 exports.default = {
-  components: {
-    Card: _card2.default,
-    AuditTable: _index2.default,
-    Pagination: _Pagination2.default
-  },
-  computed: _extends({}, (0, _vuex.mapGetters)("AUDIT", ["logs", "loading", "pagination"]), (0, _vuex.mapGetters)("FILTER_MODULE", { keyword: "GET_KEYWORD" }), {
-    page_size: {
-      get: function get() {
-        return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
-      },
-      set: function set(val) {
-        this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
-      }
+    components: {
+        Card: _card2.default,
+        AuditTable: _index2.default,
+        Pagination: _Pagination2.default
     },
-    current_page: {
-      get: function get() {
-        return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
-      },
-      set: function set(val) {
-        this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
-      }
-    },
-    order_by: {
-      get: function get() {
-        return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
-      },
-      set: function set(val) {
-        this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
-      }
-    },
-    sort_by: {
-      get: function get() {
-        return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
-      },
-      set: function set(val) {
-        this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
-      }
-    }
-  }),
-  data: function data() {
-    return {
-      columns: [{
-        name: "auditable_type",
-        required: true,
-        label: "Entity",
-        align: "left",
-        field: function field(row) {
-          return row.auditable_type;
+    computed: _extends({}, (0, _vuex.mapGetters)("AUDIT", ["logs", "loading", "pagination"]), (0, _vuex.mapGetters)("FILTER_MODULE", { keyword: "GET_KEYWORD" }), {
+        page_size: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_PAGE_SIZE"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
         },
-        sortable: true
-      }, {
-        name: "event",
-        required: true,
-        label: "Event",
-        align: "left",
-        field: function field(row) {
-          return row.event;
+        current_page: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_CURRENT_PAGE"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_PAGE_SIZE", val);
+            }
         },
-        sortable: true
-      }, {
-        name: "old_values",
-        required: true,
-        label: "Old Values",
-        align: "left",
-        field: function field(row) {
-          return row.old_values;
+        order_by: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_ORDER_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_ORDER_BY", val);
+            }
         },
-        sortable: true
-      }, {
-        name: "new_values",
-        required: true,
-        label: "New Values",
-        align: "left",
-        field: function field(row) {
-          return row.new_values;
-        },
-        sortable: true
-      }, {
-        name: "user",
-        required: true,
-        label: "User",
-        align: "left",
-        field: function field(row) {
-          return row.user.name;
-        },
-        sortable: true
-      }, {
-        name: "ip_address",
-        required: true,
-        label: "IP",
-        align: "left",
-        field: function field(row) {
-          return row.ip_address;
-        },
-        sortable: true
-      }, {
-        name: "created_at",
-        required: true,
-        label: "DATE CREATED",
-        align: "left",
-        field: function field(row) {
-          return row.created_at;
-        },
-        sortable: true
-      }]
-    };
-  },
-
-  methods: _extends({}, (0, _vuex.mapActions)("AUDIT", {
-    fetch: "fetch"
-  }), {
-    toPage: function toPage(page) {
-      var url = "/api/audits?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-      this.fetch(url);
-    },
-    firstPage: function firstPage(first_page_url) {
-      var url = first_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-      this.fetch(url);
-    },
-    prevPage: function prevPage(prev_page_url) {
-      var url = prev_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-      this.fetch(url);
-    },
-    nextPage: function nextPage(next_page_url) {
-      var url = next_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-      this.fetch(url);
-    },
-    lastPage: function lastPage(last_page_url) {
-      var url = last_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
-      this.fetch(url);
-    }
-  }),
-  mounted: function mounted() {
-    var breadcrumbs = [{
-      text: "Administrator",
-      link: "/administrator"
-    }, {
-      text: "Audits",
-      link: "/administrator/audit-logs"
-    }, {
-      text: "Main",
-      link: "/administrator/audit-logs/"
-    }];
-    (0, _helpers.setBreadcrumbs)(breadcrumbs);
-  },
-  created: function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-      return _regenerator2.default.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return this.fetch("/api/audits?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
-
-            case 2:
-            case "end":
-              return _context.stop();
-          }
+        sort_by: {
+            get: function get() {
+                return this.$store.getters["FILTER_MODULE/GET_SORT_BY"];
+            },
+            set: function set(val) {
+                this.$store.commit("FILTER_MODULE/SET_SORT_BY", val);
+            }
         }
-      }, _callee, this);
-    }));
+    }),
+    data: function data() {
+        return {
+            columns: [{
+                name: "auditable_type",
+                required: true,
+                label: "Entity",
+                align: "left",
+                field: function field(row) {
+                    return row.auditable_type;
+                },
+                sortable: true
+            }, {
+                name: "event",
+                required: true,
+                label: "Event",
+                align: "left",
+                field: function field(row) {
+                    return row.event;
+                },
+                sortable: true
+            }, {
+                name: "old_values",
+                required: true,
+                label: "Old Values",
+                align: "left",
+                field: function field(row) {
+                    return row.old_values;
+                },
+                sortable: true
+            }, {
+                name: "new_values",
+                required: true,
+                label: "New Values",
+                align: "left",
+                field: function field(row) {
+                    return row.new_values;
+                },
+                sortable: true
+            }, {
+                name: "user",
+                required: true,
+                label: "User",
+                align: "left",
+                field: function field(row) {
+                    return row.user.name;
+                },
+                sortable: true
+            }, {
+                name: "ip_address",
+                required: true,
+                label: "IP",
+                align: "left",
+                field: function field(row) {
+                    return row.ip_address;
+                },
+                sortable: true
+            }, {
+                name: "created_at",
+                required: true,
+                label: "DATE CREATED",
+                align: "left",
+                field: function field(row) {
+                    return row.created_at;
+                },
+                sortable: true
+            }]
+        };
+    },
 
-    function created() {
-      return _ref.apply(this, arguments);
-    }
+    methods: _extends({}, (0, _vuex.mapActions)("AUDIT", {
+        fetch: "fetch"
+    }), {
+        toPage: function toPage(page) {
+            var url = "/api/audits?q=" + this.keyword + "&page=" + page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetch(url);
+        },
+        firstPage: function firstPage(first_page_url) {
+            var url = first_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetch(url);
+        },
+        prevPage: function prevPage(prev_page_url) {
+            var url = prev_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetch(url);
+        },
+        nextPage: function nextPage(next_page_url) {
+            var url = next_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetch(url);
+        },
+        lastPage: function lastPage(last_page_url) {
+            var url = last_page_url + "&q=" + this.keyword + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by;
+            this.fetch(url);
+        }
+    }),
+    mounted: function mounted() {
+        var breadcrumbs = [{
+            text: "Administrator",
+            link: "/administrator"
+        }, {
+            text: "Audits",
+            link: "/administrator/audit-logs"
+        }, {
+            text: "Main",
+            link: "/administrator/audit-logs/"
+        }];
+        (0, _helpers.setBreadcrumbs)(breadcrumbs);
+    },
+    created: function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
+            return _regenerator2.default.wrap(function _callee$(_context) {
+                while (1) {
+                    switch (_context.prev = _context.next) {
+                        case 0:
+                            _context.next = 2;
+                            return this.fetch("/api/audits?q=" + this.keyword + "&page=" + this.current_page + "&per_page=" + this.page_size + "&order_by=" + this.order_by + "&sort_by=" + this.sort_by);
 
-    return created;
-  }()
+                        case 2:
+                        case "end":
+                            return _context.stop();
+                    }
+                }
+            }, _callee, this);
+        }));
+
+        function created() {
+            return _ref.apply(this, arguments);
+        }
+
+        return created;
+    }()
 };
 
 /***/ }),
@@ -46302,16 +46303,18 @@ var render = function() {
                       _vm._v(" "),
                       _c("br"),
                       _vm._v(" "),
-                      _c("pagination", {
-                        attrs: { data: _vm.pagination },
-                        on: {
-                          "to-page": _vm.toPage,
-                          "first-page": _vm.firstPage,
-                          "prev-page": _vm.prevPage,
-                          "next-page": _vm.nextPage,
-                          "last-page": _vm.lastPage
-                        }
-                      })
+                      _vm.logs.length > 0
+                        ? _c("pagination", {
+                            attrs: { data: _vm.pagination },
+                            on: {
+                              "to-page": _vm.toPage,
+                              "first-page": _vm.firstPage,
+                              "prev-page": _vm.prevPage,
+                              "next-page": _vm.nextPage,
+                              "last-page": _vm.lastPage
+                            }
+                          })
+                        : _vm._e()
                     ],
                     1
                   )

@@ -15,7 +15,7 @@
                 </td>
             </tr>
             <tr v-if="items.length === 0 && !loading">
-                <td colspan="6">
+                <td :colspan="columns.length">
                     <p class="mb-0 text-center">
                         <i>No data has been found</i>
                     </p>
