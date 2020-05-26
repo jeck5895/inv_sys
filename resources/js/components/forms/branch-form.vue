@@ -1,11 +1,12 @@
 <template>
     <form
-        data-vv-scope="settings-form"
-        @submit.prevent="handleSubmit('settings-form')"
+        data-vv-scope="branch-form"
+        @submit.prevent="handleSubmit('branch-form')"
     >
         <div class="form-group">
             <label for="">Name</label>
             <input
+                style="text-transform: uppercase;"
                 v-validate="'required'"
                 name="name"
                 v-model="item.name"
@@ -14,10 +15,20 @@
             />
             <small
                 class="form-text text-danger"
-                v-show="errors.has('settings-form.name')"
+                v-show="errors.has('branch-form.name')"
             >
-                {{ errors.first("settings-form.name") }}
+                {{ errors.first("branch-form.name") }}
             </small>
+        </div>
+        <div class="form-group">
+            <label for="">Address</label>
+            <input
+                name="address"
+                v-model="item.address"
+                type="text"
+                class="form-control"
+                placeholder="(Field is optional)"
+            />
         </div>
         <div class="form-group">
             <button :disabled="loading" class="btn btn-sm btn-success">

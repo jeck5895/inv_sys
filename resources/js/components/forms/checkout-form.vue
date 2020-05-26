@@ -109,11 +109,11 @@
                         >
                             <option value="">Select Branch</option>
                             <option
-                                v-for="payment in payments"
-                                :key="payment"
-                                :value="payment"
+                                v-for="branch in branches"
+                                :key="branch.id"
+                                :value="branch.id"
                             >
-                                {{ payment }}
+                                {{ branch.name }}
                             </option>
                         </select>
                         <small
@@ -389,6 +389,10 @@ export default {
             type: Array,
             required: true
         },
+        branches: {
+            type: Array,
+            required: true
+        },
         freebies: {
             type: Array,
             required: true
@@ -428,6 +432,7 @@ export default {
                 total_amount: this.salesItem.total_amount,
                 receipt_no: this.salesItem.receipt_no,
                 checkout_date: this.salesItem.checkout_date,
+                branch: this.salesItem.branch,
                 form: this.$validator, // for resetting form on parent
                 errors: this.errors // for clearing errors on paren
             };
@@ -547,6 +552,7 @@ export default {
                     }
                 ];
                 this.salesItem.receipt_no = "";
+                this.salesItem.branch = "";
                 this.salesItem.checkout_date = moment().format("Y-MM-DD");
                 this.salesItem.payment_mode = "";
                 this.salesItem.payment_terms = "";

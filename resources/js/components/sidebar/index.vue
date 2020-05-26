@@ -209,11 +209,27 @@
                     </ul>
                 </div>
             </li>
-            <!-- <li>
-        <a href="widgets.html" class="waves-effect"
-          ><i class="icon-hourglass"></i><span>Audit Trail</span>
-        </a>
-      </li> -->
+            <li>
+                <a
+                    href="#"
+                    class="media align-items-center user-pointer collapsed"
+                    data-toggle="collapse"
+                    data-target="#audits-dropdown"
+                >
+                    <i class="icon-hourglass"></i><span>Audits</span
+                    ><i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <div id="audits-dropdown" class="collapse">
+                    <ul class="user-setting-menu">
+                        <li>
+                            <router-link :to="{ name: 'audit-logs' }"
+                                ><i class="fa fa-long-arrow-right"></i>
+                                Main</router-link
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </li>
             <li>
                 <a @click.prevent="handleLogout" href="#" class="waves-effect"
                     ><i class="icon-logout"> </i><span>Logout</span>
@@ -243,17 +259,6 @@ export default {
                       .prev()
                       .removeClass("active");
         },
-        toggleUserClass(e) {
-            !$("#account-dropdown").hasClass("show")
-                ? console.log(
-                      $("#account-dropdown")
-                          .prev()
-                          .addClass("active")
-                  )
-                : $("#account-dropdown")
-                      .prev()
-                      .removeClass("active");
-        },
         handleLogout() {
             this.$store.dispatch("AuthModule/LOGOUT");
             this.$router.push("/login");
@@ -261,5 +266,3 @@ export default {
     }
 };
 </script>
-
-<style></style>

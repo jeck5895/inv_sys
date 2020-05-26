@@ -8,9 +8,7 @@
     <div class="col-md-8 float-right">
       <nav aria-label="...">
         <ul :class="'pagination pagination-sm justify-content-end'">
-          <li
-            :class="data.from == data.current_page ? 'page-item disabled' : ''"
-          >
+          <li :class="1 === data.current_page ? 'page-item disabled' : ''">
             <a
               class="page-link"
               @click.prevent="$emit('first-page', data.first_page_url)"

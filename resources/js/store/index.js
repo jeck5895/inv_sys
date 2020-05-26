@@ -17,6 +17,7 @@ import COLORS from "./modules/color";
 import SUPPLIERS from "./modules/suppliers";
 import FREEBIES from "./modules/freebies";
 import BRANCHES from "./modules/branches";
+import AUDIT from "./modules/audit";
 
 Vue.use(Vuex);
 
@@ -36,7 +37,8 @@ export const store = new Vuex.Store({
         COLORS,
         SUPPLIERS,
         FREEBIES,
-        BRANCHES
+        BRANCHES,
+        AUDIT
     },
     state: {
         breadcrumbs: []

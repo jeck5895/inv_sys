@@ -37,7 +37,7 @@
 
         .total-amount {
             font-size: 15px;
-            border-top: none;
+            /* border-top: none; */
             border-right: none;
             border-left: none;
             /* border:none none 1px solid black none ; */
@@ -76,9 +76,7 @@
 
 <body>
     <div class="report-hedear">
-        <div class="logo-container">
-            <img height="65" width="65" src="./images/logo.png" alt="">
-        </div>
+
         <div>
             <!-- <h2 style="text-align:center;">Company Name</h2> -->
             @if($data['from_date'] === $data['to_date'])
@@ -86,6 +84,7 @@
             @else
             <h2 style="text-align:center;">Daily Sales Report for {{ $data['from_date'] }} - {{ $data['to_date'] }}</h2>
             @endif
+
         </div>
     </div>
     <hr>
@@ -93,6 +92,7 @@
         <thead>
             <tr>
                 <th>RECEIPT #</th>
+                <th>BRANCH</th>
                 <th>PAYMENT MODE</th>
                 <th>PAYMENT TERMS</th>
                 <th>TOTAL ITEM COST</th>
@@ -114,6 +114,7 @@
 
             <tr>
                 <td>{{ $sales->receipt_no }}</td>
+                <td>{{ $sales->branch->name }}</td>
                 <td>{{ $sales->payment_mode }}</td>
                 <td>{{ $sales->payment_terms === null ? 'N/A' : $sales->payment_terms }}</td>
                 <td>{{ $sales->total_item_cost["formatted"] }}</td>
@@ -124,7 +125,7 @@
 
             @endforeach
             <tr>
-                <td colspan="6" class="general-total">Total Net Income: </td>
+                <td colspan="7" class="general-total">Total Net Income: </td>
                 <td class="total-amount">{{ number_format($total_net_income,2,'.',',') }}</td>
             </tr>
 

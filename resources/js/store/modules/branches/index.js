@@ -7,19 +7,19 @@ const state = {
 };
 
 const getters = {
-    GET_BRANCH: state => {
+    branch: state => {
         return state.branch;
     },
-    GET_BRANCHES: state => {
+    branches: state => {
         return state.branches;
     },
-    GET_LOADING_STATE: state => {
+    loading: state => {
         return state.is_loading;
     },
-    GET_PAGINATION: state => {
+    pagination: state => {
         return state.pagination;
     },
-    GET_SUBMIT_STATE: state => {
+    saving: state => {
         return state.is_saving;
     }
 };
@@ -73,7 +73,29 @@ const actions = {
                 .get(url)
                 .then(response => {
                     commit("CLEAR_BRANCHES");
-                    // commit('SET_PAGINATION', response.data);
+                    commit("SET_PAGINATION", response.data);
+                    commit("SET_BRANCHES", response.data.data);
+                    setTimeout(() => {
+                        commit("SET_LOADING", false);
+                        resolve(response);
+                    }, 1000);
+                })
+                .catch(error => {
+                    reject(error);
+                    setTimeout(() => {
+                        commit("SET_LOADING", false);
+                    }, 1000);
+                });
+        });
+    },
+    fetchOptionList: ({ commit }) => {
+        commit("SET_LOADING", true);
+
+        return new Promise((resolve, reject) => {
+            axios
+                .get(`api/branches/option-list`)
+                .then(response => {
+                    commit("CLEAR_BRANCHES");
                     commit("SET_BRANCHES", response.data);
                     setTimeout(() => {
                         commit("SET_LOADING", false);
@@ -94,7 +116,7 @@ const actions = {
             axios
                 .post("api/branches", payload)
                 .then(response => {
-                    toastr.success("Success", `${response.data.message}`);
+                    toastr.success(`${response.data.message}`);
                     commit("SET_SAVING", false);
                     commit("CLEAR_BRANCH");
                     resolve(response);
@@ -111,7 +133,7 @@ const actions = {
             axios
                 .patch("api/branches/" + payload.id, payload)
                 .then(response => {
-                    toastr.success("Success", `${response.data.message}`);
+                    toastr.success(`${response.data.message}`);
                     commit("SET_SAVING", false);
                     commit("CLEAR_BRANCH");
                     resolve(response);
@@ -122,10 +144,10 @@ const actions = {
                 });
         });
     },
-    delete: ({ commit }, payload) => {
+    delete: ({ commit }, id) => {
         return new Promise((resolve, reject) => {
             axios
-                .delete("api/branches/" + payload.id)
+                .delete("api/branches/" + id)
                 .then(response => {
                     toastr.success("Success", response.data.message);
                     resolve(response);

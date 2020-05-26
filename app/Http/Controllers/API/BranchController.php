@@ -53,7 +53,7 @@ class BranchController extends Controller
 
         $branch = new Branch;
 
-        $branch->name = $request['name'];
+        $branch->name = strtoupper($request['name']);
 
         if ($request->has('address')) {
 
@@ -98,7 +98,7 @@ class BranchController extends Controller
 
         $branch = Branch::findOrFail($id);
 
-        $branch->name = $request['name'];
+        $branch->name = strtoupper($request['name']);
 
         if ($request->has('address')) {
 
@@ -121,7 +121,17 @@ class BranchController extends Controller
      */
     public function destroy($id)
     {
-        Branch::destroy($id);
+        $branch = Branch::findOrFail($id);
+
+        $branch->delete();
+
         return ['message' => 'Record successfully deleted.'];
+    }
+
+    public function optionList()
+    {
+        $branches = Branch::orderBy('name', 'ASC')->get();
+
+        return $branches;
     }
 }

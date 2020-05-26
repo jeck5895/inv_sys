@@ -72,13 +72,15 @@ class ReportController extends Controller
 
         $request->validate([
             'date_from' => 'required|date_format:"Y-m-d"',
-            'date_to' => 'required|date_format:"Y-m-d"|after_or_equal:date_from'
+            'date_to' => 'required|date_format:"Y-m-d"|after_or_equal:date_from',
+            'branch' => 'required|numeric'
         ]);
 
         $dateFrom = $request->date_from;
         $dateTo = $request->date_to;
         $from_date = date('F j, Y', strtotime($dateFrom));
         $to_date = date('F j, Y', strtotime($dateTo));
+        $branch = $request->branch;
 
         //https://stackoverflow.com/questions/19852927/get-specific-columns-using-with-function-in-laravel-eloquent
         // $sales = Sale::select('item_id', DB::raw('SUM(amount) as sub_total'))
@@ -87,7 +89,8 @@ class ReportController extends Controller
         //         $query->select('id', 'name');
         //     }])->get();
         $sales = Sale::whereBetween(DB::raw("DATE_FORMAT(checkout_date, '%Y-%m-%d')"), [$dateFrom, $dateTo])
-            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+            ->where('branch_id', $branch)
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie', 'branch'])
             ->get();
 
         $sales->map(function ($item) {
@@ -128,6 +131,9 @@ class ReportController extends Controller
                 'formatted' => number_format($net_income, 2, '.', ',')
             ];
 
+            // $item->branch = $item['branch']->name || '';
+
+
             // $item->total_item_cost = $total_freebies_cost;
             // $item->total_freebies_cost = $total_freebies_cost;
 
@@ -146,7 +152,7 @@ class ReportController extends Controller
 
         // return view('reports/daily-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.daily-sales', compact('data'));
+        $pdf = PDF::loadView('reports.daily-sales', compact('data'))->setPaper('a4', 'landscape');
         $filename = $dateFrom . ' - ' . $dateTo . '.pdf';
 
         return [
@@ -157,15 +163,17 @@ class ReportController extends Controller
 
     public function monthly(Request $request)
     {
-        // $request->validate([
-        //     'month' => 'required|date_format:"mm"',
-        //     'year' => 'required|date_format:"Y"'
-        // ]);
+        $request->validate([
+            'month' => 'required|date_format:"m"',
+            'year' => 'required|date_format:"Y"',
+            'branch' => 'required|numeric'
+        ]);
 
         $month = $request->month;
         $year = $request->year;
         $month_obj = DateTime::createFromFormat('!m', $month);
         $month_name = $month_obj->format('F');
+        $branch = $request->branch;
 
 
         /**
@@ -175,7 +183,8 @@ class ReportController extends Controller
 
         $sales = Sale::where(DB::raw("DATE_FORMAT(checkout_date, '%m')"), $month)
             ->where(DB::raw("DATE_FORMAT(checkout_date, '%Y')"), $year)
-            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+            ->where('branch_id', $branch)
+            ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie', 'branch'])
             // ->groupBy('item_id')->with(['item.model' => function ($query) {
             //     $query->select('id', 'name');
             // }])
@@ -224,6 +233,9 @@ class ReportController extends Controller
                 'formatted' => date('F j, Y', strtotime($item->checkout_date))
             ];
 
+            // $item->branch = $item['branch']->name || '';
+
+
             // $item->total_item_cost = $total_freebies_cost;
             // $item->total_freebies_cost = $total_freebies_cost;
 
@@ -240,9 +252,9 @@ class ReportController extends Controller
 
         //return $sales;
 
-        //return view('reports.monthly-sales', compact($data));
+        // return view('reports.monthly-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.monthly-sales', compact('data'));
+        $pdf = PDF::loadView('reports.monthly-sales', compact('data'))->setPaper('a4', 'landscape');
         $filename = $month_name . ' - ' . $year . '.pdf';
 
         return [

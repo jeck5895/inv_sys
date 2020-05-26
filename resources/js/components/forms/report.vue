@@ -1,5 +1,8 @@
 <template>
-    <form @submit.prevent="handleSubmit">
+    <form
+        data-vv-scope="REPORT_FORM"
+        @submit.prevent="handleSubmit('REPORT_FORM')"
+    >
         <div class="form-group">
             <label for="">Report Type</label>
             <select
@@ -11,6 +14,31 @@
                 <option value="daily">Daily</option>
                 <option value="monthly">Monthly</option>
             </select>
+        </div>
+        <div class="form-group">
+            <label for="branch">Branch</label>
+            <select
+                v-model="branch"
+                name="branch"
+                id="branch"
+                class="form-control"
+                v-validate="'required'"
+            >
+                <option value="">Select Branch</option>
+                <option
+                    v-for="branch in branches"
+                    :key="branch.id"
+                    :value="branch.id"
+                >
+                    {{ branch.name }}
+                </option>
+            </select>
+            <small
+                class="form-text text-danger"
+                v-show="errors.has('REPORT_FORM.branch')"
+            >
+                {{ errors.first("REPORT_FORM.branch") }}
+            </small>
         </div>
         <template v-if="type === 'daily'">
             <div class="form-group">
@@ -83,10 +111,15 @@ export default {
         isLoading: {
             type: Boolean,
             default: false
+        },
+        branches: {
+            type: Array,
+            required: true
         }
     },
     data: () => ({
         type: "monthly",
+        branch: "",
         year: moment().format("YYYY"),
         month: moment().format("MM"),
         date_from: moment().format("YYYY-MM-DD"),
@@ -152,8 +185,9 @@ export default {
         }
     },
     methods: {
-        handleSubmit() {
+        handleSubmit(form) {
             let payload = {
+                branch: this.branch,
                 type: this.type
             };
 
@@ -166,7 +200,11 @@ export default {
             } else {
                 payload = { ...payload, month: this.month, year: this.year };
             }
-            this.$emit("on-submit", payload);
+            this.$validator.validateAll(form).then(valid => {
+                if (valid) {
+                    this.$emit("on-submit", payload);
+                }
+            });
         }
     }
 };

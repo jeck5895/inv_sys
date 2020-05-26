@@ -38,7 +38,7 @@ class SalesController extends Controller
             $sortBy = $request->has('sort_by') ? $request->sort_by : 'created_at';
 
             $sales = Sale::orderBy($sortBy, $orderBy)
-                ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie'])
+                ->with(['sales_items.item', 'sales_items.sales_item_freebies.freebie', 'branch'])
                 ->where(function ($query) use ($request, $keywords) {
                     if ($request->has("q") && $request->q != null) {
                         foreach ($keywords as $keyword) {
@@ -125,6 +125,7 @@ class SalesController extends Controller
         $sales_item_ids = [];
         $sales = new Sale;
         $sales->receipt_no = $request->receipt_no;
+        $sales->branch_id = $request->branch;
         $sales->payment_mode = $request->payment_mode;
         if ($request->has('payment_terms')) {
             $sales->payment_terms = $request->payment_terms;
@@ -206,6 +207,7 @@ class SalesController extends Controller
 
         $sales = Sale::findOrFail($id);
         $sales->receipt_no = $request->receipt_no;
+        $sales->branch_id = $request->branch;
         $sales->payment_mode = $request->payment_mode;
         if ($request->has('payment_terms')) {
             $sales->payment_terms = $request->payment_terms;

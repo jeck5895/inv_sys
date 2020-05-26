@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <card>
                 <template v-slot:card-header>
-                    <h3 class="card-title mb-0 float-left">MANAGE BRANDS</h3>
+                    <h3 class="card-title mb-0 float-left">MANAGE BRANCHES</h3>
                 </template>
                 <template v-slot:card-body>
                     <div class="row">
@@ -14,7 +14,7 @@
                                         @click="onCreate"
                                         class="btn btn-sm btn-primary"
                                     >
-                                        ADD BRAND
+                                        ADD BRANCH
                                     </button>
                                 </div>
                                 <div class="float-lg-right d-flex py-2">
@@ -57,9 +57,9 @@
                                 </template>
                             </branches-table>
                         </div>
-                        <div class="col-lg-12">
-                            <Pagination
-                                :data="brands"
+                        <div v-if="branches.length > 0" class="col-lg-12">
+                            <pagination
+                                :data="pagination"
                                 @to-page="toPage"
                                 @first-page="firstPage"
                                 @prev-page="prevPage"
@@ -74,10 +74,10 @@
                 <template v-slot:modal-title>
                     <h5 class="text-white">
                         <span v-if="form_type === 'CREATE'">
-                            New Brand
+                            New Branch
                         </span>
-                        <span v-if="form_type === 'EDIT' && brand.name">
-                            Edit Brand {{ brand.name }}
+                        <span v-if="form_type === 'EDIT' && branch.name">
+                            Edit Branch {{ branch.name }}
                         </span>
                     </h5>
                 </template>
@@ -88,8 +88,8 @@
                         ></validation-error-component>
                     </div>
                     <Form
-                        :item="brand"
-                        :loading="submitting"
+                        :item="branch"
+                        :loading="saving"
                         @on-submit="onSubmit"
                     />
                 </template>
@@ -100,15 +100,14 @@
 
 <script>
 import Card from "../../components/card";
-// import SuppliersTable from "../../components/admin/tables/suppliers-table";
 import BranchesTable from "../../components/users/table";
 import Pagination from "../../components/Pagination";
 import SearchForm from "../../components/filters/search";
 import Modal from "../../components/modal";
-import Form from "../../components/forms/settings-form";
+import Form from "../../components/forms/branch-form";
 import ValidationErrorComponent from "../../components/validation-errors";
 import { mapGetters, mapActions, mapMutations } from "vuex";
-import { store } from "../../store/index";
+import { store } from "../../store";
 
 export default {
     components: {
@@ -165,17 +164,20 @@ export default {
         ]
     }),
     computed: {
-        ...mapGetters({
-            branches: "BRANCHES/GET_BRANCHES",
-            loading: "BRANCHES/GET_LOADING_STATE",
-            keyword: "FILTER_MODULE/GET_KEYWORD"
-        }),
-        branches() {
-            const item = this.$store.getters["BRANCHES/GET_BRANCH"];
+        ...mapGetters("BRANCHES", [
+            "branches",
+            "loading",
+            "pagination",
+            "saving"
+        ]),
+        ...mapGetters("FILTER_MODULE", { keyword: "GET_KEYWORD" }),
+        branch() {
+            const item = this.$store.getters["BRANCHES/branch"];
 
             return {
                 id: item.id,
-                name: item.name
+                name: item.name,
+                address: item.address
             };
         },
         page_size: {
@@ -221,7 +223,7 @@ export default {
         ...mapMutations({
             setKeyword: "FILTER_MODULE/SET_KEYWORD",
             clearItem: "BRANCHES/CLEAR_BRANCH",
-            setBrand: "BRANCHES/SET_BRANCH"
+            setBranch: "BRANCHES/SET_BRANCH"
         }),
         onChange(e) {
             this.setKeyword(e.target.value);
@@ -257,7 +259,7 @@ export default {
                     link: "/administrator"
                 },
                 {
-                    text: "Brands",
+                    text: "Branches",
                     link: "/administrator/branches"
                 }
             ];
@@ -271,15 +273,18 @@ export default {
                 $("#generic-modal").modal("show");
             }, 300);
         },
-        onEdit(item) {
+        onEdit(props) {
+            const { item } = props;
+
             this.form_type = "EDIT";
             this.response_errors = null;
-            this.setBrand(item);
+            this.setBranch(item);
             setTimeout(() => {
                 $("#generic-modal").modal("show");
             }, 300);
         },
-        onDelete(item) {
+        onDelete(props) {
+            const { item } = props;
             let options = { html: true, loader: true };
             //https://github.com/Godofbrowser/vuejs-dialog
             this.$dialog
@@ -295,10 +300,14 @@ export default {
                 .catch(() => {});
         },
         onSubmit(item) {
-            const payload = {
+            let payload = {
                 id: item.id,
                 name: item.name
             };
+
+            if (item.address !== "") {
+                payload = { ...payload, address: item.address };
+            }
 
             this.submitting = true;
 
@@ -308,7 +317,6 @@ export default {
                         .then(response => {
                             this.submitting = false;
                             this.response_errors = null;
-                            toastr.success("Saved");
 
                             setTimeout(() => {
                                 $("#generic-modal").modal("hide");
@@ -332,7 +340,6 @@ export default {
                         .then(response => {
                             this.submitting = false;
                             this.response_errors = null;
-                            toastr.success("Changes saved.");
 
                             this.fetchList(
                                 `/api/branches?q=${this.keyword}&page=${this.current_page}&per_page=${this.page_size}&order_by=${this.order_by}&sort_by=${this.sort_by}`

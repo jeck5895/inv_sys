@@ -17,10 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('sales/report/daily', 'API\ReportController@daily');
+Route::get('sales/report/monthly', 'API\ReportController@monthly');
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('sales/report/daily', 'API\ReportController@daily');
-    Route::get('sales/report/monthly', 'API\ReportController@monthly');
+    Route::get('branches/option-list', 'API\BranchController@optionList');
+
     Route::get('sales/find-by/{field}/{value}', 'API\SalesController@findBy');
     Route::post('stocks/bulk', 'API\ItemsController@bulk');
     Route::get('stocks/find-by/{field}/{value}', 'API\ItemsController@findBy');
@@ -48,4 +50,5 @@ Route::middleware('auth:api')->group(function () {
     // Route::apiResource('units', 'API\UnitController');
     // Route::apiResource('sites', 'API\SiteController');
     Route::apiResource('users', 'API\UserController');
+    Route::apiResource('audits', 'API\AuditController');
 });
