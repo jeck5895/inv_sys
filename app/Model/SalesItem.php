@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SalesItem extends Model
 {
-    protected $fillable = ['sales_id', 'item_id'];
+    protected $fillable = ['sales_id', 'item_id', 'discount'];
 
     public function sales_item_freebies()
     {

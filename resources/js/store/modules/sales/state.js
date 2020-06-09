@@ -3,14 +3,17 @@ import moment from "moment";
 export default {
     customer: {},
     sales_item: {
-        items: [{
-            imei: "",
-            model_id: "",
-            color_id: "",
-            selling_price: "",
-            brand_id: "",
-            freebies: []
-        }],
+        items: [
+            {
+                imei: "",
+                model_id: "",
+                color_id: "",
+                selling_price: "",
+                brand_id: "",
+                discount: "",
+                freebies: []
+            }
+        ],
         receipt_no: "",
         checkout_date: moment().format("Y-MM-DD"),
         payment_mode: "",

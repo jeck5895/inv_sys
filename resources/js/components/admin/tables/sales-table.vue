@@ -21,8 +21,8 @@
                     <img src="/images/ajax-loader.gif" alt="Loading...." />
                 </td>
             </tr>
-            <tr v-if="!isLoading && items.data && items.data.length == 0">
-                <td colspan="9">
+            <tr v-if="!isLoading && items.data && items.data.length === 0">
+                <td colspan="10">
                     <p class="text-center">
                         <em>No data to show...</em>
                     </p>

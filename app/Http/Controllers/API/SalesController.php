@@ -141,10 +141,14 @@ class SalesController extends Controller
             $new_sales = Sale::find($sales_id);
 
             foreach ($request->items as $item) {
+
+                $discount = array_key_exists("discount", $item) === true ? $item["discount"] : "";
+
                 $sales_item = new SalesItem(
                     array(
                         'sales_id' => $sales_id,
-                        'item_id' => $item["id"]
+                        'item_id' => $item["id"],
+                        "discount" => $discount
                     )
                 );
 
@@ -222,9 +226,12 @@ class SalesController extends Controller
             $oldFreebieIds = $sales->freebies()->pluck("sales_item_freebies.id")->toArray();
 
             foreach ($request->items as $item) {
+                $discount = array_key_exists("discount", $item) === true ? $item["discount"] : "";
+
                 $sales_item =  $sales->sales_items()->create([
                     "sales_id" => $sales->id,
-                    "item_id" => $item["id"]
+                    "item_id" => $item["id"],
+                    "discount" => $discount
                 ]);
 
                 foreach ($item["freebies"] as $freebie) {

@@ -7,14 +7,16 @@ export default {
     },
     CLEAR_SALES_ITEM: state => {
         state.sales_item = {
-            items: [{
-                imei: "",
-                model_id: "",
-                color_id: "",
-                selling_price: "",
-                brand_id: "",
-                freebies: []
-            }],
+            items: [
+                {
+                    imei: "",
+                    model_id: "",
+                    color_id: "",
+                    selling_price: "",
+                    brand_id: "",
+                    freebies: []
+                }
+            ],
             receipt_no: "",
             checkout_date: moment().format("Y-MM-DD"),
             payment_mode: "",
@@ -26,13 +28,23 @@ export default {
         state.customer = payload;
     },
     SET_SALES_ITEM: (state, payload) => {
-        const { id, receipt_no, checkout_date, payment_mode, payment_terms, amount, sales_items } = payload;
+        const {
+            id,
+            receipt_no,
+            checkout_date,
+            payment_mode,
+            payment_terms,
+            amount,
+            branch_id,
+            sales_items
+        } = payload;
         let items = [];
         let sales = {
             id,
             receipt_no,
             checkout_date: moment(checkout_date).format("Y-MM-DD"),
             payment_mode,
+            branch: branch_id,
             total_amount: amount
         };
 
@@ -49,12 +61,13 @@ export default {
                 color_id: item.color_id,
                 selling_price: item.selling_price,
                 brand_id: item.brand_id,
-            }
+                discount: sales_item.discount
+            };
             let freebies = sales_item_freebies.map(item => item.freebie_id);
             a = { ...a, freebies };
 
             items.push(a);
-        })
+        });
 
         sales = { ...sales, items };
 
