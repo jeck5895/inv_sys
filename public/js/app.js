@@ -39460,6 +39460,7 @@ exports.default = {
             color_id: "",
             selling_price: "",
             brand_id: "",
+            discount: "",
             freebies: []
         }],
         receipt_no: "",
@@ -39838,6 +39839,7 @@ exports.default = {
             payment_mode = payload.payment_mode,
             payment_terms = payload.payment_terms,
             amount = payload.amount,
+            branch_id = payload.branch_id,
             sales_items = payload.sales_items;
 
         var items = [];
@@ -39846,6 +39848,7 @@ exports.default = {
             receipt_no: receipt_no,
             checkout_date: moment(checkout_date).format("Y-MM-DD"),
             payment_mode: payment_mode,
+            branch: branch_id,
             total_amount: amount
         };
 
@@ -39863,7 +39866,8 @@ exports.default = {
                 model_id: item.model_id,
                 color_id: item.color_id,
                 selling_price: item.selling_price,
-                brand_id: item.brand_id
+                brand_id: item.brand_id,
+                discount: sales_item.discount
             };
             var freebies = sales_item_freebies.map(function (item) {
                 return item.freebie_id;
@@ -43603,7 +43607,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -43624,6 +43628,19 @@ var _regenerator = __webpack_require__(9);
 var _regenerator2 = _interopRequireDefault(_regenerator);
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -44111,11 +44128,14 @@ exports.default = {
             var total_amount = (0, _sales.computeTotal)(this.items, "selling_price");
             this.salesItem.total_amount = total_amount;
         },
+        onDiscount: function onDiscount() {
+            this.computeTotal();
+        },
         onBlur: function () {
             var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator2.default.mark(function _callee(val, index, item) {
                 var _this2 = this;
 
-                var payload, total_amount;
+                var payload;
                 return _regenerator2.default.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
@@ -44125,17 +44145,16 @@ exports.default = {
                                     value: val
                                 };
 
-
-                                console.log(this.salesItem.items);
-                                console.log(this.items);
+                                // console.log(this.salesItem.items);
+                                // console.log(this.items);
                                 //   console.log(itemsExists(this.salesItem.items, item));
 
                                 if (!(val !== "")) {
-                                    _context.next = 8;
+                                    _context.next = 5;
                                     break;
                                 }
 
-                                _context.next = 6;
+                                _context.next = 4;
                                 return this.findItemBy(payload).then(function (response) {
                                     var id = response.id,
                                         imei = response.imei,
@@ -44167,17 +44186,12 @@ exports.default = {
                                     }
                                 });
 
-                            case 6:
+                            case 4:
+                                this.computeTotal();
+                                // const total_amount = computeTotal(this.items, "selling_price");
+                                // this.salesItem.total_amount = total_amount;
 
-                                // const total_amount = this.salesItem.items.reduce(
-                                //   (acc, item) => acc + item.selling_price,
-                                //   0
-                                // );
-                                total_amount = (0, _sales.computeTotal)(this.items, "selling_price");
-
-                                this.salesItem.total_amount = total_amount;
-
-                            case 8:
+                            case 5:
                             case "end":
                                 return _context.stop();
                         }
@@ -44190,7 +44204,11 @@ exports.default = {
             }
 
             return onBlur;
-        }()
+        }(),
+        computeTotal: function computeTotal() {
+            var total_amount = (0, _sales.computeTotal)(this.items, "selling_price");
+            this.salesItem.total_amount = total_amount;
+        }
     }),
     watch: {
         // reset form
@@ -44242,7 +44260,7 @@ Object.defineProperty(exports, "__esModule", {
 var computeTotal = function computeTotal(items, key) {
     if (!Array.isArray(items)) {
         return new Error("items should be of type Array");
-        console.error('parameter should be of type Array');
+        console.error("parameter should be of type Array");
     }
 
     if (!key || key === undefined || key === "") {
@@ -44250,14 +44268,30 @@ var computeTotal = function computeTotal(items, key) {
     }
 
     var total = items.reduce(function (acc, item) {
-        return acc + item[key];
+        if (item.discount === undefined) {
+            return acc + item[key];
+        } else {
+            var discount = item.discount,
+                selling_price = item.selling_price;
+
+
+            if (discount.includes("%")) {
+                var value = discount.split("%");
+                var percent = value[0];
+                var decimal = parseFloat(percent) / 100;
+                var deduction = decimal * parseFloat(selling_price);
+
+                return acc + (item[key] - deduction);
+            } else {
+                return acc + (item[key] - item.discount);
+            }
+        }
     }, 0);
 
     return total;
 };
 
 var itemsExists = function itemsExists(items, imei) {
-
     var i;
     for (i = 0; i < items.length; i++) {
         if (items[i].imei === imei) {
@@ -45217,9 +45251,43 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
+              _c("div", { staticClass: "col-lg-3 form-group" }, [
+                _c("label", { attrs: { for: "discount" } }, [
+                  _vm._v("Discount")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: item.discount,
+                      expression: "item.discount"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    name: "discount-" + i,
+                    type: "text",
+                    id: "discount",
+                    placeholder: ""
+                  },
+                  domProps: { value: item.discount },
+                  on: {
+                    blur: _vm.onDiscount,
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "discount", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-lg-9 form-group" },
+                { staticClass: "col-lg-6 form-group" },
                 [
                   _c("label", [_vm._v("Freebies")]),
                   _vm._v(" "),

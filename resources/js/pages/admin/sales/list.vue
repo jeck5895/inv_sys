@@ -41,7 +41,7 @@
                                 @on-delete="handleDelete"
                             ></sales-table>
                         </div>
-                        <div class="col-lg-12">
+                        <div v-if="sales.length > 0" class="col-lg-12">
                             <Pagination
                                 :data="sales"
                                 @to-page="toPage"

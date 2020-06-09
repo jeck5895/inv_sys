@@ -313,7 +313,20 @@
                     </small>
                 </div>
 
-                <div class="col-lg-9 form-group">
+                <div class="col-lg-3 form-group">
+                    <label for="discount">Discount</label>
+                    <input
+                        @blur="onDiscount"
+                        v-model="item.discount"
+                        :name="'discount-' + i"
+                        type="text"
+                        class="form-control"
+                        id="discount"
+                        placeholder=""
+                    />
+                </div>
+
+                <div class="col-lg-6 form-group">
                     <label>Freebies</label>
                     <Select2
                         :name="'freebies-' + i"
@@ -479,15 +492,17 @@ export default {
             const total_amount = computeTotal(this.items, "selling_price");
             this.salesItem.total_amount = total_amount;
         },
-
+        onDiscount() {
+            this.computeTotal();
+        },
         async onBlur(val, index, item) {
             const payload = {
                 field: "imei",
                 value: val
             };
 
-            console.log(this.salesItem.items);
-            console.log(this.items);
+            // console.log(this.salesItem.items);
+            // console.log(this.items);
             //   console.log(itemsExists(this.salesItem.items, item));
 
             if (val !== "") {
@@ -524,16 +539,14 @@ export default {
                             toastr.error(error.data.message);
                         }
                     });
-
-                // const total_amount = this.salesItem.items.reduce(
-                //   (acc, item) => acc + item.selling_price,
-                //   0
-                // );
-                const total_amount = computeTotal(this.items, "selling_price");
-                this.salesItem.total_amount = total_amount;
+                this.computeTotal();
+                // const total_amount = computeTotal(this.items, "selling_price");
+                // this.salesItem.total_amount = total_amount;
             }
-
-            //   this.$emit("on-blur", val);
+        },
+        computeTotal() {
+            const total_amount = computeTotal(this.items, "selling_price");
+            this.salesItem.total_amount = total_amount;
         }
     },
     watch: {
