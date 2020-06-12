@@ -73,7 +73,7 @@ class ItemsController extends Controller
                     }
                 })
 
-                ->available()
+                // ->available()
                 ->paginate($per_page);
             // ->toSql();
 

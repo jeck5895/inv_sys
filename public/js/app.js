@@ -42897,7 +42897,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.fa {\n  font-size: 1rem;\n}\n", ""]);
+exports.push([module.i, "\n.fa {\n    font-size: 1rem;\n}\n", ""]);
 
 // exports
 
@@ -42910,7 +42910,7 @@ exports.push([module.i, "\n.fa {\n  font-size: 1rem;\n}\n", ""]);
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 //
 //
@@ -42986,14 +42986,14 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  props: {
-    items: {
-      required: true
-    },
-    isLoading: {
-      type: Boolean
+    props: {
+        items: {
+            required: true
+        },
+        isLoading: {
+            type: Boolean
+        }
     }
-  }
 };
 
 /***/ }),
@@ -43033,6 +43033,26 @@ var render = function() {
                   _c("td", [_vm._v(_vm._s(item.formatted_selling_price))]),
                   _vm._v(" "),
                   _c("td", [_vm._v(_vm._s(item.formatted_cost))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "span",
+                      {
+                        class: {
+                          badge: true,
+                          "badge-success": item.is_available,
+                          "badge-danger": !item.is_available
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(item.is_available ? "AVAILABLE" : "SOLD") +
+                            "\n                    "
+                        )
+                      ]
+                    )
+                  ]),
                   _vm._v(" "),
                   _c(
                     "td",
@@ -43103,6 +43123,8 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("COST")]),
         _vm._v(" "),
+        _c("th", [_vm._v("STATUS")]),
+        _vm._v(" "),
         _c("th", [_vm._v("ACTIONS")])
       ])
     ])
@@ -43112,7 +43134,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", { staticClass: "text-center", attrs: { colspan: "8" } }, [
-      _vm._v("\n        Loading\n        "),
+      _vm._v("\n                Loading\n                "),
       _c("img", {
         attrs: { src: "/images/ajax-loader.gif", alt: "Loading...." }
       })
