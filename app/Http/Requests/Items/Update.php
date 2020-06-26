@@ -24,7 +24,7 @@ class Update extends FormRequest
     public function rules()
     {
         return [
-            'imei' => 'required|numeric|unique:items,imei,' . $this->get('id'),
+            'imei' => 'required|unique:items,imei,' . $this->get('id'),
             'category' => 'required|numeric',
             'color' => 'required|numeric',
             'brand' => 'required|numeric',

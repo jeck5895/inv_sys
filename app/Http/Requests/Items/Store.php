@@ -24,7 +24,7 @@ class Store extends FormRequest
     public function rules()
     {
         return [
-            'imei' => 'required|numeric|unique:items',
+            'imei' => 'required|unique:items',
             'category' => 'required|numeric',
             'color' => 'required|numeric',
             'brand' => 'required|numeric',
