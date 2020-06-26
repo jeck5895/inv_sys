@@ -71,10 +71,13 @@
                         </small>
                     </div>
                     <div
-                        v-if="salesItem.payment_mode === 'HOME CREDIT'"
+                        v-if="
+                            salesItem.payment_mode === 'HOME CREDIT' ||
+                                salesItem.payment_mode === 'EASTWEST'
+                        "
                         class="col-lg-6 form-group"
                     >
-                        <label for="">Home Credit Term</label>
+                        <label for="">Credit Term</label>
                         <select
                             v-model="salesItem.payment_terms"
                             name="home_credit_terms"
@@ -421,7 +424,14 @@ export default {
     },
     data() {
         return {
-            payments: ["CASH", "HOME CREDIT", "BDO", "BPI", "METROBANK"],
+            payments: [
+                "CASH",
+                "HOME CREDIT",
+                "BDO",
+                "BPI",
+                "METROBANK",
+                "EASTWEST"
+            ],
             card_types: ["BDO", "BPI", "METROBANK"],
             mode: "single",
             quantity: 1,
