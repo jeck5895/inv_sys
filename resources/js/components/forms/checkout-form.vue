@@ -40,6 +40,31 @@
                             {{ errors.first("CHECKOUT_FORM.receipt_no") }}
                         </small>
                     </div>
+                    <div class="col-lg-6 col-md-6 form-group">
+                        <label for="branch">Branch</label>
+                        <select
+                            v-model="salesItem.branch"
+                            name="branch"
+                            id="branch"
+                            class="form-control"
+                            v-validate="'required'"
+                        >
+                            <option value="">Select Branch</option>
+                            <option
+                                v-for="branch in branches"
+                                :key="branch.id"
+                                :value="branch.id"
+                            >
+                                {{ branch.name }}
+                            </option>
+                        </select>
+                        <small
+                            class="form-text text-danger"
+                            v-show="errors.has('CHECKOUT_FORM.branch')"
+                        >
+                            {{ errors.first("CHECKOUT_FORM.branch") }}
+                        </small>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -70,27 +95,20 @@
                             {{ errors.first("CHECKOUT_FORM.payment_mode") }}
                         </small>
                     </div>
-                    <div
-                        v-if="
-                            salesItem.payment_mode === 'HOME CREDIT' ||
-                                salesItem.payment_mode === 'EASTWEST'
-                        "
-                        class="col-lg-6 form-group"
-                    >
+                    <div class="col-lg-6 form-group">
                         <label for="">Credit Term</label>
                         <select
                             v-model="salesItem.payment_terms"
                             name="home_credit_terms"
                             class="form-control"
                             data-vv-as="credit term"
-                            v-validate="'required'"
                         >
                             <option value="12">12 Months</option>
                             <option value="6">6 Months</option>
                             <option value="3">3 Months</option>
                         </select>
 
-                        <small
+                        <!-- <small
                             class="form-text text-danger"
                             v-show="
                                 errors.has('CHECKOUT_FORM.home_credit_terms')
@@ -99,32 +117,7 @@
                             {{
                                 errors.first("CHECKOUT_FORM.home_credit_terms")
                             }}
-                        </small>
-                    </div>
-                    <div class="col-lg-6 form-group">
-                        <label for="branch">Branch</label>
-                        <select
-                            v-model="salesItem.branch"
-                            name="branch"
-                            id="branch"
-                            class="form-control"
-                            v-validate="'required'"
-                        >
-                            <option value="">Select Branch</option>
-                            <option
-                                v-for="branch in branches"
-                                :key="branch.id"
-                                :value="branch.id"
-                            >
-                                {{ branch.name }}
-                            </option>
-                        </select>
-                        <small
-                            class="form-text text-danger"
-                            v-show="errors.has('CHECKOUT_FORM.branch')"
-                        >
-                            {{ errors.first("CHECKOUT_FORM.branch") }}
-                        </small>
+                        </small> -->
                     </div>
                 </div>
             </div>

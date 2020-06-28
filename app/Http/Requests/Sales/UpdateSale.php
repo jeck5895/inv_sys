@@ -28,7 +28,7 @@ class UpdateSale extends FormRequest
         return [
             'receipt_no' => 'required|unique:sales,receipt_no,' . $this->get("id"),
             'payment_mode' => 'required|string',
-            'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
+            // 'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
             'total_amount' => 'required|numeric',
             'items' => 'required|array'
         ];

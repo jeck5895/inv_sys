@@ -28,7 +28,7 @@ class StoreSale extends FormRequest
             'receipt_no' => 'required|unique:sales',
             'payment_mode' => 'required|string',
             'total_amount' => 'required|numeric',
-            'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
+            // 'payment_terms' => 'required_if:payment_mode,==,' . $payment_mode,
             'items' => 'required|array'
         ];
     }
