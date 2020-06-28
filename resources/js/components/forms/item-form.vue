@@ -275,7 +275,7 @@
                                     placeholder="IMEI"
                                     data-vv-as="imei"
                                     :key="i"
-                                    v-validate="'required|numeric'"
+                                    v-validate="'required'"
                                 />
                                 <small
                                     class="form-text text-danger"

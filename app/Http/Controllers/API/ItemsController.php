@@ -189,7 +189,7 @@ class ItemsController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'items' => 'required|array',
-            'items.imei' => 'required|numeric',
+            'items.imei' => 'required',
         ]);
 
 
