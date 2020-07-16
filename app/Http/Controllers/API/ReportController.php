@@ -152,7 +152,7 @@ class ReportController extends Controller
 
         // return view('reports/daily-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.daily-sales', compact('data'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('reports.daily-sales', compact('data'))->setPaper('a4')->setOrientation('landscape');
         $filename = $dateFrom . ' - ' . $dateTo . '.pdf';
 
         return [
@@ -256,7 +256,7 @@ class ReportController extends Controller
 
         // return view('reports.monthly-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.monthly-sales', compact('data'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('reports.monthly-sales', compact('data'))->setPaper('a4')->setOrientation('landscape');
         $filename = $month_name . ' - ' . $year . '.pdf';
 
         return [
