@@ -12,7 +12,7 @@ List of major changes made is documented here.
 - Fixed 'Trying to get property 'cost' of non-object' in API/ReportController
 
 
-###  Noted
+### Additional Notes
 - Note: wkhtmltopdf installation as composer dependecy is not working.
 - Workaround download executable from https://wkhtmltopdf.org/downloads.html install, make a copy from /usr/local/bin to app/resources:
   - cp resources/wkhtmltoimage vendor/h4cc/wkhtmltoimage-amd64/bin
