@@ -14,6 +14,7 @@ List of major changes made is documented here.
 
 ### Additional Notes
 - Note: wkhtmltopdf installation as composer dependecy is not working.
-- Workaround download executable from https://wkhtmltopdf.org/downloads.html install, make a copy from /usr/local/bin to app/resources:
-  - cp resources/wkhtmltoimage vendor/h4cc/wkhtmltoimage-amd64/bin
-  - cp resources/wkhtmltopdf vendor/h4cc/wkhtmltopdf-amd64/bin
+- Workaround download executable from https://wkhtmltopdf.org/downloads.html based on your OS and install, make a copy of executable from installation path (Mac & Ubuntu (/usr/local/bin) / C:\Program Files) to vendor/h4cc/wkhtmltopdf-amd64/bin & vendor/h4cc/wkhtmltoimage-amd64/bin
+    #### For deployment (Ubuntu 18.04.3 LTS)
+  - cp /usr/local/bin/wkhtmltopdf /var/www/html/vendor/h4cc/wkhtmltopdf-amd64/bin
+  - cp /usr/local/bin/wkhtmltoimage /var/www/html/vendor/h4cc/wkhtmltoimage-amd64/bin
