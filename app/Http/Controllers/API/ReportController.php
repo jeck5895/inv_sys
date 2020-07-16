@@ -152,7 +152,7 @@ class ReportController extends Controller
 
         // return view('reports/daily-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.daily-sales', compact('data'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('reports.daily-sales', compact('data'))->setPaper('a4')->setOrientation('landscape');
         $filename = $dateFrom . ' - ' . $dateTo . '.pdf';
 
         return [
@@ -195,12 +195,14 @@ class ReportController extends Controller
             $total_freebies_cost = 0;
 
             foreach ($item['sales_items'] as $sales_item) {
-                $total_item_cost = (int) $total_item_cost + (int) $sales_item["item"]->cost;
+                if($sales_item) {
+                    $total_item_cost = (int) $total_item_cost + (int) $sales_item["item"]["cost"];
+                }
             }
 
             foreach ($item['sales_items'] as $sales_item) {
                 foreach ($sales_item['sales_item_freebies'] as $item_freebie) {
-                    $total_freebies_cost = (int) $total_freebies_cost + (int) $item_freebie["freebie"]->price;
+                    $total_freebies_cost = (int) $total_freebies_cost + (int) $item_freebie["freebie"]["price"];
                 }
             }
 
@@ -254,7 +256,7 @@ class ReportController extends Controller
 
         // return view('reports.monthly-sales', compact('data'));
 
-        $pdf = PDF::loadView('reports.monthly-sales', compact('data'))->setPaper('a4', 'landscape');
+        $pdf = PDF::loadView('reports.monthly-sales', compact('data'))->setPaper('a4')->setOrientation('landscape');
         $filename = $month_name . ' - ' . $year . '.pdf';
 
         return [
