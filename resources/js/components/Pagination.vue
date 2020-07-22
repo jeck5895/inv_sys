@@ -114,6 +114,10 @@ export default {
 
             if (this.data.current_page === this.data.last_page) {
                 return this.data.last_page - 1;
+                /**
+                 * on last page return 10 links
+                 */
+                // return this.data.last_page - (this.max_visible - 1)
             }
 
             return this.data.data.length > 0 ? this.data.current_page - 1 : 1;
