@@ -114,10 +114,6 @@ export default {
 
             if (this.data.current_page === this.data.last_page) {
                 return this.data.last_page - 1;
-                /**
-                 * on last page return 10 links
-                 */
-                // return this.data.last_page - (this.max_visible - 1)
             }
 
             return this.data.data.length > 0 ? this.data.current_page - 1 : 1;
@@ -127,7 +123,7 @@ export default {
 
             for (
                 let i = this.startPage;
-                i <= Math.min(this.startPage + 10 - 1, this.data.last_page);
+                i <= Math.min(this.startPage + this.max_visible - 1, this.data.last_page);
                 i++
             ) {
                 range.push(i);
