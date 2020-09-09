@@ -9,18 +9,20 @@
                 <th>PRICE</th>
                 <th>COST</th>
                 <th>STATUS</th>
+                <th>DATE SOLD</th>
+                <th>DELIVERY DATE</th>
                 <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
             <tr v-if="isLoading">
-                <td class="text-center" colspan="8">
+                <td class="text-center" colspan="11">
                     Loading
                     <img src="/images/ajax-loader.gif" alt="Loading...." />
                 </td>
             </tr>
             <tr v-if="!isLoading && items.data && items.data.length == 0">
-                <td colspan="9">
+                <td colspan="11">
                     <p class="text-center">
                         <em>No data to show...</em>
                     </p>
@@ -45,6 +47,15 @@
                             {{ item.is_available ? "AVAILABLE" : "SOLD" }}
                         </span>
                     </td>
+                    <td>
+                        <template v-if="item.sales_item === null">
+                            N/A
+                        </template>
+                        <template v-else>
+                            {{ item.sales_item.sales.checkout_date | humanReadable }}
+                        </template>
+                    </td>
+                    <td>{{ item.delivery_date | humanReadable }}</td>
                     <td align="center" class="px-1">
                         <button
                             @click.prevent="$emit('on-edit', item)"

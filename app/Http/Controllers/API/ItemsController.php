@@ -36,7 +36,7 @@ class ItemsController extends Controller
                         }
                     }
                 })
-                ->with(['category', 'brand', 'color', 'model', 'supplier'])
+                ->with(['category', 'brand', 'color', 'model', 'supplier', 'sales_item.sales'])
                 ->orWhereHas('brand', function ($query) use ($request, $keywords) {
                     if ($request->has('q')) {
                         foreach ($keywords as $keyword) {
@@ -123,6 +123,7 @@ class ItemsController extends Controller
         $item->selling_price = floatval($request['price']);
         $item->specs = $request['remarks'];
         $item->user_id = auth()->user()->id;
+        $item->delivery_date = $request['delivery_date'];
         $item->save();
 
         return ['message' => 'Stocks has been saved'];
@@ -167,6 +168,7 @@ class ItemsController extends Controller
         $item->cost = floatval($request['cost']);
         $item->selling_price = floatval($request['price']);
         $item->specs = $request['remarks'];
+        $item->delivery_date = $request['delivery_date'];
         $item->save();
 
         return ['message' => 'Stocks has been saved', 'item_id' => $item->id];
@@ -205,6 +207,7 @@ class ItemsController extends Controller
                 $item->color_id = $r['color'];
                 $item->cost = floatval($r['cost']);
                 $item->selling_price = floatval($r['price']);
+                $item->delivery_date = $r['delivery_date'];
                 if (isset($r['remarks'])) {
                     $item->specs = $r['remarks'];
                 }

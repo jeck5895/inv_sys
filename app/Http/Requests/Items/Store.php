@@ -32,6 +32,7 @@ class Store extends FormRequest
             'supplier' => 'required|numeric',
             'cost' => 'required|numeric',
             'price' => 'required|numeric',
+            'delivery_date' => 'required',
         ];
     }
 }
