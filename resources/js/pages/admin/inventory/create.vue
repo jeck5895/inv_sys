@@ -80,6 +80,7 @@ export default {
         color,
         cost,
         price,
+        delivery_date,
         remarks,
         mode
       } = evt;
@@ -95,6 +96,7 @@ export default {
           color,
           cost,
           price,
+          delivery_date,
           remarks
         })
           .then(() => {
@@ -131,6 +133,7 @@ export default {
             cost,
             price,
             remarks,
+            delivery_date,
             imei: data
           };
           items.push(item);
@@ -181,6 +184,7 @@ export default {
       this.$set(this.item, "cost", null);
       this.$set(this.item, "selling_price", null);
       this.$set(this.item, "remarks", "");
+      this.$set(this.item, "delivery_date", null);
 
       form.reset();
       errors.clear();

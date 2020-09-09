@@ -113,17 +113,30 @@ export default {
             }
 
             if (this.data.current_page === this.data.last_page) {
-                return this.data.last_page - 1;
+                return this.max_visible < this.data.last_page
+                ? this.data.last_page - (this.max_visible - 1)
+                : this.max_visible > this.data.last_page
+                    ? 1
+                    : this.data.last_page - 1;
             }
 
             return this.data.data.length > 0 ? this.data.current_page - 1 : 1;
+
+            /**
+             * retain 10 links to the left
+             */
+            // return this.data.data.length > 0
+            //     ?  this.max_visible < this.data.current_page
+            //         ? this.data.current_page + (this.max_visible - 1)
+            //         : this.data.current_page - 1
+            //     : 1;
         },
         links() {
             const range = [];
 
             for (
                 let i = this.startPage;
-                i <= Math.min(this.startPage + 10 - 1, this.data.last_page);
+                i <= Math.min(this.startPage + this.max_visible - 1, this.data.last_page);
                 i++
             ) {
                 range.push(i);

@@ -47,8 +47,9 @@ class Item extends Model implements Auditable
         return $this->belongsToMany(Sale::class);
     }
 
-    // public function freebies()
-    // {
-    //     return $this->hasManyThrough(Freebie::class, SaleItem::class, 'item_id');
-    // }
+    public function sales_item()
+    {
+        return $this->hasOne(SalesItem::class, 'item_id', 'id');
+    }
+
 }

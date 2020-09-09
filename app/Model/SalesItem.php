@@ -17,4 +17,9 @@ class SalesItem extends Model
     {
         return $this->hasOne(Item::class, 'id', 'item_id');
     }
+
+    public function sales()
+    {
+        return $this->hasOne(Sale::class, 'id', 'sales_id');
+    }
 }

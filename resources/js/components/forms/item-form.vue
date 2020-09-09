@@ -53,6 +53,31 @@
                     </div>
                 </div>
                 <div class="form-row">
+                    <div
+                        :class="{
+                            'col-lg-12': mode === 'multiple',
+                            'col-lg-6': mode === 'single',
+                            'form-group': true,
+                        }">
+                        <label for="input-4">DELIVERY DATE</label>
+                        <input
+                            v-model="item.delivery_date"
+                            name="delivery_date"
+                            type="date"
+                            class="form-control"
+                            id="delivery_date"
+                            v-validate="'required'"
+                            placeholder=""
+                        />
+                        <small
+                            class="form-text text-danger"
+                            v-show="errors.has('ITEM_FORM.delivery_date')"
+                        >
+                            {{ errors.first("ITEM_FORM.delivery_date") }}
+                        </small>
+                    </div>
+                </div>
+                <div class="form-row">
                     <div class="form-group col-lg-6 col-md-6">
                         <label for="input-4">IMEI</label>
                         <input
@@ -357,6 +382,7 @@ export default {
                 category: this.item.category_id,
                 remarks: this.item.remarks,
                 supplier: this.item.supplier_id,
+                delivery_date: this.item.delivery_date,
                 mode: this.mode,
                 form: this.$validator, // for resetting form on parent
                 errors: this.errors // for clearing errors on paren
